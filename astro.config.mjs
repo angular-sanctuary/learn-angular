@@ -28,6 +28,7 @@ export default defineConfig({
 						{ label: 'Add form component', link: '/practical-course/add-form-component' },
 						{ label: 'Routing introduction', link: '/practical-course/routing-introduction' },
 						{ label: 'HTML form', link: '/practical-course/html-form' },
+						{ label: 'Form binding', link: '/practical-course/form-binding' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
