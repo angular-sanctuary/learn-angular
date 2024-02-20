@@ -27,6 +27,7 @@ export default defineConfig({
 						{ label: 'Read interlude', link: '/practical-course/read-interlude' },
 						{ label: 'Add form component', link: '/practical-course/add-form-component' },
 						{ label: 'Routing introduction', link: '/practical-course/routing-introduction' },
+						{ label: 'HTML form', link: '/practical-course/html-form' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
