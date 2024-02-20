@@ -53,5 +53,7 @@ It's defined in the `task-list.component.ts` file:
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
+export class TaskListComponent {
+}
 ```
 

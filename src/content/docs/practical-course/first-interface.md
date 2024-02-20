@@ -56,21 +56,26 @@ Open the `src/app/task-list.component.ts` file.
 
 Add the following code to the file:
 
-```typescript
-tasks: Task[] = [
-  {
-    id: 1,
-    title: 'Task 1',
-    description: 'Description of task 1',
-    done: false
-  },
-  {
-    id: 2,
-    title: 'Task 2',
-    description: 'Description of task 2',
-    done: true
-  }
-];
+```typescript ins={"Add the tasks variable": 8-18}
+@Component({
+    selector: 'app-task-list',
+    templateUrl: './task-list.component.html',
+    styleUrls: ['./task-list.component.css']
+})
+export class TaskListComponent {
+    
+    
+    tasks: Task[] = [
+        {
+            title: 'Task 1',
+            description: 'Description of task 1'
+        },
+        {
+            title: 'Task 2',
+            description: 'Description of task 2'
+        }
+    ];
+}
 ```
 
 Now the list is no longer empty and contains two tasks.
