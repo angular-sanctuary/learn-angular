@@ -33,6 +33,7 @@ export default defineConfig({
 						{ label: 'Angular service', link: '/practical-course/angular-service' },
 						{ label: 'Application state', link: '/practical-course/application-state' },
 						{ label: 'Dependency injection', link: '/practical-course/dependency-injection' },
+						{ label: 'Service communication', link: '/practical-course/service-communication' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
