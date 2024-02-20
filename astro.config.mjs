@@ -26,6 +26,7 @@ export default defineConfig({
 						{ label: 'Inperpolation', link: '/practical-course/interpolation' },
 						{ label: 'Read interlude', link: '/practical-course/read-interlude' },
 						{ label: 'Add form component', link: '/practical-course/add-form-component' },
+						{ label: 'Routing introduction', link: '/practical-course/routing-introduction' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
