@@ -32,6 +32,7 @@ export default defineConfig({
 						{ label: 'Event binding', link: '/practical-course/event-binding'},
 						{ label: 'Angular service', link: '/practical-course/angular-service' },
 						{ label: 'Application state', link: '/practical-course/application-state' },
+						{ label: 'Dependency injection', link: '/practical-course/dependency-injection' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
