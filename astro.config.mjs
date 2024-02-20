@@ -20,6 +20,12 @@ export default defineConfig({
 						{ label: 'UI Library', link: '/practical-course/ui-library' },
 						{ label: 'Component introduction', link: '/practical-course/component-introduction' },
 						{ label: 'Your first component', link: '/practical-course/task-list-component' },
+						{ label: 'Typescript introduction', link : '/practical-course/typescript-introduction'},
+						{ label: 'First interface', link: '/practical-course/first-interface' },
+						{ label: 'Displaying list', link: '/practical-course/display-list' },
+						{ label: 'Inperpolation', link: '/practical-course/interpolation' },
+						{ label: 'Read interlude', link: '/practical-course/read-interlude' },
+						{ label: 'Add form component', link: '/practical-course/add-form-component' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
