@@ -31,6 +31,7 @@ export default defineConfig({
 						{ label: 'Form binding', link: '/practical-course/form-binding' },
 						{ label: 'Event binding', link: '/practical-course/event-binding'},
 						{ label: 'Angular service', link: '/practical-course/angular-service' },
+						{ label: 'Application state', link: '/practical-course/application-state' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
