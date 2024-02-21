@@ -109,3 +109,7 @@ export class TaskListComponent {
   constructor(private taskService: TaskService) { }
 }
 ```
+
+## What's next
+
+In the next chapter, you will learn how to delete a task from the list. You will learn how to create a delete button in the `TaskListComponent` class and how to create a function to remove a task from the list in the `TaskService` class.
