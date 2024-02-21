@@ -57,3 +57,5 @@ You should see `Task name :` repeated as many times as there are tasks in the li
 ## What you learned
 
 In this chapter, you learned how to display a list of items in an Angular application.
+
+## 🔎 Want to learn more?

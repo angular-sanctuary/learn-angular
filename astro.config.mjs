@@ -24,7 +24,7 @@ export default defineConfig({
 						{ label: 'First interface', link: '/practical-course/first-interface' },
 						{ label: 'Displaying list', link: '/practical-course/display-list' },
 						{ label: 'Interpolation', link: '/practical-course/interpolation' },
-						{ label: 'Read interlude', link: '/practical-course/read-interlude' },
+						{ label: '🏁 Display review', link: '/practical-course/read-interlude' },
 						{ label: 'Add form component', link: '/practical-course/add-form-component' },
 						{ label: 'Routing introduction', link: '/practical-course/routing-introduction' },
 						{ label: 'HTML form', link: '/practical-course/html-form' },
@@ -36,6 +36,8 @@ export default defineConfig({
 						{ label: 'Service communication', link: '/practical-course/service-communication' },
 						{ label: 'Add task in service', link: '/practical-course/add-task-service' },
 						{ label: 'Inject service in form', link: '/practical-course/inject-service-form' },
+						{ label: 'Programmatical routing', link: '/practical-course/programmatical-routing' },
+						{ label: '🏁 Form review', link: '/practical-course/form-review' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },

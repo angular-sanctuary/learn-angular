@@ -41,6 +41,16 @@ export class TaskFormComponent {
 
 The `TaskFormComponent` class is now using the `TaskService` to add a new task to the list.
 
+## Let's test it out
+
+1. Go back to your browser
+2. Click on the `Add a new task` link
+3. Enter a title and a description in the form
+4. Click on the `Create task` button
+5. Click on the `List of tasks` link
+
+You should see the new task in the list.
+
 ## What you learned
 
 In this chapter, you learned how to inject a service in a form component in an Angular application. You learned how to use the `TaskService` to add a new task to the list in the `TaskFormComponent` class.
