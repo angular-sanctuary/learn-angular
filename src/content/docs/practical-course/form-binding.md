@@ -30,7 +30,7 @@ import { Component } from '@angular/core';
 })
 export class TaskFormComponent {
     
-  task = {
+  task: Task = {
     title: '',
     description: ''
   };

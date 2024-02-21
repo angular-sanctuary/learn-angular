@@ -35,6 +35,7 @@ export default defineConfig({
 						{ label: 'Dependency injection', link: '/practical-course/dependency-injection' },
 						{ label: 'Service communication', link: '/practical-course/service-communication' },
 						{ label: 'Add task in service', link: '/practical-course/add-task-service' },
+						{ label: 'Inject service in form', link: '/practical-course/inject-service-form' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
