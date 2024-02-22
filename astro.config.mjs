@@ -38,6 +38,10 @@ export default defineConfig({
 						{ label: 'Inject service in form', link: '/practical-course/inject-service-form' },
 						{ label: 'Programmatical routing', link: '/practical-course/programmatical-routing' },
 						{ label: '🏁 Form review', link: '/practical-course/form-review' },
+						{ label: 'Add delete function', link: '/practical-course/add-delete-function' },
+						{ label: 'Add delete button', link: '/practical-course/add-delete-button' },
+						{ label: 'Add empty list', link: '/practical-course/add-empty-list' },
+						{ label: '🏁 Delete review', link: '/practical-course/delete-review' },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
