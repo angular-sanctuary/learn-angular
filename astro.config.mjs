@@ -44,6 +44,13 @@ export default defineConfig({
 						{ label: 'Add delete button', link: '/practical-course/add-delete-button' },
 						{ label: 'Add empty list', link: '/practical-course/add-empty-list' },
 						{ label: '🏁 Delete review', link: '/practical-course/delete-review', attrs: { style: 'font-weight: bold' } },
+						{ label: '🚀 Update overview', link: '/practical-course/update-overview' },
+						{ label: 'Update task route', link: '/practical-course/update-task-route' },
+						{ label: 'Update form', link: '/practical-course/update-task-form' },
+						{ label: 'Submit update form', link: '/practical-course/submit-update-form' },
+						{ label: '🏁 Update review', link: '/practical-course/update-review', attrs: { style: 'font-weight: bold' } },
+						{ label: '🎉 Congratulations', link: '/practical-course/congratulations' },
+						{ label: '🏁 Final review', link: '/practical-course/final-review', attrs: { style: 'font-weight: bold' } },
 						/**
 						{ label: 'Routing', link: '/practical-course/routing' },
 						{ label: 'Layouts', link: '/practical-course/layouts' },
