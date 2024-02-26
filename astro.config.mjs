@@ -15,6 +15,7 @@ export default defineConfig({
 					label: 'Practical Course',
 					items: [
 						{ label: 'Introduction', link: '/practical-course/introduction' },
+						{ label: 'Learning process', link: '/practical-course/learning-process'},
 						{ label: 'Prerequisites', link: '/practical-course/prerequisites' },
 						{ label: 'Getting started', link: '/practical-course/getting-started' },
 						{ label: 'UI Library', link: '/practical-course/ui-library' },
