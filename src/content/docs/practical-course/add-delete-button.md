@@ -18,7 +18,7 @@ Add the following code to the file:
   <li *ngFor="let task of tasks; let i = index">
     Task name: {{ task.title }}
     
-    <button type="button" (click)="deleteTask(i)">Delete</button>
+    <button type="button" (click)="deleteTask(task.id)">Delete</button>
   </li>
 </ul>
 ```
@@ -43,8 +43,8 @@ export class TaskListComponent {
 
   constructor(private taskService: TaskService) { }
 
-  deleteTask(index) {
-    this.taskService.deleteTask(index);
+  deleteTask(uuid: string) {
+    this.taskService.deleteTask(uuid);
   }
 }
 ```

@@ -36,8 +36,8 @@ export class TaskService {
   }
   
   
-  deleteTask(index) {
-    this.tasks.splice(index, 1);
+  deleteTask(uuid: string) {
+    this.tasks = this.tasks.filter(task => task.uuid !== uuid);
   }
 }
 ```
