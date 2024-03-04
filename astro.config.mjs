@@ -9,6 +9,7 @@ export default defineConfig({
 			title: 'Learn Angular',
 			social: {
 				github: 'https://github.com/angular-sanctuary/learn-angular',
+				youtube: 'https://github.com/angular-sanctuary/learn-angular',
 			},
 			sidebar: [
 				{
@@ -50,6 +51,12 @@ export default defineConfig({
 						{ label: 'Update form', link: '/practical-course/update-task-form' },
 						{ label: 'Submit update form', link: '/practical-course/submit-update-form' },
 						{ label: '🏁 Update review', link: '/practical-course/update-review', attrs: { style: 'font-weight: bold' } },
+						{ label: 'API server', items: [
+								{ label: '🚀 API overview', link: '/practical-course/api-server/api-overview' },
+								{ label: 'JSON server installation', link: '/practical-course/api-server/json-server-installation' },
+								{ label: 'Add HTTP client', link: '/practical-course/api-server/add-http-client' },
+								{ label: 'Get tasks', link: '/practical-course/api-server/get-tasks' },
+							]},
 						{ label: '🎉 Congratulations', link: '/practical-course/congratulations' },
 						{ label: '🏁 Final review', link: '/practical-course/final-review', attrs: { style: 'font-weight: bold' } },
 						/**
