@@ -3,9 +3,9 @@ title: Submit update form
 description: Learn how to submit an update form in an Angular application.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to submit an update form in an Angular application.
+:::note
+Learn how to submit an update form in an Angular application.
+:::
 
 ## Update the task with the TaskService
 

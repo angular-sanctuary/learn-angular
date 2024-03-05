@@ -3,9 +3,9 @@ title: Add HTTP client
 description: Learn how to add an HTTP client to an Angular application.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to add an HTTP client to an Angular application.
+:::note
+Learn how to add an HTTP client to an Angular application.
+:::
 
 ## The HttpClient module
 

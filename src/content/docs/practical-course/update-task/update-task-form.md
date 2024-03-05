@@ -3,9 +3,9 @@ title: Update TaskFormComponent
 description: Learn how to update the `TaskFormComponent` to populate the form with the task to update.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to update the `TaskFormComponent` to populate the form with the task to update.
+:::note
+Learn how to update the `TaskFormComponent` to populate the form with the task to update.
+:::
 
 We are now able to land on the `TaskFormComponent` when we click on the 'Update' button next to a task in the list with a new route path.
 This path a dynamic value to pass the `id` of the task to update.

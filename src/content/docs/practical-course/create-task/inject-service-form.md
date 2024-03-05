@@ -3,9 +3,9 @@ title: Inject Service in form component
 description: Learn how to inject a service in a form component in an Angular application.
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to inject our service and use its function in the `TaskFormComponent` class.
+:::note
+Learn how to inject our service and use its function in the `TaskFormComponent` class.
+:::
 
 ## Inject the TaskService in the TaskFormComponent
 

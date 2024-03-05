@@ -3,9 +3,9 @@ title: Your first interface
 description: Create your first Typescript interface
 ---
 
-## 🎓 What you will learn
-
-In this practical course, you will learn how to create your first TypeScript interface.
+:::note
+Learn how to create your first TypeScript interface.
+:::
 
 ## Models folder
 

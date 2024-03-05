@@ -3,9 +3,9 @@ title: Create advanced typescript types
 description: Learn how to create advanced typescript types.
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to create advanced typescript types.
+:::note
+Learn how to create advanced typescript types.
+:::
 
 We updated our Task model to include an `id` property. We also updated the TaskService to use the `uuid` library to generate unique identifiers for the tasks.
 We now need to update the `addTask` function to use the updated Task model.

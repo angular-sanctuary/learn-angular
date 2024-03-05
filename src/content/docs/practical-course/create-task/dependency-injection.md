@@ -3,9 +3,9 @@ title: Dependency injection
 description: Learn how to use dependency injection in an Angular application.
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to use dependency injection in an Angular application.
+:::note
+Learn how to use dependency injection in an Angular application.
+:::
 
 ## Remove the tasks list from the TaskListComponent
 

@@ -3,9 +3,9 @@ title: Query the task list
 description: Learn how to query the task list from the API server in an Angular application.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to query the task list from the API server in an Angular application.
+:::note
+Learn how to query the task list from the API server in an Angular application.
+:::
 
 ## The TaskService
 

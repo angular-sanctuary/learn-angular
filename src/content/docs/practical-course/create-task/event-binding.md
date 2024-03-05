@@ -3,10 +3,10 @@ title: Event binding
 description: Learn to bind an event to a function
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to bind an event to a function in Angular.
+:::note
+Learn how to bind an event to a function in Angular.
 You will learn how to execute a function when the form is submitted.
+:::
 
 ## Event binding
 

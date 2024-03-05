@@ -3,9 +3,9 @@ title: Add delete button in the TaskListComponent
 description: Learn how to add a delete button in the TaskListComponent class in an Angular application.
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to add a delete button in the `TaskListComponent` class in an Angular application.
+:::note
+Learn how to add a delete button in the `TaskListComponent` class in an Angular application.
+:::
 
 ## The delete button
 

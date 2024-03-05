@@ -3,9 +3,9 @@ title: Add task with the HTTP client
 description: Learn how to add a task to a list using the HTTP client in an Angular application.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to add a task to a list using the HTTP client in an Angular application.
+:::note
+Learn how to add a task to a list using the HTTP client in an Angular application.
+:::
 
 ## The TaskService
 

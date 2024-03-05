@@ -3,9 +3,9 @@ title: Install JSON Server
 description: Learn how to install JSON Server to create a fake REST API.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to install JSON Server to create a fake REST API.
+:::note
+Learn how to install JSON Server to create a fake REST API.
+:::
 
 ## What is JSON Server
 

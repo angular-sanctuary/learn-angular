@@ -3,9 +3,9 @@ title: Add route for update task feature
 description: Learn how to add a route to update a task in an Angular application.
 ---
 
-## 	🎓 What you will learn
-
-In this chapter, you will learn how to add a route to update a task in an Angular application.
+:::note
+Learn how to add a route to update a task in an Angular application.
+:::
 
 ## The route path
 

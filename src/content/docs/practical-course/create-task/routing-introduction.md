@@ -3,9 +3,9 @@ title: Routing introduction
 description: Introduction to routing in the practical course
 ---
 
-## 🎓 What you will learn
-
-In this practical course, you will learn how to add routing to your application.
+:::note
+Learn how to add routing to your application.
+:::
 
 ## What is routing?
 

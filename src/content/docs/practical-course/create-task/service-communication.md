@@ -3,9 +3,9 @@ title: Service communication
 description: Learn how to communicate between a service and a component in an Angular application.
 ---
 
-## 🎓 What you will learn
-
-In this chapter, you will learn how to communicate between a service and a component in an Angular application.
+:::note
+Learn how to communicate between a service and a component in an Angular application.
+:::
 
 ## The task variable
 
