@@ -3,7 +3,7 @@ title: Form binding
 description: Learn how to bind a form to a model in Angular
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to bind a form to a model in Angular.
 Thanks to the previous chapter we now have an HTML form but it does nothing yet.

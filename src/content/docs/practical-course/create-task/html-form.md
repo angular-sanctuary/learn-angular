@@ -3,7 +3,7 @@ title: HTML Form
 description: Learn how to create a form in HTML
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to create a form in HTML.
 

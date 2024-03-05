@@ -3,7 +3,7 @@ title: Service creation
 description: Learn how to create a service in Angular
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to create a service in Angular to manage the tasks.
 

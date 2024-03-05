@@ -3,7 +3,7 @@ title: Create a form component
 description: Create a form component to add a new task to the task list
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to create a form component to add a new task to the task list.
 

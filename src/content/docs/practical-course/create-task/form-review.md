@@ -3,7 +3,7 @@ title: Inject Service in form component
 description: Learn how to inject a service in a form component in an Angular application.
 ---
 
-## What you learned so far
+## 🎓 What you learned so far
 
 In the previous chapters, you learned:
 

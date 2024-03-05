@@ -3,7 +3,7 @@ title: Add task in service
 description: Learn how to add a task in the `TaskService` in an Angular application.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to add a task in the `TaskService` in an Angular application.
 

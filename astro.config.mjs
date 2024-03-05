@@ -22,73 +22,73 @@ export default defineConfig({
                         {label: 'Getting started', link: '/practical-course/getting-started'},
                         {
                             label: 'Display tasks', collapsed: true, items: [
-                                {label: 'UI Library', link: '/practical-course/display-content/ui-library'},
+                                {label: 'Add an UI Library', link: '/practical-course/display-tasks/add-ui-library'},
                                 {
                                     label: 'Component introduction',
-                                    link: '/practical-course/display-content/component-introduction'
+                                    link: '/practical-course/display-tasks/component-introduction'
                                 },
                                 {
                                     label: 'Your first component',
-                                    link: '/practical-course/display-content/task-list-component'
+                                    link: '/practical-course/display-tasks/task-list-component'
                                 },
                                 {
                                     label: 'Typescript introduction',
-                                    link: '/practical-course/display-content/typescript-introduction'
+                                    link: '/practical-course/display-tasks/typescript-introduction'
                                 },
-                                {label: 'First interface', link: '/practical-course/display-content/first-interface'},
-                                {label: 'Displaying list', link: '/practical-course/display-content/display-list'},
-                                {label: 'Interpolation', link: '/practical-course/display-content/interpolation'},
+                                {label: 'First interface', link: '/practical-course/display-tasks/first-interface'},
+                                {label: 'Displaying list', link: '/practical-course/display-tasks/display-list'},
+                                {label: 'Interpolation', link: '/practical-course/display-tasks/interpolation'},
                                 {
                                     label: '🏁 Display review',
-                                    link: '/practical-course/read-interlude',
+                                    link: '/practical-course/display-tasks/read-interlude',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]
                         },
                         {
                             label: 'Create task', collapsed: true, items: [
-                                {label: 'Add form component', link: '/practical-course/add-form-component'},
-                                {label: 'Routing introduction', link: '/practical-course/routing-introduction'},
-                                {label: 'HTML form', link: '/practical-course/html-form'},
-                                {label: 'Form binding', link: '/practical-course/form-binding'},
-                                {label: 'Event binding', link: '/practical-course/event-binding'},
-                                {label: 'Angular service', link: '/practical-course/angular-service'},
-                                {label: 'Application state', link: '/practical-course/application-state'},
-                                {label: 'Dependency injection', link: '/practical-course/dependency-injection'},
-                                {label: 'Service communication', link: '/practical-course/service-communication'},
-                                {label: 'Add task in service', link: '/practical-course/add-task-service'},
-                                {label: 'Inject service in form', link: '/practical-course/inject-service-form'},
-                                {label: 'Programmatical routing', link: '/practical-course/programmatical-routing'},
+                                {label: 'Add form component', link: '/practical-course/create-task/add-form-component'},
+                                {label: 'Routing introduction', link: '/practical-course/create-task/routing-introduction'},
+                                {label: 'HTML form', link: '/practical-course/create-task/html-form'},
+                                {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
+                                {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
+                                {label: 'Angular service', link: '/practical-course/create-task/angular-service'},
+                                {label: 'Application state', link: '/practical-course/create-task/application-state'},
+                                {label: 'Dependency injection', link: '/practical-course/create-task/dependency-injection'},
+                                {label: 'Service communication', link: '/practical-course/create-task/service-communication'},
+                                {label: 'Add task in service', link: '/practical-course/create-task/add-task-service'},
+                                {label: 'Inject service in form', link: '/practical-course/create-task/inject-service-form'},
+                                {label: 'Programmatical routing', link: '/practical-course/create-task/programmatical-routing'},
                                 {
                                     label: '🏁 Form review',
-                                    link: '/practical-course/form-review',
+                                    link: '/practical-course/create-task/form-review',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]
                         },
                         {
                             label: 'Delete task', collapsed: true, items: [
-                                {label: 'Create uuids', link: '/practical-course/create-uuids'},
-                                {label: 'Advanced Typescript', link: '/practical-course/advanced-typescript'},
-                                {label: 'Add delete function', link: '/practical-course/add-delete-function'},
-                                {label: 'Add delete button', link: '/practical-course/add-delete-button'},
-                                {label: 'Add empty list', link: '/practical-course/add-empty-list'},
+                                {label: 'Create uuids', link: '/practical-course/delete-task/create-uuids'},
+                                {label: 'Advanced Typescript', link: '/practical-course/delete-task/advanced-typescript'},
+                                {label: 'Add delete function', link: '/practical-course/delete-task/add-delete-function'},
+                                {label: 'Add delete button', link: '/practical-course/delete-task/add-delete-button'},
+                                {label: 'Add empty list', link: '/practical-course/delete-task/add-empty-list'},
                                 {
                                     label: '🏁 Delete review',
-                                    link: '/practical-course/delete-review',
+                                    link: '/practical-course/delete-task/delete-review',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]
                         },
                         {
                             label: 'Update task', collapsed: true, items: [
-                                {label: '🚀 Update overview', link: '/practical-course/update-overview'},
-                                {label: 'Update task route', link: '/practical-course/update-task-route'},
-                                {label: 'Update form', link: '/practical-course/update-task-form'},
-                                {label: 'Submit update form', link: '/practical-course/submit-update-form'},
+                                {label: '🚀 Update overview', link: '/practical-course/update-task/update-overview'},
+                                {label: 'Update task route', link: '/practical-course/update-task/update-task-route'},
+                                {label: 'Update form', link: '/practical-course/update-task/update-task-form'},
+                                {label: 'Submit update form', link: '/practical-course/update-task/submit-update-form'},
                                 {
                                     label: '🏁 Update review',
-                                    link: '/practical-course/update-review',
+                                    link: '/practical-course/update-task/update-review',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]

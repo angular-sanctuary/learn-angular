@@ -3,20 +3,20 @@ title: Display a list of items
 description: Learn how to display a list of items in an Angular application.
 ---
 
-## What you will learn
-
-In this chapter, you will learn how to display a list of items in an Angular application.
+:::note
+Learn how to display a list of items in an Angular application.
 We'll use our newly `tasks` variable to display each task in the list.
+:::
 
 ## HTML structure
 
 To display a list of items, the expected HTML structure is:
 
 ```html
-<ul>
-  <li>Item 1</li>
-  <li>Item 2</li>
-  <li>Item 3</li>
+<ul class="list-group">
+  <li class="list-group-item">Item 1</li>
+  <li class="list-group-item">Item 2</li>
+  <li class="list-group-item">Item 3</li>
 </ul>
 ```
 
@@ -36,8 +36,8 @@ Open the `src/app/task-list.component.html` file.
 Replace the content of the file with the following code:
 
 ```html
-<ul>
-  <li *ngFor="let task of tasks">
+<ul class="list-group">
+  <li *ngFor="let task of tasks" class="list-group-item">
     Task name : 
   </li>
 </ul>

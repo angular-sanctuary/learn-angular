@@ -3,7 +3,7 @@ title: Create uuids for tasks
 description: Learn how to create uuids for tasks in an Angular application.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to create uuids for tasks in an Angular application.
 To delete a task, we need a way to identify it uniquely. We could have duplicate titles, so we can't use the title as an identifier.

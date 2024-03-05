@@ -3,7 +3,7 @@ title: Add delete function in the TaskService
 description: Learn how to delete a task from the list in an Angular application.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to delete a task from the list in an Angular application.
 

@@ -3,7 +3,7 @@ title: Display empty list message
 description: Learn how to display a message when the tasks list is empty in an Angular application.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to display a message when the tasks list is empty in an Angular application.
 We just learned how to delete a task from the list, and we want to display a message when the list is empty.

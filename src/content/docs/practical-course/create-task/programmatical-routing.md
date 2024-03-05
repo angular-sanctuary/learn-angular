@@ -3,7 +3,7 @@ title: Programmatical routing
 description: Learn how to use programmatical routing in an Angular application
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to use programmatical routing in an Angular application.
 

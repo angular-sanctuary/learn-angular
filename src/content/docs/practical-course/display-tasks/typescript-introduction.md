@@ -3,7 +3,7 @@ title: Typescript Introduction
 description: Create your first Typescript model
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this practical course, you will learn how to create your first TypeScript model.
 

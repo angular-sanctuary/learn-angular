@@ -3,7 +3,7 @@ title: Application state
 description: Learn how to manage the application state in an Angular application.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to manage the application state in an Angular application.
 

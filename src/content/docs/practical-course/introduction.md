@@ -1,7 +1,9 @@
 ---
-title: Introduction
+title: Discover Angular
 description: Learn Angular in a practical way
 ---
+
+![Angular](../../../assets/extended-angular-logo.png)
 
 ## What is Angular?
 
@@ -19,3 +21,7 @@ You will build a complete Angular application from scratch. You will build a sim
 
 This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular. If you are not familiar with these technologies, we recommend you to take a look at the [HTML](https://www.w3schools.com/html/), [CSS](https://www.w3schools.com/css/) and [JavaScript](https://www.w3schools.com/js/) tutorials on [W3Schools](https://www.w3schools.com/).
 
+:::caution
+A **Renaissance** happened for Angular in the last versions.  
+This course is based on Angular 14 and doesn't cover the latest versions.  
+It's aimed for beginners onboarded to old Angular projects.

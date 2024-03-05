@@ -33,8 +33,9 @@ The options will bootstrap the project with the latest version of Angular with s
 6. Replace the content of the file with the following code:
 
 ```html
-<header>Angular Practical course</header>
-<h1>Home page</h1>
+<header>
+    <h1>Angular Practical course</h1>
+</header>
 ```
 6. Save the file.
 7. Go back to your browser and refresh the page.

@@ -3,18 +3,17 @@ title: Task list component
 description: Create a task list component in Angular
 ---
 
-## What you will learn
-
-In this chapter, you will learn how to create a task list component in Angular. You will learn how to create a new component using the Angular CLI and how to use it in your application.
-
+:::note
+Learn how to create a new component using the Angular CLI and how to use it in your application.
+:::
 
 ## Angular CLI
 
-The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications. You can use the tool directly in a command shell, or indirectly through an interactive UI such as Angular Console.
+The **Angular CLI** is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications.  
 
-We already used it to serve the application locally with the `ng serve` command.
+You already used the CLI to serve the application locally with the `ng serve` command in the [Getting Started](/practical-course/getting-started/#running-the-application) step.
 
-Now we will use it to create a new component.
+Now you will use it to create a new component.
 
 ## Component creation
 
@@ -25,6 +24,7 @@ Now we will use it to create a new component.
 ## Component usage
 
 So far the application still only displays the `app` component html content.
+You created a component but your application does not know how to use it!
 
 We will now use the `task-list` component in the `app` component.
 
@@ -57,3 +57,15 @@ export class TaskListComponent {
 }
 ```
 
+## Quizz
+
+What is the command to create a new component using the Angular CLI?
+
+1. `ng generate component task-list`
+2. `ng new task-list`
+3. `ng create component task-list`
+4. `ng component task-list`
+
+## 🔎 Want to learn more?
+
+- [Official Angular documentation](https://angular.dev/cli)

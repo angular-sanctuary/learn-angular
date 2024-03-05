@@ -3,7 +3,7 @@ title: Create advanced typescript types
 description: Learn how to create advanced typescript types.
 ---
 
-## What you will learn
+## 🎓 What you will learn
 
 In this chapter, you will learn how to create advanced typescript types.
 

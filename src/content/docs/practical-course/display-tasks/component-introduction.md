@@ -11,6 +11,10 @@ Components are used to:
 - Reuse the same block in different parts of the application.
 - as dedidated routes with their own URL.
 
+:::note
+If you are familiar with **components** with another frontend framework, the concept is the same.
+:::
+
 ## Our first component
 
 Our project already has a default component called `app`.
@@ -25,6 +29,7 @@ Think about the human body:
 The HTML file is the bones, the TypeScript file is the brain and muscles, and the CSS file is the skin.
 Each of these files is a part of the component.
 
-Entreprise applications are made of many components. Each component is a piece of the application that controls a portion of the screen.
+Enterprise applications are made of many components. Each component is a piece of the application that controls a portion of the screen.
+You'll learn how to create a new component in the next chapter.
 
 
