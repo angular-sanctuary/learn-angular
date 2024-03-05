@@ -59,6 +59,7 @@ For example, Angular uses the `src/main.ts` file to bootstrap the application. T
 The `main.ts` file contains the following code:
 
 ```typescript
+// main.ts
 bootstrapApplication(AppComponent, appConfig).catch((err) =>
     console.error(err),
 );

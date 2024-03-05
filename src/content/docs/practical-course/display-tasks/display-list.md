@@ -1,5 +1,5 @@
 ---
-title: Display a list of items
+title: Display a list of tasks
 description: Learn how to display a list of items in an Angular application.
 ---
 
@@ -36,6 +36,7 @@ Open the `src/app/task-list.component.html` file.
 Replace the content of the file with the following code:
 
 ```html
+// task-list.component.html
 <ul class="list-group">
   <li *ngFor="let task of tasks" class="list-group-item">
     Task name : 
@@ -54,8 +55,19 @@ You should see the following page:
 Your list is now displayed in the browser.
 You should see `Task name :` repeated as many times as there are tasks in the list.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to display a list of items in an Angular application.
 
-## 🔎 Want to learn more?
+## 🚦 Quiz
+
+What is the expected *ngFor directive syntax?
+
+1. *ngFor="let task on tasks"
+2. *ngFor="let task of tasks"
+3. *ngFor="let task in tasks"
+4. *ngFor="task of tasks"
+
+## 🔗 Resources
+
+

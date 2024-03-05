@@ -17,7 +17,8 @@ In the previous chapters, you learned:
 We create a HTML form structure in the `TaskFormComponent` class.
 
 
-```html ins={"2. We bind the form to the component with ngModel": 3-4} ins={"3. We add a button to submit the form": 7-8}
+```html ins={"2. We bind the form to the component with ngModel": 4-5} ins={"3. We add a button to submit the form": 8-9}
+// task-form.component.html
 <form>
   <label for="title">Title:</label>
   
@@ -31,7 +32,8 @@ We create a HTML form structure in the `TaskFormComponent` class.
 
 We create a `TaskFormComponent` class to handle the form submission.
 
-```typescript ins={"5. We create a task model": 12-16} ins={"6. we inject the TaskService and the Router": 18-22} ins={"7. We create a function to handle the form submission and navigate to the task list": 24-27}
+```typescript ins={"5. We create a task model": 13-17} ins={"6. we inject the TaskService and the Router": 19-23} ins={"7. We create a function to handle the form submission and navigate to the task list": 25-28}
+// task-form.component.ts
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
 import { Router } from '@angular/router';
@@ -65,7 +67,8 @@ export class TaskFormComponent {
 
 We create a `TaskService` class to manage the tasks list.
 
-```typescript ins={"8. We create a tasks list": 7-17} ins={"9. We create a function to add a task to the list": 19-22}
+```typescript ins={"8. We create a tasks list": 8-18} ins={"9. We create a function to add a task to the list": 20-23}
+// task.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -93,7 +96,8 @@ export class TaskService {
 
 We update the `TaskListComponent` class to display the tasks list.
 
-```typescript ins={"10. We inject the TaskService and reference the service task list in a variable": 10-13}
+```typescript ins={"10. We inject the TaskService and reference the service task list in a variable": 11-14}
+// task-list.component.ts
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
 

@@ -1,5 +1,5 @@
 ---
-title: Task list component
+title: Create your first component
 description: Create a task list component in Angular
 ---
 
@@ -18,8 +18,19 @@ Now you will use it to create a new component.
 ## Component creation
 
 1. Open another terminal tab.
-2. Type `ng generate component task-list`.
+2. Run the following command:
+
+```bash
+ng generate component task-list
+```
+
 3. You should see a new folder called `task-list` in the `src/app` folder.
+
+This new folder contains the three following files:
+
+- `task-list.component.ts`
+- `task-list.component.html`
+- `task-list.component.css`
 
 ## Component usage
 
@@ -31,13 +42,16 @@ We will now use the `task-list` component in the `app` component.
 1. Open the `src/app/app.component.html` file.
 2. Replace the content of the file with the following code:
 
-```html
+```html ins={"Add the task list selector": 5-6}
+// app.component.html
+<header>
+    <h1>Angular Practical course</h1>
+</header>
+
 <app-task-list />
 ```
 
-3. Save the file.
-4. Go back to your browser and refresh the page.
-5. You should see the following page:
+3. Go back to your browser to see the following page:
 
 ## Component selector
 
@@ -47,15 +61,20 @@ The selector is a CSS selector that identifies this component in a template. Ang
 
 It's defined in the `task-list.component.ts` file:
 
-```typescript
+```typescript "selector: 'app-task-list'"
+// task-list.component.ts
 @Component({
-  selector: 'app-task-list', <== This is the selector
+  selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent {
 }
 ```
+
+## ✔️ What you learned
+
+In this chapter, you learned how to create a new component using the Angular CLI and how to use it in your application.
 
 ## Quizz
 
@@ -66,6 +85,25 @@ What is the command to create a new component using the Angular CLI?
 3. `ng create component task-list`
 4. `ng component task-list`
 
-## 🔎 Want to learn more?
+What is the property used to define the component 'app-task-list'?
+
+1. `name`
+2. `selector`
+3. `title`
+4. `tag`
+
+is Angular CLI meant to only create components?
+
+1. Yes
+2. No
+
+Given the component is generated with the command `ng generate component task-list`, what is the name of the selector component?
+
+1. `app-task-list`
+2. `task-list`
+3. `app-task`
+4. `task list`
+
+## 🔗 Resources
 
 - [Official Angular documentation](https://angular.dev/cli)

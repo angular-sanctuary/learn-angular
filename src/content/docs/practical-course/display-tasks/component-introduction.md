@@ -9,7 +9,7 @@ Components are used to:
 
 - Break up the application into smaller components.
 - Reuse the same block in different parts of the application.
-- as dedidated routes with their own URL.
+- as dedidcted routes with their own URL.
 
 :::note
 If you are familiar with **components** with another frontend framework, the concept is the same.

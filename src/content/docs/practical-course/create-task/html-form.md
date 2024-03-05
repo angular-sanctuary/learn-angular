@@ -21,7 +21,8 @@ Open the `src/app/task-form/task-form.component.html` file.
 
 Replace the content of the file with the following code:
 
-```html ins={"Add an input for the task title with its label": 2-4} ins={"Add a textarea for the task description with its label": 6-8} ins={"Add a submit button": 10-11}
+```html ins={"Add an input for the task title with its label": 3-5} ins={"Add a textarea for the task description with its label": 7-9} ins={"Add a submit button": 11-12}
+// task-form.component.html
 <form>
 
   <label for="title">Title:</label>

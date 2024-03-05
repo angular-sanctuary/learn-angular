@@ -3,6 +3,8 @@ title: Interpolation
 description: rendering data in a template
 ---
 
+import Quiz from '../../../../components/quiz.astro'
+
 :::note
 Learn how to render data in a template using interpolation.  
 We are now iterating over the `tasks` array but displaying a static value.      
@@ -44,18 +46,24 @@ Between `{{` and `}}` delimiters, you can add any valid TypeScript expression in
 Your list is now displayed in the browser.
 The interpolation evaluates the `task.title` property and displays the actual task title value.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to render data in a template using interpolation.
 
-## ✔️ Quizz
+## 🚦 Quiz
 
-What is the interpolation syntax in Angular?
-
-1. `{{ task.title }}`
-2. `[task.title]`
-3. `(task.title)`
-4. `task.title`
+<Quiz
+    question="What is the interpolation syntax in Angular?"
+    options={
+        [
+            { "id": 0, label: "`{{ task.title }}`", rightAnswer: true},
+            { "id": 1, label: "`[task.title]`", rightAnswer: false},
+            { "id": 2, label: "`(task.title)`", rightAnswer: false},
+            { "id": 3, label: "`task.title`", rightAnswer: false}
+        ]
+    }
+    multiple={false}
+/>
 
 ## 🔎 Want to learn more?
 

@@ -22,8 +22,23 @@ Angular features will be introduced as needed and as limited as possible to the 
 Each chapter is divided into several steps. Each step is a small task to complete.
 Each step is introduced with a learning objective and a description of the task to complete.
 
-## Code snippets
+#### Learning objectives
+
+:::note
+The step learning objectives are the main takeaways from the step.
+There are highlighted this way to help you focus on the main points.
+:::
+
+#### Code snippets
 
 Each chapter contains code snippets to add to the application.
 The course content uses specific styling to highlight the changes to make in the code.
 
+#### Quiz
+
+Each chapter contains a quiz to test your understanding of the content.
+
+#### Learn more
+
+Each chapter contains a "Learn more" section to help you dive deeper into the topic.
+You do not need to read the "Learn more" section to complete the course, but it can help you understand the topic better.

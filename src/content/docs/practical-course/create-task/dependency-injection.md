@@ -17,7 +17,8 @@ Open the `src/app/task-list.component.ts` file.
 
 Remove the `tasks` variable from the `TaskListComponent` class:
 
-```typescript del={"remove the task list": 8-18}
+```typescript del={"remove the task list": 9-19}
+// task-list.component.ts
 @Component({
     selector: 'app-task-list',
     templateUrl: './task-list.component.html',
@@ -48,7 +49,8 @@ Open the `src/app/task-list.component.ts` file.
 
 Add the following code to the file:
 
-```typescript ins={"import the TaskService": 2-3} ins={"Inject the TaskService in the class constructor": 12-13}
+```typescript ins={"import the TaskService": 3-4} ins={"Inject the TaskService in the class constructor": 13-14}
+// task-list.component.ts
 import { Component } from '@angular/core';
 
 import { TaskService } from '../task.service';

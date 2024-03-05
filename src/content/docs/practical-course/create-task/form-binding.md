@@ -20,7 +20,8 @@ Open the `src/app/task-form/task-form.component.ts` file.
 
 Replace the content of the file with the following code:
 
-```typescript ins={"Add the task model with empty values": 9-13}
+```typescript ins={"Add the task model with empty values": 10-14}
+// task-form.component.ts
 import { Component } from '@angular/core';
 
 @Component({
@@ -47,7 +48,8 @@ Open the `src/app/task-form/task-form.component.html` file.
 
 Replace the content of the file with the following code:
 
-```html ins={"Bind the title with the ngModel directive": 3-4} ins={"Bind the description with the ngModel directive": 7-8}
+```html ins={"Bind the title with the ngModel directive": 4-5} ins={"Bind the description with the ngModel directive": 8-9}
+// task-form.component.html
 <form>
   <label for="title">Title:</label>
     

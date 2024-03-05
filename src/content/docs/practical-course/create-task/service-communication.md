@@ -17,7 +17,8 @@ Open the `src/app/task-list.component.ts` file.
 
 Add the following code to the file:
 
-```typescript ins={"Get the tasks from the TaskService": 11-12}
+```typescript ins={"Get the tasks from the TaskService": 12-13}
+// task-list.component.ts
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
 

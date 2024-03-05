@@ -18,7 +18,8 @@ Open the `src/app/task-form/task-form.component.html` file.
 
 Replace the content of the file with the following code:
 
-```html ins={"Add the submit event binding": 8-9}
+```html ins={"Add the submit event binding": 9-10}
+// task-form.component.html
 <form>
   <label for="title">Title:</label>
   <input type="text" id="title" name="title" [(ngModel)]="task.title">
@@ -40,7 +41,8 @@ Open the `src/app/task-form/task-form.component.ts` file.
 
 Replace the content of the file with the following code:
 
-```typescript ins={"Add the createTask method": 9-13}
+```typescript ins={"Add the createTask method": 10-14}
+// task-form.component.ts
 import { Component } from '@angular/core';
 
 @Component({

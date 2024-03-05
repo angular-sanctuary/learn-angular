@@ -26,7 +26,8 @@ Open the `src/app/task.service.ts` file.
 
 Replace the content of the file with the following code:
 
-```typescript ins={"Add the tasks variable": 8-18}
+```typescript ins={"Add the tasks variable": 9-19}
+// task.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({

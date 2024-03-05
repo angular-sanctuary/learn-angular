@@ -18,7 +18,8 @@ The Angular router module provides a special directive called `router-outlet`. T
 
 In the `app.component.html` file, we have the following code:
 
-```html ins={"Add router-outlet as a placeholder for routed content": 2-3}
+```html ins={"Add router-outlet as a placeholder for routed content": 3-4}
+// app.component.html
 <h1>My first Angular application</h1>
 
 <router-outlet></router-outlet>
@@ -35,7 +36,8 @@ Open the `src/app/app-routing.module.ts` file.
 
 Replace the content of the file with the following code:
 
-```typescript ins={"Import the componentes for each route": 3-5} ins={"Define the routes": 8-10}
+```typescript ins={"Import the componentes for each route": 4-6} ins={"Define the routes": 9-11}
+// app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -68,7 +70,8 @@ Open the `src/app/app.component.html` file.
 
 Replace the content of the file with the following code:
 
-```html ins={"Add links to navigate between routes": 2-4}
+```html ins={"Add links to navigate between routes": 3-5}
+// app.component.html
 <h1>My first Angular application</h1>
 
 <a routerLink="/tasks">List of tasks</a>

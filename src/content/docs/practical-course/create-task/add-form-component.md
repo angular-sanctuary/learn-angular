@@ -11,7 +11,12 @@ Learn how to create a form component to add a new task to the task list.
 ## Component creation
 
 1. Open another terminal tab.
-2. Type `ng generate component add-form`.
+2. Run the following command:
+
+```bash
+ng generate component add-form
+```
+
 3. You should see a new folder called `add-form` in the `src/app` folder.
 
 ## What you learned

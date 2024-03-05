@@ -1,0 +1,17 @@
+---
+const {question, options} = Astro.props;
+---
+
+<form>
+  <fieldset>
+    <legend>{question}</legend>
+    {options.map(option => (
+        <label class="flex gap-2">
+          <input type="radio" name="question" value={option.rightAnswer} />
+          {option.label}
+        </label>
+    ))}
+  </fieldset>
+
+  <button type="submit">Submit</button>
+</form>

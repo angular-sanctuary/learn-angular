@@ -7,6 +7,11 @@ description: What you need to know before starting this course
 
 Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
 
+Based on your Angular version, you will need to install a specific version of Node.js.
+
+You can find the compatibility matrix on the [Angular web site](https://angular.dev/reference/versions#actively-supported-versions).  
+This course uses the latest version of Angular, so you can refer to the top line of the compatibility matrix.
+
 ## Visual Studio Code
 
 An IDE (Integrated Development Environment) is a software application that provides comprehensive facilities to computer programmers for software development. An IDE normally consists of a source code editor, build automation tools and a debugger.
@@ -19,6 +24,10 @@ An IDE (Integrated Development Environment) is a software application that provi
 4. Restart your computer. You won’t be able to run Visual Studio Code until you restart your computer.
 5. Test Visual Studio Code. To see if Visual Studio Code is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type `code --version`. This should print a version number, so you’ll see something like this `1.35.1`.
 
+### Auto save
+
+1. Open Visual Studio Code.
+2. Click on the File menu and select Auto Save.
 
 ### Plugins
 

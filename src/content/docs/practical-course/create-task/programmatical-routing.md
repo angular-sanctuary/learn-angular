@@ -31,7 +31,8 @@ Open the `src/app/task-form.component.ts` file.
 
 Add the following code to the file:
 
-```typescript ins={"1. import the Router": 3-4} ins={"2. Inject the Router in the class constructor": 19-20} ins={"3. Use the navigate function from the Router": 25-26}
+```typescript ins={"1. import the Router": 4-5} ins={"2. Inject the Router in the class constructor": 20-21} ins={"3. Use the navigate function from the Router": 26-27}
+// task-form.component.ts
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
 

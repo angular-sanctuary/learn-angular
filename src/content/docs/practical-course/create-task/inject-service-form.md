@@ -13,7 +13,8 @@ Open the `src/app/task-form.component.ts` file.
 
 Add the following code to the file:
 
-```typescript ins={"1. import the TaskService": 2-3} ins={"2. Inject the TaskService in the class constructor": 16-17} ins={"3. Call the addTask function from the TaskService": 20-21}
+```typescript ins={"1. import the TaskService": 3-4} ins={"2. Inject the TaskService in the class constructor": 17-18} ins={"3. Call the addTask function from the TaskService": 21-22}
+// task-form.component.ts
 import { Component } from '@angular/core';
 
 import { TaskService } from '../task.service';

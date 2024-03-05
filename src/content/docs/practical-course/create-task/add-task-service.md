@@ -16,7 +16,8 @@ Open the `src/app/task.service.ts` file.
 
 Add the following code to the file:
 
-```typescript ins={"Add the addTask function": 19-22}
+```typescript ins={"Add the addTask function": 20-23}
+// task.service.ts
 import { Injectable } from '@angular/core';
 import { Task } from './models/task.model';
 
