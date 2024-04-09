@@ -3,9 +3,12 @@ title: Display a list of tasks
 description: Learn how to display a list of items in an Angular application.
 ---
 
+import { Image } from 'astro:assets';
+import staticImg from '../../../../assets/display-list_static.png'
+
+
 :::note
-Learn how to display a list of items in an Angular application.
-We'll use our newly `tasks` variable to display each task in the list.
+Learn how to display a list of items in a HTML template file using the *ngFor directive.
 :::
 
 ## HTML structure
@@ -20,6 +23,8 @@ To display a list of items, the expected HTML structure is:
 </ul>
 ```
 
+<Image class="shadow-xl rounded-xl" src={staticImg} alt="A bird sitting on a nest of eggs."/>
+
 However, what happens if we want to display a list of items that is dynamic and changes over time?
 How to displays a four-item list today, but a five-item list tomorrow?
 
@@ -31,9 +36,11 @@ If the tasks is updated, the view should be updated as well.
 To display a list of items in an Angular application, you can use the `*ngFor` directive.
 The `*ngFor` directive is a built-in directive that allows you to loop through a list of items and display them in the view.
 
-Open the `src/app/task-list.component.html` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/task-list.component.html` file.
+
+2. Update the content of the file with the following code:
 
 ```html
 // task-list.component.html
@@ -44,11 +51,7 @@ Replace the content of the file with the following code:
 </ul>
 ```
 
-Save the file.
-
-Go back to your browser and refresh the page.
-
-You should see the following page:
+3. Go back to your browser and see the following page:
 
 // TODO: Add image
 

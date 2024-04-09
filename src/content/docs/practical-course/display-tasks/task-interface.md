@@ -4,20 +4,20 @@ description: Create your first Typescript interface
 ---
 
 :::note
-Learn how to create your first TypeScript interface and type the task array.
+Learn how to create your first TypeScript interface and type the new task list.
 :::
-
-## Models folder
-
-Create a new folder called `models` in the `src/app` folder.
-
-This folder is used to store all the TypeScript interfaces of the application.
 
 ## Interface creation
 
-Create a new file called `task.model.ts` in the `src/app/models` folder.
+Each task in the task list has a title, a description, and a creation date. We will create a new TypeScript interface to represent a task.
 
-Add the following code to the file:
+#### Instructions
+
+1. Create a new folder called `models` in the `src/app` folder to store all the TypeScript interfaces of the application.
+
+1. Create a new file called `task.model.ts` in this new folder.
+
+2. Add the following code to the file:
 
 ```typescript
 // task.model.ts
@@ -30,13 +30,15 @@ export interface Task {
 
 ## Interface usage
 
-Now that we have created the `Task` interface, we can use it in our application.
+You now want to use this task interface in your application.
 
-Now that we have created the `Task` interface and used it in our application, we can populate it with data.
+You will create a local variable in your component class to store the tasks.
 
-Open the `src/app/task-list.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Import the task interface": 3-4} ins={"Add the tasks variable": 13-23}
 // task-list.component.ts
@@ -72,4 +74,21 @@ export class TaskListComponent {
 In this chapter, you learned how to create your first TypeScript interface. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and build time errors.
 
 ## 🚦 Quiz
+
+What is the TypeScript keyword used to define an interface?
+
+1. `interface`
+2. `type`
+3. `class`
+
+What is the TypeScript keyword used to delimit the properties of an interface?
+
+1. `:`
+2. `=`
+3. `;`
+
+## 🔗 Resources
+
+
+
 

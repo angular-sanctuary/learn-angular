@@ -14,9 +14,11 @@ We'll now use this `id` to populate the form with the task to update.
 
 ## Retrieve the task to update with the TaskService
 
-Open the `src/app/task-service.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-service.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add a function to retrieve a taks based on its id": 29-33}
 import { Injectable } from '@angular/core';
@@ -56,9 +58,11 @@ export class TaskService {
 
 ## Retrieve the task id from the route
 
-Open the `src/app/task-form/task-form.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-form/task-form.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Retrieve the task id from the route": 10-13}
 import { Component, OnInit } from '@angular/core';

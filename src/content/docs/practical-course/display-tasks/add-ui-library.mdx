@@ -1,0 +1,107 @@
+---
+title: UI Library
+description: Add an UI library to your project
+---
+
+import { Image } from 'astro:assets';
+import bootstrapImg from '../../../../assets/bootstrap_added.png'
+
+
+:::note
+Learn how to add Bootstrap, an UI library, to your project to enhance the user interface of your application.
+:::
+
+Unrelated to Angular itself, adding this library will enhance the user interface of the application rather then relying on the default browser styles.
+
+Here is a comparison of the complete application before and after adding the UI library:
+
+## What is an UI library?
+
+An UI library is a collection of reusable components that can be used to build a user interface. It can be used to build a complete application or to add specific features to an existing application.
+
+To enhance the user interface of this application, we'll add [Bootstrap](https://getbootstrap.com/) to our project.
+
+## How to add Bootstrap
+
+The Angular community created multiple projects to wrap Bootstrap to facilitate the installation.
+We'll use the [NG Bootstrap](https://ng-bootstrap.github.io/#/home) one.
+
+The **NG-Bootstrap** installation command will install Bootstrap as a dependency in your package.json file and add the necessary configuration to your project.
+
+#### Instructions
+
+1. pen a terminal and run the following command to install Bootstrap:
+
+```bash
+ng add @ng-bootstrap/ng-bootstrap
+```
+
+2. Stop the server if it's running and restart it with the following command:
+
+```bash
+ng serve
+```
+
+3. Open the `src/app/app.component.html` file and replace the content with the following code to add Bootstrap classes:
+
+```html
+<header class="navbar bg-body-tertiary px-4">
+    <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
+</header>
+```
+
+4. Check out the *small* changes in your browser.
+
+<Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="A bird sitting on a nest of eggs."/>
+
+
+## What you learned
+
+You learned how to add an UI library to your project.  
+The next chapters will use **Bootstrap** classes in html snippets to enhance the user interface of the application:
+
+:::caution
+**bootstrap** also refers to **bootstrapping an application**.  
+This is not the same as adding the Bootstrap UI library to your project. 
+
+Bootstrapping an application refers to the process of initializing an application. It is the process of loading a set of instructions that will be used to start the application.
+
+For example, Angular uses the `src/main.ts` file to bootstrap the application. This file is the entry point of the application. It is the first file that is executed when the application starts.
+
+The `main.ts` file contains the following code:
+
+```typescript
+// main.ts
+bootstrapApplication(AppComponent, appConfig).catch((err) =>
+    console.error(err),
+);
+```
+:::
+
+## 🚦 Quiz
+
+1. What is Bootstrap?
+
+- A. A CSS framework
+- B. A JavaScript library
+- C. A UI library
+- D. All of the above
+
+2. What is the purpose of ng add?
+
+- A. To add a new component to the application
+- B. To add a new library to the application
+- C. To add a new service to the application
+- D. To add a new module to the application
+
+
+## 🔗 Resources
+
+- [Bootstrap documentation](https://getbootstrap.com/)
+- [NG Bootstrap documentation](https://ng-bootstrap.github.io/#/home)
+- [Angular CLI ng add command](https://angular.io/cli/add)
+
+
+
+
+

@@ -14,9 +14,11 @@ We just learned how to delete a task from the list, and we want to display a mes
 To display a message when the tasks list is empty, you can use the `*ngIf` directive.
 The `*ngIf` directive is a built-in directive that allows you to conditionally display an element in the view.
 
-Open the `src/app/task-list.component.html` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/task-list.component.html` file.
+
+2. Replace the content of the file with the following code:
 
 ```html ins={"1. Add a message when the tasks list is empty": 6-7}
 <ul>

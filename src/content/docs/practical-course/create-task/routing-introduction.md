@@ -32,9 +32,11 @@ But on all pages, we'll see the same title "My first Angular application".
 
 We need to define the routes for our application. We will have two routes: one for the list of tasks and one for the form to add a new task.
 
-Open the `src/app/app-routing.module.ts` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/app-routing.module.ts` file.
+
+2. Replace the content of the file with the following code:
 
 ```typescript ins={"Import the componentes for each route": 4-6} ins={"Define the routes": 9-11}
 // app-routing.module.ts
@@ -66,9 +68,11 @@ Each route is defined by a `path` and a `component`:
 
 We need to add links to navigate between the different routes.
 
-Open the `src/app/app.component.html` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/app.component.html` file.
+
+2. Replace the content of the file with the following code:
 
 ```html ins={"Add links to navigate between routes": 3-5}
 // app.component.html

@@ -23,9 +23,11 @@ We'll use a dynamic route path to pass the `id` of the task to update.
 
 ## Add the route
 
-Open the `src/app/app-routing.module.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/app-routing.module.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"1. Add the route for the update task feature": 9-12}
 import { NgModule } from '@angular/core';
@@ -47,9 +49,11 @@ export class AppRoutingModule { }
 
 ## The update button
 
-Open the `src/app/task-list/task-list.component.html` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list/task-list.component.html` file.
+
+2. Add the following code to the file:
 
 ```html ins={"1. Add the update button": 4-5}
 <ul>

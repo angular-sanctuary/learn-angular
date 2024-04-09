@@ -13,9 +13,11 @@ The `HttpClientModule` is a built-in Angular module that allows you to make HTTP
 
 ## Add the HttpClientModule to the application
 
-Open the `src/app/app.module.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/app.module.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add the HttpClientModule": 3-4}
 import { BrowserModule } from '@angular/platform-browser';
@@ -40,9 +42,11 @@ export class AppModule { }
 
 ## Inject the HttpClient service
 
-Open the `src/app/task.service.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task.service.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Import the HttpClient service": 2-3} ins={"Inject the HttpClient service": 10-12}
 import { Injectable } from '@angular/core';

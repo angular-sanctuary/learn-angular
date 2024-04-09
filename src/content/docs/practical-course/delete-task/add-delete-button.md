@@ -9,9 +9,11 @@ Learn how to add a delete button in the `TaskListComponent` class in an Angular 
 
 ## The delete button
 
-Open the `src/app/task-list/task-list.component.html` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list/task-list.component.html` file.
+
+2. Add the following code to the file:
 
 ```html ins={"1. Add a delete button": 4-5}
 <ul>
@@ -25,9 +27,11 @@ Add the following code to the file:
 
 ## The deleteTask function
 
-Open the `src/app/task-list/task-list.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list/task-list.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add the deleteTask function and call the TaskService deleteTask": 14-17}
 import { Component } from '@angular/core';

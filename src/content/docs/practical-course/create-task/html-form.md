@@ -15,11 +15,11 @@ The `<form>` tag is used to create an HTML form for user input.
 
 The form can contain input elements like text fields, checkboxes, radio-buttons, submit buttons, and more.
 
-## Create the form
+#### Instructions
 
-Open the `src/app/task-form/task-form.component.html` file.
+1. Open the `src/app/task-form/task-form.component.html` file.
 
-Replace the content of the file with the following code:
+2. Replace the content of the file with the following code:
 
 ```html ins={"Add an input for the task title with its label": 3-5} ins={"Add a textarea for the task description with its label": 7-9} ins={"Add a submit button": 11-12}
 // task-form.component.html

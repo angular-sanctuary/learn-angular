@@ -9,9 +9,11 @@ Learn how to inject our service and use its function in the `TaskFormComponent` 
 
 ## Inject the TaskService in the TaskFormComponent
 
-Open the `src/app/task-form.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-form.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"1. import the TaskService": 3-4} ins={"2. Inject the TaskService in the class constructor": 17-18} ins={"3. Call the addTask function from the TaskService": 21-22}
 // task-form.component.ts

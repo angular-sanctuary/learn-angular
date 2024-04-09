@@ -58,6 +58,16 @@ const car: Car = {
 };
 ```
 
+:::note
+The typescript authoring format is:
+
+```typescript
+<property>: <type> = <value>;
+```
+
+`[]` is used to define an array, like in `tasks: Task[]`.
+:::
+
 ## What are the benefits of using TypeScript?
 
 ### Autocompletion
@@ -81,6 +91,7 @@ Your IDE will warn you if you are using the wrong type for a variable.
 TypeScript will catch errors at build time.
 
 // TODO add a screenshot
+
 
 ## What you learned
 

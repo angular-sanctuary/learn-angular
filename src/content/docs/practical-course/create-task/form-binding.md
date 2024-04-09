@@ -16,9 +16,11 @@ In Angular, you can bind a form to a model. This allows you to create a two-way 
 
 We will create a `task` model to represent a task. The `task` model will have two properties: `title` and `description`.
 
-Open the `src/app/task-form/task-form.component.ts` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/task-form/task-form.component.ts` file.
+
+2. Replace the content of the file with the following code:
 
 ```typescript ins={"Add the task model with empty values": 10-14}
 // task-form.component.ts
@@ -44,9 +46,12 @@ To bind a form to a model in Angular, you can use the `[(ngModel)]` directive.
 The `[(ngModel)]` directive is a built-in directive that allows you to bind a form input to a model.
 
 We want to bind the `title` input to the `task.title` property and the `description` textarea to the `task.description` property.
-Open the `src/app/task-form/task-form.component.html` file.
 
-Replace the content of the file with the following code:
+#### Instructions
+
+1. Open the `src/app/task-form/task-form.component.html` file.
+
+2. Replace the content of the file with the following code:
 
 ```html ins={"Bind the title with the ngModel directive": 4-5} ins={"Bind the description with the ngModel directive": 8-9}
 // task-form.component.html

@@ -13,9 +13,11 @@ The `TaskListComponent` class is currently responsible for managing the tasks li
 
 We want to move this responsibility to a service.
 
-Open the `src/app/task-list.component.ts` file.
+#### Instructions
 
-Remove the `tasks` variable from the `TaskListComponent` class:
+1. Open the `src/app/task-list.component.ts` file.
+
+2. Remove the `tasks` variable from the `TaskListComponent` class:
 
 ```typescript del={"remove the task list": 9-19}
 // task-list.component.ts
@@ -45,9 +47,11 @@ export class TaskListComponent {
 Our TaskListComponent class needs to use the `TaskService` to get the tasks list.
 Angular is using the dependency injection system to provide the `TaskService` to the `TaskListComponent` class.
 
-Open the `src/app/task-list.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"import the TaskService": 3-4} ins={"Inject the TaskService in the class constructor": 13-14}
 // task-list.component.ts

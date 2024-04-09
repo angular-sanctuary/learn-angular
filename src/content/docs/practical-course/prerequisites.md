@@ -5,8 +5,6 @@ description: What you need to know before starting this course
 
 ## Node installation
 
-Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world.
-
 Based on your Angular version, you will need to install a specific version of Node.js.
 
 You can find the compatibility matrix on the [Angular web site](https://angular.dev/reference/versions#actively-supported-versions).  

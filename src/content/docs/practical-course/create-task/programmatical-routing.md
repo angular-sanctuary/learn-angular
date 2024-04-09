@@ -27,9 +27,11 @@ By using the Angular Router feature, you can inject the `Router` service in a co
 
 This service provides information about the current route and allows you to navigate to a different route.
 
-Open the `src/app/task-form.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-form.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"1. import the Router": 4-5} ins={"2. Inject the Router in the class constructor": 20-21} ins={"3. Use the navigate function from the Router": 26-27}
 // task-form.component.ts

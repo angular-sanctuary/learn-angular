@@ -9,9 +9,11 @@ Learn how to submit an update form in an Angular application.
 
 ## Update the task with the TaskService
 
-Open the `src/app/task-service.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-service.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add a function to update a task": 35-39}
 import { Injectable } from '@angular/core';
@@ -55,9 +57,11 @@ export class TaskService {
 
 ## Update the TaskFormComponent
 
-Open the `src/app/task-form/task-form.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-form/task-form.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add the updateTask function": 23-27}
 import { Component, OnInit } from '@angular/core';

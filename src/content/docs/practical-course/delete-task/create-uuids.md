@@ -12,6 +12,8 @@ We will use the `uuid` library to generate unique identifiers for the tasks.
 
 ## Install the uuid library
 
+#### Instructions
+
 Open a terminal and run the following command:
 
 ```bash
@@ -20,9 +22,11 @@ npm install uuid
 
 ## Update the task model
 
-Open the `src/app/task.model.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task.model.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Add the id property": 2-3}
 export interface Task {
@@ -35,13 +39,15 @@ export interface Task {
 
 ## Update the Task list
 
-Open the `src/app/task.service.ts` file.
+#### Instructions
+
+1. Open the `src/app/task.service.ts` file.
 
 The task list is now underlined in red because its type is not correct anymore.
 The model expects each task to include an `id` property.
 Thanks to Typescript, such warnings are very helpful.
 
-Add the following code to the file:
+2. Add the following code to the file:
 
 ```typescript ins={"Add the uuid package import": 3-4} ins={"Add the id property to the task": 12-13} ins={"Add the id property to the task": 18-19}
 import { Injectable } from '@angular/core';

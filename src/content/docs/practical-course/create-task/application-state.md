@@ -22,9 +22,11 @@ In Angular, we can use services to manage the application state.
 The new `TaskService` will be responsible for managing the tasks list.
 It'll be our source of truth for the current state of the tasks list.
 
-Open the `src/app/task.service.ts` file.
+#### Instructions
 
-Replace the content of the file with the following code:
+1. Open the `src/app/task.service.ts` file.
+
+2. Replace the content of the file with the following code:
 
 ```typescript ins={"Add the tasks variable": 9-19}
 // task.service.ts

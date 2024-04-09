@@ -13,9 +13,11 @@ If we removed the task variable in the last step, we still need to display the l
 
 We will recreate this variable but instad of initializing it with a static list of tasks, we will get the tasks from the `TaskService`.
 
-Open the `src/app/task-list.component.ts` file.
+#### Instructions
 
-Add the following code to the file:
+1. Open the `src/app/task-list.component.ts` file.
+
+2. Add the following code to the file:
 
 ```typescript ins={"Get the tasks from the TaskService": 12-13}
 // task-list.component.ts
