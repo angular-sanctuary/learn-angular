@@ -21,48 +21,56 @@ export default defineConfig({
                         {label: 'Prerequisites', link: '/practical-course/prerequisites'},
                         {
                             label: 'Typescript introduction',
-                            link: '/practical-course/display-tasks/typescript-introduction'
+                            link: '/practical-course/task-listing/typescript-introduction'
                         },
                         {label: 'Getting started', link: '/practical-course/getting-started'},
                         {
-                            label: 'Display tasks', collapsed: true, items: [
+                            label: 'Task listing', collapsed: true, items: [
                                 {
                                     label: '🚀 Display overview',
-                                    link: '/practical-course/display-tasks/display-overview',
+                                    link: '/practical-course/task-listing/display-overview',
                                     attrs: {style: 'font-weight: bold'}
                                 },
-                                {label: 'Add an UI Library', link: '/practical-course/display-tasks/add-ui-library'},
+                                {label: 'Add an UI Library', link: '/practical-course/task-listing/add-ui-library'},
                                 {
                                     label: 'Component introduction',
-                                    link: '/practical-course/display-tasks/component-introduction'
+                                    link: '/practical-course/task-listing/component-introduction'
                                 },
                                 {
                                     label: 'Create your first component',
-                                    link: '/practical-course/display-tasks/create-task-list-component'
+                                    link: '/practical-course/task-listing/create-task-list-component'
                                 },
                                 {
                                     label: 'Create the task interface',
-                                    link: '/practical-course/display-tasks/task-interface'
+                                    link: '/practical-course/task-listing/task-interface'
                                 },
-                                {label: 'Display the list', link: '/practical-course/display-tasks/display-list'},
-                                {label: 'Interpolation', link: '/practical-course/display-tasks/interpolation'},
+                                {label: 'Display the list', link: '/practical-course/task-listing/display-list'},
+                                {label: 'Interpolation', link: '/practical-course/task-listing/interpolation'},
                                 {
                                     label: '🏁 Display review',
-                                    link: '/practical-course/display-tasks/read-interlude',
+                                    link: '/practical-course/task-listing/read-interlude',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]
                         },
+                        { label: 'Task details', collapsed: true, items: [
+                                { label: '🚀 Task details overview', link: '/practical-course/task-details/task-details-overview' },
+                                {
+                                    label: 'Routing introduction',
+                                    link: '/practical-course/task-details/routing-introduction'
+                                },
+                                { label: 'Routing parameters', link: '/practical-course/display-details/routing-parameters' },
+                                { label: 'Get task by id', link: '/practical-course/display-details/get-task-by-id' },
+                                { label: 'Display task details', link: '/practical-course/display-details/display-task-details' },
+                                { label: '🏁 Display details review', link: '/practical-course/display-details/display-details-review', attrs: { style: 'font-weight: bold' } },
+                            ]},
                         {
                             label: 'Create task', collapsed: true, items: [
                                 {
                                     label: 'Create form component',
                                     link: '/practical-course/create-task/add-form-component'
                                 },
-                                {
-                                    label: 'Routing introduction',
-                                    link: '/practical-course/create-task/routing-introduction'
-                                },
+
                                 {label: 'HTML form', link: '/practical-course/create-task/html-form'},
                                 {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
                                 {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
@@ -92,13 +100,7 @@ export default defineConfig({
                                 },
                             ]
                         },
-                        { label: 'Display details', collapsed: true, items: [
-                                { label: '🚀 Display details overview', link: '/practical-course/display-details/display-details-overview' },
-                                { label: 'Routing parameters', link: '/practical-course/display-details/routing-parameters' },
-                                { label: 'Get task by id', link: '/practical-course/display-details/get-task-by-id' },
-                                { label: 'Display task details', link: '/practical-course/display-details/display-task-details' },
-                                { label: '🏁 Display details review', link: '/practical-course/display-details/display-details-review', attrs: { style: 'font-weight: bold' } },
-                            ]},
+
                         {
                             label: 'Update task', collapsed: true, items: [
                                 {label: '🚀 Update overview', link: '/practical-course/update-task/update-overview'},
