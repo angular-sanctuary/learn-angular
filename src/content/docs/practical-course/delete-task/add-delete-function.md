@@ -15,7 +15,7 @@ Learn how to delete a task from the list in an Angular application.
 
 2. Add the following code to the file:
 
-```typescript ins={"Add the deleteTask function": 22-25}
+```typescript ins={"Add the deleteTask function": 20-23}
 import { Injectable } from '@angular/core';
 
 @Injectable({

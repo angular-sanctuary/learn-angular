@@ -110,10 +110,6 @@ export default defineConfig({
                         {
                             label: 'Delete task', collapsed: true, items: [
                                 {
-                                    label: 'Advanced Typescript',
-                                    link: '/practical-course/delete-task/advanced-typescript'
-                                },
-                                {
                                     label: 'Add delete function',
                                     link: '/practical-course/delete-task/add-delete-function'
                                 },

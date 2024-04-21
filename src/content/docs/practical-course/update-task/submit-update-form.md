@@ -15,7 +15,7 @@ Learn how to submit an update form in an Angular application.
 
 2. Add the following code to the file:
 
-```typescript ins={"Add a function to update a task": 35-39}
+```typescript ins={"Add a function to update a task": 36-39}
 import { Injectable } from '@angular/core';
 import { Task } from './task.model';
 
@@ -23,22 +23,25 @@ import { Task } from './task.model';
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = [
-    {
-      id: '1',
-      title: 'First task',
-      description: 'This is the first task'
-    },
-    {
-      id: '2',
-      title: 'Second task',
-      description: 'This is the second task'
-    }
-  ];
+    tasks: Task[] = [
+        {
+            title: 'Task 1',
+            description: 'Description of task 1',
+            createdAt: new Date()
+        },
+        {
+            title: 'Task 2',
+            description: 'Description of task 2',
+            createdAt: new Date()
+        }
+    ];
 
-  addTask(task) {
-    this.tasks.push(task);
-  }
+    addTask(task: Task) {
+        this.tasks.push({
+            ...task,
+            createdAt: new Date()
+        });
+    }
 
   deleteTask(id: string) {
     this.tasks = this.tasks.filter(task => task.id !== id);
@@ -48,6 +51,7 @@ export class TaskService {
     return this.tasks.find(task => task.id === id);
   }
 
+  
   updateTask(task: Task) {
     const index = this.tasks.findIndex(t => t.id === task.id);
     this.tasks[index] = task;
@@ -63,7 +67,7 @@ export class TaskService {
 
 2. Add the following code to the file:
 
-```typescript ins={"Add the updateTask function": 23-27}
+```typescript ins={"Add the updateTask function": 28-33}
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskService } from '../task.service';
@@ -91,6 +95,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   submit(task) {
+      
     if (task.id) {
         this.taskService.updateTask(task);
         } else {
