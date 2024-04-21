@@ -28,22 +28,25 @@ import { Task } from './task.model';
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = [
-    {
-      id: '1',
-      title: 'First task',
-      description: 'This is the first task'
-    },
-    {
-      id: '2',
-      title: 'Second task',
-      description: 'This is the second task'
-    }
-  ];
+    tasks: Task[] = [
+        {
+            title: 'Task 1',
+            description: 'Description of task 1',
+            createdAt: new Date()
+        },
+        {
+            title: 'Task 2',
+            description: 'Description of task 2',
+            createdAt: new Date()
+        }
+    ];
 
-  addTask(task) {
-    this.tasks.push(task);
-  }
+    addTask(task: Task) {
+        this.tasks.push({
+            ...task,
+            createdAt: new Date()
+        });
+    }
 
   deleteTask(id: string) {
     this.tasks = this.tasks.filter(task => task.id !== id);

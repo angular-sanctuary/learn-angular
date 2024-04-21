@@ -22,20 +22,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TaskService {
-  tasks: Task[] = [
-    {
-      title: 'First task',
-      description: 'This is the first task'
-    },
-    {
-      title: 'Second task',
-      description: 'This is the second task'
-    }
-  ];
-  
-  addTask(task) {
-    this.tasks.push(task);
-  }
+    tasks: Task[] = [
+        {
+            title: 'Task 1',
+            description: 'Description of task 1',
+            createdAt: new Date()
+        },
+        {
+            title: 'Task 2',
+            description: 'Description of task 2',
+            createdAt: new Date()
+        }
+    ];
   
   
   deleteTask(uuid: string) {

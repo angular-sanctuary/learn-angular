@@ -11,7 +11,7 @@ Learn how to add a route to update a task in an Angular application.
 
 So far we defined the route paths with static values:
 
-- `'tasks'` for the `TaskListComponent`
+- `''` for the `TaskListComponent`
 - `'add-task'` for the `AddTaskComponent`
 
 The update route path is quite different.
@@ -36,8 +36,9 @@ import { TaskListComponent } from './task-list/task-list.component';
 import { TaskFormComponent } from './task-form/task-form.component';
 
 const routes: Routes = [
-  { path: '', component: TaskListComponent },
-  { path: 'update/:id', component: TaskFormComponent }
+    { path: '', component: TaskListComponent },
+    { path: 'add-task', component: TaskFormComponent },
+    { path: 'update/:id', component: TaskFormComponent }
 ];
 
 @NgModule({

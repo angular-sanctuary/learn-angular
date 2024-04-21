@@ -48,7 +48,7 @@ import { TaskFormComponent } from './task-form/task-form.component';
 
 const routes: Routes = [
 
-  { path: 'tasks', component: TaskListComponent },
+  { path: '', component: TaskListComponent },
   { path: 'add-task', component: TaskFormComponent }
 ];
 
@@ -78,7 +78,7 @@ We need to add links to navigate between the different routes.
 // app.component.html
 <h1>My first Angular application</h1>
 
-<a routerLink="/tasks">List of tasks</a>
+<a routerLink="/">List of tasks</a>
 <a routerLink="/add-task">Add a new task</a>
 
 <router-outlet></router-outlet>
