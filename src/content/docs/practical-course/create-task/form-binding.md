@@ -56,15 +56,15 @@ We want to bind the `title` input to the `task.title` property and the `descript
 ```html ins={"Bind the title with the ngModel directive": 4-5} ins={"Bind the description with the ngModel directive": 8-9}
 // task-form.component.html
 <form>
-  <label for="title">Title:</label>
+  <label for="title" class="form-label">Title</label>
     
-  <input type="text" id="title" name="title" [(ngModel)]="task.title">
+  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
     
-  <label for="description">Description:</label>
+  <label for="description" class="form-label">Description</label>
     
-  <textarea id="description" name="description" [(ngModel)]="task.description"></textarea>
+  <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
   
-  <button type="submit">Create task</button>
+  <button type="submit" class="btn btn-primary">Create task</button>
 </form>
 ```
 

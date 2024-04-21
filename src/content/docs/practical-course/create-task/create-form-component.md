@@ -16,10 +16,10 @@ Learn how to create a form component to add a new task to the task list.
 2. Run the following command:
 
 ```bash
-ng generate component add-form
+ng generate component task-form
 ```
 
-3. You should see a new folder called `add-form` in the `src/app` folder.
+3. You should see a new folder called `task-form` in the `src/app` folder.
 
 ## What you learned
 

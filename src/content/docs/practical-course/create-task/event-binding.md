@@ -23,14 +23,14 @@ We want to execute a function when the 'create task' button is clicked.
 ```html ins={"Add the submit event binding": 9-10}
 // task-form.component.html
 <form>
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title" [(ngModel)]="task.title">
+  <label for="title" class="form-label">Title:</label>
+  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
   
-  <label for="description">Description:</label>
-  <textarea id="description" name="description" [(ngModel)]="task.description"></textarea>
+  <label for="description" class="form-label">Description:</label>
+  <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
   
     
-  <button type="submit" (click)="createTask()">Create task</button>
+  <button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
 </form>
 ```
 

@@ -42,10 +42,12 @@ export class TaskService {
         {
             title: 'Task 1',
             description: 'Description of task 1',
+            createdAt: new Date()
         },
         {
             title: 'Task 2',
             description: 'Description of task 2',
+            createdAt: new Date()
         }
     ];
 }

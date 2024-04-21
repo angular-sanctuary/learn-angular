@@ -56,10 +56,14 @@ export default defineConfig({
                         {
                             label: 'Create task', collapsed: true, items: [
                                 {
-                                    label: 'Create form component',
-                                    link: '/practical-course/create-task/add-form-component'
+                                    label: '🚀 Create task overview',
+                                    link: '/practical-course/create-task/create-task-overview'
                                 },
-
+                                {
+                                    label: 'Create form component',
+                                    link: '/practical-course/create-task/create-form-component'
+                                },
+                                {label: 'Routing introduction', link: '/practical-course/create-task/routing-introduction'},
                                 {label: 'HTML form', link: '/practical-course/create-task/html-form'},
                                 {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
                                 {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
@@ -84,7 +88,7 @@ export default defineConfig({
                                 },
                                 {
                                     label: '🏁 Form review',
-                                    link: '/practical-course/create-task/form-review',
+                                    link: '/practical-course/create-task/create-task-review',
                                     attrs: {style: 'font-weight: bold'}
                                 },
                             ]

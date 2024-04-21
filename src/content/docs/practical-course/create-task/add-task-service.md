@@ -31,16 +31,21 @@ export class TaskService {
         {
             title: 'Task 1',
             description: 'Description of task 1',
+            createdAt: new Date()
         },
         {
             title: 'Task 2',
             description: 'Description of task 2',
+            createdAt: new Date()
         }
     ];
 
     
     addTask(task: Task) {
-        this.tasks.push(task);
+        this.tasks.push({
+            ...task,
+            createdAt: new Date()
+        });
     }
 }
 ```

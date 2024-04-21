@@ -25,15 +25,15 @@ The form can contain input elements like text fields, checkboxes, radio-buttons,
 // task-form.component.html
 <form>
 
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title">
+  <label for="title" class="form-label">Title</label>
+  <input type="text" id="title" name="title" class="form-control">
   
   
-  <label for="description">Description:</label>
-  <textarea id="description" name="description"></textarea>
+  <label for="description" class="form-label">Description</label>
+  <textarea id="description" name="description" class="form-control"></textarea>
   
   
-  <button type="submit">Create task</button>
+  <button type="submit" class="btn btn-primary">Create task</button>
 </form>
 ```
 
