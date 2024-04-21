@@ -53,17 +53,6 @@ export default defineConfig({
                                 },
                             ]
                         },
-                        { label: 'Task details', collapsed: true, items: [
-                                { label: '🚀 Task details overview', link: '/practical-course/task-details/task-details-overview' },
-                                {
-                                    label: 'Routing introduction',
-                                    link: '/practical-course/task-details/routing-introduction'
-                                },
-                                { label: 'Routing parameters', link: '/practical-course/display-details/routing-parameters' },
-                                { label: 'Get task by id', link: '/practical-course/display-details/get-task-by-id' },
-                                { label: 'Display task details', link: '/practical-course/display-details/display-task-details' },
-                                { label: '🏁 Display details review', link: '/practical-course/display-details/display-details-review', attrs: { style: 'font-weight: bold' } },
-                            ]},
                         {
                             label: 'Create task', collapsed: true, items: [
                                 {
@@ -116,7 +105,6 @@ export default defineConfig({
                         },
                         {
                             label: 'Delete task', collapsed: true, items: [
-                                {label: 'Create uuids', link: '/practical-course/delete-task/create-uuids'},
                                 {
                                     label: 'Advanced Typescript',
                                     link: '/practical-course/delete-task/advanced-typescript'

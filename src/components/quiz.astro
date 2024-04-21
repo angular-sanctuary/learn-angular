@@ -1,4 +1,13 @@
 ---
+
+interface Props {
+  question: string;
+  options: {
+    label: string;
+    rightAnswer: string;
+  }[];
+}
+
 const {question, options} = Astro.props;
 ---
 
