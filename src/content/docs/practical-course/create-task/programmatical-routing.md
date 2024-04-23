@@ -45,7 +45,7 @@ import { Router } from '@angular/router';
     templateUrl: './task-form.component.html',
     styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent {
+export class TaskFormComponent implements OnInit {
     task = {
         title: '',
         description: ''
@@ -56,6 +56,8 @@ export class TaskFormComponent {
         
         private router: Router
     ) { }
+    
+    ngOnInit() {}
 
     createTask() {
         this.taskService.addTask(this.task);

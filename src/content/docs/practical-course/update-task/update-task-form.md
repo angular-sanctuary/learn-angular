@@ -41,19 +41,15 @@ export class TaskService {
         }
     ];
 
-    addTask(task: Task) {
+    addTask(task: Task): void {
         this.tasks.push({
             ...task,
             createdAt: new Date()
         });
     }
 
-  deleteTask(id: string) {
-    this.tasks = this.tasks.filter(task => task.id !== id);
-  }
-
   
-  getTask(id: string) {
+  getTask(id: string): Task {
     return this.tasks.find(task => task.id === id);
   }
 }
@@ -91,6 +87,8 @@ export class TaskFormComponent implements OnInit {
         this.task = this.taskService.getTask(id);
       }
   }
+    
+  ngOnInit() {}  
 }
 ```
 

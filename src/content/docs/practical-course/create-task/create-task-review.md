@@ -57,6 +57,7 @@ export class TaskFormComponent {
       private router: Router
   ) { }
   
+  ngOnInit() {}  
     
   createTask() {
     this.taskService.addTask(this.task);
@@ -88,7 +89,7 @@ export class TaskService {
   ];
   
   
-  addTask(task) {
+  addTask(task): void {
     this.tasks.push(task);
   }
 }
@@ -106,11 +107,13 @@ import { TaskService } from '../task.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
     
   tasks: Task[] = this.taskService.tasks;
   
   constructor(private taskService: TaskService) { }
+    
+  ngOnInit() {}  
 }
 ```
 

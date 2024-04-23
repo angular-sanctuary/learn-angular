@@ -41,7 +41,7 @@ export class TaskService {
     ];
 
     
-    addTask(task: Task) {
+    addTask(task: Task): void {
         this.tasks.push({
             ...task,
             createdAt: new Date()

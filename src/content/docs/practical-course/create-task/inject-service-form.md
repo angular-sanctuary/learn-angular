@@ -26,7 +26,7 @@ import { TaskService } from '../task.service';
     templateUrl: './task-form.component.html',
     styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent {
+export class TaskFormComponent implements OnInit {
     task = {
         title: '',
         description: ''
@@ -34,6 +34,8 @@ export class TaskFormComponent {
     
 
     constructor(private taskService: TaskService) { }
+    
+    ngOnInit() {}
     
     createTask() {
         

@@ -66,6 +66,8 @@ export class TaskFormComponent implements OnInit {
 
   constructor(private taskService: TaskService) { }
 
+  ngOnInit()  {} 
+    
   submit(task: TaskForm) {
     this.taskService.addTask(task).subscribe();
     this.router.navigate(['/tasks']);
@@ -138,6 +140,8 @@ export class TaskFormComponent implements OnInit {
   };
 
   constructor(private taskService: TaskService, private router: Router) { }
+    
+  ngOnInit()  {} 
 
   submit(task: TaskForm) {
     this.taskService.addTask(task).subscribe(() => {

@@ -45,6 +45,8 @@ export class TaskFormComponent implements OnInit {
       this.task = this.taskService.getTask(id);
     }
   }
+    
+  ngOnInit() {}  
 
   submit(task) {
     if (task.id) {

@@ -29,7 +29,7 @@ We'll use a dynamic route path to pass the `id` of the task to update.
 
 2. Add the following code to the file:
 
-```typescript ins={"1. Add the route for the update task feature": 9-12}
+```typescript ins={"1. Add the route for the update task feature": 9-10}
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TaskListComponent } from './task-list/task-list.component';
@@ -38,6 +38,7 @@ import { TaskFormComponent } from './task-form/task-form.component';
 const routes: Routes = [
     { path: '', component: TaskListComponent },
     { path: 'add-task', component: TaskFormComponent },
+    
     { path: 'update/:id', component: TaskFormComponent }
 ];
 
@@ -61,7 +62,6 @@ export class AppRoutingModule { }
   <li *ngFor="let task of tasks; let i = index">
     Task name: {{ task.title }}
 
-    <button type="button" (click)="deleteTask(task.id)">Delete</button>
     <a [routerLink]="['/update', task.id]">Update</a>
   </li>
 </ul>

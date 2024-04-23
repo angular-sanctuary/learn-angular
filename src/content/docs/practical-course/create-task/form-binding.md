@@ -31,12 +31,14 @@ import { Component } from '@angular/core';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent {
+export class TaskFormComponent implements OnInit {
     
   task: Task = {
     title: '',
     description: ''
   };
+    
+  ngOnInit() {}  
 }
 ```
 

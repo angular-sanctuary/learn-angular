@@ -1,5 +1,5 @@
 ---
-title: CRUD - Read interlude
+title: CRUD - Read review
 description: An interlude in the CRUD practical course.
 ---
 

@@ -45,7 +45,7 @@ For this step, we'll just log the form data to the console.
 
 2. Replace the content of the file with the following code:
 
-```typescript ins={"Add the createTask method": 10-14}
+```typescript ins={"Add the createTask method": 16-19}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -54,14 +54,17 @@ import { Component } from '@angular/core';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent {
+export class TaskFormComponent implements OnInit {
     
   task = {
     title: '',
     description: ''
   };
+    
+  ngOnInit() {}  
+  
 
-  createTask() {
+  createTask(): void {
     console.log('Task created', this.task);
   }
 }

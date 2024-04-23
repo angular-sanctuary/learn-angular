@@ -26,7 +26,7 @@ We want to move this responsibility to a service.
     templateUrl: './task-list.component.html',
     styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
 
 
     tasks: Task[] = [
@@ -39,6 +39,8 @@ export class TaskListComponent {
             description: 'Description of task 2'
         }
     ];
+    
+    ngOnInit() {}
 }
 ```
 
@@ -64,10 +66,12 @@ import { TaskService } from '../task.service';
     templateUrl: './task-list.component.html',
     styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
 
     
     constructor(private taskService: TaskService) {}
+    
+    ngOnInit() {}
 }
 ```
 
