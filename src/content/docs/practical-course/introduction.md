@@ -19,7 +19,7 @@ You will build a complete Angular application from scratch. You will build a sim
 
 ## Who is this course for?
 
-This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular. If you are not familiar with these technologies, we recommend you to take a look at the [HTML](https://www.w3schools.com/html/), [CSS](https://www.w3schools.com/css/) and [JavaScript](https://www.w3schools.com/js/) tutorials on [W3Schools](https://www.w3schools.com/).
+This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular. If you are not familiar with these technologies, we recommend you to take a look at the HTML, CSS and JavaScript tutorials on <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>.
 
 :::caution
 A **Renaissance** happened for Angular in the last versions.  

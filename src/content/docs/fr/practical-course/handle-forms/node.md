@@ -9,7 +9,7 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js 
 
 ### Windows
 
-1. Download the Windows installer from the [Nodes.js® web site](https://nodejs.org/en/download/).
+1. Download the Windows installer from the <a href="https://nodejs.org/en/download/" target="_blank">Nodes.js® web site</a>.
 2. Run the installer (the .msi file you downloaded in the previous step.)
 3. Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
 4. Restart your computer. You won’t be able to run Node.js until you restart your computer.
@@ -17,7 +17,7 @@ Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js 
 
 ### macOS
 
-1. Download the macOS installer from the [Nodes.js® web site](https://nodejs.org/en/download/).
+1. Download the macOS installer from the <a href="https://nodejs.org/en/download/" target="_blank">Nodes.js® web site</a>.
 2. Run the installer (the .pkg file you downloaded in the previous step.)
 3. Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
 4. Restart your computer. You won’t be able to run Node.js until you restart your computer.

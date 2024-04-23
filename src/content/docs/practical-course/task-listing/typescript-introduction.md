@@ -19,7 +19,7 @@ Using TypeScript has several advantages:
 - **Tooling**: TypeScript provides a rich set of tools for building and maintaining large-scale applications. This includes features such as code completion, refactoring, and navigation.
 - **Readability**: TypeScript provides a way to add type annotations to your code, which can make it easier to understand and maintain.
 
-Given a **car** javascript object, you might except such a format:
+Given a **car** JavaScript object, you might except such a format:
 
 ```javascript
 const car = {

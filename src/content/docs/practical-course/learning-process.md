@@ -12,10 +12,10 @@ Angular features will be introduced as needed and as limited as possible to the 
 
 ### Chapters
 
-- [Create a task list](/docs/practical-course/create-task-list)
-- [Add a task](/docs/practical-course/add-task-form)
-- [Delete a task](/docs/practical-course/delete-task)
-- [Update a task](/docs/practical-course/update-task-route)
+- <a href="/docs/practical-course/create-task-list" target="_blank">Create a task list</a>
+- <a href="/docs/practical-course/add-task-form" target="_blank">Add a task</a>
+- <a href="/docs/practical-course/delete-task" target="_blank">Delete a task</a>
+- <a href="/docs/practical-course/update-task-route" target="_blank">Update a task</a>
 
 ### Steps
 
