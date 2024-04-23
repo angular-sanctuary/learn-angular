@@ -51,7 +51,7 @@ import { Task } from './models/task.model';
     templateUrl: './task-list.component.html',
     styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent  implements OnInit {
     
     
     tasks: Task[] = [
@@ -66,6 +66,8 @@ export class TaskListComponent {
             createdAt: new Date()
         }
     ];
+    
+    ngOnInit() {}
 }
 ```
 

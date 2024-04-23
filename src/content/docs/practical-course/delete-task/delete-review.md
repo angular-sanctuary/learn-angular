@@ -37,10 +37,12 @@ import { TaskService } from '../task.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent {
+export class TaskListComponent implements OnInit {
   tasks: Task[] = this.taskService.tasks;
 
   constructor(private taskService: TaskService) { }
+    
+  ngOnInit() {} 
 
   deleteTask(index) {
     this.taskService.deleteTask(index);

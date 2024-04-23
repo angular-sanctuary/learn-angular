@@ -83,12 +83,14 @@ export class TaskFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private taskService: TaskService
-  ) {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.task = this.taskService.getTask(id);
-    }
-  }
+  ) {}
+    
+  ngOnInit() {
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+          this.task = this.taskService.getTask(id);
+      }
+  }  
 
   submit(task) {
       
@@ -104,7 +106,7 @@ export class TaskFormComponent implements OnInit {
 
 ## Let's test it out
 
-1. Click on the 'Edit' button next to a task in the list.
+1. Click on the 'Update' button next to a task in the list.
 2. Update the form with the new task details.
 3. Click on the 'Update task' button.
 4. The task should be updated in the list.

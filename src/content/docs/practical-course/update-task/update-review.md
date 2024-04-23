@@ -39,14 +39,14 @@ export class TaskFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private taskService: TaskService
-  ) {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.task = this.taskService.getTask(id);
-    }
-  }
+  ) {}
     
-  ngOnInit() {}  
+  ngOnInit() {
+      const id = this.route.snapshot.paramMap.get('id');
+      if (id) {
+          this.task = this.taskService.getTask(id);
+      }
+  }  
 
   submit(task) {
     if (task.id) {
