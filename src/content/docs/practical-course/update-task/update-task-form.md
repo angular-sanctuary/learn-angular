@@ -57,6 +57,8 @@ export class TaskService {
 
 ## Retrieve the task id from the route
 
+// TODO explain the code and ngOnInit usage
+
 #### Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
@@ -81,14 +83,15 @@ export class TaskFormComponent implements OnInit {
   };
 
   constructor(private taskService: TaskService, private route: ActivatedRoute) {
-      const id = this.route.snapshot.paramMap.get('id');
-      
-      if(id) {
-        this.task = this.taskService.getTask(id);
-      }
   }
     
-  ngOnInit() {}  
+  ngOnInit() {
+      const id = this.route.snapshot.paramMap.get('id');
+
+      if(id) {
+          this.task = this.taskService.getTask(id);
+      }
+  }  
 }
 ```
 
