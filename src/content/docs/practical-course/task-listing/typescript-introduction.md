@@ -86,14 +86,14 @@ Your IDE will warn you if you are using the wrong type for a variable.
 
 // TODO add a screenshot
 
-#### Build time errors
+#### Compile time errors
 
-TypeScript will catch errors at build time.
+TypeScript will catch errors at compile time.
 
 // TODO add a screenshot
 
 
 ## What you learned
 
-In this chapter, you learned how to create your first TypeScript model. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and build time errors.
+In this chapter, you learned how to create your first TypeScript model. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and compile time errors.
 Typescript is a tool to enhance your experience as a developer. It helps you to write better code, catch errors early, and improve the quality of your code. It's a great tool to use in your projects.

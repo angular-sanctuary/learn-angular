@@ -10,7 +10,6 @@ export default defineConfig({
             favicon: '/favicon.ico',
             social: {
                 github: 'https://github.com/angular-sanctuary/learn-angular',
-                youtube: 'https://github.com/angular-sanctuary/learn-angular',
             },
             sidebar: [
                 {
@@ -131,6 +130,9 @@ export default defineConfig({
                                 },
                                 {label: 'Add HTTP client', link: '/practical-course/api-server/add-http-client'},
                                 {label: 'Get tasks', link: '/practical-course/api-server/get-tasks'},
+                                {label: 'Create task', link: '/practical-course/api-server/create-task'},
+                                {label: 'Update task', link: '/practical-course/api-server/update-task'},
+                                {label: 'Delete task', link: '/practical-course/api-server/delete-task'},
                             ]
                         },
                         {
@@ -139,6 +141,8 @@ export default defineConfig({
                             attrs: {style: 'font-weight: bold'}
                         },
                         {label: '🎉 Congratulations', link: '/practical-course/congratulations'},
+                        {label: '📚 Resources', link: '/practical-course/resources'},
+                        {label: 'Glossary', link: '/practical-course/glossary'}
                         /**
                          { label: 'Routing', link: '/practical-course/routing' },
                          { label: 'Layouts', link: '/practical-course/layouts' },

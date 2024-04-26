@@ -73,7 +73,7 @@ export class TaskListComponent  implements OnInit {
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to create your first TypeScript interface. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and build time errors.
+In this chapter, you learned how to create your first TypeScript interface. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and compile time errors.
 
 ## 🚦 Quiz
 
