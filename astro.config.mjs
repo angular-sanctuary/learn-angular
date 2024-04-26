@@ -7,6 +7,9 @@ export default defineConfig({
     integrations: [
         starlight({
             title: 'Learn Angular',
+            components: {
+                Head: './src/components/Head.astro',
+            },
             favicon: '/favicon.ico',
             social: {
                 github: 'https://github.com/angular-sanctuary/learn-angular',
