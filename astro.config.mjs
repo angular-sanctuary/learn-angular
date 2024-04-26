@@ -144,6 +144,11 @@ export default defineConfig({
                                 {label: 'Create task', link: '/practical-course/api-server/create-task'},
                                 {label: 'Update task', link: '/practical-course/api-server/update-task'},
                                 {label: 'Delete task', link: '/practical-course/api-server/delete-task'},
+                                {
+                                    label: '🏁 API review',
+                                    link: '/practical-course/api-server/api-review',
+                                    attrs: {style: 'font-weight: bold'}
+                                },
                             ]
                         },
                         {
