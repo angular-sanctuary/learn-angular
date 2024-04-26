@@ -62,7 +62,10 @@ export default defineConfig({
                                     label: 'Create form component',
                                     link: '/practical-course/create-task/create-form-component'
                                 },
-                                {label: 'Routing introduction', link: '/practical-course/create-task/routing-introduction'},
+                                {
+                                    label: 'Routing introduction',
+                                    link: '/practical-course/create-task/routing-introduction'
+                                },
                                 {label: 'HTML form', link: '/practical-course/create-task/html-form'},
                                 {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
                                 {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
@@ -84,6 +87,10 @@ export default defineConfig({
                                 {
                                     label: 'Programmatical routing',
                                     link: '/practical-course/create-task/programmatical-routing'
+                                },
+                                {
+                                    label: 'Component destruction',
+                                    link: '/practical-course/create-task/component-destruction'
                                 },
                                 {
                                     label: '🏁 Form review',
@@ -108,6 +115,7 @@ export default defineConfig({
                         },
                         {
                             label: 'Delete task', collapsed: true, items: [
+                                {label: '🚀 Delete overview', link: '/practical-course/delete-task/delete-overview'},
                                 {
                                     label: 'Add delete function',
                                     link: '/practical-course/delete-task/add-delete-function'
