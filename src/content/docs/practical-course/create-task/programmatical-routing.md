@@ -27,7 +27,7 @@ By using the Angular Router feature, you can inject the `Router` service in a co
 
 This service provides information about the current route and allows you to navigate to a different route.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form.component.ts` file.
 

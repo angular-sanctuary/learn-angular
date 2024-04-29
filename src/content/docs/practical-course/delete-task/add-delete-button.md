@@ -9,7 +9,7 @@ Learn how to add a delete button in the `TaskListComponent` class in an Angular 
 
 ## The delete button
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list/task-list.component.html` file.
 
@@ -27,7 +27,7 @@ Learn how to add a delete button in the `TaskListComponent` class in an Angular 
 
 ## The deleteTask function
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list/task-list.component.ts` file.
 

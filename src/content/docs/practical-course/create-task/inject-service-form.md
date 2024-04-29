@@ -9,7 +9,7 @@ Learn how to inject our service and use its function in the `TaskFormComponent` 
 
 ## Inject the TaskService in the TaskFormComponent
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form.component.ts` file.
 

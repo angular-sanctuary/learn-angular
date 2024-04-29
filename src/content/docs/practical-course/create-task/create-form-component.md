@@ -10,7 +10,7 @@ Learn how to create a form component to add a new task to the task list.
 
 ## Component creation
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open another terminal tab.
 2. Run the following command:

@@ -13,7 +13,7 @@ The `HttpClientModule` is a built-in Angular module that allows you to make HTTP
 
 ## Add the HttpClientModule to the application
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/app.module.ts` file.
 
@@ -42,7 +42,7 @@ export class AppModule { }
 
 ## Inject the HttpClient service
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.
 

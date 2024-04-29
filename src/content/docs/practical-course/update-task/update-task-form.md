@@ -14,7 +14,7 @@ We'll now use this `id` to populate the form with the task to update.
 
 ## Retrieve the task to update with the TaskService
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-service.ts` file.
 
@@ -59,7 +59,7 @@ export class TaskService {
 
 // TODO explain the code and ngOnInit usage
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

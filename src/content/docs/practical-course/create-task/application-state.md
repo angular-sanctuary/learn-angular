@@ -22,7 +22,7 @@ In Angular, we can use services to manage the application state.
 The new `TaskService` will be responsible for managing the tasks list.
 It'll be our source of truth for the current state of the tasks list.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.
 

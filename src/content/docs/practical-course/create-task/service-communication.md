@@ -13,7 +13,7 @@ If we removed the task variable in the last step, we still need to display the l
 
 We will recreate this variable but instad of initializing it with a static list of tasks, we will get the tasks from the `TaskService`.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list.component.ts` file.
 

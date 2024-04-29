@@ -16,7 +16,7 @@ In Angular, you can bind a form to a model. This allows you to create a two-way 
 
 We will create a `task` model to represent a task. The `task` model will have two properties: `title` and `description`.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 
@@ -49,7 +49,7 @@ The `[(ngModel)]` directive is a built-in directive that allows you to bind a fo
 
 We want to bind the `title` input to the `task.title` property and the `description` textarea to the `task.description` property.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.html` file.
 

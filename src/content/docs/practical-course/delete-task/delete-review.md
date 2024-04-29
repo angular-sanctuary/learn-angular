@@ -3,7 +3,7 @@ title: Delete review
 description: Review the code to delete a task from the task list in an Angular application.
 ---
 
-## 🎓 What you learned so far
+## What you learned so far
 
 This part was quite fast!
 We mainly reused some concepts from previous chapters:

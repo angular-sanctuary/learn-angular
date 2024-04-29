@@ -9,7 +9,7 @@ Learn how to submit an update form in an Angular application.
 
 ## Update the task with the TaskService
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-service.ts` file.
 
@@ -57,7 +57,7 @@ export class TaskService {
 
 ## Update the TaskFormComponent
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

@@ -15,7 +15,7 @@ The `<form>` tag is used to create an HTML form for user input.
 
 The form can contain input elements like text fields, checkboxes, radio-buttons, submit buttons, and more.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.html` file.
 

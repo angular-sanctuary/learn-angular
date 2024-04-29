@@ -14,7 +14,7 @@ In Angular you can bind an event to a function. This allows you to execute a fun
 
 We want to execute a function when the 'create task' button is clicked.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.html` file.
 
@@ -39,7 +39,7 @@ We want to execute a function when the 'create task' button is clicked.
 We will create a `createTask` function to handle the form submission.
 For this step, we'll just log the form data to the console.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

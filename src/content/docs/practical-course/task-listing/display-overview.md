@@ -3,7 +3,7 @@ title: Display overview
 description: Learn how to update a task in an Angular application.
 ---
 
-## 	🎯 What you will learn in this chapter
+## What you will learn in this chapter
 
 Here is our next scenario:
 

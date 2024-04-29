@@ -15,7 +15,7 @@ Now we want to update the API server list by adding a new task.
 Based on the HTTP protocol, we will use the `post` function to add a task to the list.
 As JSON-server is able to generate an `id` for us, we will send a `TaskForm` object to the server.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.
 
@@ -46,7 +46,7 @@ This new `addTask` function defines our contract with the API server:
 
 ## Update the TaskFormComponent
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

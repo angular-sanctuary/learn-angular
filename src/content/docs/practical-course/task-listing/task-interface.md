@@ -11,7 +11,7 @@ Learn how to create your first TypeScript interface and type the new task list.
 
 Each task in the task list has a title, a description, and a creation date. We will create a new TypeScript interface to represent a task.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Create a new folder called `models` in the `src/app` folder to store all the TypeScript interfaces of the application.
 
@@ -34,7 +34,7 @@ You now want to use this task interface in your application.
 
 You will create a local variable in your component class to store the tasks.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list.component.ts` file.
 

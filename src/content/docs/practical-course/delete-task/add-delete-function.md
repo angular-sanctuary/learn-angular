@@ -9,7 +9,7 @@ Learn how to delete a task from the list in an Angular application.
 
 ## The deleteTask function
 
-#### Instructions
+#### I🎓 nstructions
 
 1. Open the `src/app/task.service.ts` file.
 

@@ -13,7 +13,7 @@ The `TaskListComponent` class is currently responsible for managing the tasks li
 
 We want to move this responsibility to a service.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list.component.ts` file.
 
@@ -49,7 +49,7 @@ export class TaskListComponent implements OnInit {
 Our TaskListComponent class needs to use the `TaskService` to get the tasks list.
 Angular is using the dependency injection system to provide the `TaskService` to the `TaskListComponent` class.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task-list.component.ts` file.
 

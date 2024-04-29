@@ -28,7 +28,7 @@ So even if you navigate to a different route, the service will still be availabl
 To create a service in Angular, you can use the Angular CLI.
 We used it so far to generate components but, among other things, it can also generate services.
 
-#### Instructions
+#### 🎓 Instructions
 
 Open a terminal and run the following command:
 

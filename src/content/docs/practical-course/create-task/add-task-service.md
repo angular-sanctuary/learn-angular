@@ -12,7 +12,7 @@ Learn how to add a task in the `TaskService` in an Angular application.
 The `TaskService` will be responsible for managing the tasks list.
 We need to add a function to add a task to the list.
 
-#### Instructions
+#### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.
 
