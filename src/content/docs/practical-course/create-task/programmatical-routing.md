@@ -87,7 +87,7 @@ Now if you repeat the previous scenario:
 
 You should be redirected to the list of tasks.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to use programmatical routing in an Angular application. You learned how to inject the `Router` service in a component and use its `navigate` function to navigate to a different route.
 

@@ -53,6 +53,6 @@ export class TaskService {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to manage the application state in an Angular application. You learned how to move the tasks list to a service and how to use services to manage the application state.

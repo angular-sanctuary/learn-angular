@@ -73,7 +73,7 @@ export class AppRoutingModule { }
 2. The URL should change to `http://localhost:4200/update/1` for example.
 3. The `TaskFormComponent` should be displayed.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to add a route to update a task in an Angular application. You learned how to define a dynamic route path to pass the `id` of the task to update. You also learned how to use the `routerLink` directive to navigate to the `UpdateTaskComponent` and pass the `id` of
 the task to update.

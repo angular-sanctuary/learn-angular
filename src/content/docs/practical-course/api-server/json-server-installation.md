@@ -65,7 +65,7 @@ You can now access your API server at `http://localhost:3000`.
 1. Open your browser and go to `http://localhost:3000/tasks`.
 2. You should see the list of tasks.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to install JSON Server to create a fake REST API. You learned how to create a `db.json` file with some data and how to start JSON Server to access your API server at `http://localhost:3000`. You also learned how to access the list of tasks at `http://localhost:3000/tasks`.
 

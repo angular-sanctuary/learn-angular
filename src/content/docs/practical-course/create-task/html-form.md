@@ -37,6 +37,6 @@ The form can contain input elements like text fields, checkboxes, radio-buttons,
 </form>
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to create a form in HTML. You learned how to use the `<form>` tag to create a form for user input. You also learned how to use the `<input>` and `<textarea>` tags to create input fields for the user to enter data. You also learned how to use the `<button>` tag to create a submit button for the form.

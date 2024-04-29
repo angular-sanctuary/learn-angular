@@ -53,6 +53,6 @@ export class TaskService {
 This new function will be called from our `TaskFormComponent` to add a new task to the list.
 From there we'll pass the new task as a parameter to the function.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to add a task in the `TaskService` in an Angular application. You learned how to add a function to add a task to the list in the `TaskService`.

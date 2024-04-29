@@ -155,7 +155,7 @@ export class TaskFormComponent implements OnInit {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to add a task to a list using the HTTP client in an Angular application.
 

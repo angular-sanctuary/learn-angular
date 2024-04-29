@@ -62,7 +62,7 @@ export class TaskService {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to add an HTTP client to an Angular application. You learned how to import the `HttpClientModule` in the `AppModule` class to make HTTP requests to a server.
 

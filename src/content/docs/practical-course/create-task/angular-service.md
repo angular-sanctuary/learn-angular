@@ -51,7 +51,7 @@ export class TaskService {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to create a service in Angular to manage the tasks. You learned what a service is and how to create one using the Angular CLI.
 

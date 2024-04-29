@@ -72,6 +72,6 @@ We want to bind the `title` input to the `task.title` property and the `descript
 
 By being bound to the form, the `task` model will be updated when the form is updated.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to bind a form to a model in Angular. You learned how to create a `task` model to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a model.

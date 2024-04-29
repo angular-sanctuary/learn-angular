@@ -75,6 +75,6 @@ export class TaskListComponent implements OnInit {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to use dependency injection in an Angular application. You learned how to remove the tasks list from the `TaskListComponent` class and how to inject the `TaskService` in the `TaskListComponent` class. You also learned how Angular uses the dependency injection system to provide the `TaskService` to the `TaskListComponent` class.

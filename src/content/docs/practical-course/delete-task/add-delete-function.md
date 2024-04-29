@@ -42,7 +42,7 @@ export class TaskService {
 }
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to delete a task from the list in an Angular application. You learned how to create a `deleteTask` function in the `TaskService` class to remove a task from the list.
 

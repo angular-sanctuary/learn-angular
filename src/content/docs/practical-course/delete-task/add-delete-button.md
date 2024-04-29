@@ -60,6 +60,6 @@ export class TaskListComponent implements OnInit {
 1. Click on the 'Delete' button next to a task in the list.
 2. The task should be removed from the list.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to add a delete button in the `TaskListComponent` class in an Angular application. You learned how to create a `deleteTask` function in the `TaskListComponent` class to remove a task from the list. You also learned how to call the `deleteTask` function from the `TaskService` class to remove the task from the list.

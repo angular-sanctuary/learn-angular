@@ -35,6 +35,6 @@ The `*ngIf` directive is a built-in directive that allows you to conditionally d
 1. Remove all the tasks from the list.
 2. The message "No tasks to display" should be displayed in the view.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to display a message when the tasks list is empty in an Angular application.

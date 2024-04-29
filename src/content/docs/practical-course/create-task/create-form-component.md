@@ -21,7 +21,7 @@ ng generate component task-form
 
 3. You should see a new folder called `task-form` in the `src/app` folder.
 
-## What you learned
+## ✔️ What you learned
 
 We used the Angular CLI to create a new component.
 Such a task is a common task in Angular development, and the Angular CLI makes it easy to create new components.

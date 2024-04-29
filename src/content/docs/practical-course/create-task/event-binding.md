@@ -73,7 +73,7 @@ export class TaskFormComponent implements OnInit {
 3. Open the devtools console in your browser.
 4. By clicking on the 'create task' button, you should see the form data logged to the console.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to submit a form in Angular. You learned how to bind an event to a method to execute the method when the form is submitted. You also learned how to create a method to handle the form submission. You also learned how to access the form data in the method. 
 

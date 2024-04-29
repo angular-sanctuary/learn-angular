@@ -105,7 +105,7 @@ So we conditionally retrieve the task from the `TaskService` only if the `id` is
 1. Click on the 'Update' button next to a task in the list.
 2. The form should be populated with the task to update.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to update the `TaskFormComponent` to populate the form with the task to update. You learned how to retrieve the task to update from the `TaskService` based on the `id` available in the route.
 

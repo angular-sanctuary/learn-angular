@@ -9,6 +9,6 @@ Understand what happens when we navigate away from a component in an Angular app
 
 #
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to handle component destruction in an Angular application.

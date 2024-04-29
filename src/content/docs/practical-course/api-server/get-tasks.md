@@ -112,7 +112,7 @@ Update the following code to the file:
 </ul>
 ```
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to query the task list from the API server in an Angular application. You learned how to create a `getTasks` function in the `TaskService` class to query the task list from the API server. You also learned how to use the `async` pipe to subscribe to the `getTasks` function and display the task list in the `TaskListComponent` class.
 

@@ -3,7 +3,7 @@ title: API overview
 description: Learn how to create an API server with json-server and consume it in an Angular application.
 ---
 
-## 	🎓 What you will learn in this chapter
+## What you will learn in this chapter
 
 In this chapter, you will learn how to create an API server with json-server and consume it in an Angular application.
 In a real world scenario, the task list would be stored in a database and the application would consume an API to interact with the database.

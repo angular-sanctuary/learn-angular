@@ -111,7 +111,7 @@ export class TaskFormComponent implements OnInit {
 3. Click on the 'Update task' button.
 4. The task should be updated in the list.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to submit an update form in an Angular application. You learned how to create an `updateTask` function in the `TaskService` class to update a task in the list. You also learned how to call the `updateTask` function from the `TaskFormComponent` class to update the task in the list. You also learned how to retrieve the task from the `TaskService` class using the `ActivatedRoute` service. You also learned how to conditionally call the `updateTask` function if the `id` is available in the route.
 

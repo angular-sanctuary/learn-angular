@@ -44,6 +44,6 @@ As we injected the `TaskService` in the `TaskListComponent` class, we can access
 
 If you go back to your browser and refresh the page, you should see the tasks list displayed as before.
 
-## What you learned
+## ✔️ What you learned
 
 In this chapter, you learned how to communicate between a service and a component in an Angular application. You learned how to get the tasks from the `TaskService` and display them in the `TaskListComponent` class.
