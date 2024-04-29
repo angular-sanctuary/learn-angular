@@ -159,12 +159,6 @@ export default defineConfig({
                         {label: '🎉 Congratulations', link: '/practical-course/congratulations'},
                         {label: '📚 Resources', link: '/practical-course/resources'},
                         {label: 'Glossary', link: '/practical-course/glossary'}
-                        /**
-                         { label: 'Routing', link: '/practical-course/routing' },
-                         { label: 'Layouts', link: '/practical-course/layouts' },
-                         { label: 'Data', link: '/practical-course/data' },
-                         { label: 'Deploy', link: '/practical-course/deploy' },
-                         */
                     ],
                 },
             ],
