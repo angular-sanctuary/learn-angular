@@ -13,11 +13,19 @@ We now want to display the actual task title.
 
 ## What is interpolation?
 
-To display the actual task title, we can use Angular **interpolation** authoring format.  
-Between `{{` and `}}` delimiters, you can add any valid TypeScript expression in the HTML template file:
+Interpolation is the solution to render a JavaScript expression in the template.
+While some of your html content is static, you may want to display dynamic data in your template.
+It allows us to display the actual value of a property defined in the component.ts file in the template.
+
+That's our situation: we want to display the actual task title.
+
+We use `{{ }}` delimiters to define the expression to render in the template.
+You can use any valid TypeScript expression in the interpolation delimiters.
 
 ```html
-{{ task.title }}
+{{ name }} => Gerome
+{{ 1 + 1 }} => 2
+{{ 'Hello ' + name }} => Hello Gerome
 ```
 
 #### 🎓 Instructions
@@ -48,7 +56,7 @@ The interpolation evaluates the `task.title` property and displays the actual ta
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to render data in a template using interpolation.
+Interpolation is one of the most common Angular features. You'll use it in almost all templates to display dynamic data.
 
 ## 🚦 Quiz
 

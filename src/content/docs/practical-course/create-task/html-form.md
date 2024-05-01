@@ -4,7 +4,8 @@ description: Learn how to create a form in HTML
 ---
 
 :::note
-Learn how to create a form in HTML.
+Create a semantic HTML form structure to add a new task to the task list.
+This step is strictly about HTML, we'll bind the form to Angular in the next steps.
 :::
 
 ## Form structure

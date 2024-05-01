@@ -16,7 +16,7 @@ export default defineConfig({
             },
             sidebar: [
                 {
-                    label: 'Practical Course',
+                    label: 'Introduction Course',
                     items: [
                         {label: 'Introduction', link: '/practical-course/introduction'},
                         {label: 'Learning process', link: '/practical-course/learning-process'},

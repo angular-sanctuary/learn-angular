@@ -4,24 +4,32 @@ description: Learn how to add a route to update a task in an Angular application
 ---
 
 :::note
-Learn how to add a route to update a task in an Angular application.
+Learn how to create dynamic route path in Angular.
 :::
 
 ## The route path
 
-So far we defined the route paths with static values:
+So far we defined 2 route paths:
 
-- `''` for the `TaskListComponent`
-- `'add-task'` for the `AddTaskComponent`
+- `''` for the `TaskListComponent` component to display the list of tasks
+- `'add-task'` for the `AddTaskComponent` component to add a new task
 
-The update route path is quite different.
+The update route path is quite different.  
+Existing path are stateless: they don't depend on any context.  
+The update path is stateful: it depends on the task to update.  
 
-We'll include an update button in the `TaskListComponent` for each task.
-By navigating to the `UpdateTaskComponent`, we need a way to know which task we want to update.
-
-We'll use a dynamic route path to pass the `id` of the task to update.
+A common way to provide an information to a routed component is by using a dynamic route path.
 
 ## Add the route
+
+Our new path will be `'update/:id'`.  
+The `update` part is static but the `:id` part is dynamic.
+
+:::tip
+The `:id` part is a route parameter.
+You cn chain multiple route parameters in a path, for example `'update/:id/:name'`.
+Each one is prefixed by a colon `:` followed by an arbitrary name.
+:::
 
 #### 🎓 Instructions
 
@@ -49,7 +57,10 @@ const routes: Routes = [
 export class AppRoutingModule { }
 ```
 
-## The update button
+## The update link
+
+We'll add a link to the `TaskListComponent` to navigate to the `TaskFormComponent` with the `id` of the task to update.
+When navigating to this path, Angular will extract the `id` value from the URL and provide it to the related component.
 
 #### Instructions
 
@@ -66,6 +77,10 @@ export class AppRoutingModule { }
   </li>
 </ul>
 ```
+
+The `routerLink` value is an array of URL segments.
+The first one is a string, the static part of the path.
+The second one is the `id` of the task to update.
 
 ## Let's test it out
 

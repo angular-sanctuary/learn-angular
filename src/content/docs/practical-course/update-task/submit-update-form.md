@@ -9,6 +9,9 @@ Learn how to submit an update form in an Angular application.
 
 ## Update the task with the TaskService
 
+The `TaskService` service already incldues a function to add a new task to the list.  
+We need to add a new function to update an existing task of the list.
+
 #### 🎓 Instructions
 
 1. Open the `src/app/task-service.ts` file.
@@ -56,6 +59,30 @@ export class TaskService {
 ```
 
 ## Update the TaskFormComponent
+
+The `TaskFormComponent` component is currently used to add a new task to the list.
+We updated it to be populated thanks to the `id` of the task to update.
+
+We now need to handle the submission of the form so it updates the task.
+To do so, we'll keep the same `submit` function but updating it to use the `updateTask` function of the `TaskService` service.
+
+When?
+
+- If the task has an `id`, we'll call the `updateTask` function.
+- If the task doesn't have an `id`, we'll call the `addTask` function.
+
+```typescript
+submit(task) {
+    if (task.id) {
+        this.taskService.updateTask(task);
+    } else {
+        this.taskService.addTask(task);
+    }
+    this.router.navigate(['/tasks']);
+}
+```
+
+In both situations, we'll navigate back to the list of tasks.
 
 #### 🎓 Instructions
 
