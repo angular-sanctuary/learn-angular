@@ -9,6 +9,9 @@ Learn how to delete a task from the list in an Angular application.
 
 ## The deleteTask function
 
+To delete a task from the list, we need to create a `deleteTask` function in the `TaskService` service.
+It'll remove the task from the list based on its `uuid`.
+
 #### I🎓 nstructions
 
 1. Open the `src/app/task.service.ts` file.

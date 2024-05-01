@@ -9,6 +9,9 @@ Learn how to add a delete button in the `TaskListComponent` class in an Angular 
 
 ## The delete button
 
+We now update the `TaskListComponent` class to add a delete button next to each task in the list.
+When the user clicks the delete button, the task is removed from the list.
+
 #### 🎓 Instructions
 
 1. Open the `src/app/task-list/task-list.component.html` file.
@@ -26,6 +29,9 @@ Learn how to add a delete button in the `TaskListComponent` class in an Angular 
 ```
 
 ## The deleteTask function
+
+Let's create the `deleteTask` function in the `TaskListComponent` class to remove a task from the list.
+It'll call the `deleteTask` function from the `TaskService` class to remove the task from the list.
 
 #### 🎓 Instructions
 

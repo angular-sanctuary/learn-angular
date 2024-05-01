@@ -11,8 +11,13 @@ We just learned how to delete a task from the list, and we want to display a mes
 
 ## The *ngIf directive
 
-To display a message when the tasks list is empty, you can use the `*ngIf` directive.
-The `*ngIf` directive is a built-in directive that allows you to conditionally display an element in the view.
+To iterate over the tasks list, we used the `*ngFor` directive.
+Known as a structural directive, it affects the layout by adding, removing, or manipulating elements in the DOM.
+
+Another common structural directive is the `*ngIf` directive.
+It allows you to conditionally display an element in the view.
+
+By passing it a condition, the element its used one is displayed only when the condition is true.
 
 #### 🎓 Instructions
 
