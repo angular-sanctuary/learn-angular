@@ -9,7 +9,10 @@ Learn how to install JSON Server to create a fake REST API.
 
 ## What is JSON Server
 
-JSON Server is a simple project that helps you to create a REST API with zero coding in less than 30 seconds. It's a full fake REST API with zero coding that allows you to create, read, update and delete tasks.
+JSON Server is a simple package that helps you to create a REST API with zero coding in less than 30 seconds.
+It's a full fake REST API with zero coding that allows you to create, read, update and delete tasks.
+
+It won't provide us a real API server, but it's a great tool to focus on the Angular part of the application.
 
 ## Installation
 
@@ -21,7 +24,7 @@ npm install json-server
 
 ## Database file
 
-Create a `db.json` file with some data:
+To replace the static task list from the `TaskService`,  create a `db.json` file with some data:
 
 ```json
 {

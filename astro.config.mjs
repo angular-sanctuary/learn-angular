@@ -35,12 +35,12 @@ export default defineConfig({
                                 },
                                 {label: 'Add an UI Library', link: '/practical-course/task-listing/add-ui-library'},
                                 {
-                                    label: 'Component introduction',
-                                    link: '/practical-course/task-listing/component-introduction'
+                                    label: 'Components introduction',
+                                    link: '/practical-course/task-listing/components-introduction'
                                 },
                                 {
                                     label: 'Create your first component',
-                                    link: '/practical-course/task-listing/create-task-list-component'
+                                    link: '/practical-course/task-listing/create-first-component'
                                 },
                                 {
                                     label: 'Create the task interface',

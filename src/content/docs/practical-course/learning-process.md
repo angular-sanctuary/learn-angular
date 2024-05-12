@@ -39,10 +39,6 @@ Depending on your IDE, there are different ways to open a terminal.
 
 In Visual Studio Code, you can open a terminal by clicking on the `Terminal` menu and selecting `New Terminal`.
 
-#### WebStorm
-
-In WebStorm, you can open a terminal by clicking on the `Terminal` menu and selecting `New Terminal`.
-
 #### Code snippets
 
 Each chapter contains code snippets to add to the application.

@@ -20,15 +20,18 @@ An IDE (Integrated Development Environment) is a software application that provi
 5. Test Visual Studio Code. To see if Visual Studio Code is installed, open the Windows Command Prompt, Powershell or a similar command line tool, and type `code --version`. This should print a version number, so you’ll see something like this `1.35.1`.
 
 
-### Plugins
+## Angular Language Service plugin
+
+The Angular Language Service plugin provides a rich editing experience for Angular templates, both inline and external templates including:
+
+- Autocompletion
+- Error checking
+- Quick info and navigation to the definition
+
+### Installation
 
 1. Open Visual Studio Code.
-2. Click on the Extensions icon in the left side bar.
-
-- <a href="https://marketplace.visualstudio.com/items?itemName=Angular.ng-template" target="_blank">Angular Language Service</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=johnpapa.Angular2" target="_blank">Angular Snippets</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schematics" target="_blank">Angular Schematics</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=nrwl.angular-console" target="_blank">Angular Console</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin" target="_blank">TSLint</a>
-- <a href="https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome" target="_blank">Debugger for Chrome</a>
+2. Click on the Extensions view icon on the Sidebar or press `Ctrl+Shift+X`.
+3. Search for `Angular Language Service`.
+4. Click on the Install button.
+5. Reload Visual Studio Code.

@@ -1,26 +1,30 @@
 ---
-
 interface Props {
-  question: string;
-  options: {
-    label: string;
-    rightAnswer: string;
-  }[];
+    question: string;
+    options: {
+        label: string;
+        rightAnswer: string;
+    }[];
 }
 
 const {question, options} = Astro.props;
 ---
 
 <form>
-  <fieldset>
-    <legend>{question}</legend>
-    {options.map(option => (
-        <label class="flex gap-2">
-          <input type="radio" name="question" value={option.rightAnswer} />
-          {option.label}
-        </label>
-    ))}
-  </fieldset>
+    <fieldset>
+        <!-- TODO to be fixed as a legend -->
+        <div>{question}</div>
+        <ul>
+            {options.map(option => (
+                    <li class="list-none shadow-lg rounded-xl py-2 px-4 border-2 border-gray-500">
+                        <label class="flex gap-2 !m-0">
+                            <input type="radio" name="question" value={option.rightAnswer}/>
+                            {option.label}
+                        </label>
+                    </li>
+            ))}
+        </ul>
+    </fieldset>
 
-  <button type="submit">Submit</button>
+    <button type="submit">Submit</button>
 </form>

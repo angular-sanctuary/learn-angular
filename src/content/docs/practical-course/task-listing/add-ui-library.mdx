@@ -1,42 +1,42 @@
 ---
-title: UI Library
+title: Add an UI Library
 description: Add an UI library to your project
 ---
 
 import { Image } from 'astro:assets';
-import bootstrapImg from '../../../../assets/bootstrap_added.png'
+import bootstrapImg from '../../../../assets/bootstrap_added.png';
+import Objective from '../../../../components/learning-objective.astro';
 
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Add an UI library to your project', description: 'Learn how to add Bootstrap, an UI library, to your project to enhance the user interface of your application.'},
+]} />
 
-:::note
-Learn how to add Bootstrap, an UI library, to your project to enhance the user interface of your application.
-:::
+Not specific to Angular, adding this library will enhance the user interface of the application rather then relying on the default browser styles.
+Discover a comparison of the complete application before and after adding the UI library:
 
-Unrelated to Angular itself, adding this library will enhance the user interface of the application rather then relying on the default browser styles.
-
-Here is a comparison of the complete application before and after adding the UI library:
+// TODO : add screenshot comparison
 
 ## What is an UI library?
 
-An UI library is a collection of reusable components that can be used to build a user interface. It can be used to build a complete application or to add specific features to an existing application.
+An UI library is a collection of reusable styled components that can be used to build a user interface. It helps to create a consistent look and feel across the application.
 
-To enhance the user interface of this application, we'll add <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> to our project.
+For this course, we'll add <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> to our project.
 
 ## How to add Bootstrap
 
-The Angular community created multiple projects to wrap Bootstrap to facilitate the installation.
-We'll use the <a href="https://ng-bootstrap.github.io/#/home" target="_blank">NG Bootstrap</a> one.
+Rather than installing it directly, let's use an Angular library that wraps Bootstrap to facilitate the installation: <a href="https://ng-bootstrap.github.io/#/home" target="_blank">NG Bootstrap</a>.
 
-The **NG-Bootstrap** installation command will install Bootstrap as a dependency in your package.json file and add the necessary configuration to your project.
+The **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstrap` installation command will install Bootstrap as a dependency in your package.json file and add the necessary configuration to your project.
 
 #### 🎓 Instructions
 
-1. Open a terminal and run the following command to install Bootstrap:
+1. Run the following command in your terminal:
 
 ```bash
 ng add @ng-bootstrap/ng-bootstrap
 ```
 
-2. Stop the server if it's running and restart it with the following command:
+2. Stop the server if it's still running and restart it with the following command:
 
 ```bash
 ng serve
@@ -57,8 +57,10 @@ ng serve
 
 ## ✔️ What you learned
 
-You learned how to add an UI library to your project.  
-The next chapters will use **Bootstrap** classes in html snippets to enhance the user interface of the application:
+You learned how to add a library to an Angular application.
+Most Angular libraries use the `ng add` command to facilitate the installation process. It avoids relying on  `npm install` command and additional manual updates of your project configuration.
+The next chapters will use **Bootstrap** classes in html snippets to enhance the user interface of the application.
+You won't need to explore the Bootstrap documentation, as the snippets will be provided for you.
 
 :::caution
 **bootstrap** also refers to **bootstrapping an application**.  

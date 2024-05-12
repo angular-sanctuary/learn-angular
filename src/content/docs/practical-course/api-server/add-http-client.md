@@ -42,6 +42,9 @@ export class AppModule { }
 
 ## Inject the HttpClient service
 
+To make HTTP requests to a server, you need to inject the `HttpClient` service in the `TaskService` class.
+We'll use this service in next chapters.
+
 #### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.

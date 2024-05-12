@@ -12,8 +12,25 @@ Learn how to add a task to a list using the HTTP client in an Angular applicatio
 We just communicated with our API server to retrieve a list of tasks.
 Now we want to update the API server list by adding a new task.
 
-Based on the HTTP protocol, we will use the `post` function to add a task to the list.
-As JSON-server is able to generate an `id` for us, we will send a `TaskForm` object to the server.
+Based on the HTTP protocol, we will use the `post` function to add a task to the list: `http.post()`.
+This function expects 2 parameters:
+
+1. The URL of the API server
+2. The task to send to the server
+
+```typescript
+addTask(task: TaskForm) {
+  return this.http.post<TaskForm>('http://localhost:3000/tasks', task);
+}
+```
+
+As JSON-server is able to generate an `id` for us, we won't use `uuid` to generate an `id` for the task.
+
+This new `addTask` function defines our contract with the API server:
+
+- it makes a **POST** request
+- it sends a `Task` object as a request body
+- it communicates with the API server at `http://localhost:3000/tasks`
 
 #### 🎓 Instructions
 
@@ -38,13 +55,14 @@ export class TaskService {
 }
 ```
 
-This new `addTask` function defines our contract with the API server:
-
-- it makes a **POST** request
-- it sends a `Task` object as a request body
-- it communicates with the API server at `http://localhost:3000/tasks`
-
 ## Update the TaskFormComponent
+
+In the previous step, we explained Observables need to be subscribed to in order to execute the request.
+We wera able to use the `async` pipe in the template to subscribe to the observable.
+
+But in the current situation, the request does happen in the component.ts file.
+
+We need to subscribe to the observable by using the `subscribe` function.
 
 #### 🎓 Instructions
 
@@ -79,15 +97,18 @@ export class TaskFormComponent implements OnInit {
 }
 ```
 
-By default an Observable is cold, meaning that the function will not be executed until we subscribe to it.
-
-
-:::info
-By using the async pipe to get the task list, we don't need to subscribe to the `getTasks` function in the `TaskListComponent`.
-:::
+It now works, but not exactly as we should expect...
 
 
 ## Asynchronous programming
+
+Remember the newsletter example from the previous chapter?
+Given that's a physical newsletter, it takes time to be delivered to your mailbox.
+Some time happen between the moment you subscribe and the moment you receive the newsletter.
+
+That's the same in our situation.
+By sending a request with the `subscribe()` function, we're asking the server to add a task to the list.
+But the navigation to the `/tasks` route will happen immediately after the request is sent, not after the request is completed.
 
 Let's review the code we just changed in the `submit` function of the `TaskFormComponent`:
 

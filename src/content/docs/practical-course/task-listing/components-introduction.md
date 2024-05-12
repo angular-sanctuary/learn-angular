@@ -1,10 +1,10 @@
 ---
-title: Components
+title: Components introduction
 description: Components are the building blocks of Angular applications
 ---
 
 Components are the building blocks of Angular applications.
-Components are a solution to the problem of how to organize an application into smaller, reusable pieces.
+They help to organize an application into smaller, reusable pieces for a more maintainable codebase.
 
 Components are used to:
 
@@ -27,9 +27,9 @@ It's made of 3 files:
 - `app.component.css`: The component's private CSS styles.
 
 Think about the human body:
-- The HTML file is the bones,
-- The TypeScript file is the brain and muscles, 
-- The CSS file is the skin.
+- The HTML file is the bones, the structure,
+- The TypeScript file is the brain and muscles, the logic,
+- The CSS file is the skin, how it'll look like.
 
 Each of these files is a part of the component.
 
