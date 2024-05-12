@@ -3,6 +3,12 @@ title: Inject Service in form component
 description: Learn how to inject a service in a form component in an Angular application.
 ---
 
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Use TaskService to create a task', description: 'Use TaskService from TaskFormComponent to creat a new task'},
+]} />
+
 :::note
 Learn how to inject our service and use its function in the `TaskFormComponent` class.
 :::
@@ -15,7 +21,7 @@ Learn how to inject our service and use its function in the `TaskFormComponent` 
 
 2. Add the following code to the file:
 
-```typescript ins={"1. import the TaskService": 3-4} ins={"2. Inject the TaskService in the class constructor": 17-18} ins={"3. Call the addTask function from the TaskService": 21-22}
+```typescript ins={"1. import the TaskService": 3-4} ins={"2. Inject the TaskService in the class constructor": 17-18} ins={"3. Call the addTask function from the TaskService": 22-25}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -36,9 +42,9 @@ export class TaskFormComponent implements OnInit {
     constructor(private taskService: TaskService) { }
     
     ngOnInit() {}
+
     
     createTask() {
-        
         this.taskService.addTask(this.task);
     }
 }
@@ -58,5 +64,5 @@ You should see the new task in the list.
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to inject a service in a form component in an Angular application. You learned how to use the `TaskService` to add a new task to the list in the `TaskFormComponent` class.
+You learned how to use the `TaskService` once gain, this time to trigger the addTask function to add a new task to the task list.
 

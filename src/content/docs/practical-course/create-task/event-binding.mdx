@@ -3,16 +3,26 @@ title: Event binding
 description: Learn to bind an event to a function
 ---
 
-:::note
-Learn how to bind an event to a function in Angular.
-You will learn how to execute a function when the form is submitted.
-:::
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Event binding', description: 'Learn how to bind an event to a function in Angular'},
+]} />
+
 
 ## Event binding
 
-In Angular you can bind an event to a function. This allows you to execute a function when an event occurs.
+Event binding allows to listen to events and execute a function when the event occurs.
+In the current situation, we want to execute a function when the 'create task' button is clicked.
 
-We want to execute a function when the 'create task' button is clicked.
+On the html button tag, we can bind the click event to a function using the `(click)` syntax.
+We assign it the function we want to execute when the button is clicked.
+
+```html ins="(click)="createTask()""
+<button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
+```
+
+This function will be created in the component class.
 
 #### 🎓 Instructions
 
@@ -20,7 +30,7 @@ We want to execute a function when the 'create task' button is clicked.
 
 2. Replace the content of the file with the following code:
 
-```html ins={"Add the submit event binding": 9-10}
+```html ins={"Add the submit event binding": 8-9} ins="(click)="createTask()""
 // task-form.component.html
 <form>
   <label for="title" class="form-label">Title:</label>
@@ -28,16 +38,15 @@ We want to execute a function when the 'create task' button is clicked.
   
   <label for="description" class="form-label">Description:</label>
   <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
-  
-    
+
   <button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
 </form>
 ```
 
-## Submit function
+## createTask function
 
 We will create a `createTask` function to handle the form submission.
-For this step, we'll just log the form data to the console.
+For this step, we'll just log the form value to the console.
 
 #### 🎓 Instructions
 
@@ -45,7 +54,7 @@ For this step, we'll just log the form data to the console.
 
 2. Replace the content of the file with the following code:
 
-```typescript ins={"Add the createTask method": 16-19}
+```typescript ins={"Add the createTask method": 17-20}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -56,13 +65,12 @@ import { Component } from '@angular/core';
 })
 export class TaskFormComponent implements OnInit {
     
-  task = {
+  task: TaskForm = {
     title: '',
     description: ''
   };
     
   ngOnInit() {}  
-  
 
   createTask(): void {
     console.log('Task created', this.task);
@@ -73,7 +81,10 @@ export class TaskFormComponent implements OnInit {
 3. Open the devtools console in your browser.
 4. By clicking on the 'create task' button, you should see the form data logged to the console.
 
+## 🌱 Challenge
+
+Fill the title and description fields and click on the 'create task' button. Verify that the form value logged to the console is updated.
+
 ## ✔️ What you learned
 
-In this chapter, you learned how to submit a form in Angular. You learned how to bind an event to a method to execute the method when the form is submitted. You also learned how to create a method to handle the form submission. You also learned how to access the form data in the method. 
-
+You learned how to listen to an event to trigger a function.

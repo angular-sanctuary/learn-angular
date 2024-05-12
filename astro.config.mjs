@@ -74,14 +74,9 @@ export default defineConfig({
                                 {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
                                 {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
                                 {label: 'Angular service', link: '/practical-course/create-task/angular-service'},
-                                {label: 'Application state', link: '/practical-course/create-task/application-state'},
                                 {
                                     label: 'Dependency injection',
                                     link: '/practical-course/create-task/dependency-injection'
-                                },
-                                {
-                                    label: 'Service communication',
-                                    link: '/practical-course/create-task/service-communication'
                                 },
                                 {label: 'Add task in service', link: '/practical-course/create-task/add-task-service'},
                                 {

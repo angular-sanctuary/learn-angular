@@ -3,8 +3,13 @@ title: HTML Form
 description: Learn how to create a form in HTML
 ---
 
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Create a semantic HTML form', description: 'Learn how to create a form in HTML using the <form> tag.'},
+]} />
+
 :::note
-Create a semantic HTML form structure to add a new task to the task list.
 This step is strictly about HTML, we'll bind the form to Angular in the next steps.
 :::
 
@@ -15,6 +20,19 @@ To create a form in HTML, you need to use the `<form>` tag.
 The `<form>` tag is used to create an HTML form for user input.
 
 The form can contain input elements like text fields, checkboxes, radio-buttons, submit buttons, and more.
+
+
+The Task form will have the following fields:
+
+- Task title
+- Task description
+
+:::note
+The **Task** interface includes 2 more properties: `id` and `createdAt`.
+Their values will be generated upon the form submission later on by the application, not the user.
+:::
+
+The form also includes a submit button to create the new task based on the form values.
 
 #### 🎓 Instructions
 
@@ -40,4 +58,5 @@ The form can contain input elements like text fields, checkboxes, radio-buttons,
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to create a form in HTML. You learned how to use the `<form>` tag to create a form for user input. You also learned how to use the `<input>` and `<textarea>` tags to create input fields for the user to enter data. You also learned how to use the `<button>` tag to create a submit button for the form.
+In this chapter, you learned how to create a basic form in HTML.
+This HTML interlude wil be bound to Angular in the next steps.

@@ -1,0 +1,63 @@
+---
+title: Add task in service
+description: Learn how to add a task in the `TaskService` in an Angular application.
+---
+
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Create a function in the Task Service', description: 'Create a function which add a new task to the TaskService based on the task object passed as a parameter.'},
+]} />
+
+## Add a method to add a task
+
+The `TaskService` will be responsible for managing the tasks list as planned.
+We need to add a function to add a task to the list.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/task.service.ts` file.
+
+2. Add the following code to the file:
+
+```typescript ins={"Import uuid package": 4-5} ins={"Add the addTask function": 26-32}
+// task.service.ts
+import { Injectable } from '@angular/core';
+import { Task } from './models/task.model';
+
+import { v4 as uuid } from 'uuid';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TaskService {
+    tasks: Task[] = [
+                {
+                    id: uuid(),
+                    title: 'Task 1',
+                    description: 'Description of task 1',
+                    createdAt: new Date()
+                },
+                {
+                    id: uuid(),
+                    title: 'Task 2',
+                    description: 'Description of task 2',
+                    createdAt: new Date()
+                }
+            ];
+
+    
+    addTask(task: Task): void {
+        this.tasks.push({
+            ...task,
+            createdAt: new Date()
+        });
+    }
+}
+```
+
+This new function will be called from our `TaskFormComponent` to add a new task to the list.
+
+## ✔️ What you learned
+
+You created a function in the TaskService to isolate the Task logic inside the service.
