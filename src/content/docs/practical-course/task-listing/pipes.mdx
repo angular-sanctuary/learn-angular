@@ -1,0 +1,126 @@
+---
+title: Pipes
+description: Learn to customize the display of data in Angular templates using pipes.
+---
+
+import Quiz from '../../../../components/quiz.astro';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Pipes', description: 'Learn to customize the display of data in Angular templates using pipes.'}
+]} />
+
+
+## Angular Pipes
+
+Angular provides a set of built-in pipes to transform data in the template.
+Pipes are simple functions that accept an input value and return a transformed value.
+They are used in the template to format data before displaying it.
+
+Angular pipes are used with the pipe operator `|` followed by the pipe name.
+You can chain multiple pipes together to transform the data in the template.
+
+Here are some of the most common built-in pipes:
+
+- `uppercase`: Transforms a string to uppercase.
+- `lowercase`: Transforms a string to lowercase.
+- `currency`: Formats a number as a currency.
+- `date`: Formats a date.
+
+We'll use the latter one to format the task **createdAt** date as a human-readable date.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/task-list.component.html` file.
+
+2. Replace the content of the file with the following code:
+
+```html ins={"use date pipe and pass it a shortdate option for a more grained format": 3-4}
+<ul>
+  <li *ngFor="let task of tasks">
+
+    {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
+  </li>
+</ul>
+```
+
+3. Check the changes in your browser:
+
+// TODO: Add image
+
+The task creation date is displayed in a more user-friendly format.
+
+## Alternative
+
+A common alternative to transform data in the template is to use a function.
+As Interpolation evaluates JavaScript expression, you can pass it a function which returns a value.
+
+In the following example, we use a function to format the task creation date. The function takes the task creation date as an argument and returns a formatted date.
+
+```html ins="formatDate(task.createdAt)"
+<ul>
+  <li *ngFor="let task of tasks">
+    {{ task.title }} - {{ formatDate(task.createdAt) }}
+  </li>
+</ul>
+```
+
+```typescript ins={"pass the date and returns a formatted date": 6-13}
+export class TaskListComponent {
+  tasks = [
+    { title: 'Task 1', createdAt: new Date() },
+    { title: 'Task 2', createdAt: new Date() }
+  ];
+
+  formatDate(date: Date): string {
+    // Get the month, day, and year from the Date object
+    const month = currentDate.getMonth() + 1; // Months are zero-based, so we add 1
+    const day = currentDate.getDate();
+    const year = currentDate.getFullYear();
+    return month + '/' + day + '/' + year;;
+  }
+}
+```
+
+It'll work but not as optimized as using pipes.
+Angular is using internal **Change detection** to detect changes in the component and update the view.
+When using a function in the template, Angular will call the function on every change detection cycle, even if the **createdAt** date hasn't changed.
+Pipes memoize the result of the transformation and only recompute it when the input value changes.
+
+## ✔️ What you learned
+
+Angular pipes allow to transform data in templates.
+While not covered in this introduction, you can also create custom pipes to apply custom transformations to your data.
+
+## 🚦 Quiz
+
+What is the purpose of Angular pipes?
+
+
+    'Transform data in the template',
+    'Transform data in the component',
+    'Transform data in the service',
+    'Transform data in the module'
+
+
+What is the advantage of using pipes over functions in the template?
+
+
+    'Pipes are easier to write',
+    'Pipes memoize the result of the transformation',
+    'Pipes are faster than functions',
+    'Pipes are more flexible than functions'
+
+What is the pipe format in the template?
+
+
+    'pipeName | value',
+    'value | pipeName',
+    'value | pipeName: argument',
+    'pipeName: argument | value'
+
+
+
+## 🔎 Want to learn more?
+
+- <a href="https://angular.dev/guide/templates/interpolation" target="_blank">Official Angular interpolation documentation</a>

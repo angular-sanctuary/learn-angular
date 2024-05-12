@@ -48,6 +48,7 @@ export default defineConfig({
                                 },
                                 {label: 'Display the list', link: '/practical-course/task-listing/display-list'},
                                 {label: 'Interpolation', link: '/practical-course/task-listing/interpolation'},
+                                {label: 'Pipes', link: '/practical-course/task-listing/pipes'},
                                 {
                                     label: '🏁 Display review',
                                     link: '/practical-course/task-listing/read-interlude',

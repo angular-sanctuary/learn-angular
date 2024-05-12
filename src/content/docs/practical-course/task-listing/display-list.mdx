@@ -4,12 +4,12 @@ description: Learn how to display a list of items in an Angular application.
 ---
 
 import { Image } from 'astro:assets';
-import staticImg from '../../../../assets/display-list_static.png'
+import staticImg from '../../../../assets/display-list_static.png';
+import Objective from '../../../../components/learning-objective.astro';
 
-
-:::note
-Learn how to iterate over a list of items in a HTML template file using the *ngFor directive.
-:::
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Discover *ngFor directive', description: 'Learn how to iterate over a list of items in a HTML template file using the *ngFor directive.'}
+]} />
 
 ## HTML structure
 
@@ -25,18 +25,34 @@ To display a list of items, the expected HTML structure is:
 
 <Image class="shadow-xl rounded-xl" src={staticImg} alt="A bird sitting on a nest of eggs."/>
 
-However, what happens if we want to display a list of items that is dynamic and changes over time?
-How to displays a four-item list today, but a five-item list tomorrow?
+However, what happens if we want to display a dynamic list of items changing over time?
+What if a new task is added?
 
-We want to use the `tasks` variable to display the list of tasks.
+We want to rely on the `tasks` variable to display the proper list of tasks.
 If the tasks is updated, the view should be updated as well.
 
-## *ngFor directive
+## Angular Directives
 
-To display a list of items in an Angular application, you can use the `*ngFor` directive.
-The `*ngFor` directive is a built-in directive that allows you to loop through a list of items and display them in the view.
+Angular Components are Angular Directives with a template.
+The goal of a Directive is not to display content but to manipulate the html content of an Angular component.
+They can help to dynamically hide/display some content, change their style, or affect how many times a content is displayed.
 
-By using it on an html tag, it'll display this tag and its children as many times as there are items in the list.
+### *ngFor directive
+
+`*ngFor` name refers to **for loop**: its goal is to display a given html tag as many times as there are items in a provided list.
+You can apply it on any html tag. It'll affect this tag and its children.
+
+To use it, we add this `*ngFor` on the html tag and provide it an arbitrary syntax to define the list we want to iterate over and a reference to use the value of each item.
+This syntax is `let item of items`:
+
+- **items** refers to the list defined in your component.ts file.
+- **item** is the reference to use the value of each item in the list (you can name it as you want).
+
+```html
+  <ul>
+    <li *ngFor="let item of items"></li>
+  </ul>
+```
 
 #### 🎓 Instructions
 
@@ -48,7 +64,7 @@ By using it on an html tag, it'll display this tag and its children as many time
 // task-list.component.html
 <ul class="list-group">
   <li *ngFor="let task of tasks" class="list-group-item">
-    Task name : 
+    Task
   </li>
 </ul>
 ```
@@ -58,7 +74,7 @@ By using it on an html tag, it'll display this tag and its children as many time
 // TODO: Add image
 
 Your list is now displayed in the browser.
-You should see `Task name :` repeated as many times as there are tasks in the list.
+You should see `Task` repeated as many times (2) as there are tasks in the list.
 
 ## ✔️ What you learned
 
