@@ -1,0 +1,78 @@
+---
+title: Getting Started
+description: How to get started with Angular
+---
+
+import { Image } from 'astro:assets';
+import boilerplateImg from '../../../../assets/getting-started_boilerplate.png';
+import headerImg from '../../../../assets/getting-started_header.png';
+
+:::note
+Learn how to create an Angular application and ensure it runs on your local machine.
+:::
+
+## Project creation
+
+Open a terminal and run the following command to create an Angular application:
+
+```bash
+npx -p @angular/cli@latest ng new angular-introduction-course --standalone=false --style=css --ssr=false --skip-tests=true
+```
+
+:::tip
+The command includes some options to **facilitate the learning process**.
+Find more about the options in the <a href="/practical-course/going-further#angular-cli-options" target="_blank">Angular CLI options</a>.
+:::
+
+## Open the project
+
+#### 🎓Instructions
+
+1. open **Visual Studio Code**.
+2. Click on the `File` menu and select `Open Folder`.
+3. Navigate to the `practical-course` folder and click on the `Select Folder` button.
+
+## Running the application
+
+Angular CLI provides a command to serve the application locally.
+
+#### 🎓 Instructions
+
+1. Open a terminal in Visual Studio Code.
+2. Type the following command to start the application:
+
+```bash
+ng serve
+```
+
+3. Open your browser and navigate to `http://localhost:4200`.
+4. You should see the following default boilerplate page:
+
+
+<Image class="shadow-xl rounded-xl" src={boilerplateImg} alt="A bird sitting on a nest of eggs."/>
+
+## Hot reload
+
+Hot reload is a feature that allows you to see the changes you make in your code without having to manually refresh the page.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/app.component.html` file.
+2. Replace the full content of the file with the following code:
+
+```html
+// app.component.html
+<header>
+    <h1>Angular Practical course</h1>
+</header>
+```
+
+3. Go back to your browser to see the following page:
+
+<Image class="shadow-xl rounded-xl" src={headerImg} alt="A bird sitting on a nest of eggs."/>
+
+
+## 🔎 Want to learn more?
+
+-
+

@@ -1,0 +1,160 @@
+---
+title: Créez l'interface des tâches
+description: Créez votre première interface TypeScript.
+---
+
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Créez une interface TypeScript', description: 'Découvrez comment créer une nouvelle interface TypeScript pour représenter une tâche.'},
+    {title: 'Utilisez l\'interface TypeScript', description: 'Découvrez comment utiliser l\'interface TypeScript pour définir le type d\'une variable.'},
+    {title: 'Générez un identifiant unique', description: 'Apprenez à générer un identifiant unique avec le package uuid'},
+]} />
+
+## Création d'interfaces
+
+Nous allons créer une nouvelle interface TypeScript pour représenter une tâche.
+Chaque tâche possède 3 propriétés :
+
+- **id** : une chaîne de caractères représentant l'identifiant unique de la tâche;
+- **title** : une chaîne de caractères représentant le titre de la tâche.
+- **description** : une chaîne de caractères représentant la description de la tâche.
+- **createdAt** : une date représentant la date de création de la tâche.
+
+#### 🎓 Instructions
+
+1. Créez un nouveau dossier appelé `models` dans le dossier `src/app` pour stocker toutes les interfaces TypeScript de l'application.
+
+1. Créez un nouveau fichier appelé `task.model.ts`dans ce nouveau dossier.
+
+2. Ajoutez le code suivant au fichier :
+
+```typescript
+// task.model.ts
+export interface Task {
+  id: string;
+  title: string;
+  description: string;
+  createdAt: Date;
+}
+```
+
+## Génération d'identifiant
+
+Nous générerons un identifiant unique pour chaque tâche. Cet identifiant nous aidera à trouver une tâche donnée de manière unique.
+Un tel identifiant est généralement généré par un serveur backend, mais pour ce tutoriel, nous le générerons côté client.
+
+Pour ce faire, nous utiliserons la libairie `uuid`. Cette libairie génère des identifiants uniques basés sur l'horodatage actuel et un nombre aléatoire.
+
+#### 🎓 Instructions
+
+1. Installez la libairie `uuid` en exécutant la commande suivante dans le terminal :
+
+```bash
+npm install uuid
+```
+
+## Utilisation de l'interface
+
+Créons une variable locale dans la classe `TaskListComponent` pour stocker une liste de tâches.
+Nous utiliserons l'interface `Task` pour définir le type de la variable tâches.
+
+En JavaScript, vous définiriez la variable tâches comme ceci :
+
+```javascript
+let tasks = [
+    {
+        title: 'Tâche 1',
+        description: 'Description de la tâche 1',
+        createdAt: new Date()
+    },
+    {
+        title: 'Tâche 2',
+        description: 'Description de la tâche 2',
+        createdAt: new Date()
+    }
+];
+```
+
+Pour attribuer un type à une variable dans TypeScript, vous pouvez utiliser l'opérateur `:` suivi du type de la variable :
+
+```typescript ins=": Task[]"
+let tasks: Task[] = [
+    {
+        title: 'Tâche 1',
+        description: 'Description de la tâche 1',
+        createdAt: new Date()
+    },
+    {
+        title: 'Tâche 2',
+        description: 'Description de la tâche 2',
+        createdAt: new Date()
+    }
+];
+```
+
+#### 🎓 Instructions
+
+1. Ouvrez le fichier `src/app/task-list.component.ts`.
+
+2. Ajoutez le code suivant au fichier :
+
+```typescript ins={"Importez l'interface des tâches": 3-4} ins={"Importez le package uuid": 5-6} ins={"Ajoutez la variable tâches": 14-28}
+// task-list.component.ts
+import { Component } from '@angular/core';
+
+import { Task } from './models/task.model';
+
+import { v4 as uuid } from 'uuid';
+
+@Component({
+    selector: 'app-task-list',
+    templateUrl: './task-list.component.html',
+    styleUrls: ['./task-list.component.css']
+})
+export class TaskListComponent  implements OnInit {
+
+    tasks: Task[] = [
+        {
+            id: uuid(),
+            title: 'Tâche 1',
+            description: 'Description de la tâche 1',
+            createdAt: new Date()
+        },
+        {
+            id: uuid(),
+            title: 'Tâche 2',
+            description: 'Description de la tâche 2',
+            createdAt: new Date()
+        }
+    ];
+    
+    ngOnInit() {}
+}
+```
+
+## ✔️ Ce que vous avez appris
+
+Vous avez appris à créer votre première interface TypeScript. Cela aidera pendant ce cours à suivre les erreurs et à améliorer la qualité du code.
+Vous avez également appris à utiliser l'interface TypeScript pour définir le type d'une variable.
+
+## 🚦 Quiz
+
+Quel est le mot-clé TypeScript utilisé pour définir le modèle de tâche dans le fichier `src/app/model/task.model.ts` ?
+
+1. `interface`
+2. `type`
+3. `class`
+
+Quel est le mot-clé TypeScript utilisé pour définir le type d'une variable ?
+
+1. `title: string;`
+2. `title = string`
+3. `title ; string`
+
+## 🔗 Ressources
+
+- <a href="https://www.typescriptlang.org/docs/handbook/interfaces.html" target="_blank">Documentation TypeScript: interface</a>
+- <a href="https://github.com/uuidjs/uuid?tab=readme-ov-file#uuid--" target="_blank">Documentation uuid</a>
+
+

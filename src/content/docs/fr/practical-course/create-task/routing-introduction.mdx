@@ -1,0 +1,152 @@
+---
+title: Routing introduction
+description: Introduction to routing in the practical course
+---
+
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Understand routing with Angular', description: 'Learn how routing works in Angular'},
+{title: 'Define routes', description: 'Define the routes for your application'},
+]} />
+
+## What is routing?
+
+Routing is the process of determining what content to display based on the URL.
+Angular is a single-page application (SPA) framework. By changing the URL, the application can display different content without reloading the page.
+It provides a **Router** API to change the content based on the URL.
+
+The project currently displays a list of tasks.
+We want to be able to switch between displaying this list or the form to add a new task.
+
+## Router outlet
+
+The Angular router module provides a directive called `router-outlet`. This directive is used to display the content of the current route. When the user navigates to a different route, the content of the `router-outlet` is replaced with the content of the new route.
+This `router-outlet` is a placeholder for our content.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/app.component.html` file.
+
+2. Replace the content of the file with the following code:
+
+```html ins={"Add router-outlet as a placeholder for routed content": 6-7}
+<header>
+    <h1>Angular Practical course</h1>
+</header>
+
+<main class="container pt-4">
+
+  <router-outlet />
+</main>
+```
+
+As the `router-outlet`is a placeholder, it means we'll keep seeing the header on all pages, but the content of the `router-outlet` will change based on the URL.
+
+## Define the routes
+
+We need to define the routes for our application. Each route is defined by a path and a component as an object :
+
+```typescript
+{ path: '/add-task', component: TaskFormComponent }
+```
+
+The path is the URL that the user will navigate to. For example `/add-task` path means that the user will navigate to `http://localhost:4200/add-task`.
+
+The component provided is the component that will be displayed in the `router-outlet` placeholder when the user navigates to that URL.
+
+The route definition lies in the `app-routing.module.ts` file.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/app-routing.module.ts` file.
+
+2. Replace the content of the file with the following code:
+
+```typescript ins={"Import the components for each route": 4-6} ins={"Define the routes": 9-11}
+// app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { TaskListComponent } from './task-list/task-list.component';
+import { TaskFormComponent } from './task-form/task-form.component';
+
+const routes: Routes = [
+
+  { path: '', component: TaskListComponent },
+  { path: 'add-task', component: TaskFormComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+
+## Add links to navigate between routes
+
+We need to add links to trigger the navigation between the different routes.
+We could manually change the URL in the browser but users expect to have links to navigate between pages.
+
+The `<a>` HTMl tag is used to create links. We can use the `routerLink` directive upon it to navigate between routes. This directive will take the path of the route to navigate to as a value.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/app.component.html` file.
+
+2. Replace the content of the file with the following code:
+
+```html ins={"Add links to navigate between routes": 3-5}
+// app.component.html
+<header>
+    <h1>Angular Practical course</h1>
+    <a routerLink="/">List of tasks</a>
+    <a routerLink="/add-task">Add a new task</a>
+</header>
+
+<main class="container pt-4">
+  <router-outlet />
+</main>
+```
+
+3. Click on both links to see the content of the `TaskListComponent` and `TaskFormComponent` displayed in the `router-outlet`.
+
+:::tip
+The `TaskFormComponent` path is defined as `add-task` in the `app-routing.module.ts` file, but used as `/add-task` in the `routerLink` directive.
+It's used to change the URL at the root of the URL. Without it, the navigation would be relative to the current URL: if you are already on `/add-task`, the link would try to navigate to `/add-task/add-task`.
+:::
+
+## ✔️ What you learned
+
+In this chapter, you learned how to add routing to your application. You learned how to define the routes and how to navigate between them using the `routerLink` directive. You also learned how to display the content of the current route using the `router-outlet` directive.
+
+## 🚦 Quiz
+
+1. What is the purpose of the `router-outlet` directive?
+    - A. To define the routes of the application
+    - B. To display the content of the current route
+    - C. To navigate between routes
+    - D. To display the content of the previous route
+
+2. What is the purpose of the `routerLink` directive?
+    - A. To define the routes of the application
+    - B. To display the content of the current route
+    - C. To navigate between routes
+    - D. To display the content of the previous route
+
+3. What is the purpose of the `Routes` array in the `app-routing.module.ts` file?
+
+    - A. To define the routes of the application
+    - B. To display the content of the current route
+    - C. To navigate between routes
+    - D. To display the content of the previous route
+
+4. What is the difference of prefixing a route with `/` or not in the `routerLink` directive?
+
+    - A. There is no difference
+    - B. The route is relative to the current URL
+    - C. The route is absolute
+    - D. The route is relative to the root URL
+

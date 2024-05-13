@@ -1,0 +1,94 @@
+---
+title: Afficher une liste de tâches
+description: Découvrez comment afficher une liste d'éléments dans une application Angular.
+---
+
+import { Image } from 'astro:assets';
+import staticImg from '../../../../../assets/display-list_static.png';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Découvrez la directive structurelle *ngFor', description: 'Découvrez comment parcourir une liste d\'éléments dans un fichier de modèle HTML à l\'aide de la directive *ngFor.'}
+]} />
+
+## Structure HTML
+
+Pour afficher une liste d'éléments, la structure HTML attendue est :
+
+```html
+<ul class="list-group">
+  <li class="list-group-item">Item 1</li>
+  <li class="list-group-item">Item 2</li>
+  <li class="list-group-item">Item 3</li>
+</ul>
+```
+
+<Image class="shadow-xl rounded-xl" src={staticImg} alt="Un oiseau posé sur un nid d’œufs."/>
+
+Cependant, que se passe-t-il si l’on souhaite afficher une liste dynamique d’éléments évoluant au fil du temps ?
+Et si une nouvelle tâche est ajoutée ?
+
+Nous voulons nous appuyer sur la variable `tasks` pour afficher la bonne liste de tâches.
+Si les tâches sont mises à jour, la vue doit également être mise à jour.
+
+## Directives Angular
+
+Les composants Angular sont des directives Angular avec un modèle.
+Le but d'une Directive n'est pas d'afficher du contenu mais de manipuler le contenu HTML d'un composant Angular.
+Ils peuvent aider à masquer/afficher dynamiquement certains contenus, à modifier leur style ou à affecter le nombre de fois qu'un contenu est affiché.
+
+### Directive structurelle *ngFor
+
+`*ngFor` le nom fait référence à **for loop**: son objectif est d'afficher une balise HTML donnée autant de fois qu'il y a d'éléments dans une liste fournie.
+Vous pouvez l'appliquer sur n'importe quelle balise HTML. Cela affectera cette balise et ses enfants.
+
+Pour l'utiliser, nous ajoutons ce `*ngFor` sur la balise HTML. Nous lui fournissons une syntaxe arbitraire pour définir la liste sur laquelle nous voulons parcourir. Nous lui renseignons également une référence pour utiliser la valeur de chaque élément.
+Cette syntaxe est `let item of items` :
+
+- **items** fait référence à la liste définie dans votre fichier `composant.ts`.
+- **item** est la référence pour utiliser la valeur de chaque élément de la liste (vous pouvez le nommer comme vous le souhaitez).
+
+```html
+  <ul>
+    <li *ngFor="let item of items"></li>
+  </ul>
+```
+
+#### 🎓 Instructions
+
+1. Ouvrez le fichier `src/app/task-list.component.html`.
+
+2. Remplacez le contenu du fichier par le code suivant :
+
+```html
+// task-list.component.html
+<ul class="list-group">
+  <li *ngFor="let task of tasks" class="list-group-item">
+    Task
+  </li>
+</ul>
+```
+
+3. Revenez à votre navigateur et consultez la page suivante :
+
+// TODO : Ajouter une image
+
+Votre liste est maintenant affichée dans le navigateur.
+Vous devriez voir `Task` répétée autant de fois (2) qu'il y a de tâches dans la liste.
+
+## ✔️ Ce que vous avez appris
+
+Dans ce chapitre, vous avez appris à utiliser une liste d'éléments définis dans votre fichier `composant.ts` vers le fichier `composant.html`.
+Vous avez utilisé la directive structurelle `*ngFor` pour parcourir la liste des éléments et les afficher dans la vue.
+Une telle action est assez courante dans le développement Web et vous l'utiliserez probablement dans plusieurs de vos applications Angular.
+
+## 🚦 Quiz
+
+Quelle est la syntaxe attendue de la directive `*ngFor` ?
+
+1. *ngFor="let task on tasks"
+2. *ngFor="let task of tasks"
+3. *ngFor="let task in tasks"
+4. *ngFor="task of tasks"
+
+## 🔗 Ressources
