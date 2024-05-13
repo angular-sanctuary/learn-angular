@@ -27,26 +27,30 @@ export default defineConfig({
                         },
                         {label: 'Getting started', link: '/practical-course/getting-started'},
                         {
-                            label: 'Task listing', collapsed: true, items: [
+                            label: 'Task listing', collapsed: true, translations: { fr:'Liste des tâches' }, items: [
                                 {
                                     label: '🚀 Display overview',
                                     link: '/practical-course/task-listing/display-overview',
-                                    attrs: {style: 'font-weight: bold'}
+                                    attrs: {style: 'font-weight: bold'},
+                                    translations: { fr:'Aperçu du chapitre' }
                                 },
-                                {label: 'Add an UI Library', link: '/practical-course/task-listing/add-ui-library'},
+                                {label: 'Add an UI Library', link: '/practical-course/task-listing/add-ui-library', translations: { fr:'Ajout d\'une librairie UI' }},
                                 {
                                     label: 'Components introduction',
-                                    link: '/practical-course/task-listing/components-introduction'
+                                    link: '/practical-course/task-listing/components-introduction',
+                                    translations: { fr: 'Introduction sur les composants' }
                                 },
                                 {
                                     label: 'Create your first component',
-                                    link: '/practical-course/task-listing/create-first-component'
+                                    link: '/practical-course/task-listing/create-first-component',
+                                    translations: { fr: 'Créez notre premier composant' }
                                 },
                                 {
                                     label: 'Create the task interface',
-                                    link: '/practical-course/task-listing/task-interface'
+                                    link: '/practical-course/task-listing/task-interface',
+                                    translations: { fr: 'Créez l\'interface des tâches' }
                                 },
-                                {label: 'Display the list', link: '/practical-course/task-listing/display-list'},
+                                {label: 'Display the list', link: '/practical-course/task-listing/display-list', translations: { fr: 'Afficher la liste' }},
                                 {label: 'Interpolation', link: '/practical-course/task-listing/interpolation'},
                                 {label: 'Pipes', link: '/practical-course/task-listing/pipes'},
                                 {

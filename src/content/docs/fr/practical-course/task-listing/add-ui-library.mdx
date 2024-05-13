@@ -1,0 +1,110 @@
+---
+title: Ajouter une librairie UI
+description: Ajoutez une librairie d'interface utilisateur à notre projet.
+---
+
+import { Image } from 'astro:assets';
+import bootstrapImg from '../../../../../assets/bootstrap_added.png';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Ajoutez une librairie d\'interface utilisateur à notre projet', description: 'Découvrez comment ajouter Bootstrap (librairie UI), à notre projet afin d\'améliorer l\'interface utilisateur de notre application.'},
+]} />
+
+Non spécifique à Angular, l'ajout de cette librairie améliorera l'interface utilisateur de l'application plutôt que de s'appuyer sur les styles de navigateur par défaut.
+Découvrez un comparatif de l'application complète avant et après ajout de la librairie UI :
+
+// TODO : ajouter capture d'écran de comparaison
+
+## Qu'est-ce qu'une librairie d'interface utilisateur (UI) ?
+
+Une librairie d'interface utilisateur (UI) est une collection de composants stylisés et réutilisables. Ils peuvent être utilisés pour créer une interface utilisateur. Cela permet de créer une apparence cohérente dans l’ensemble de l’application et de gagner en temps de développement.
+
+Pour ce cours, nous ajouterons <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> à notre projet.
+
+## Comment ajouter Bootstrap ?
+
+Plutôt que de l'installer directement et pour plus de facilité, nous utiliserons une librairie Angular qui enveloppe Bootstrap : <a href="https://ng-bootstrap.github.io/#/home" target="_blank">NG Bootstrap</a>.
+
+La commande d'installation de **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstrap` installera Bootstrapen tant que dépendance dans votre fichier package.json et ajoutera la configuration nécessaire à notre projet.
+
+#### 🎓 Instructions
+
+1. Exécutez la commande suivante dans votre terminal :
+
+```bash
+ng add @ng-bootstrap/ng-bootstrap
+```
+
+2. Arrêtez le serveur s'il est toujours en cours d'exécution (raccourci clavier `CTRL+C`) et redémarrez-le avec la commande suivante :
+
+```bash
+ng serve
+```
+
+3. Ouvrez le fichier `src/app/app.component.html` et remplacez le contenu par le code suivant pour ajouter des classes Bootstrap :
+
+```html
+<header class="navbar bg-body-tertiary px-4">
+    <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
+</header>
+```
+
+4. Découvrez les *petits* changements dans votre navigateur.
+
+<Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="Un oiseau posé sur un nid d’œufs."/>
+
+
+## ✔️ Ce que vous avez appris
+
+Vous avez appris à ajouter une librairie UI à votre application Angular.
+La plupart des bibliothèques Angular utilisent la commande `ng add` pour faciliter le processus d'installation. Cela évite de dépendre de la commande `npm install` et des mises à jour manuelles supplémentaires de la configuration de votre projet.
+
+Les prochains chapitres, nous utiliserons les classes **Bootstrap** dans des extraits HTML pour améliorer l'interface utilisateur de l'application.
+Vous n'aurez pas besoin d'explorer la documentation Bootstrap, car les extraits vous seront fournis.
+
+:::caution
+**bootstrap** fait également référence au **bootstrapping d'une application**.  
+Ce n'est pas la même chose que d'ajouter la librairie Bootstrap UI à notre projet.
+
+Le bootstrapping fait référence au processus d'initialisation d'une application. C'est le processus de chargement d'un ensemble d'instructions qui seront utilisées pour démarrer l'application.
+
+Par exemple, Angular utilise le fichier `src/main.ts` pour démarrer l'application. Ce fichier est le point d'entrée de l'application. C'est le premier fichier exécuté au démarrage de l'application.
+
+Le fichier `main.ts` contient le code suivant :
+
+```typescript
+// main.ts
+bootstrapApplication(AppComponent, appConfig).catch((err) =>
+    console.error(err),
+);
+```
+:::
+
+## 🚦 Quiz
+
+1. Qu'est-ce que Bootstrap?
+
+- A. Un framework CSS
+- B. Une librairieJavaScript
+- C. Une librairie UI
+- D. Toutes les réponses sont vraies
+
+2. Qu'est-ce que réalise la commande `ng add` ?
+
+- A. Ajoute un nouveau composant à l'application
+- B. Ajoute une nouvelle libairie à l'application
+- C. Ajoute un nouveau service à l'application
+- D. Ajoute un nouveau module à l'application
+
+
+## 🔗 Ressources
+
+- <a href="https://getbootstrap.com/" target="_blank">Documentation Bootstrap</a>
+- <a href="https://ng-bootstrap.github.io/#/home" target="_blank">Documentation NG Bootstrap</a>
+- <a href="https://angular.io/cli/add" target="_blank">Angular CLI: commande `ng add`</a>
+
+
+
+
+

@@ -1,0 +1,62 @@
+---
+title: HTML Form
+description: Learn how to create a form in HTML
+---
+
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Create a semantic HTML form', description: 'Learn how to create a form in HTML using the <form> tag.'},
+]} />
+
+:::note
+This step is strictly about HTML, we'll bind the form to Angular in the next steps.
+:::
+
+## Form structure
+
+To create a form in HTML, you need to use the `<form>` tag.
+
+The `<form>` tag is used to create an HTML form for user input.
+
+The form can contain input elements like text fields, checkboxes, radio-buttons, submit buttons, and more.
+
+
+The Task form will have the following fields:
+
+- Task title
+- Task description
+
+:::note
+The **Task** interface includes 2 more properties: `id` and `createdAt`.
+Their values will be generated upon the form submission later on by the application, not the user.
+:::
+
+The form also includes a submit button to create the new task based on the form values.
+
+#### 🎓 Instructions
+
+1. Open the `src/app/task-form/task-form.component.html` file.
+
+2. Replace the content of the file with the following code:
+
+```html ins={"Add an input for the task title with its label": 3-5} ins={"Add a textarea for the task description with its label": 7-9} ins={"Add a submit button": 11-12}
+// task-form.component.html
+<form>
+
+  <label for="title" class="form-label">Title</label>
+  <input type="text" id="title" name="title" class="form-control">
+  
+  
+  <label for="description" class="form-label">Description</label>
+  <textarea id="description" name="description" class="form-control"></textarea>
+  
+  
+  <button type="submit" class="btn btn-primary">Create task</button>
+</form>
+```
+
+## ✔️ What you learned
+
+In this chapter, you learned how to create a basic form in HTML.
+This HTML interlude wil be bound to Angular in the next steps.

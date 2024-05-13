@@ -1,0 +1,77 @@
+---
+title: Interpolation
+description: Rendu des données dans un modèle
+---
+
+import Quiz from '../../../../../components/quiz.astro';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Interpolation', description: 'Découvrez comment restituer des données dans un modèle à l\'aide de l\'interpolation.'},
+]} />
+
+
+Nous parcourons maintenant le tableau `tasks` mais affichons une valeur `Task` statique.
+Nous souhaitons maintenant afficher dynamiquement la dernière version de la tâche à la place.
+
+## Qu'est-ce que l'interpolation ?
+
+L'interpolation est la solution pour restituer une expression JavaScript dans le modèle.
+Bien qu'une partie de votre contenu HTML soit statique, vous souhaiterez peut-être afficher des données dynamiques dans votre modèle.
+Il nous permet d'afficher la valeur de la dernière version d'une propriété définie dans le fichier `composant.ts` dans le modèle.
+
+Voilà notre situation : nous voulons afficher la dernière version de la tâche!
+
+Nous utilisons les délimiteurs `{{ }}` pour définir l'expression à restituer dans le modèle.
+Vous pouvez utiliser n'importe quelle expression TypeScript valide dans les délimiteurs d'interpolation.
+
+```html
+<div>{{ name }}</div> => Gerome
+<div>{{ 1 + 1 }}</div> => 2
+<div>{{ 'Hello ' + name }}</div> => Hello Gerome
+```
+
+#### 🎓 Instructions
+
+1. Ouvrez le fichier `src/app/task-list.component.html`.
+
+2. Remplacez le contenu du fichier par le code suivant :
+
+```html ins={"Ajoutez une interpolation et transmettez-lui une propriété de tâche": 3-4}
+<ul>
+  <li *ngFor="let task of tasks">
+      
+    {{ task.title }} - {{ task.createdAt }}
+  </li>
+</ul>
+```
+
+3. Vérifiez les modifications dans votre navigateur :
+
+// TODO: ajout de l'image
+
+L'interpolation évalue les propriétés `task.title` et `task.createdAt` et affiche les valeurs.
+
+## ✔️ Ce que vous avez appris
+
+L'interpolation est l'une des fonctionnalités Angular les plus courantes. Vous l'utiliserez dans presque tous les modèles pour afficher des données dynamiques.
+
+## 🚦 Quiz
+
+<Quiz
+    translationSubmit="Vérifier mes réponses"
+    question="Quelle est la syntaxe d'interpolation dans Angular ?"
+    options={
+        [
+            { "id": 0, label: "`{{ task.title }}`", rightAnswer: true},
+            { "id": 1, label: "`[task.title]`", rightAnswer: false},
+            { "id": 2, label: "`(task.title)`", rightAnswer: false},
+            { "id": 3, label: "`task.title`", rightAnswer: false}
+        ]
+    }
+    multiple={false}
+/>
+
+## 🔗 Ressources
+
+- <a href="https://angular.dev/guide/templates/interpolation" target="_blank">Documentation officielle Angular: interpolation</a>
