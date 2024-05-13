@@ -26,7 +26,7 @@ Pour ce cours, nous ajouterons <a href="https://getbootstrap.com/" target="_blan
 
 Plutôt que de l'installer directement et pour plus de facilité, nous utiliserons une librairie Angular qui enveloppe Bootstrap : <a href="https://ng-bootstrap.github.io/#/home" target="_blank">NG Bootstrap</a>.
 
-La commande d'installation de **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstrap` installera Bootstrapen tant que dépendance dans votre fichier package.json et ajoutera la configuration nécessaire à notre projet.
+La commande d'installation de **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstrap` installera Bootstrap en tant que dépendance dans votre fichier package.json et ajoutera la configuration nécessaire à notre projet.
 
 #### 🎓 Instructions
 
@@ -75,9 +75,8 @@ Le fichier `main.ts` contient le code suivant :
 
 ```typescript
 // main.ts
-bootstrapApplication(AppComponent, appConfig).catch((err) =>
-    console.error(err),
-);
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.log(err));
 ```
 :::
 

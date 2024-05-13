@@ -129,13 +129,13 @@ We request the last issue of the newspaper and once it's available, it's deliver
 ## How to subscribe
 
 There are multiple ways to subscribe to an observable.
-For the given situation, we'll use the `async` pipe in the template.
+For the given situation, we'll use the `async` pipe in the HTML template.
 
 Like the `date` pipe we used earlier, the `async` pipe role is to transform the data before displaying it.
 Here it's role will be to subscribe to the observable and returns the list of tasks once available.
 
 :::tip
-While there are alternatives, When the data returned by an observable is only meant to be displayed in the template, it's a good practice to use the `async` pipe.
+While there are alternatives, When the data returned by an observable is only meant to be displayed in the HTML template, it's a good practice to use the `async` pipe.
 You'll discover the alternative at the end of this page.
 :::
 
@@ -145,7 +145,7 @@ Open the `src/app/task-list/task-list.component.html` file.
 
 Update the following code to the file:
 
-```html ins={"Update the template": 1-3}
+```html ins={"Update the HTML template": 1-3}
 <ul>
   <li *ngFor="let task of tasks$ | async">
     Task name: {{ task.title }}

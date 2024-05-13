@@ -8,7 +8,7 @@ import staticImg from '../../../../../assets/display-list_static.png';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-    {mainTitle: 'Objectifs de ce chapitre', title: 'Découvrez la directive structurelle *ngFor', description: 'Découvrez comment parcourir une liste d\'éléments dans un fichier de modèle HTML à l\'aide de la directive *ngFor.'}
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Découvrez la directive structurelle *ngFor', description: 'Découvrez comment itérer sur une liste d\'éléments dans un fichier HTML à l\'aide de la directive *ngFor.'}
 ]} />
 
 ## Structure HTML
@@ -33,20 +33,20 @@ Si les tâches sont mises à jour, la vue doit également être mise à jour.
 
 ## Directives Angular
 
-Les composants Angular sont des directives Angular avec un modèle.
-Le but d'une Directive n'est pas d'afficher du contenu mais de manipuler le contenu HTML d'un composant Angular.
+Les Composants Angular sont des Directives Angular possédant un fichier HTML.
+Le but d'une Directive n'est pas d'afficher du contenu mais de manipuler le contenu HTML d'un autre composant Angular.
 Ils peuvent aider à masquer/afficher dynamiquement certains contenus, à modifier leur style ou à affecter le nombre de fois qu'un contenu est affiché.
 
 ### Directive structurelle *ngFor
 
-`*ngFor` le nom fait référence à **for loop**: son objectif est d'afficher une balise HTML donnée autant de fois qu'il y a d'éléments dans une liste fournie.
+Le nom `*ngFor` fait référence à **for loop**: son objectif est d'afficher une balise HTML donnée autant de fois qu'il y a d'éléments dans une liste fournie.
 Vous pouvez l'appliquer sur n'importe quelle balise HTML. Cela affectera cette balise et ses enfants.
 
-Pour l'utiliser, nous ajoutons ce `*ngFor` sur la balise HTML. Nous lui fournissons une syntaxe arbitraire pour définir la liste sur laquelle nous voulons parcourir. Nous lui renseignons également une référence pour utiliser la valeur de chaque élément.
-Cette syntaxe est `let item of items` :
+Pour l'utiliser, nous ajoutons ce `*ngFor` sur la balise HTML. Elle attend une syntaxe arbitraire qui définit à la fois la liste et une référence à chaque élément de la liste.
+Cette syntaxe est `let task of tasks` :
 
-- **items** fait référence à la liste définie dans votre fichier `composant.ts`.
-- **item** est la référence pour utiliser la valeur de chaque élément de la liste (vous pouvez le nommer comme vous le souhaitez).
+- **tasks** fait référence à la liste définie dans votre fichier `composant.ts`.
+- **task** est la référence pour utiliser la valeur de chaque élément de la liste (vous pouvez le nommer comme vous le souhaitez).
 
 ```html
   <ul>

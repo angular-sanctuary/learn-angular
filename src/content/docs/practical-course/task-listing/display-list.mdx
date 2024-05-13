@@ -33,7 +33,7 @@ If the tasks is updated, the view should be updated as well.
 
 ## Angular Directives
 
-Angular Components are Angular Directives with a template.
+Angular Components are Angular Directives with a HTML template.
 The goal of a Directive is not to display content but to manipulate the html content of an Angular component.
 They can help to dynamically hide/display some content, change their style, or affect how many times a content is displayed.
 
@@ -43,10 +43,10 @@ They can help to dynamically hide/display some content, change their style, or a
 You can apply it on any html tag. It'll affect this tag and its children.
 
 To use it, we add this `*ngFor` on the html tag and provide it an arbitrary syntax to define the list we want to iterate over and a reference to use the value of each item.
-This syntax is `let item of items`:
+This syntax is `let task of tasks`:
 
-- **items** refers to the list defined in your component.ts file.
-- **item** is the reference to use the value of each item in the list (you can name it as you want).
+- **tasks** refers to the list defined in your component.ts file.
+- **task** is the reference to use the value of each item in the list (you can name it as you want).
 
 ```html
   <ul>

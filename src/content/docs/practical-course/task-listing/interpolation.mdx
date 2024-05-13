@@ -1,13 +1,13 @@
 ---
 title: Interpolation
-description: rendering data in a template
+description: rendering data in a HTML template
 ---
 
 import Quiz from '../../../../components/quiz.astro';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-    {title: 'Interpolation', description: 'Learn how to render data in a template using interpolation.'},
+    {title: 'Interpolation', description: 'Learn how to render data in a HTML template using interpolation.'},
 ]} />
 
 
@@ -16,14 +16,14 @@ We now want to display the actual task instead.
 
 ## What is interpolation?
 
-Interpolation is the solution to render a JavaScript expression in the template.
-While some of your html content is static, you may want to display dynamic data in your template.
-It allows us to display the actual value of a property defined in the component.ts file in the template.
+Interpolation is the solution to render a JavaScript expression in the HTML template.
+While some of your html content is static, you may want to display dynamic data in your HTML template.
+It allows us to display the actual value of a property defined in the component.ts file in the HTML template.
 
-That's our situation: we want to display the actual task!
+That's our situation: we want to display the details of each task!
 
-We use `{{ }}` delimiters to define the expression to render in the template.
-You can use any valid TypeScript expression in the interpolation delimiters.
+We use `{{ }}` delimiters to identify the expression we want to evaluate.
+You can use any valid TypeScript expression within the interpolation delimiters.
 
 ```html
 <div>{{ name }}</div> => Gerome
@@ -50,11 +50,11 @@ You can use any valid TypeScript expression in the interpolation delimiters.
 
 // TODO: Add image
 
-The interpolation evaluates the `task.title` and `task.createdAt` properties and displays the values.
+The interpolation evaluates the `task.title` and `task.createdAt` properties and displays the values in the browser.
 
 ## ✔️ What you learned
 
-Interpolation is one of the most common Angular features. You'll use it in almost all templates to display dynamic data.
+Interpolation is one of the most common Angular features. You'll use it in almost all HTML templates to display dynamic data.
 
 ## 🚦 Quiz
 

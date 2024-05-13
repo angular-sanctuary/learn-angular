@@ -13,7 +13,7 @@ Here is our next scenario:
 
 ## Technical details
 
-1. As we want to navigate to a new route, we need to add a route and a link to the `TaskListComponent` template.
+1. As we want to navigate to a new route, we need to add a route and a link to the `TaskListComponent` HTML template.
 2. We will update our `TaskFormComponent` to populate the form with the task to update.
 3. We will create a `TaskService` function to update the task in the list.
 

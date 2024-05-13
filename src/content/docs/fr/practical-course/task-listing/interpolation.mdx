@@ -16,14 +16,14 @@ Nous souhaitons maintenant afficher dynamiquement la dernière version de la tâ
 
 ## Qu'est-ce que l'interpolation ?
 
-L'interpolation est la solution pour restituer une expression JavaScript dans le modèle.
+L'interpolation est la solution pour évaluer une expression JavaScript dans le fichier HTML.
 Bien qu'une partie de votre contenu HTML soit statique, vous souhaiterez peut-être afficher des données dynamiques dans votre modèle.
-Il nous permet d'afficher la valeur de la dernière version d'une propriété définie dans le fichier `composant.ts` dans le modèle.
+Cela nous permet d'afficher la valeur d'une propriété définie depuis le fichier `composant.ts` dans le fichier HTML.
 
-Voilà notre situation : nous voulons afficher la dernière version de la tâche!
+Voilà notre situation : nous voulons afficher les détails de chaque tâche!
 
-Nous utilisons les délimiteurs `{{ }}` pour définir l'expression à restituer dans le modèle.
-Vous pouvez utiliser n'importe quelle expression TypeScript valide dans les délimiteurs d'interpolation.
+Nous utilisons les délimiteurs `{{ }}` pour identifier l'expression à évaluer.
+Vous pouvez utiliser n'importe quelle expression TypeScript valide entre ces délimiteurs d'interpolation.
 
 ```html
 <div>{{ name }}</div> => Gerome
@@ -50,11 +50,11 @@ Vous pouvez utiliser n'importe quelle expression TypeScript valide dans les dél
 
 // TODO: ajout de l'image
 
-L'interpolation évalue les propriétés `task.title` et `task.createdAt` et affiche les valeurs.
+L'interpolation évalue les propriétés `task.title` et `task.createdAt` et affiche les valeurs dans le navigateur.
 
 ## ✔️ Ce que vous avez appris
 
-L'interpolation est l'une des fonctionnalités Angular les plus courantes. Vous l'utiliserez dans presque tous les modèles pour afficher des données dynamiques.
+L'interpolation est l'une des fonctionnalités Angular les plus courantes. Vous l'utiliserez dans presque tous les composants pour afficher des données dynamiques.
 
 ## 🚦 Quiz
 

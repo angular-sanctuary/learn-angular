@@ -13,21 +13,21 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Pipes Angular
 
-Angular fournit un ensemble de pipes intégrés pour transformer les données dans le modèle.
+Angular fournit un ensemble de pipes intégrés pour transformer les données dans les fichiers HTML.
 Les pipes sont des fonctions simples qui acceptent une valeur d'entrée et renvoient une valeur transformée.
 Ils sont utilisés dans le modèle pour formater les données avant de les afficher.
 
-Les pipes Angular sont utilisés avec l'opérateur de pipe `|` suivi du nom du pipe.
+Les pipes Angular sont utilisés avec l'opérateur de pipe `|` suivi du nom de la pipe.
 Vous pouvez enchaîner plusieurs pipes pour transformer les données dans le modèle.
 
-Voici quelques-uns des pipes intégrés les plus courants :
+Voici les pipes Angular les plus utilisées :
 
 - `uppercase` : transforme une chaîne de caractères en majuscule;
 - `minuscule` : transforme une chaîne de caractères en minuscule;
 - `currency` : formate un nombre en tant que devise;
 - `date` : formate une date.
 
-Nous utiliserons ce dernier pour formater la date **createdAt** de la tâche en une date lisible par l'homme.
+Nous utiliserons cette dernière pour formater la date **createdAt** de la tâche en un format plus lisible.
 
 #### 🎓 Instructions
 
@@ -35,7 +35,7 @@ Nous utiliserons ce dernier pour formater la date **createdAt** de la tâche en 
 
 2. Remplacez le contenu du fichier par le code suivant :
 
-```html ins={"utilisez le pipe de date et transmettez-lui une option shortdate pour un format plus précis": 3-4}
+```html ins={"utilisez la pipe de date et transmettez-lui une option shortdate pour un format plus précis": 3-4}
 <ul>
   <li *ngFor="let task of tasks">
 
@@ -52,7 +52,7 @@ La date de création de la tâche est affichée dans un format plus convivial.
 
 ## Alternative
 
-Une alternative courante pour transformer les données dans le modèle consiste à utiliser une fonction.
+Une alternative courante pour transformer les données dans le fichier HTML consiste à utiliser une fonction.
 Comme l'interpolation évalue l'expression JavaScript, vous pouvez lui transmettre une fonction qui renvoie une valeur.
 
 Dans l'exemple suivant, nous utilisons une fonction pour formater la date de création de la tâche. La fonction prend la date de création de la tâche comme argument et renvoie une date formatée.
@@ -82,15 +82,15 @@ export class TaskListComponent {
 }
 ```
 
-Cela fonctionnera mais pas aussi optimisé que l'utilisation du pipe date.
+Cela fonctionnera mais pas de façon aussi optimisée que l'utilisation de la pipe date.
 Angular utilise la **détection de changement** interne pour détecter les modifications dans le composant et mettre à jour la vue.
-Lors de l'utilisation d'une fonction dans le modèle, Angular appellera la fonction à chaque cycle de détection de changement, même si la date **createdAt** n'a pas changé.
+Lors de l'utilisation d'une fonction dans le fichier HTML, Angular appellera la fonction à chaque cycle de détection de changement, même si la date **createdAt** n'a pas changé.
 Les pipes mémorisent le résultat de la transformation et ne le recalculent que lorsque la valeur d'entrée change.
 
 ## ✔️ Ce que vous avez appris
 
 Les pipes Angular permettent de transformer les données dans les modèles.
-Bien que cela ne soit pas abordé dans cette introduction, vous pouvez également créer des pipes personnalisés pour appliquer des transformations spécifiques à vos données.
+Bien que cela ne soit pas abordé dans cette introduction, vous pouvez également créer des pipes personnalisées pour appliquer des transformations spécifiques à vos données.
 
 ## 🚦 Quiz
 
@@ -111,7 +111,7 @@ Quel est l'avantage d'utiliser des pipes par rapport aux fonctions dans le modè
     'Les pipes sont plus rapides que les fonctions.',
     'Les pipes sont plus flexibles que les fonctions.'
 
-Quel est le format du pipe dans le modèle ?
+Quel est le format du pipe dans le fichier HTML ?
 
 
     'pipeName | value',

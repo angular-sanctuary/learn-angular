@@ -1,24 +1,24 @@
 ---
 title: Pipes
-description: Learn to customize the display of data in Angular templates using pipes.
+description: Learn to customize the display of data in Angular HTML templates using pipes.
 ---
 
 import Quiz from '../../../../components/quiz.astro';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-    {title: 'Pipes', description: 'Learn to customize the display of data in Angular templates using pipes.'}
+    {title: 'Pipes', description: 'Learn to customize the display of data in Angular HTML templates using pipes.'}
 ]} />
 
 
 ## Angular Pipes
 
-Angular provides a set of built-in pipes to transform data in the template.
+Angular provides a set of built-in pipes to transform data in the HTML template.
 Pipes are simple functions that accept an input value and return a transformed value.
-They are used in the template to format data before displaying it.
+They are used in the HTML template to format data before displaying it.
 
 Angular pipes are used with the pipe operator `|` followed by the pipe name.
-You can chain multiple pipes together to transform the data in the template.
+You can chain multiple pipes together to transform the data in the HTML template.
 
 Here are some of the most common built-in pipes:
 
@@ -52,7 +52,7 @@ The task creation date is displayed in a more user-friendly format.
 
 ## Alternative
 
-A common alternative to transform data in the template is to use a function.
+A common alternative to transform data in the HTML template is to use a function.
 As Interpolation evaluates JavaScript expression, you can pass it a function which returns a value.
 
 In the following example, we use a function to format the task creation date. The function takes the task creation date as an argument and returns a formatted date.
@@ -84,12 +84,12 @@ export class TaskListComponent {
 
 It'll work but not as optimized as using pipes.
 Angular is using internal **Change detection** to detect changes in the component and update the view.
-When using a function in the template, Angular will call the function on every change detection cycle, even if the **createdAt** date hasn't changed.
+When using a function in the HTML template, Angular will call the function on every change detection cycle, even if the **createdAt** date hasn't changed.
 Pipes memoize the result of the transformation and only recompute it when the input value changes.
 
 ## ✔️ What you learned
 
-Angular pipes allow to transform data in templates.
+Angular pipes allow to transform data in HTML templates.
 While not covered in this introduction, you can also create custom pipes to apply custom transformations to your data.
 
 ## 🚦 Quiz
@@ -103,7 +103,7 @@ What is the purpose of Angular pipes?
     'Transform data in the module'
 
 
-What is the advantage of using pipes over functions in the template?
+What is the advantage of using pipes over functions in the HTML template?
 
 
     'Pipes are easier to write',
@@ -111,7 +111,7 @@ What is the advantage of using pipes over functions in the template?
     'Pipes are faster than functions',
     'Pipes are more flexible than functions'
 
-What is the pipe format in the template?
+What is the pipe format in the HTML template?
 
 
     'pipeName | value',
