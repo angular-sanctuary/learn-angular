@@ -1,5 +1,5 @@
 ---
-title: Créez notre premier composant
+title: Créez votre premier composant
 description: Créez un composant de liste de tâches dans Angular
 ---
 
@@ -14,7 +14,7 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## CLI d'Angular
 
-Vous avez déjà utilisé la CLI pour lancer notre application localement avec la commande `ng serve` dans la section <a href="/practical-course/getting-started/#running-the-application" target="_blank">Mise en route</a>. Utilisons-le maintenant pour créer un nouveau composant !
+Vous avez déjà utilisé la CLI pour lancer notre application localement avec la commande `ng serve` dans la section <a href="/practical-course/getting-started/#running-the-application" target="_blank">Mise en route</a>. Utilisez-le maintenant pour créer un nouveau composant !
 
 La CLI d'Angular fournit une commande pour générer un nouveau composant avec la commande `ng generate component nom-du-composant`.
 Vous pouvez aussi utiliser la commande raccourcie `ng g c nom-du-composant`.
@@ -39,9 +39,9 @@ ng g c task-list
 :::note
 Ce nouveau dossier contient les trois fichiers suivants :
 
-- `task-list.component.ts`
-- `task-list.component.html`
-- `task-list.component.css`
+- `task-list.component.ts` (modèle)
+- `task-list.component.html` (vue)
+- `task-list.component.css` (style)
 
 C'est la même structure que le composant AppComponent.
 :::
@@ -67,23 +67,27 @@ Le décorateur `@Component` définit les métadonnées de configuration du compo
 C'est ici qu'on détermine comment le composant doit être traité, instancié et utilisé au moment de son exécution.
 
 La propriété `selector` définit le sélecteur d'éléments CSS du composant.
-En utilisant ce sélecteur dans un fichier HTML, Angular crée et affiche une instance du composant.
+En utilisant ce sélecteur dans un Template HTML (vue), Angular crée et affiche une instance du composant.
 
-La propriété `templateUrl` définit l'emplacement du modèle HTML pour le composant.
-C'est le modèle qui sera affiché lorsque le sélecteur CSS `selector` sera utilisé dans un autre fichier HTML.
+La propriété `templateUrl` définit l'emplacement du Template HTML (de sa vue) pour le composant.
+C'est la vue qui sera affichée lorsque le sélecteur CSS `selector` sera utilisé dans un autre Template HTML.
 
 La propriété `styleUrls` définit les emplacements des fichiers CSS du composant.
 Ces styles seront appliqués au modèle du composant.
 
+:::note
+Un décorateur est une façon de faire de la méta-programmation. Ils peuvent modifier leur cible (classes, méthodes, ...), appeler d'autres méthodes quand la cible est appelée ou ajouter des métadonnées destinées à un framework. Ce dernier point correspond à l'utilisation que l'ont fait dans Angular.
+:::
 
 ## Affichez le composant
 
 Jusqu'à présent, l'application affiche uniquement le contenu HTML du composant `app` dans le navigateur.
-Nous avons généré le nouveau composant mais nous devons afficher son contenu HTML en utilisant son sélecteur.
+Vous avez généré le nouveau composant mais vous devez afficher son contenu HTML en utilisant son sélecteur.
 
 #### 🎓 Instructions
 
 1. Ouvrez le fichier `src/app/app.component.html`.
+
 2. Ajoutez le sélecteur du composant de la liste de tâches comme suit :
 
 ```html ins={"Ajoutez le sélecteur du composant (et la balise <main> pour garantir une bonne sémantique HTML et gestion CSS)": 5-8}
@@ -103,12 +107,14 @@ Nous avons généré le nouveau composant mais nous devons afficher son contenu 
 
 :::tip
 `task-list works!` s'affiche dans le navigateur.
-C'est le contenu généré par défaut par la CLI d'Angular dans le fichier HTML du composant. Nous le mettrons à jour dans les prochains chapitres.
+C'est le contenu généré par défaut par la CLI d'Angular dans le Template HTML du composant. Vous le mettrez à jour dans les prochains chapitres.
 :::
 
 ## ✔️ Ce que vous avez appris
 
 Dans ce chapitre, vous avez appris à créer un nouveau composant à l'aide de la CLI d'Angular et à l'utiliser dans votre application.
+
+Vous avez également mémorisé que la **vue** du composant est son Template HTML et le **modèle** du composant est son fichier TypeScript.
 
 ## 🚦 Quiz
 
