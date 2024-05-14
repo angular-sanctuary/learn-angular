@@ -9,7 +9,7 @@ In this practical course, you learned how to create a TypeScript interface and u
 
 You also learned how to create a new component using the Angular CLI and how to use it in your application.
 
-You learned how to render data in a template using interpolation.
+You learned how to render data in a HTML template using interpolation.
 
 ## What's next
 

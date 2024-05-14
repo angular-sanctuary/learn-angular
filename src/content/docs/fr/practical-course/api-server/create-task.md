@@ -58,7 +58,7 @@ export class TaskService {
 ## Update the TaskFormComponent
 
 In the previous step, we explained Observables need to be subscribed to in order to execute the request.
-We wera able to use the `async` pipe in the template to subscribe to the observable.
+We wera able to use the `async` pipe in the HTML template to subscribe to the observable.
 
 But in the current situation, the request does happen in the component.ts file.
 

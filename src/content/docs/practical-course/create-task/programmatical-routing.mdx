@@ -3,9 +3,11 @@ title: Programmatical routing
 description: Learn how to use programmatical routing in an Angular application
 ---
 
-:::note
-Learn how to use programmatical routing in an Angular application.
-:::
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Trigger the route programmatically', description: 'Learn how to trigger a route programmatically in an Angular application.'},
+]} />
 
 In the last step, we tested the form with this scenario:
 
@@ -22,10 +24,10 @@ But in our situation, we want to trigger a navigation when the `createTask` func
 
 ## Inject the Router
 
-Your own custom services are not the only elements you can inject in the constructor of a component.
+Your `TaskService` service is not the only element you can inject in the constructor of a component.
 By using the Angular Router feature, you can inject the `Router` service in a component.
 
-This service provides information about the current route and allows you to navigate to a different route.
+This service provides information about the current route and allows you to navigate to a different one.
 
 #### 🎓 Instructions
 
@@ -33,7 +35,7 @@ This service provides information about the current route and allows you to navi
 
 2. Add the following code to the file:
 
-```typescript ins={"1. import the Router": 4-5} ins={"2. Inject the Router in the class constructor": 20-21} ins={"3. Use the navigate function from the Router": 26-27}
+```typescript ins={"1. import the Router": 4-5} ins={"2. Inject the Router in the class constructor": 20-21} ins={"3. Use the navigate function from the Router": 28-29}
 // task-form.component.ts
 import { Component } from '@angular/core';
 import { TaskService } from '../task.service';
@@ -62,17 +64,17 @@ export class TaskFormComponent implements OnInit {
     createTask() {
         this.taskService.addTask(this.task);
 
-        this.router.navigate(['/tasks']);
+        this.router.navigate(['/']);
     }
 }
 ```
 
 The navigate function expects an array of route segments as a parameter.
-In our case, we want to navigate to the `tasks` route as we defined it in our route definition, so we pass `['/tasks']`;
+In our case, we want to navigate to the `tasks` route as we defined it in our route definition, so we pass `['/']`;
 
 ```typescript
 const routes: Routes = [
-  { path: 'tasks', component: TaskListComponent },
+  { path: '', component: TaskListComponent },
   { path: 'add-task', component: TaskFormComponent }
 ];
 ```

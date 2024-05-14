@@ -22,7 +22,7 @@ An IDE (Integrated Development Environment) is a software application that provi
 
 ## Angular Language Service plugin
 
-The Angular Language Service plugin provides a rich editing experience for Angular templates, both inline and external templates including:
+The Angular Language Service plugin provides a rich editing experience for Angular HTML templates, both inline and external HTML templates including:
 
 - Autocompletion
 - Error checking
