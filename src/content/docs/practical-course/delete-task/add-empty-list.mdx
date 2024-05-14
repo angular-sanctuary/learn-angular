@@ -3,10 +3,15 @@ title: Display empty list message
 description: Learn how to display a message when the tasks list is empty in an Angular application.
 ---
 
-:::note
-Learn how to display a message when the tasks list is empty in an Angular application.
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Display HTML content conditionally', description: 'Learn how to use the *ngIf directive to display HTML content conditionally.'},
+]} />
+
 We just learned how to delete a task from the list, and we want to display a message when the list is empty.
-:::
+
 
 
 ## The *ngIf directive
@@ -21,25 +26,32 @@ By passing it a condition, the element its used one is displayed only when the c
 
 #### 🎓 Instructions
 
+<Steps>
+
 1. Open the `src/app/task-list.component.html` file.
 
 2. Replace the content of the file with the following code:
 
-```html ins={"1. Add a message when the tasks list is empty": 6-7}
-<ul>
-  <li *ngFor="let task of tasks">
-    Task name : {{ task.title }}
-  </li>
-</ul>
+   ```html ins={"1. Add a message when the tasks list is empty": 6-7}
+   <ul>
+     <li *ngFor="let task of tasks">
+       Task name : {{ task.title }}
+     </li>
+   </ul>
 
-<p *ngIf="!tasks.length">No tasks to display</p>
-```
+   <p *ngIf="!tasks.length">No tasks to display</p>
+   ```
+
+</Steps>
 
 ## Let's test it out
 
+<Steps>
 1. Remove all the tasks from the list.
 2. The message "No tasks to display" should be displayed in the view.
 
+</Steps>
+
 ## ✔️ What you learned
 
-In this chapter, you learned how to display a message when the tasks list is empty in an Angular application.
+In this chapter, you learned how to use the *ngIf directive.
