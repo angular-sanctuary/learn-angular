@@ -1,36 +1,36 @@
 ---
-title: Routing introduction
-description: Introduction to routing in the practical course
+title: Introduction au routage
+description: Introduction au routage au sein de votre application
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Understand routing with Angular', description: 'Learn how routing works in Angular'},
-{title: 'Define routes', description: 'Define the routes for your application'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Comprendre le routage avec Angular', description: 'Découvrez comment fonctionne le routage dans Angular.'},
+{title: 'Définir des routes', description: 'Définissez des routes dans votre application.'},
 ]} />
 
-## What is routing?
+## Qu'est-ce que le routage ?
 
-Routing is the process of determining what content to display based on the URL.
-Angular is a single-page application (SPA) framework. By changing the URL, the application can display different content without reloading the page.
-It provides a **Router** API to change the content based on the URL.
+Le routage est le processus permettant de déterminer le contenu à afficher en fonction de l'URL du navigateur.
+Angular est un framework d'application monopage (SPA). En modifiant l'URL, l'application peut afficher un contenu différent sans recharger la page.
+Il fournit une API **Router** pour modifier le contenu en fonction de l'URL.
 
-The project currently displays a list of tasks.
-We want to be able to switch between displaying this list or the form to add a new task.
+Le projet affiche actuellement une liste de tâches.
+Afin d'ajouter une nouvelle tâche à cette liste, vous avez besoin de pouvoir basculer la vue de cette liste à la vue du formulaire.
 
-## Router outlet
+## Directive RouterOutlet
 
-The Angular router module provides a directive called `router-outlet`. This directive is used to display the content of the current route. When the user navigates to a different route, the content of the `router-outlet` is replaced with the content of the new route.
-This `router-outlet` is a placeholder for our content.
+Le module `RouterModule` fournit une directive appelé `router-outlet`. Cette directive est utilisée pour afficher le contenu de la route actuelle. Lorsque l'utilisateur navigue vers un itinéraire différent, le contenu du `router-outlet` est remplacé par le contenu du nouvel itinéraire.
+La directive `router-outlet` a pour seul rôle de marquer l'emplacement dans le Template HTML du contenu correspondant à l'URL que vous aurez défini.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/app.component.html` file.
+1. Ouvrez le fichier `src/app/app.component.html`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```html ins={"Add router-outlet as a placeholder for routed content": 6-7}
+```html ins={"Ajoutez la directive via la balise router-outlet pour marquer l'emplacement du contenu configuré via l'URL": 6-7}
 <header>
     <h1>Angular Practical course</h1>
 </header>
@@ -41,29 +41,29 @@ This `router-outlet` is a placeholder for our content.
 </main>
 ```
 
-As the `router-outlet`is a placeholder, it means we'll keep seeing the header on all pages, but the content of the `router-outlet` will change based on the URL.
+Dans le cas ci-dessus, le `router-outlet` est placé entre les balises `<main>`. Cela signifie donc que vous continuerez à avoir l'en-tête `<header>` sur toutes les pages et que le contenu paramétré changera en fonction de l'URL sur laquelle vous naviguerez.
 
-## Define the routes
+## Définir les routes
 
-We need to define the routes for our application. Each route is defined by a path and a component as an object :
+Pour afficher le contenu souhaité par rapport à l'URL, vous devez associer dans votre tableau `routes` chaque chemin `path` à chaqun de vos composants `component`:
 
 ```typescript
 { path: '/add-task', component: TaskFormComponent }
 ```
 
-The path is the URL that the user will navigate to. For example `/add-task` path means that the user will navigate to `http://localhost:4200/add-task`.
+Le chemin est donc l'URL vers laquelle l'utilisateur accédera. Par exemple, le chemin `/add-task` signifie que l'utilisateur naviguera sur l'URL `http://localhost:4200/add-task`.
 
-The component provided is the component that will be displayed in the `router-outlet` placeholder when the user navigates to that URL.
+Le composant fourni est le composant qui sera affiché dans l'espace réservé `router-outlet`` lorsque l'utilisateur accède à cette URL.
 
-The route definition lies in the `app-routing.module.ts` file.
+La définition de la route réside dans le fichier `app-routing.module.ts`.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/app-routing.module.ts` file.
+1. Ouvrez le fichier `src/app/app-routing.module.ts`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```typescript ins={"Import the components for each route": 4-6} ins={"Define the routes": 9-11}
+```typescript ins={"Importez les composants pour chaque itinéraire": 4-6} ins={"Définissez les routes": 9-11}
 // app-routing.module.ts
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -85,20 +85,20 @@ export class AppRoutingModule { }
 ```
 
 
-## Add links to navigate between routes
+## Ajoutez des liens pour naviguer entre les routes
 
-We need to add links to trigger the navigation between the different routes.
-We could manually change the URL in the browser but users expect to have links to navigate between pages.
+Il faut ajouter des liens pour déclencher la navigation entre les différents itinéraires.
+Vous pourriez modifier manuellement l'URL dans le navigateur, mais les utilisateurs s'attendent à disposer de liens pour naviguer entre les pages.
 
-The `<a>` HTMl tag is used to create links. We can use the `routerLink` directive upon it to navigate between routes. This directive will take the path of the route to navigate to as a value.
+La balise HTML `<a>` est utilisée pour créer des liens. Vous pouvez utiliser la directive `routerLink` pour naviguer entre les routes. Cette directive prendra le chemin de la route vers laquelle naviguer en tant que valeur.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/app.component.html` file.
+1. Ouvrez le fichier `src/app/app.component.html`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```html ins={"Add links to navigate between routes": 3-5}
+```html ins={"Ajoutez des liens pour naviguer entre les routes": 3-5}
 // app.component.html
 <header>
     <h1>Angular Practical course</h1>
@@ -111,42 +111,46 @@ The `<a>` HTMl tag is used to create links. We can use the `routerLink` directiv
 </main>
 ```
 
-3. Click on both links to see the content of the `TaskListComponent` and `TaskFormComponent` displayed in the `router-outlet`.
+3. Cliquez sur les deux liens pour voir le contenu de `TaskListComponent` et `TaskFormComponent` s'afficher à tour de rôle à l'emplacement défini par le `router-outlet`.
 
 :::tip
-The `TaskFormComponent` path is defined as `add-task` in the `app-routing.module.ts` file, but used as `/add-task` in the `routerLink` directive.
-It's used to change the URL at the root of the URL. Without it, the navigation would be relative to the current URL: if you are already on `/add-task`, the link would try to navigate to `/add-task/add-task`.
+Le chemin du composant `TaskFormComponent` est défini à `add-task` dans le fichier `app-routing.module.ts`. Par contre, dans le Template HTML, dans la directive `routerLink`, il est spécifié comme `/add-task` (avec le `/`).
+
+`routerLink` construit l'URL de manière relative au chemin courant. Ajoutez un slash indique que l'URL doit être construite depuis l'URL de base de l'application (ici `http://localhost:4200`). Sans la spécification du slash dans la directive du `routerLink`, vous réaliseriez des composants imbriqués et vous navigueriez vers `/add-task/add-task`.
+
+>  `<a routerLink="/add-task">...</a>` => http://localhost:4200/add-task
+>
+>  `<a routerLink="add-task">...</a>` => http://localhost:4200/add-task/add-task
 :::
 
-## ✔️ What you learned
+## ✔️ Ce que vous avez appris
 
-In this chapter, you learned how to add routing to your application. You learned how to define the routes and how to navigate between them using the `routerLink` directive. You also learned how to display the content of the current route using the `router-outlet` directive.
+Dans ce chapitre, vous avez appris à ajouter du routage à votre application. Vous avez appris à définir les routes et à naviguer entre elles à l'aide de la directive `routerLink`. Vous avez également appris à afficher le contenu de la route actuelle à l'aide de la directive `router-outlet`.
 
 ## 🚦 Quiz
 
-1. What is the purpose of the `router-outlet` directive?
-    - A. To define the routes of the application
-    - B. To display the content of the current route
-    - C. To navigate between routes
-    - D. To display the content of the previous route
+1. Quel est le but de la directive `router-outlet` ?
+    - A. Définir les routes de l'application
+    - B. Pour afficher le contenu de la route en cours
+    - C. Pour naviguer entre les routes
+    - D. Pour afficher le contenu du parcours précédent
 
-2. What is the purpose of the `routerLink` directive?
-    - A. To define the routes of the application
-    - B. To display the content of the current route
-    - C. To navigate between routes
-    - D. To display the content of the previous route
+2. Quel est le but de la directive `routerLink` ?
+    - A. Définir les routes de l'application
+    - B. Pour afficher le contenu de la route en cours
+    - C. Pour naviguer entre les routes
+    - D. Pour afficher le contenu du parcours précédent
 
-3. What is the purpose of the `Routes` array in the `app-routing.module.ts` file?
+3. Quel est le but du tableau `Routes` dans le fichier `app-routing.module.ts` ?
 
-    - A. To define the routes of the application
-    - B. To display the content of the current route
-    - C. To navigate between routes
-    - D. To display the content of the previous route
+    - A. Définir les routes de l'application
+    - B. Pour afficher le contenu de la route en cours
+    - C. Pour naviguer entre les routes
+    - D. Pour afficher le contenu du parcours précédent
 
-4. What is the difference of prefixing a route with `/` or not in the `routerLink` directive?
+4. Quelle est la différence entre préfixer une route avec `/` ou non dans la directive `routerLink` ?
 
-    - A. There is no difference
-    - B. The route is relative to the current URL
-    - C. The route is absolute
-    - D. The route is relative to the root URL
-
+    - A. Il n'y a aucune différence.
+    - B. La route est relative à l'URL actuelle.
+    - C. La route est absolue.
+    - D. La route est relative à l'URL racine.

@@ -65,22 +65,24 @@ export default defineConfig({
                             ]
                         },
                         {
-                            label: 'Create task', collapsed: true, items: [
+                            label: 'Create task', collapsed: true, translations: { fr: 'Créer une tâche' }, items: [
                                 {
                                     label: '🚀 Create task overview',
                                     link: '/practical-course/create-task/create-task-overview'
                                 },
                                 {
                                     label: 'Create form component',
-                                    link: '/practical-course/create-task/create-form-component'
+                                    link: '/practical-course/create-task/create-form-component',
+                                    translations: { fr: 'Créez un composant dédié' }
                                 },
                                 {
                                     label: 'Routing introduction',
-                                    link: '/practical-course/create-task/routing-introduction'
+                                    link: '/practical-course/create-task/routing-introduction',
+                                    translations: { fr: 'Introduction au routage' }
                                 },
-                                {label: 'HTML form', link: '/practical-course/create-task/html-form'},
-                                {label: 'Form binding', link: '/practical-course/create-task/form-binding'},
-                                {label: 'Event binding', link: '/practical-course/create-task/event-binding'},
+                                {label: 'HTML form', link: '/practical-course/create-task/html-form', translations: { fr: 'Formulaire HTML' }},
+                                {label: 'Form binding', link: '/practical-course/create-task/form-binding', translations: { fr: 'Liaison du formulaire' }},
+                                {label: 'Event binding', link: '/practical-course/create-task/event-binding', translations: { fr: 'Liaison d\'évènements' }},
                                 {label: 'Angular service', link: '/practical-course/create-task/angular-service'},
                                 {
                                     label: 'Dependency injection',

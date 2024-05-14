@@ -1,43 +1,43 @@
 ---
-title: Form binding
-description: Learn how to bind a form to a model in Angular
+title: Liaison du formulaire
+description: Apprenez à lier un formulaire à un modèle dans Angular
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Bind your HTML form', description: 'Learn how to bind a form to a model in Angular.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Liaison de votre formulaire HTML', description: 'Apprenez à lier un formulaire à un modèle (`.component.ts`) dans Angular.'},
 ]} />
 
-We are able to fill out the form, but we need to get the data from the form to create a new task and add it to the existing list.
+Pour l'instant, la saisie du formulaire est réalisable. Il vous faut, maintenant, récupérer les données du formulaire pour créer une nouvelle tâche et l'ajouter à la liste existante.
 
-## Angular Forms API
+## API Forms Angular
 
-Angular provides 2 different API to work with forms:
+Angular fournit 2 API différentes pour travailler avec des formulaires :
 
-- Template-driven forms
-- Reactive forms
+- Formulaires pilotés par le Template HTML;
+- Formulaires réactifs piloté par le code (`.component.ts`).
 
-In this course, we will use the template-driven forms API to bind the form.
+Dans ce cours, vous utiliserez l'API des formulaires pilotés par le Template HTML pour lier le formulaire.
 
-## Template-driven forms
+## Formulaire piloté par le Template HTML
 
-What does `Template-driven` mean?
+Que veut dire piloté par le Template HTML ?
 
-The form structure and validations are defined in the HTML template. The template-driven forms are easy to use and suitable for simple forms.
-On Angular side, our focus is to bind each field to a property to retrieve its current value.
+La structure du formulaire et les validations sont définies dans la vue (Template HTML). Les formulaires basés sur des Template HTML sont faciles à utiliser et adaptés aux formulaires simples.
+Côté Angular, notre objectif est de lier chaque champ à une propriété pour récupérer sa valeur actuelle.
 
-## Task model
+## Modèle de tâche
 
-We will create a `task` model to represent a task. The `task` model will have two properties: `title` and `description`.
-Its shape is different from the `Task` interface we created earlier. We'll create a new derivated one from the existing `Task` interface.
+Vous allez créer un modèle de `task` pour représenter une tâche. Le modèle `task` aura deux propriétés : `title` et `description`.
+Sa forme est différente de l'interface `Task` que vous avez créée précédemment. Vous allez en créer une nouvelle dérivée à partir de l'interface `Task` existante.
 
-### Pick Typescript Utility type
+### Choisissez le type d'utilitaire Typescript
 
-The `Pick` utility type allows you to create a new type by picking some properties from an existing type.
-The benefit of using the `Pick` utility type is that it helps you to avoid duplicating the properties of the existing type.
+Le type d'utilitaire `Pick` vous permet de créer un nouveau type en sélectionnant certaines propriétés d'un type existant.
+L'avantage d'utiliser le type d'utilitaire  `Pick` est qu'il vous aide à éviter de dupliquer les propriétés du type existant.
 
-We pass it the original type and the properties we want to pick.
+Vous lui transmettez le type d'origine et les propriétés que vous souhaitez sélectionner.
 
 ```ts
 // task.model.ts
@@ -47,20 +47,20 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task-form/task.model.ts` file.
+1. Ouvrez le fichier `src/app/task-form/task.model.ts`.
 
-2. Add the following code:
+2. Ajoutez le code suivant:
 
 ```typescript
 // task.model.ts
 export type TaskForm = Pick<Task, 'title' | 'description'>;
 ```
 
-3. Open the `src/app/task-form/task-form.component.ts` file.
+3. Ouvrez le fichier `src/app/task-form/task-form.component.ts`.
 
-4. Replace the content of the file with the following code:
+4. Remplacez le contenu du fichier par le code suivant :
 
-```typescript ins={"Import the new TaskForm type": 3-4} ins={"Add the task model with empty values": 12-16}
+```typescript ins={"Importez le nouveau type TaskForm": 3-4} ins={"Ajoutez le modèle de tâche avec des valeurs vides": 12-16}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -82,32 +82,40 @@ export class TaskFormComponent implements OnInit {
 }
 ```
 
-## Form binding
+## Liaison du formulaire
 
-To bind a form to a model in Angular, you can use the `[ngModel]` directive.
-The `[ngModel]` directive is a built-in directive that allows you to bind a form input to a model.
-But it won't be enough for our usecase: it only allows us to bind the value of the property to the field, not the other way around.
+Pour lier un formulaire à un modèle (`.component.ts`) dans Angular, vous pouvez utiliser la directive `[ngModel]`.
+La directive `[ngModel]` est une directive intégrée qui vous permet de lier une entrée de formulaire à un modèle.
+Mais cela ne suffira pas pour votre cas d'utilisation : cela vous permet uniquement de lier la valeur de la propriété au champ, et non l'inverse.
 
-### 2 way data binding
+### Liaison de données bidirectionnelle
 
-To update our `task` model when the form is updated, we need to use the `[(ngModel)]` format.
-Also called **banana in a box** syntax to remember how to write it, it allows us to:
+Pour mettre à jour votre modèle `task` lorsque le formulaire est mis à jour, vous devez utiliser le format `[(ngModel)]`.
+Cette syntaxe nous permet de :
 
-- bind the value of the task to the form field
-- to update the value of the task based on the user input
+- lier la valeur de la tâche au champ du formulaire;
+- mettre à jour la valeur de la tâche en fonction de la saisie de l'utilisateur.
 
-We want to bind the `title` input to the `task.title` property and the `description` textarea to the `task.description` property.
+:::tip
+`[(ngModel)]` 🤔 `([ngModel])` ? Pour se rappeler de l'ordre des parenthèses et des crochets ? 
+
+Pensez **banana in a box** [()] 
+
+`[(ngModel)]` ✅
+:::
+
+A présent, il faut lier l'input `title` à la propriété `task.title` et le textarea `description` à la propriété `task.description`.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task-form/task-form.component.html` file.
+1. Ouvrez le fichier `src/app/task-form/task-form.component.html`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```html ins={"Bind the title with the ngModel directive": 4-5} ins="[(ngModel)]="task.title"" ins={"Bind the description with the ngModel directive": 8-9} ins="[(ngModel)]="task.description""
+```html ins={"Liez le titre avec la directive ngModel": 4-5} ins="[(ngModel)]="task.title"" ins={"Liez la description avec la directive ngModel": 8-9} ins="[(ngModel)]="task.description""
 // task-form.component.html
 <form>
-  <label for="title" class="form-label">Title</label>
+  <label for="title" class="form-label">Titre</label>
     
   <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
     
@@ -115,12 +123,17 @@ We want to bind the `title` input to the `task.title` property and the `descript
     
   <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
   
-  <button type="submit" class="btn btn-primary">Create task</button>
+  <button type="submit" class="btn btn-primary">Créer une tâche</button>
 </form>
 ```
 
-By being bound to the form, the `task` model will be updated when the form is updated.
+En étant lié au formulaire, le modèle `task` sera mis à jour lorsque le formulaire sera mis à jour.
 
-## ✔️ What you learned
+## ✔️ Ce que vous avez appris
 
-In this chapter, you learned how to bind a form to a model in Angular. You learned how to create a `task` model to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a model.
+Dans ce chapitre, vous avez appris à lier un formulaire à un modèle (`.component.ts`) dans Angular. Vous avez appris à créer un modèle `task` pour représenter une tâche. Vous avez également appris à utiliser la directive `[(ngModel)]` pour lier une entrée de formulaire à un modèle.
+
+## 🔗 Ressources
+
+- <a href="https://www.typescriptlang.org/docs/handbook/utility-types.html" target="_blank">Documentation TypeScript: types d'utilitaires</a>
+- <a href="https://angular.dev/guide/directives#displaying-and-updating-properties-with-ngmodel" target="_blank">Documentation Angular: ngModel</a>
