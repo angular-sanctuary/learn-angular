@@ -3,7 +3,7 @@ title: Discover Angular
 description: Learn Angular in a practical way
 ---
 
-![Angular](../../../assets/extended-angular-logo.png)
+![Angular](../../../../assets/extended-angular-logo.png)
 
 ## What is Angular?
 
