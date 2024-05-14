@@ -1,0 +1,68 @@
+---
+title: Add an HTTP Client
+description: Learn how to add an HTTP Client to an Angular application.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Add an Http Client', description: 'Learn how to add an HTTP Client to communicate with the fake API server.'},
+]} />
+
+## The HttpClient module
+
+The `HttpClientModule` is a built-in Angular module that allows you to make HTTP requests to a server.
+It provides a `HttpClient` service that you can inject in your services to make HTTP requests.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Import the `HttpClientModule` in the `src/app/app.module.ts` file.
+
+    ```typescript ins={"Import the HttpClientModule": 3-4} ins={"Add the HttpClientModule to the imports array": 13-14}
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+
+    import { HttpClientModule } from '@angular/common/http';
+    import { AppComponent } from './app.component';
+
+    @NgModule({
+    declarations: [
+    AppComponent
+    ],
+    imports: [
+    BrowserModule,
+
+    HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+
+2. Inject the HttpClient service in the `src/app/task.service.ts` file.
+
+    ```typescript ins={"Import the HttpClient service": 2-3} ins={"Inject the HttpClient service": 9-11}
+    import { Injectable } from '@angular/core';
+
+    import { HttpClient } from '@angular/common/http';
+
+    @Injectable({
+    providedIn: 'root'
+    })
+    export class TaskService {
+
+    constructor(private http: HttpClient) { }
+    }
+    ```
+
+</Steps>
+
+## ✔️ What you learned
+
+The `HttpClientModule` is a built-in Angular module that allows you to make HTTP requests to a server.
+That's one of the first module added in a real-world Angular application to communicate with a server.
+In the next chapters, we'll use it to communicate with the fake API server to fetch and update tasks.

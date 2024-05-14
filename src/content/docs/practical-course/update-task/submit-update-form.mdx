@@ -15,13 +15,11 @@ import Objective from '../../../../components/learning-objective.astro';
 The `TaskService` service already includes a function to add a new task to the list.
 Let's add a new function to update an existing task of the list.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/task-service.ts` file.
-
-2. Add the following code to the file:
+1. Update the `src/app/task-service.ts` file.
 
    ```typescript ins={"Add a function to update a task": 32-36}
    import { Injectable } from '@angular/core';
@@ -69,7 +67,7 @@ Let's add a new function to update an existing task of the list.
 
 The `TaskFormComponent` component is currently used to add a new task to the list.
 
-We now need to handle the submission of the form to update and not create a new task.
+Let's handle the submission of the form to update and not create a new task.
 To do so, keep the same `submit` function but update it to use the `updateTask` function of the `TaskService` service.
 
 When?
@@ -90,13 +88,11 @@ submit(task) {
 
 In both situations, navigate back to the list of tasks.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/task-form/task-form.component.ts` file.
-
-2. Add the following code to the file:
+1. Update the `src/app/task-form/task-form.component.ts` file.
 
    ```typescript ins={"Add the updateTask function": 28-33}
    import { Component, OnInit } from '@angular/core';

@@ -15,13 +15,11 @@ import Objective from '../../../../components/learning-objective.astro';
 Let's update the `TaskListComponent` class to add a delete button next to each task in the list.
 When the user clicks the delete button, the task will be removed from the list.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/task-list/task-list.component.html` file.
-
-2. Add the following code to the file:
+1. Update the `src/app/task-list/task-list.component.html` file.
 
    ```html ins={"1. Add a delete button": 4-5}
    <ul>
@@ -40,13 +38,11 @@ When the user clicks the delete button, the task will be removed from the list.
 Let's create the `deleteTask` function in the `TaskListComponent` class to remove a task from the list.
 It'll call the `deleteTask` function from the `TaskService` class to remove the task from the list.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/task-list/task-list.component.ts` file.
-
-2. Add the following code to the file:
+1. Update the `src/app/task-list/task-list.component.ts` file.
 
    ```typescript ins={"Add the deleteTask function and call the TaskService deleteTask": 15-18}
    import { Component } from '@angular/core';

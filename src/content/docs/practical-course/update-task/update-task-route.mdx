@@ -17,13 +17,13 @@ So far we defined 2 route paths:
 - `''` for the `TaskListComponent` component to display the list of tasks
 - `'add-task'` for the `AddTaskComponent` component to display a form
 
-The update route path is quite different as we don't just want to land on a new page: to update a task, we need to know which task to update.
+The update route path is quite different as you don't just want to land on a new page: to update a task, you need to know which task to update.
 
 A common way to provide an information to a routed component is by using a dynamic route path.
 
 ## Create the route
 
-Our new path will be `'update/:id'`.  
+The new path will be `'update/:id'`.
 The `update` part is static but the `:id` part is dynamic.
 
 :::tip
@@ -32,16 +32,14 @@ You can chain multiple route parameters in a path, for example `'update/:id/:nam
 Each one is prefixed by a colon `:` followed by an arbitrary name.
 :::
 
-We won't create a dedicated component for the update feature.
-The purpose of the `TaskFormComponent` is to create tasks with usr input: we'll update it to handle both creation and update.
+You won't create a dedicated component for the update feature.
+The purpose of the `TaskFormComponent` is to create tasks with user input: let's update it to handle both creation and update.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/app-routing.module.ts` file.
-
-2. Add the following code to the file:
+1. Update the the `src/app/app-routing.module.ts` file.
 
    ```typescript ins={"1. Add the route for the update task feature": 9-10}
    import { NgModule } from '@angular/core';
@@ -72,13 +70,11 @@ The purpose of the `TaskFormComponent` is to create tasks with usr input: we'll 
 Let's add a link to the `TaskListComponent` to navigate to the `TaskFormComponent` with the `id` of the task to update.
 By navigating to this path, you will extract the `id` value from the URL in the next chapter.
 
-#### Instructions
+### 🎓 Instructions
 
 <Steps>
 
-1. Open the `src/app/task-list/task-list.component.html` file.
-
-2. Add the following code to the file:
+1. Update the `src/app/task-list/task-list.component.html` file.
 
     ```html ins={"1. Add the update button": 4-5}
     <ul>

@@ -144,7 +144,7 @@ export default defineConfig({
                                     link: '/practical-course/api-server/json-server-installation'
                                 },
                                 {label: 'Add HTTP client', link: '/practical-course/api-server/add-http-client'},
-                                {label: 'Get tasks', link: '/practical-course/api-server/get-tasks'},
+                                {label: 'Retrieve tasks', link: '/practical-course/api-server/retrieve-tasks'},
                                 {label: 'Create task', link: '/practical-course/api-server/create-task'},
                                 {label: 'Update task', link: '/practical-course/api-server/update-task'},
                                 {label: 'Delete task', link: '/practical-course/api-server/delete-task'},
