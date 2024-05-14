@@ -1,28 +1,28 @@
 ---
 title: Interpolation
-description: Rendu des données dans un modèle
+description: Rendu des données dans une vue (Template HTML)
 ---
 
 import Quiz from '../../../../../components/quiz.astro';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-    {mainTitle: 'Objectifs de ce chapitre', title: 'Interpolation', description: 'Découvrez comment restituer des données dans un modèle à l\'aide de l\'interpolation.'},
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Interpolation', description: 'Découvrez comment restituer des données dans une vue (Template HTML) à l\'aide de l\'interpolation.'},
 ]} />
 
 
-Nous parcourons maintenant le tableau `tasks` mais affichons une valeur `Task` statique.
-Nous souhaitons maintenant afficher dynamiquement la dernière version de la tâche à la place.
+Vous parcourez maintenant le tableau `tasks` mais affichons une valeur `Task` statique.
+Maintenant ? Vous souhaitez afficher dynamiquement la dernière version de la tâche à la place.
 
 ## Qu'est-ce que l'interpolation ?
 
-L'interpolation est la solution pour évaluer une expression JavaScript dans le fichier HTML.
-Bien qu'une partie de votre contenu HTML soit statique, vous souhaiterez peut-être afficher des données dynamiques dans votre modèle.
-Cela nous permet d'afficher la valeur d'une propriété définie depuis le fichier `composant.ts` dans le fichier HTML.
+L'interpolation est la solution pour évaluer une expression JavaScript dans le Template HTML.
+Bien qu'une partie de votre contenu HTML soit statique, vous souhaiterez peut-être afficher des données dynamiques dans votre vue.
+Cela nous permet d'afficher la valeur d'une propriété définie depuis le fichier `composant.ts` dans le Template HTML.
 
-Voilà notre situation : nous voulons afficher les détails de chaque tâche!
+Voilà votre situation souhaitée : afficher les détails de chaque tâche!
 
-Nous utilisons les délimiteurs `{{ }}` pour identifier l'expression à évaluer.
+Vous utiliserez les délimiteurs `{{ }}` pour identifier l'expression à évaluer.
 Vous pouvez utiliser n'importe quelle expression TypeScript valide entre ces délimiteurs d'interpolation.
 
 ```html

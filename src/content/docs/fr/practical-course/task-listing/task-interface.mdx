@@ -13,13 +13,18 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Création d'interfaces
 
-Nous allons créer une nouvelle interface TypeScript pour représenter une tâche.
+Vous allez créer une nouvelle interface TypeScript pour représenter une tâche.
 Chaque tâche possède 3 propriétés :
 
 - **id** : une chaîne de caractères représentant l'identifiant unique de la tâche;
 - **title** : une chaîne de caractères représentant le titre de la tâche.
 - **description** : une chaîne de caractères représentant la description de la tâche.
 - **createdAt** : une date représentant la date de création de la tâche.
+
+:::caution
+On utilise les interfaces pour représenter nos entités et également les modèles métiers du projet.
+Ces modèles métiers, ces entités sont donc bien différents du modèle du composant (le fichier `.component.ts`).
+:::
 
 #### 🎓 Instructions
 
@@ -41,10 +46,10 @@ export interface Task {
 
 ## Génération d'identifiant
 
-Nous générerons un identifiant unique pour chaque tâche. Cet identifiant nous aidera à trouver une tâche donnée de manière unique.
-Un tel identifiant est généralement généré par un serveur backend, mais pour ce tutoriel, nous le générerons côté client.
+Vous générerez un identifiant unique pour chaque tâche. Cet identifiant vous aidera à trouver une tâche donnée de manière unique.
+Un tel identifiant est généralement généré par un serveur backend, mais pour ce tutoriel, vous le générerez côté client.
 
-Pour ce faire, nous utiliserons la libairie `uuid`. Cette libairie génère des identifiants uniques basés sur l'horodatage actuel et un nombre aléatoire.
+Pour ce faire, vous utiliserez la libairie `uuid`. Cette libairie génère des identifiants uniques basés sur l'horodatage actuel et un nombre aléatoire.
 
 #### 🎓 Instructions
 
@@ -56,8 +61,8 @@ npm install uuid
 
 ## Utilisation de l'interface
 
-Créons une variable locale dans la classe `TaskListComponent` pour stocker une liste de tâches.
-Nous utiliserons l'interface `Task` pour définir le type de la variable tâches.
+Créez une variable locale dans la classe `TaskListComponent` pour stocker une liste de tâches.
+Vous utiliserez l'interface `Task` pour définir le type de la variable tâches.
 
 En JavaScript, vous définiriez la variable tâches comme ceci :
 

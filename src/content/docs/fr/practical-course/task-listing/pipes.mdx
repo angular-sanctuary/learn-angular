@@ -1,24 +1,24 @@
 ---
 title: Pipes
-description: Apprenez à personnaliser l'affichage des données dans les modèles Angular à l'aide de pipes.
+description: Apprenez à personnaliser l'affichage des données dans les vues Angular à l'aide de pipes.
 ---
 
 import Quiz from '../../../../../components/quiz.astro';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-    {mainTitle: 'Objectifs de ce chapitre', title: 'Pipes', description: 'Apprenez à personnaliser l\'affichage des données dans les modèles Angular à l\'aide de pipes.'}
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Pipes', description: 'Apprenez à personnaliser l\'affichage des données dans les vues Angular à l\'aide de pipes.'}
 ]} />
 
 
 ## Pipes Angular
 
-Angular fournit un ensemble de pipes intégrés pour transformer les données dans les fichiers HTML.
+Angular fournit un ensemble de pipes intégrés pour transformer les données dans les Templates HTML (vues).
 Les pipes sont des fonctions simples qui acceptent une valeur d'entrée et renvoient une valeur transformée.
-Ils sont utilisés dans le modèle pour formater les données avant de les afficher.
+Ils sont utilisés dans la vue (Template HTML) pour formater les données avant de les afficher.
 
 Les pipes Angular sont utilisés avec l'opérateur de pipe `|` suivi du nom de la pipe.
-Vous pouvez enchaîner plusieurs pipes pour transformer les données dans le modèle.
+Vous pouvez enchaîner plusieurs pipes pour transformer les données dans la vue (Template HTML).
 
 Voici les pipes Angular les plus utilisées :
 
@@ -27,7 +27,7 @@ Voici les pipes Angular les plus utilisées :
 - `currency` : formate un nombre en tant que devise;
 - `date` : formate une date.
 
-Nous utiliserons cette dernière pour formater la date **createdAt** de la tâche en un format plus lisible.
+Vous utiliserez cette dernière pour formater la date **createdAt** de la tâche en un format plus lisible.
 
 #### 🎓 Instructions
 
@@ -52,7 +52,7 @@ La date de création de la tâche est affichée dans un format plus convivial.
 
 ## Alternative
 
-Une alternative courante pour transformer les données dans le fichier HTML consiste à utiliser une fonction.
+Une alternative courante pour transformer les données dans le Template HTML consiste à utiliser une fonction.
 Comme l'interpolation évalue l'expression JavaScript, vous pouvez lui transmettre une fonction qui renvoie une valeur.
 
 Dans l'exemple suivant, nous utilisons une fonction pour formater la date de création de la tâche. La fonction prend la date de création de la tâche comme argument et renvoie une date formatée.
@@ -83,13 +83,13 @@ export class TaskListComponent {
 ```
 
 Cela fonctionnera mais pas de façon aussi optimisée que l'utilisation de la pipe date.
-Angular utilise la **détection de changement** interne pour détecter les modifications dans le composant et mettre à jour la vue.
-Lors de l'utilisation d'une fonction dans le fichier HTML, Angular appellera la fonction à chaque cycle de détection de changement, même si la date **createdAt** n'a pas changé.
+Angular utilise la **détection de changement** interne pour détecter les modifications dans le composant et mettre à jour la vue (Template HTML).
+Lors de l'utilisation d'une fonction dans le Template HTML, Angular appellera la fonction à chaque cycle de détection de changement, même si la date **createdAt** n'a pas changé.
 Les pipes mémorisent le résultat de la transformation et ne le recalculent que lorsque la valeur d'entrée change.
 
 ## ✔️ Ce que vous avez appris
 
-Les pipes Angular permettent de transformer les données dans les modèles.
+Les pipes Angular permettent de transformer les données dans les vues (Templates HTML).
 Bien que cela ne soit pas abordé dans cette introduction, vous pouvez également créer des pipes personnalisées pour appliquer des transformations spécifiques à vos données.
 
 ## 🚦 Quiz
@@ -118,8 +118,6 @@ Quel est le format du pipe dans le fichier HTML ?
     'value | pipeName',
     'value | pipeName: argument',
     'pipeName: argument | value'
-
-
 
 ## 🔗 Ressources
 

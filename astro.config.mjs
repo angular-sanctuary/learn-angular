@@ -48,7 +48,7 @@ export default defineConfig({
                                 {
                                     label: 'Create your first component',
                                     link: '/practical-course/task-listing/create-first-component',
-                                    translations: { fr: 'Créez notre premier composant' }
+                                    translations: { fr: 'Créez votre premier composant' }
                                 },
                                 {
                                     label: 'Create the task interface',
