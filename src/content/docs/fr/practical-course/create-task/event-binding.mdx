@@ -1,60 +1,60 @@
 ---
-title: Event binding
-description: Learn to bind an event to a function
+title: Liaison d'évènements
+description: Apprennez à lier un événement à une fonction
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Event binding', description: 'Learn how to bind an event to a function in Angular'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Liaison d\'évènements', description: 'Apprenez à lier un événement à une fonction dans Angular.'},
 ]} />
 
 
-## Event binding
+## Liaison d'évènements
 
-Event binding allows to listen to events and execute a function when the event occurs.
-In the current situation, we want to execute a function when the 'create task' button is clicked.
+La liaison d'évènements permet d'écouter les évènements et d'exécuter une fonction lorsque l'évènements se produit.
+Dans la situation actuelle, vous allez exécuter une fonction lorsque l'on clique sur le bouton 'Créer une tâche'.
 
-On the html button tag, we can bind the click event to a function using the `(click)` syntax.
-We assign it the function we want to execute when the button is clicked.
+Sur la balise HTML `<button>`, vous pouvez lier l'événement clic à une fonction en utilisant la syntaxe `(click)`.
+Vous lui attribuez la fonction que vous voulez exécuter lorsque l'on clique sur le bouton.
 
 ```html ins="(click)="createTask()""
-<button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
+<button type="submit" class="btn btn-primary" (click)="createTask()">Créer une tâche</button>
 ```
 
-This function will be created in the component class.
+Dans la classe du modèle (dans le fichier `.component.ts`/ la classe du composant), vous devez créer la fonction liée. Sans cela, Angular ne compilera pas.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task-form/task-form.component.html` file.
+1. Ouvrez le fichier `src/app/task-form/task-form.component.html`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```html ins={"Add the submit event binding": 8-9} ins="(click)="createTask()""
+```html ins={"Ajoutez la liaison d\'évènement de soumission du formulaire": 8-9} ins="(click)="createTask()""
 // task-form.component.html
 <form>
-  <label for="title" class="form-label">Title:</label>
+  <label for="title" class="form-label">Titre:</label>
   <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
   
   <label for="description" class="form-label">Description:</label>
   <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
 
-  <button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
+  <button type="submit" class="btn btn-primary" (click)="createTask()">Créer une tâche</button>
 </form>
 ```
 
-## createTask function
+## Fonction `createTask`
 
-We will create a `createTask` function to handle the form submission.
-For this step, we'll just log the form value to the console.
+Vous allez créer une fonction `createTask` pour gérer la soumission du formulaire.
+Pour cette étape, vous allez simplement enregistrer la valeur du formulaire dans la console.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task-form/task-form.component.ts` file.
+1. Ouvrez le fichier `src/app/task-form/task-form.component.ts`.
 
-2. Replace the content of the file with the following code:
+2. Remplacez le contenu du fichier par le code suivant :
 
-```typescript ins={"Add the createTask method": 17-20}
+```typescript ins={"Ajoutez la méthode createTask": 17-20}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -73,18 +73,15 @@ export class TaskFormComponent implements OnInit {
   ngOnInit() {}  
 
   createTask(): void {
-    console.log('Task created', this.task);
+    console.log('Tâche créée', this.task);
   }
 }
 ```
 
-3. Open the devtools console in your browser.
-4. By clicking on the 'create task' button, you should see the form data logged to the console.
+3. Ouvrez la console Devtools de votre navigateur.
+4. Remplissez les champs de titre et de description et cliquez sur le bouton 'create task'.
+4. En cliquant sur le bouton 'create task', vous devriez voir les données du formulaire s'afficher dans la console.
 
-## 🌱 Challenge
+## ✔️ Ce que vous avez appris
 
-Fill the title and description fields and click on the 'create task' button. Verify that the form value logged to the console is updated.
-
-## ✔️ What you learned
-
-You learned how to listen to an event to trigger a function.
+Vous avez appris à écouter un événement pour déclencher une fonction.
