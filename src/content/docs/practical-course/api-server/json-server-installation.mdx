@@ -1,0 +1,79 @@
+---
+title: Install JSON Server
+description: Learn how to install JSON Server to create a fake REST API.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Add json-server', description: 'Install and configure json-server as a fake REST API server.'},
+]} />
+
+## What is json-server?
+
+json-server is a small package that helps you to create a REST API with zero coding in less than 30 seconds.
+It's a full fake REST API with zero coding that allows you to create, read, update and delete tasks.
+
+It won't provide us a real API server, but it's a great tool to focus on the Angular part of the application.
+
+Let's install it and create a fake database.
+
+#### 🎓 Instructions
+
+<Steps>
+
+1. Run the following command in a terminal to Install json-server.
+
+    ```bash
+    npm install json-server
+    ```
+2. Create a `db.json` file with some data.
+
+    ```json
+    {
+      "tasks": [
+        {
+          "id": 1,
+          "title": "First task",
+          "description": "This is the first task",
+          "createdAt": "2021-09-01T12:00:00"
+        },
+        {
+          "id": 2,
+          "title": "Second task",
+          "description": "This is the second task",
+          "createdAt": "2021-09-01T12:00:00"
+        }
+      ]
+    }
+    ```
+3. Create a `start-server` script in your `package.json` file.
+
+    ```json
+    {
+      "scripts": {
+        "start-server": "json-server --watch db.json"
+      }
+    }
+    ```
+4. Start json-server to access your API server at `http://localhost:3000`
+
+    ```bash
+    npm run start-server
+    ```
+5. Open your browser and go to `http://localhost:3000/tasks`.
+
+</Steps>
+
+
+## ✔️ What you learned
+
+In this chapter, you learned how to add json-server and configure it to create a fake REST API server.
+It'll be use in next chapters to create, read, update and delete tasks as if you were interacting with a real API server.
+
+
+
+
+
+
