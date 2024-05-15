@@ -1,26 +1,26 @@
 ---
-title: Add task in service
-description: Learn how to add a task in the `TaskService` in an Angular application.
+title: Ajoutez une tâche via le service
+description: Découvrez comment ajouter une tâche avec le service `TaskService` dans votre application Angular.
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Create a function in the Task Service', description: 'Create a function which add a new task to the TaskService based on the task object passed as a parameter.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Créez une fonction dans `TaskService`', description: 'Créez une méthode qui ajoute une nouvelle tâche au `TaskService` en fonction de l\'objet de tâche passé en paramètre.'},
 ]} />
 
-## Add a method to add a task
+## Concevez une méthode pour ajouter une tâche
 
-The `TaskService` will be responsible for managing the tasks list as planned.
-We need to add a function to add a task to the list.
+Le `TaskService` sera responsable de la gestion de la liste des tâches comme prévu.
+Vous devez ajouter une fonction pour ajouter une tâche à la liste.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task.service.ts` file.
+1. Ouvrez le fichier `src/app/task.service.ts`.
 
-2. Add the following code to the file:
+2. Ajoutez le code suivant au fichier :
 
-```typescript ins={"Import uuid package": 4-5} ins={"Add the addTask function": 26-32}
+```typescript ins={"Importez le package uuid": 4-5} ins={"Ajoutez la fonction addTask": 26-32}
 // task.service.ts
 import { Injectable } from '@angular/core';
 import { Task } from './models/task.model';
@@ -34,14 +34,14 @@ export class TaskService {
     tasks: Task[] = [
                 {
                     id: uuid(),
-                    title: 'Task 1',
-                    description: 'Description of task 1',
+                    title: 'Tâche 1',
+                    description: 'Description de la tâche 1',
                     createdAt: new Date()
                 },
                 {
                     id: uuid(),
-                    title: 'Task 2',
-                    description: 'Description of task 2',
+                    title: 'Tâche 2',
+                    description: 'Description de la tâche 2',
                     createdAt: new Date()
                 }
             ];
@@ -56,8 +56,8 @@ export class TaskService {
 }
 ```
 
-This new function will be called from our `TaskFormComponent` to add a new task to the list.
+Cette nouvelle fonction sera appelée depuis votre composant `TaskFormComponent` pour ajouter une nouvelle tâche à la liste.
 
-## ✔️ What you learned
+## ✔️ Ce que vous avez appris
 
-You created a function in the TaskService to isolate the Task logic inside the service.
+Vous avez créé une fonction dans le service `TaskService` pour isoler la logique d'ajout de tâche.

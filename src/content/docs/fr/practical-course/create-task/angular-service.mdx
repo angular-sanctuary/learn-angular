@@ -1,58 +1,64 @@
 ---
-title: Service creation
-description: Learn how to create a service in Angular
+title: Création de service
+description: Apprenez à créer un service avec la CLI Angular
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Create an Angular service', description: 'Learn how to create a service in Angular using the Angular CLI.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Créez un service Angular', description: 'Découvrez comment créer un service à l\'aide de la CLI Angular.'},
 ]} />
 
-## The problem
+## Etat des lieux
 
-We have 2 components in our application: `TaskFormComponent` and `TaskListComponent`.
-The `TaskFormComponent` is responsible for creating new tasks.
-The `TaskListComponent` is responsible for displaying the list of tasks.
+Vous avez 2 composants dans votre application : `TaskFormComponent` et `TaskListComponent`.
+Le `TaskFormComponent` est responsable de la création de nouvelles tâches.
+Le `TaskListComponent` est responsable de l'affichage de la liste des tâches.
 
-Creating a new task implies adding it to the list of tasks.
-But the `TaskFormComponent` and the `TaskListComponent` are not connected.
+Créer une nouvelle tâche implique de l'ajouter à la liste des tâches.
+Mais le `TaskFormComponent` et le `TaskListComponent` ne sont pas connectés.
 
-We need a third party to manage the tasks and share them between the two components.
-That's what Angular Services come in!
+Nous avons besoin d'un tiers pour gérer les éléments et les partager entre les deux composants.
+C'est là qu'interviennent les services Angular !
 
-## Angular services
+## Services Angular
 
-In Angular, a service is a class that can be used to share data and functionality across different parts of your application.
-Services are used to encapsulate the logic that is not directly related to a specific component.
-That's our situation: the tasks are not directly related to the `TaskFormComponent` or the `TaskListComponent`.
+Dans Angular, un service est une classe qui peut être utilisée pour partager des données et des fonctionnalités entre différentes parties de votre application.
+Les services sont utilisés pour encapsuler la logique qui n'est pas directement liée à un composant spécifique.
+C'est notre situation : les tâches ne sont pas directement liées au `TaskFormComponent` ou au `TaskListComponent` mais elles sont bien partagées par les deux composants.
 
-For the rest of this course, Angular services will be our main orchestration tool to retrieve, create, update and delete tasks.
+Pour le reste de ce cours, les services Angular seront notre principal outil d'orchestration pour récupérer, créer, mettre à jour et supprimer des tâches.
 
-The first goal will be to store the list to make it accessible from both components.
-By default, Angular services are singletons. This means that there is only one instance of the service in the application.
-As long as you do not refresh your application, the service will keep its memory.
+Le premier objectif sera de stocker la liste pour la rendre accessible depuis les deux composants.
+Par défaut, les services Angular sont des singletons. Cela signifie qu'il n'y a qu'une seule instance du service dans l'application.
+Tant que vous ne rafraîchissez pas votre application, le service **conservera** sa mémoire.
 
-As Angular routing does not refresh the page, the service will keep the list of tasks in memory by switching between the `TaskFormComponent` and the `TaskListComponent`.
+Comme le routage Angular ne rafraîchit pas la page, le service conservera la liste des tâches en mémoire en basculant entre le `TaskFormComponent` et le `TaskListComponent`.
 
-## Create a service
+## Créer un service
 
-To create a service in Angular, you can use the Angular CLI.
-The `ng generate` command we used for components can also be used to generate services.
+Pour créer un service dans Angular, vous pouvez utiliser la CLI Angular.
+La commande `ng generate` que vous avez utilisée pour les composants peut également être utilisée pour générer des services.
 
 #### 🎓 Instructions
 
-1. Run the following command in a terminal:
+1. Exécutez la commande suivante dans un terminal :
 
 ```bash
 ng generate service task
 ```
 
-This command will create a new file called `task.service.ts` in the `src/app` folder.
+ou 
 
-2. Open the `task.service.ts` file and add a property to store the list of tasks:
+```bash
+ng g s task
+```
 
-```typescript ins={"Import the task interface": 3-4} ins={"Add the tasks variable": 10-24}
+Cette commande créera un nouveau fichier appelé `task.service.ts` dans le dossier `src/app`.
+
+2. Ouvrez le fichier `task.service.ts` et ajoutez la  une propriété pour stocker la liste des tâches:
+
+```typescript ins={"Importez l\'interface des tâches": 3-4} ins={"Ajoutez la variable des tâches": 10-24}
 // task.service.ts
 import { Injectable } from '@angular/core';
 
@@ -66,26 +72,24 @@ export class TaskService {
      tasks: Task[] = [
             {
                 id: uuid(),
-                title: 'Task 1',
-                description: 'Description of task 1',
+                title: 'Tâche 1',
+                description: 'Description de la tâche 1',
                 createdAt: new Date()
             },
             {
                 id: uuid(),
-                title: 'Task 2',
-                description: 'Description of task 2',
+                title: 'Tâche 2',
+                description: 'Description de la tâche 2',
                 createdAt: new Date()
             }
         ];
 }
 ```
 
-This list is exactly the one we used in the `TaskListComponent` to display the tasks.
+Cette liste est exactement celle que nous avons utilisée dans le `TaskListComponent` pour afficher les tâches.
 
-## ✔️ What you learned
+## ✔️ Ce que vous avez appris
 
-In this chapter, you learned how to create a service with Angular CLI.
-Services are used to share data and functionality across different parts of your application.
-Not only do they help to keep your code DRY, but they also help to keep your components clean and focused on their main purpose.
-
-
+Dans ce chapitre, vous avez appris à créer un service avec Angular CLI.
+Les services sont utilisés pour partager des données et des fonctionnalités entre différentes parties de votre application.
+Non seulement ils aident à garder votre code maintenable en respectant le principe DRY (“Don't Repeat Yourself”), mais ils aident également à garder vos composants propres et concentrés sur leur objectif principal.

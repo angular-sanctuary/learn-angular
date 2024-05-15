@@ -1,27 +1,25 @@
 ---
-title: Inject Service in form component
-description: Learn how to inject a service in a form component in an Angular application.
+title: Injectez le service dans le composant de formulaire
+description: Découvrez comment injecter un service dans votre composant de formulaire dans une application Angular.
 ---
 
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Use TaskService to create a task', description: 'Use TaskService from TaskFormComponent to creat a new task'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Utilisez TaskService pour créer une tâche', description: 'Créez une nouvelle tâche avec le composant TaskFormComponent en utilisant le service TaskService.'},
 ]} />
 
-:::note
-Learn how to inject our service and use its function in the `TaskFormComponent` class.
-:::
+## Injectez le TaskService dans le TaskFormComponent
 
-## Inject the TaskService in the TaskFormComponent
+La première étape est d'injecter le service dans votre composant.
 
 #### 🎓 Instructions
 
-1. Open the `src/app/task-form.component.ts` file.
+1. Ouvrez le fichier `src/app/task-form.component.ts`.
 
-2. Add the following code to the file:
+2. Ajoutez le code suivant dans le fichier:
 
-```typescript ins={"1. import the TaskService": 3-4} ins={"2. Inject the TaskService in the class constructor": 17-18} ins={"3. Call the addTask function from the TaskService": 22-25}
+```typescript ins={"1. Importez TaskService": 3-4} ins={"2. Injectez TaskService dans le constructeur de la classe": 17-18} ins={"3. Appelez la fonction addTask de TaskService": 22-25}
 // task-form.component.ts
 import { Component } from '@angular/core';
 
@@ -50,19 +48,18 @@ export class TaskFormComponent implements OnInit {
 }
 ```
 
-The `TaskFormComponent` class is now using the `TaskService` to add a new task to the list.
+La classe `TaskFormComponent` utilise désormais `TaskService` pour ajouter une nouvelle tâche à la liste.
 
-## Let's test it out
+## Testons-le
 
-1. Go back to your browser
-2. Click on the `Add a new task` link
-3. Enter a title and a description in the form
-4. Click on the `Create task` button
-5. Click on the `List of tasks` link
+1. Retournez dans votre navigateur
+2. Cliquez sur le lien `Ajouter une nouvelle tâche`
+3. Saisissez un titre et une description dans le formulaire
+4. Cliquez sur le bouton `Créer une tâche`
+5. Cliquez sur le lien `Liste des tâches`
 
-You should see the new task in the list.
+Vous devriez voir la nouvelle tâche dans la liste.
 
-## ✔️ What you learned
+## ✔️ Ce que vous avez appris
 
-You learned how to use the `TaskService` once gain, this time to trigger the addTask function to add a new task to the task list.
-
+Vous avez appris à utiliser `TaskService` une fois de plus ! Cette fois-ci pour déclencher la fonction `addTask` afin d'ajouter une nouvelle tâche à la liste des tâches. Bien joué ! 🤩
