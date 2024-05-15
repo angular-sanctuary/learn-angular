@@ -1,26 +1,28 @@
 ---
-title: Component destruction
-description: Learn what happens when we navigate away from a component in an Angular application.
+title: Destruction du composant
+description: Découvrez ce qui se passe lorsque vous quittez un composant dans une application Angular.
 ---
 
-:::note
-Understand what happens when we navigate away from a component in an Angular application.
-:::
+import Objective from '../../../../../components/learning-objective.astro';
 
-At the time you submit the form, the `TaskFormComponent` task property is populated with the values you entered in the form.
-For example, given you filled the name and description fields, the `task` property will be:
+<Objective class="drop-shadow-xl" objectives={[
+{mainTitle: 'Objectifs de ce chapitre', title: 'Apprenez le fonctionnement de destruction un composant', description: 'Comprenez ce qui se passe lorsque vous quittez un composant dans une application Angular.'},
+]} />
+
+Au moment où vous soumettez le formulaire, la propriété de tâche du `TaskFormComponent` est renseignée avec les valeurs que vous avez saisies dans le formulaire.
+Par exemple, étant donné que vous avez rempli les champs nom et description, la propriété `task` sera :
 
 ```typescript
 task = {
-  title: 'My new task',
-  description: 'Awesome description'
+  title: 'Ma nouvelle tâche',
+  description: 'Votre belle description.'
 };
 ```
 
-By submitting the form, you also navigate away from the `TaskFormComponent` component.
-When you navigate away from a component, the component is destroyed.
+En soumettant le formulaire, vous quittez également le composant `TaskFormComponent`.
+Lorsque vous quittez un composant, celui-ci est détruit.
 
-So by navigate once again to this form, the `task` property will be empty:
+Ainsi, en naviguant à nouveau vers ce formulaire, la propriété `task` sera vide :
 
 ```typescript
 task = {
@@ -29,17 +31,15 @@ task = {
 };
 ```
 
-A new instance of the `TaskFormComponent` component is created each time you navigate to it.
-So any local state you set in the component is lost when you navigate away from it.
+Une nouvelle instance du composant `TaskFormComponent` est créée à chaque fois que vous y accédez.
+Ainsi, tout état local que vous définissez dans le composant est perdu lorsque vous naviguez sur une autre route.
 
 :::tip
-That's why we store the new task in the `TaskService` service.
-The service is a singleton, meaning it's a single instance shared across the application.
-Except if you force reload the page, it'll keep the tasks you added.
+C'est pourquoi vous utilisez le service `TaskService` pour stocker la nouvelle tâche.
+Le service est un singleton, ce qui signifie qu'il s'agit d'une instance unique partagée dans l'application.
+Sauf si vous forcez le rechargement de la page, les tâches que vous avez ajoutées seront conservées.
 :::
 
-#
+## ✔️ Ce que vous avez appris
 
-## ✔️ What you learned
-
-In this chapter, you learned how to handle component destruction in an Angular application.
+Dans ce chapitre, vous avez appris le fonctionnement de destruction de composants dans une application Angular.

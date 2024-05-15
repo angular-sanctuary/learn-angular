@@ -83,23 +83,27 @@ export default defineConfig({
                                 {label: 'HTML form', link: '/practical-course/create-task/html-form', translations: { fr: 'Formulaire HTML' }},
                                 {label: 'Form binding', link: '/practical-course/create-task/form-binding', translations: { fr: 'Liaison du formulaire' }},
                                 {label: 'Event binding', link: '/practical-course/create-task/event-binding', translations: { fr: 'Liaison d\'évènements' }},
-                                {label: 'Angular service', link: '/practical-course/create-task/angular-service'},
+                                {label: 'Angular service', link: '/practical-course/create-task/angular-service', translations: { fr: 'Service Angular' }},
                                 {
                                     label: 'Dependency injection',
-                                    link: '/practical-course/create-task/dependency-injection'
+                                    link: '/practical-course/create-task/dependency-injection',
+                                    translations: { fr: 'Injection de dépendances' }
                                 },
-                                {label: 'Add task in service', link: '/practical-course/create-task/add-task-service'},
+                                {label: 'Add task in service', link: '/practical-course/create-task/add-task-service', translations: { fr: 'Ajoutez une tâche via le service'}},
                                 {
                                     label: 'Inject service in form',
-                                    link: '/practical-course/create-task/inject-service-form'
+                                    link: '/practical-course/create-task/inject-service-form',
+                                    translations: { fr: 'Injectez le service'}
                                 },
                                 {
                                     label: 'Programmatical routing',
-                                    link: '/practical-course/create-task/programmatical-routing'
+                                    link: '/practical-course/create-task/programmatical-routing',
+                                    translations: { fr: 'Routage avancé'}
                                 },
                                 {
                                     label: 'Component destruction',
-                                    link: '/practical-course/create-task/component-destruction'
+                                    link: '/practical-course/create-task/component-destruction',
+                                    translations: { fr: 'Destruction du composant' }
                                 },
                                 {
                                     label: '🏁 Form review',
