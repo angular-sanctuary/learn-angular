@@ -15,7 +15,7 @@ You learned how to create a `TaskService` function to update the task in the lis
 
 ### Update the TaskFormComponent
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 Open the `src/app/task-form/task-form.component.ts` file.
 

@@ -19,7 +19,7 @@ Before retrieving the id from the route, let's prepare the logic to identify the
 As the list of tasks is stored in the `TaskService`, we'll add a new function to retrieve a task based on its `id`.
 From this id, we want to retrieve the whole task to fill the form.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/task-service.ts` file.
 
@@ -126,7 +126,7 @@ if (id) {
 }
 ```
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

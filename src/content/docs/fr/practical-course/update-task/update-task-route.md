@@ -31,7 +31,7 @@ You cn chain multiple route parameters in a path, for example `'update/:id/:name
 Each one is prefixed by a colon `:` followed by an arbitrary name.
 :::
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/app-routing.module.ts` file.
 
@@ -62,7 +62,7 @@ export class AppRoutingModule { }
 We'll add a link to the `TaskListComponent` to navigate to the `TaskFormComponent` with the `id` of the task to update.
 When navigating to this path, Angular will extract the `id` value from the URL and provide it to the related component.
 
-#### Instructions
+### Instructions
 
 1. Open the `src/app/task-list/task-list.component.html` file.
 

@@ -32,7 +32,7 @@ This new `addTask` function defines our contract with the API server:
 - it sends a `Task` object as a request body
 - it communicates with the API server at `http://localhost:3000/tasks`
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/task.service.ts` file.
 
@@ -64,7 +64,7 @@ But in the current situation, the request does happen in the component.ts file.
 
 We need to subscribe to the observable by using the `subscribe` function.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/task-form/task-form.component.ts` file.
 

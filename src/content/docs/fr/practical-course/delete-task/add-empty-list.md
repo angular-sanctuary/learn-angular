@@ -19,7 +19,7 @@ It allows you to conditionally display an element in the view.
 
 By passing it a condition, the element its used one is displayed only when the condition is true.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 1. Open the `src/app/task-list.component.html` file.
 

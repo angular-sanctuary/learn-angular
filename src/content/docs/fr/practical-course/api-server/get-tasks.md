@@ -35,7 +35,7 @@ This new `getTasks` defines our contract with the API server:
 We were previously storing the task list and its changes in the `tasks` variable in the `TaskService` class.
 That's now the API server's responsibility and we can remove the `tasks` variable.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 Open the `src/app/task.service.ts` file.
 
@@ -90,7 +90,7 @@ To differentiate a value from the observable, we commonly use the `$` suffix in 
 
 
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 Open the `src/app/task-list/task-list.component.ts` file.
 
@@ -139,7 +139,7 @@ While there are alternatives, When the data returned by an observable is only me
 You'll discover the alternative at the end of this page.
 :::
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 Open the `src/app/task-list/task-list.component.html` file.
 
@@ -160,7 +160,7 @@ The alternative to using the `async` pipe is to subscribe to the observable in t
 This is done by calling the `subscribe` function on the observable and passing a function as a parameter.
 This function will be called once the data is available.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
 Open the `src/app/task-list/task-list.component.ts` file.
 
