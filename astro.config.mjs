@@ -16,7 +16,8 @@ export default defineConfig({
             },
             favicon: '/favicon.ico',
             social: {
-                github: 'https://github.com/angular-sanctuary/learn-angular',
+                linkedin: 'https://www.linkedin.com/in/gerome-grignon/',
+                twitter: 'https://twitter.com/GeromeDEV',
             },
             sidebar: [
                 {
