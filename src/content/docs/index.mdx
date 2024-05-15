@@ -24,18 +24,61 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import oldAngularLogo from '../../assets/angular-logo-old.png';
+import angularLogo from '../../assets/angular-logo.png';
 
-## Angular courses
+<section class="flex gap-8">
+    <div class="max-w-96">
+        <h2 className="!text-[#D9A21B] !text-2xl">Courses</h2>
+        <h3 class="!text-5xl !font-bold">Learn from scratch complete interactive Angular courses!</h3>
+    </div>
 
-<CardGrid stagger>
-	<Card title="Modern Angular introduction course" icon="pencil">
-		You are new to Angular and want to learn the basics.
-	</Card>
-	<Card title="Legacy Angular introduction course" icon="add-document">
-		Your project is still using ngModules and not familiar with new APIs.
-		Facilitate your onboarding with this course.
-	</Card>
-	<Card title="Complete Modern Angular course" icon="setting">
-		You are familiar with the basics and want to learn more about advanced topics.
-	</Card>
-</CardGrid>
+    <ul class="flex flex-col gap-6 list-none p-12">
+        <li class="flex items-start gap-4">
+            <Icon name="star" color="goldenrod" size="2rem" />
+            <span class="flex flex-col !m-0">
+                <span class="font-bold">1 step at a time</span>
+                <span>Short chapters</span>
+            </span>
+        </li>
+        <li class="flex items-start gap-4">
+            <Icon name="star" color="goldenrod" size="2rem" />
+            <span class="flex flex-col">
+                <span class="font-bold">Expressive snippets</span>
+                <span>Complete and highlighted snippets to guide you</span>
+            </span>
+        </li>
+        <li class="flex items-start gap-4">
+            <Icon name="star" color="goldenrod" size="2rem" />
+            <span class="flex flex-col">
+                <span class="font-bold">Quiz</span>
+                <span>Assert your skills on each step of your journey!</span>
+            </span>
+        </li>
+    </ul>
+</section>
+
+<ul class="flex justify-center gap-12 list-none">
+    <li class="flex flex-col items-center gap-4 p-6 max-w-80 !m-0 w-full">
+        <Image src={oldAngularLogo} alt="Legacy Angular" height={100} width={100} />
+        <h4 class="text-center">Legacy Angular introduction course</h4>
+        <p class="text-center flex-1">Crafted for people learning Angular to onboard on professionals projects using v14 or below</p>
+        <a class="!bg-[#3B5772] !text-white px-4 py-2 rounded-xl uppercase no-underline" href="foo">Learn</a>
+    </li>
+    <hr style="border: 1px solid gray !important"/>
+    <li class="flex flex-col items-center gap-4 p-6 max-w-80 !m-0 w-full">
+        <Image src={angularLogo} alt="Legacy Angular" height={100} width={100} />
+        <h4 class="text-center">Modern Angular introduction course</h4>
+        <p class="text-center flex-1">Your project is still using ngModules and not familiar with new APIs. Facilitate your onboarding with this course.</p>
+        <a class="!bg-[#3B5772] !text-white px-4 py-2 rounded-xl uppercase no-underline" href="foo">Learn</a>
+    </li>
+    <hr style="border: 1px solid gray !important"/>
+    <li class="flex flex-col items-center gap-4 p-6 max-w-80 !m-0 w-full">
+        <h4 class="text-center">Legacy Angular introduction course</h4>
+        <p class="text-center flex-1">Your project is still using ngModules and not familiar with new APIs. Facilitate your onboarding with this course.</p>
+        <a class="!bg-[#3B5772] !text-white px-4 py-2 rounded-xl uppercase no-underline" href="foo">Learn</a>
+    </li>
+</ul>
+
