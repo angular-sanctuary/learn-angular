@@ -3,6 +3,7 @@ title: Créez un formulaire dans un composant dédié
 description: Créez un formulaire dans un composant dédié afin d'ajouter une nouvelle tâche à la liste
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -12,21 +13,23 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Création de composants
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
+<Steps>
 1. Exécutez la commande suivante dans votre terminal :
 
-```bash
-ng generate component task-form
-```
+    ```bash
+    ng generate component task-form
+    ```
 
-ou
+    ou la version courte
 
-```bash
-ng g c task-form
-```
+    ```bash
+    ng g c task-form
+    ```
 
 2. Vous devriez voir un nouveau dossier appelé `task-form` dans le dossier `src/app`.
+</Steps>
 
 ## Options de la CLI Angular
 
@@ -43,7 +46,7 @@ ou
 ng g c task-form --flat
 ```
 
-Si vous souhaitez que certaines options soient celles par défaut pour tous les composants, vous pouvez les ajouter au fichier `angular.json` situé à la racine de votre projet.
+Si vous souhaitez que certaines options soient définies par défaut pour tous les composants, vous pouvez les ajouter au fichier `angular.json` situé à la racine de votre projet.
 
 Pour le projet actuel, nous avons déjà défini les options suivantes :
 

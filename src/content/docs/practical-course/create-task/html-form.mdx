@@ -3,15 +3,12 @@ title: HTML Form
 description: Learn how to create a form in HTML
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
 {title: 'Create a semantic HTML form', description: 'Learn how to create a form in HTML using the <form> tag.'},
 ]} />
-
-:::note
-This step is strictly about HTML, we'll bind the form to Angular in the next steps.
-:::
 
 ## Form structure
 
@@ -34,27 +31,29 @@ Their values will be generated upon the form submission later on by the applicat
 
 The form also includes a submit button to create the new task based on the form values.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
-1. Open the `src/app/task-form/task-form.component.html` file.
+<Steps>
 
-2. Replace the content of the file with the following code:
+1. Update the `src/app/task-form/task-form.component.html` file.
 
-```html ins={"Add an input for the task title with its label": 3-5} ins={"Add a textarea for the task description with its label": 7-9} ins={"Add a submit button": 11-12}
-// task-form.component.html
-<form>
+    ```html ins={"Add an input for the task title with its label": 3-5} ins={"Add a textarea for the task description with its label": 7-9} ins={"Add a submit button": 11-12}
+    // task-form.component.html
+    <form>
 
-  <label for="title" class="form-label">Title</label>
-  <input type="text" id="title" name="title" class="form-control">
-  
-  
-  <label for="description" class="form-label">Description</label>
-  <textarea id="description" name="description" class="form-control"></textarea>
-  
-  
-  <button type="submit" class="btn btn-primary">Create task</button>
-</form>
-```
+        <label for="title" class="form-label">Title</label>
+        <input type="text" id="title" name="title" class="form-control">
+
+
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+
+
+            <button type="submit" class="btn btn-primary">Create task</button>
+    </form>
+    ```
+
+</Steps>
 
 ## ✔️ What you learned
 

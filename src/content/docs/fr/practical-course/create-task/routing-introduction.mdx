@@ -3,12 +3,17 @@ title: Introduction au routage
 description: Introduction au routage au sein de votre application
 ---
 
+import {Steps} from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{mainTitle: 'Objectifs de ce chapitre', title: 'Comprendre le routage avec Angular', description: 'Découvrez comment fonctionne le routage dans Angular.'},
-{title: 'Définir des routes', description: 'Définissez des routes dans votre application.'},
-]} />
+    {
+        mainTitle: 'Objectifs de ce chapitre',
+        title: 'Comprendre le routage avec Angular',
+        description: 'Découvrez comment fonctionne le routage dans Angular.'
+    },
+    {title: 'Définir des routes', description: 'Définissez des routes dans votre application.'},
+]}/>
 
 ## Qu'est-ce que le routage ?
 
@@ -24,103 +29,103 @@ Afin d'ajouter une nouvelle tâche à cette liste, vous avez besoin de pouvoir b
 Le module `RouterModule` fournit une directive appelé `router-outlet`. Cette directive est utilisée pour afficher le contenu de la route actuelle. Lorsque l'utilisateur navigue vers un itinéraire différent, le contenu du `router-outlet` est remplacé par le contenu du nouvel itinéraire.
 La directive `router-outlet` a pour seul rôle de marquer l'emplacement dans le Template HTML du contenu correspondant à l'URL que vous aurez défini.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/app.component.html`.
+1. Modifiez le fichier `src/app/app.component.html`.
 
-2. Remplacez le contenu du fichier par le code suivant :
+    ```html ins={"Ajoutez la directive via la balise router-outlet pour marquer l'emplacement du contenu configuré via l'URL": 6-7}
+    <header>
+        <h1>Angular Practical course</h1>
+    </header>
 
-```html ins={"Ajoutez la directive via la balise router-outlet pour marquer l'emplacement du contenu configuré via l'URL": 6-7}
-<header>
-    <h1>Angular Practical course</h1>
-</header>
+    <main class="container pt-4">
 
-<main class="container pt-4">
-
-  <router-outlet />
-</main>
-```
+        <router-outlet/>
+    </main>
+    ```
 
 Dans le cas ci-dessus, le `router-outlet` est placé entre les balises `<main>`. Cela signifie donc que vous continuerez à avoir l'en-tête `<header>` sur toutes les pages et que le contenu paramétré changera en fonction de l'URL sur laquelle vous naviguerez.
 
 ## Définir les routes
 
-Pour afficher le contenu souhaité par rapport à l'URL, vous devez associer dans votre tableau `routes` chaque chemin `path` à chaqun de vos composants `component`:
+Pour afficher le contenu souhaité par rapport à l'URL, vous devez ajouter dans votre tableau `routes` un chemin `path` à chaqun de vos composants `component`:
 
 ```typescript
 { path: '/add-task', component: TaskFormComponent }
 ```
 
-Le chemin est donc l'URL vers laquelle l'utilisateur accédera. Par exemple, le chemin `/add-task` signifie que l'utilisateur naviguera sur l'URL `http://localhost:4200/add-task`.
+Le chemin est donc l'URL vers laquelle l'utilisateur accédera. Par exemple, le chemin `/add-task` signifie que l'utilisateur naviguera vers l'URL `http://localhost:4200/add-task`.
 
-Le composant fourni est le composant qui sera affiché dans l'espace réservé `router-outlet`` lorsque l'utilisateur accède à cette URL.
+Le composant fourni est le composant qui sera affiché dans l'espace réservé `router-outlet` lorsque l'utilisateur accède à cette URL.
 
 La définition de la route réside dans le fichier `app-routing.module.ts`.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/app-routing.module.ts`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/app-routing.module.ts`.
 
-```typescript ins={"Importez les composants pour chaque itinéraire": 4-6} ins={"Définissez les routes": 9-11}
-// app-routing.module.ts
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+    ```typescript ins={"Importez les composants pour chaque itinéraire": 4-6} ins={"Définissez les routes": 9-11}
+    // app-routing.module.ts
+    import {NgModule} from '@angular/core';
+    import {Routes, RouterModule} from '@angular/router';
 
-import { TaskListComponent } from './task-list/task-list.component';
-import { TaskFormComponent } from './task-form/task-form.component';
+    import {TaskListComponent} from './task-list/task-list.component';
+    import {TaskFormComponent} from './task-form/task-form.component';
 
-const routes: Routes = [
+    const routes: Routes = [
 
-  { path: '', component: TaskListComponent },
-  { path: 'add-task', component: TaskFormComponent }
-];
+      {path: '', component: TaskListComponent},
+      {path: 'add-task', component: TaskFormComponent}
+    ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-```
+    @NgModule({
+      imports: [RouterModule.forRoot(routes)],
+      exports: [RouterModule]
+    })
+    export class AppRoutingModule {}
+    ```
+
+</Steps>
 
 
 ## Ajoutez des liens pour naviguer entre les routes
 
 Il faut ajouter des liens pour déclencher la navigation entre les différents itinéraires.
-Vous pourriez modifier manuellement l'URL dans le navigateur, mais les utilisateurs s'attendent à disposer de liens pour naviguer entre les pages.
+Vous pourriez modifier manuellement l'URL dans le navigateur, mais les utilisateurs s'attendent à disposer de liens cliquables pour naviguer entre les pages.
 
-La balise HTML `<a>` est utilisée pour créer des liens. Vous pouvez utiliser la directive `routerLink` pour naviguer entre les routes. Cette directive prendra le chemin de la route vers laquelle naviguer en tant que valeur.
+La balise HTML `<a>` est utilisée pour créer des liens et est associée la directive `routerLink` pour utliser le routing d'Angular. Cette directive prend le chemin de la route vers laquelle naviguer en tant que valeur.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/app.component.html`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/app.component.html`.
 
-```html ins={"Ajoutez des liens pour naviguer entre les routes": 3-5}
-// app.component.html
-<header>
-    <h1>Angular Practical course</h1>
-    <a routerLink="/">Liste des tâches</a>
-    <a routerLink="/add-task">Ajouter une nouvelle tâche</a>
-</header>
+    ```html ins={"Ajoutez des liens pour naviguer entre les routes": 3-5}
+    // app.component.html
+    <header>
+        <h1>Angular Practical course</h1>
+        <a routerLink="/">Liste des tâches</a>
+        <a routerLink="/add-task">Ajouter une nouvelle tâche</a>
+    </header>
 
-<main class="container pt-4">
-  <router-outlet />
-</main>
-```
+    <main class="container pt-4">
+        <router-outlet />
+    </main>
+    ```
 
-3. Cliquez sur les deux liens pour voir le contenu de `TaskListComponent` et `TaskFormComponent` s'afficher à tour de rôle à l'emplacement défini par le `router-outlet`.
+2. Cliquez sur les deux liens pour voir le contenu de `TaskListComponent` et `TaskFormComponent` s'afficher à tour de rôle à l'emplacement défini par le `router-outlet`.
+
+</Steps>
 
 :::tip
 Le chemin du composant `TaskFormComponent` est défini à `add-task` dans le fichier `app-routing.module.ts`. Par contre, dans le Template HTML, dans la directive `routerLink`, il est spécifié comme `/add-task` (avec le `/`).
 
-`routerLink` construit l'URL de manière relative au chemin courant. Ajoutez un slash indique que l'URL doit être construite depuis l'URL de base de l'application (ici `http://localhost:4200`). Sans la spécification du slash dans la directive du `routerLink`, vous réaliseriez des composants imbriqués et vous navigueriez vers `/add-task/add-task`.
+`routerLink` construit l'URL de manière relative au chemin courant. Ajoutez un slash indique que l'URL doit être construite depuis l'URL de base de l'application (ici `http://localhost:4200`). Sans la spécification du slash dans la directive du `routerLink`, vous réaliseriez des imbrications et vous navigueriez vers `/add-task/add-task`.
 
->  `<a routerLink="/add-task">...</a>` => http://localhost:4200/add-task
->
->  `<a routerLink="add-task">...</a>` => http://localhost:4200/add-task/add-task
+>  `<a routerLink="/add-task">...</a>` => http://localhost:4200/add-task`<a routerLink="add-task">...</a>` => http://localhost:4200/add-task/add-task
 :::
 
 ## ✔️ Ce que vous avez appris
@@ -130,27 +135,27 @@ Dans ce chapitre, vous avez appris à ajouter du routage à votre application. V
 ## 🚦 Quiz
 
 1. Quel est le but de la directive `router-outlet` ?
-    - A. Définir les routes de l'application
-    - B. Pour afficher le contenu de la route en cours
-    - C. Pour naviguer entre les routes
-    - D. Pour afficher le contenu du parcours précédent
+ - A. Définir les routes de l'application
+ - B. Pour afficher le contenu de la route en cours
+ - C. Pour naviguer entre les routes
+ - D. Pour afficher le contenu du parcours précédent
 
 2. Quel est le but de la directive `routerLink` ?
-    - A. Définir les routes de l'application
-    - B. Pour afficher le contenu de la route en cours
-    - C. Pour naviguer entre les routes
-    - D. Pour afficher le contenu du parcours précédent
+ - A. Définir les routes de l'application
+ - B. Pour afficher le contenu de la route en cours
+ - C. Pour naviguer entre les routes
+ - D. Pour afficher le contenu du parcours précédent
 
 3. Quel est le but du tableau `Routes` dans le fichier `app-routing.module.ts` ?
 
-    - A. Définir les routes de l'application
-    - B. Pour afficher le contenu de la route en cours
-    - C. Pour naviguer entre les routes
-    - D. Pour afficher le contenu du parcours précédent
+ - A. Définir les routes de l'application
+ - B. Pour afficher le contenu de la route en cours
+ - C. Pour naviguer entre les routes
+ - D. Pour afficher le contenu du parcours précédent
 
 4. Quelle est la différence entre préfixer une route avec `/` ou non dans la directive `routerLink` ?
 
-    - A. Il n'y a aucune différence.
-    - B. La route est relative à l'URL actuelle.
-    - C. La route est absolue.
-    - D. La route est relative à l'URL racine.
+ - A. Il n'y a aucune différence.
+ - B. La route est relative à l'URL actuelle.
+ - C. La route est absolue.
+ - D. La route est relative à l'URL racine.

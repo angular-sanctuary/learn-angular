@@ -3,6 +3,7 @@ title: Create a form component
 description: Create a form component to add a new task to the task list
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -14,13 +15,22 @@ import Objective from '../../../../components/learning-objective.astro';
 
 #### 🎓 Instructions
 
+<Steps>
 1. Run the following command in your terminal:
 
-```bash
-ng generate component task-form
-```
+    ```bash
+    ng generate component task-form
+    ```
+
+    or the shorthand version:
+
+    ```bash
+    ng g c task-form
+    ```
 
 2. You should see a new folder called `task-form` in the `src/app` folder.
+
+</Steps>
 
 ## Angular CLI options
 
@@ -43,6 +53,8 @@ For the current project, we already have the following options set:
 
 It avoids creating test files and deactivate the new **Standalone** feature.
 These options were added to the `angular.json` file when we created the project with the Angular CLI.
+
+> This course doesn't cover testing, that's a topic for another course.
 
 ## ✔️ What you learned
 

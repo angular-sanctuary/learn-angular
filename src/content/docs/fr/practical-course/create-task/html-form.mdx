@@ -3,15 +3,12 @@ title: Formulaire HTML
 description: Apprenez à créer un formulaire en HTML
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
 {mainTitle: 'Objectifs de ce chapitre', title: 'Créez un formulaire HTML', description: 'Découvrez comment créer un formulaire en HTML à l\'aide de la balise <form>.'},
 ]} />
-
-:::note
-Cette étape concerne strictement au code HTML, nous lierons le formulaire à Angular dans les prochaines étapes.
-:::
 
 ## Structure d'un formulaire
 
@@ -33,27 +30,27 @@ Leurs valeurs seront générées ultérieurement lors de la soumission du formul
 
 Le formulaire comprend également un bouton de soumission pour créer la nouvelle tâche en fonction des valeurs du formulaire.
 
-#### 🎓 Instructions
+### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-form/task-form.component.html`.
 
-2. Remplacez le contenu du fichier par le code suivant :
+    1. Modifiez le fichier `src/app/task-form/task-form.component.html`.
 
-```html ins={"Ajoutez un input pour le titre de la tâche avec sa légende <label>": 3-5} ins={"Ajoutez un champ <textarea> pour la description de la tâche avec sa légende": 7-9} ins={"Ajoutez un bouton de soumission": 11-12}
-// task-form.component.html
-<form>
+    ```html ins={"Ajoutez un input pour le titre de la tâche avec sa légende <label>": 3-5} ins={"Ajoutez un champ <textarea> pour la description de la tâche avec sa légende": 7-9} ins={"Ajoutez un bouton de soumission": 11-12}
+    // task-form.component.html
+    <form>
 
-  <label for="title" class="form-label">Titre</label>
-  <input type="text" id="title" name="title" class="form-control">
-  
-  
-  <label for="description" class="form-label">Description</label>
-  <textarea id="description" name="description" class="form-control"></textarea>
-  
-  
-  <button type="submit" class="btn btn-primary">Créer une tâche</button>
-</form>
-```
+        <label for="title" class="form-label">Titre</label>
+        <input type="text" id="title" name="title" class="form-control">
+
+
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" class="form-control"></textarea>
+
+
+            <button type="submit" class="btn btn-primary">Créer une tâche</button>
+    </form>
+    ```
+
 
 ## ✔️ Ce que vous avez appris
 
