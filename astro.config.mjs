@@ -2,6 +2,7 @@ import {defineConfig} from 'astro/config';
 import starlight from '@astrojs/starlight';
 import tailwind from '@astrojs/tailwind';
 import starlightImageZoom from 'starlight-image-zoom';
+import starlightBlog from 'starlight-blog';
 
 // https://astro.build/config
 export default defineConfig({
@@ -189,7 +190,17 @@ export default defineConfig({
             customCss: ['./src/tailwind.css'],
             plugins: [
                 starlightImageZoom(),
-            ]
+                starlightBlog({
+                    authors: {
+                        geromegrignon: {
+                            name: 'Gerome Grignon',
+                            title: 'Web developer',
+                            picture: '../../src/assets/avatar.png',
+                            url: 'https://gerome.dev'
+                        },
+                    }
+                })
+            ],
         }),
         tailwind({applyBaseStyles: false}),
     ],
