@@ -6,6 +6,7 @@ import starlightBlog from 'starlight-blog';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://learn-angular',
     integrations: [
         starlight({
             title: 'Learn Angular',

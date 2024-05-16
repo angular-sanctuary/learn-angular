@@ -8,5 +8,5 @@ https://tailwindcss.com/docs/adding-custom-styles#using-css-and-layer
 */
 
 .sl-flex .action {
-    @apply bg-[#D9A21B] font-bold rounded-xl;
+    @apply bg-[#D9A21B] font-bold rounded-xl text-2xl md:text-lg;
 }
