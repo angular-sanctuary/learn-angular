@@ -196,7 +196,7 @@ export default defineConfig({
                         geromegrignon: {
                             name: 'Gerome Grignon',
                             title: 'Web developer',
-                            picture: '../../src/assets/avatar.png',
+                            picture: '/avatar.png',
                             url: 'https://gerome.dev'
                         },
                     }

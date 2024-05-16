@@ -1,6 +1,6 @@
 ---
 title: 'Add a favicon to your Storybook application'
-date: 2024-05-16
+date: 2023-02-21
 excerpt: 'Take this small but impactful step today and give your Storybook application that extra touch of visual appeal and professionalism!'
 tags: 
     - storybook

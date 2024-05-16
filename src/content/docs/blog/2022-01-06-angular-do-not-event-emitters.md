@@ -1,6 +1,6 @@
 ---
 title: "You shouldn't use EventEmitters in Angular services"
-date: 2024-05-16
+date: 2022-01-06
 excerpt: 'Use the right API for reactivity'
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 'GitHub CI-CD javascript workflow'
-date: 2024-05-16
+date: 2021-12-09
 excerpt: 'Create a complete CI-CD GitHub Action workflow for Javascript projects'
 tags:
   - GitHub
