@@ -4,6 +4,7 @@ description: Rendu des données dans une vue (Template HTML)
 ---
 
 import Quiz from '../../../../../components/quiz.astro';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -11,7 +12,7 @@ import Objective from '../../../../../components/learning-objective.astro';
 ]} />
 
 
-Vous parcourez maintenant le tableau `tasks` mais affichons une valeur `Task` statique.
+Vous parcourez maintenant le tableau **tasks** mais affichons une valeur **Task** statique.
 Maintenant ? Vous souhaitez afficher dynamiquement la dernière version de la tâche à la place.
 
 ## Qu'est-ce que l'interpolation ?
@@ -33,24 +34,26 @@ Vous pouvez utiliser n'importe quelle expression TypeScript valide entre ces dé
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-list.component.html`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/task-list.component.html`.
 
-```html ins={"Ajoutez une interpolation et transmettez-lui une propriété de tâche": 3-4}
-<ul>
-  <li *ngFor="let task of tasks">
-      
-    {{ task.title }} - {{ task.createdAt }}
-  </li>
-</ul>
-```
+    ```html ins={"Ajoutez une interpolation et transmettez-lui une propriété de tâche": 3-4}
+    <ul>
+      <li *ngFor="let task of tasks">
 
-3. Vérifiez les modifications dans votre navigateur :
+        {{ task.title }} - {{ task.createdAt }}
+      </li>
+    </ul>
+    ```
 
-// TODO: ajout de l'image
+2. Vérifiez les modifications dans votre navigateur :
 
-L'interpolation évalue les propriétés `task.title` et `task.createdAt` et affiche les valeurs dans le navigateur.
+    // TODO: ajout de l'image
+
+</Steps>
+
+L'interpolation évalue les propriétés **task.title** et **task.createdAt** et affiche les valeurs dans le navigateur.
 
 ## ✔️ Ce que vous avez appris
 

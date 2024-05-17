@@ -5,6 +5,7 @@ description: Découvrez comment afficher une liste d'éléments dans une applica
 
 import { Image } from 'astro:assets';
 import staticImg from '../../../../../assets/display-list_static.png';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -28,7 +29,7 @@ Pour afficher une liste d'éléments, la structure HTML attendue est :
 Cependant, que se passe-t-il si vous souhaitez afficher une liste dynamique d’éléments évoluant au fil du temps ?
 Et si une nouvelle tâche est ajoutée ?
 
-Vous voudrez vous appuyer sur la variable `tasks` pour afficher la bonne liste de tâches.
+Vous voudrez vous appuyer sur la variable **tasks** pour afficher la bonne liste de tâches.
 Si les tâches sont mises à jour, la vue (Template HTML) doit également être mise à jour.
 
 ## Directives Angular
@@ -39,10 +40,10 @@ Ils peuvent aider à masquer/afficher dynamiquement certains contenus, à modifi
 
 ### Directive structurelle *ngFor
 
-Le nom `*ngFor` fait référence à **for loop**: son objectif est d'afficher une balise HTML donnée autant de fois qu'il y a d'éléments dans une liste fournie.
+Le nom ***ngFor** fait référence à **for loop**: son objectif est d'afficher une balise HTML donnée autant de fois qu'il y a d'éléments dans une liste fournie.
 Vous pouvez l'appliquer sur n'importe quelle balise HTML. Cela affectera cette balise et ses enfants.
 
-Pour l'utiliser, nous ajoutons ce `*ngFor` sur la balise HTML. Elle attend une syntaxe arbitraire qui définit à la fois la liste et une référence à chaque élément de la liste.
+Pour l'utiliser, nous ajoutons ce ***ngFor** sur la balise HTML. Elle attend une syntaxe arbitraire qui définit à la fois la liste et une référence à chaque élément de la liste.
 Cette syntaxe est `let task of tasks` :
 
 - **tasks** fait référence à la liste définie dans votre fichier `composant.ts`.
@@ -56,22 +57,24 @@ Cette syntaxe est `let task of tasks` :
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-list.component.html`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/task-list.component.html`.
 
-```html
-// task-list.component.html
-<ul class="list-group">
-  <li *ngFor="let task of tasks" class="list-group-item">
-    Task
-  </li>
-</ul>
-```
+    ```html
+    // task-list.component.html
+    <ul class="list-group">
+      <li *ngFor="let task of tasks" class="list-group-item">
+        Task
+      </li>
+    </ul>
+    ```
 
-3. Revenez à votre navigateur et consultez la page suivante :
+2. Revenez à votre navigateur et consultez la page suivante :
 
-// TODO : Ajouter une image
+    // TODO : Ajouter une image
+
+</Steps>
 
 Votre liste est maintenant affichée dans le navigateur.
 Vous devriez voir `Task` répétée autant de fois (2) qu'il y a de tâches dans la liste.
@@ -79,7 +82,7 @@ Vous devriez voir `Task` répétée autant de fois (2) qu'il y a de tâches dans
 ## ✔️ Ce que vous avez appris
 
 Dans ce chapitre, vous avez appris à utiliser une liste d'éléments définis dans votre fichier `composant.ts` vers le fichier `composant.html`.
-Vous avez utilisé la directive structurelle `*ngFor` pour parcourir la liste des éléments et les afficher dans la vue (Template HTML).
+Vous avez utilisé la directive structurelle ***ngFor** pour parcourir la liste des éléments et les afficher dans la vue (Template HTML).
 Une telle action est assez courante dans le développement Web et vous l'utiliserez probablement dans plusieurs de vos applications Angular.
 
 ## 🚦 Quiz

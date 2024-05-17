@@ -3,6 +3,7 @@ title: Création de service
 description: Apprenez à créer un service avec la CLI Angular
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -11,12 +12,12 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Etat des lieux
 
-Vous avez 2 composants dans votre application : `TaskFormComponent` et `TaskListComponent`.
-Le `TaskFormComponent` est responsable de la création de nouvelles tâches.
-Le `TaskListComponent` est responsable de l'affichage de la liste des tâches.
+Vous avez 2 composants dans votre application : **TaskFormComponent** et **TaskListComponent**.
+Le **TaskFormComponent** est responsable de la création de nouvelles tâches.
+Le **TaskListComponent** est responsable de l'affichage de la liste des tâches.
 
 Créer une nouvelle tâche implique de l'ajouter à la liste des tâches.
-Mais le `TaskFormComponent` et le `TaskListComponent` ne sont pas connectés.
+Mais le **TaskFormComponent** et le **TaskListComponent** ne sont pas connectés.
 
 Nous avons besoin d'un tiers pour gérer les éléments et les partager entre les deux composants.
 C'est là qu'interviennent les services Angular !
@@ -25,7 +26,7 @@ C'est là qu'interviennent les services Angular !
 
 Dans Angular, un service est une classe qui peut être utilisée pour partager des données et des fonctionnalités entre différentes parties de votre application.
 Les services sont utilisés pour encapsuler la logique qui n'est pas directement liée à un composant spécifique.
-C'est notre situation : les tâches ne sont pas directement liées au `TaskFormComponent` ou au `TaskListComponent` mais elles sont bien partagées par les deux composants.
+C'est notre situation : les tâches ne sont pas directement liées au **TaskFormComponent** ou au **TaskListComponent** mais elles sont bien partagées par les deux composants.
 
 Pour le reste de ce cours, les services Angular seront notre principal outil d'orchestration pour récupérer, créer, mettre à jour et supprimer des tâches.
 
@@ -33,7 +34,7 @@ Le premier objectif sera de stocker la liste pour la rendre accessible depuis le
 Par défaut, les services Angular sont des singletons. Cela signifie qu'il n'y a qu'une seule instance du service dans l'application.
 Tant que vous ne rafraîchissez pas votre application, le service **conservera** sa mémoire.
 
-Comme le routage Angular ne rafraîchit pas la page, le service conservera la liste des tâches en mémoire en basculant entre le `TaskFormComponent` et le `TaskListComponent`.
+Comme le routage Angular ne rafraîchit pas la page, le service conservera la liste des tâches en mémoire en basculant entre le **TaskFormComponent** et le **TaskListComponent**.
 
 ## Créer un service
 
@@ -42,51 +43,55 @@ La commande `ng generate` que vous avez utilisée pour les composants peut égal
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Exécutez la commande suivante dans un terminal :
 
-```bash
-ng generate service task
-```
+    ```bash
+    ng generate service task
+    ```
 
-ou 
+    ou
 
-```bash
-ng g s task
-```
+    ```bash
+    ng g s task
+    ```
 
-Cette commande créera un nouveau fichier appelé `task.service.ts` dans le dossier `src/app`.
+    Cette commande créera un nouveau fichier appelé `task.service.ts` dans le dossier `src/app`.
 
 2. Ouvrez le fichier `task.service.ts` et ajoutez la  une propriété pour stocker la liste des tâches:
 
-```typescript ins={"Importez l\'interface des tâches": 3-4} ins={"Ajoutez la variable des tâches": 10-24}
-// task.service.ts
-import { Injectable } from '@angular/core';
+    ```typescript ins={"Importez l\'interface des tâches": 3-4} ins={"Ajoutez la variable des tâches": 10-24}
+    // task.service.ts
+    import { Injectable } from '@angular/core';
 
-import { Task } from './models/task.model';
+    import { Task } from './models/task.model';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TaskService {
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class TaskService {
 
-     tasks: Task[] = [
-            {
-                id: uuid(),
-                title: 'Tâche 1',
-                description: 'Description de la tâche 1',
-                createdAt: new Date()
-            },
-            {
-                id: uuid(),
-                title: 'Tâche 2',
-                description: 'Description de la tâche 2',
-                createdAt: new Date()
-            }
-        ];
-}
-```
+         tasks: Task[] = [
+                {
+                    id: uuid(),
+                    title: 'Tâche 1',
+                    description: 'Description de la tâche 1',
+                    createdAt: new Date()
+                },
+                {
+                    id: uuid(),
+                    title: 'Tâche 2',
+                    description: 'Description de la tâche 2',
+                    createdAt: new Date()
+                }
+            ];
+    }
+    ```
 
-Cette liste est exactement celle que nous avons utilisée dans le `TaskListComponent` pour afficher les tâches.
+</Steps>
+
+Cette liste est exactement celle que nous avons utilisée dans le **TaskListComponent** pour afficher les tâches.
 
 ## ✔️ Ce que vous avez appris
 

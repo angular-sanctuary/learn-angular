@@ -24,7 +24,7 @@ Le formulaire pour créer une tâche comportera les champs suivants :
 - Description de la tâche
 
 :::note
-L'interface **Task** comprend 2 propriétés supplémentaires : `id` et `createdAt`.
+L'interface **Task** comprend 2 propriétés supplémentaires : **id** et **createdAt**.
 Leurs valeurs seront générées ultérieurement lors de la soumission du formulaire par l'application et non par l'utilisateur.
 :::
 
@@ -32,8 +32,9 @@ Le formulaire comprend également un bouton de soumission pour créer la nouvell
 
 ### 🎓 Instructions
 
+<Steps>
 
-    1. Modifiez le fichier `src/app/task-form/task-form.component.html`.
+1. Modifiez le fichier `src/app/task-form/task-form.component.html`.
 
     ```html ins={"Ajoutez un input pour le titre de la tâche avec sa légende <label>": 3-5} ins={"Ajoutez un champ <textarea> pour la description de la tâche avec sa légende": 7-9} ins={"Ajoutez un bouton de soumission": 11-12}
     // task-form.component.html
@@ -51,6 +52,7 @@ Le formulaire comprend également un bouton de soumission pour créer la nouvell
     </form>
     ```
 
+</Steps>
 
 ## ✔️ Ce que vous avez appris
 

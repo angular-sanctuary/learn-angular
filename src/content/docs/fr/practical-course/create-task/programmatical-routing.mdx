@@ -3,6 +3,7 @@ title: Routage avancé
 description: Apprenez-en un peu plus sur le routage dans une application Angular
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -19,58 +20,60 @@ Dans la dernière étape, vous avez testé le formulaire avec ce scénario :
 Mais que se passe-t-il si l'on souhaite rediriger l'utilisateur vers la liste des tâches après la soumission du formulaire ?
 C'est un scénario courant dans les applications Web et Angular fournit un moyen de le faire.
 
-Vous avez vu comment déclencher une navigation en cliquant sur un lien avec la directive `routerLink`.
-Mais dans cette situation, vous allez déclencher une navigation lorsque la fonction `createTask` est appelée.
+Vous avez vu comment déclencher une navigation en cliquant sur un lien avec la directive **routerLink**.
+Mais dans cette situation, vous allez déclencher une navigation lorsque la fonction **createTask** est appelée.
 
 ## Injectez le Router
 
 Vos propres services personnalisés ne sont pas les seuls éléments que vous pouvez injecter dans le constructeur d'un composant.
-En utilisant la fonctionnalité Angular Router, vous pouvez injecter le service `Router` dans un composant.
+En utilisant la fonctionnalité Angular Router, vous pouvez injecter le service **Router** dans un composant.
 
 Ce service vous permet de récupérer des informations sur la route actuelle et vous permet de naviguer vers une route différente.
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-form.component.ts`.
+<Steps>
 
-2. Ajoutez le code suivant dans le fichier:
+1. Modifiez le fichier `src/app/task-form.component.ts`.
 
-```typescript ins={"1. Importez le Router": 4-5} ins={"2. Injectez le Router dans la classe du constructeur": 20-21} ins={"3. Utilisez la fonction de navigation fournit par le Router": 26-27}
-// task-form.component.ts
-import { Component } from '@angular/core';
-import { TaskService } from '../task.service';
+    ```typescript ins={"1. Importez le Router": 4-5} ins={"2. Injectez le Router dans la classe du constructeur": 20-21} ins={"3. Utilisez la fonction de navigation fournit par le Router": 26-27}
+    // task-form.component.ts
+    import { Component } from '@angular/core';
+    import { TaskService } from '../task.service';
 
-import { Router } from '@angular/router';
+    import { Router } from '@angular/router';
 
-@Component({
-    selector: 'app-task-form',
-    templateUrl: './task-form.component.html',
-    styleUrls: ['./task-form.component.css']
-})
-export class TaskFormComponent implements OnInit {
-    task = {
-        title: '',
-        description: ''
-    };
-    
-    constructor(
-        private taskService: TaskService,
-        
-        private router: Router
-    ) { }
-    
-    ngOnInit() {}
+    @Component({
+        selector: 'app-task-form',
+        templateUrl: './task-form.component.html',
+        styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+        task = {
+            title: '',
+            description: ''
+        };
 
-    createTask() {
-        this.taskService.addTask(this.task);
+        constructor(
+            private taskService: TaskService,
 
-        this.router.navigate(['/tasks']);
+            private router: Router
+        ) { }
+
+        ngOnInit() {}
+
+        createTask() {
+            this.taskService.addTask(this.task);
+
+            this.router.navigate(['/tasks']);
+        }
     }
-}
-```
+    ```
+
+</Steps>
 
 La fonction de navigation attend un tableau de segments de routes en tant que paramètre.
-Dans notre cas, vous allez naviguer vers la route `tasks` telle que vous l'avez défini dans votre configuration de route. Vous transmettez donc `['/tasks']`.
+Dans notre cas, vous allez naviguer vers la route **tasks** telle que vous l'avez défini dans votre configuration de route. Vous transmettez donc `['/tasks']`.
 
 ```typescript
 const routes: Routes = [
@@ -83,12 +86,16 @@ const routes: Routes = [
 
 Maintenant, si vous répétez le scénario précédent :
 
+<Steps>
+
 1. Cliquez sur le lien  `Ajoutez une nouvelle tâche`
 2. Saisissez un titre et une description dans le formulaire
 3. Cliquez sur le bouton `Créer une tâche`
+
+</Steps>
 
 Vous devriez être redirigé vers la liste des tâches.
 
 ## ✔️ Ce que vous avez appris
 
-Dans ce chapitre, vous avez appris à utiliser le routage programmatique dans une application Angular. Vous avez appris à injecter le service `Router` dans un composant et à utiliser sa fonction `navigate` pour naviguer vers un itinéraire différent.
+Dans ce chapitre, vous avez appris à utiliser le routage programmatique dans une application Angular. Vous avez appris à injecter le service **Router** dans un composant et à utiliser sa fonction **navigate** pour naviguer vers un itinéraire différent.

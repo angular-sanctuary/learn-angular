@@ -5,6 +5,7 @@ description: Ajoutez une librairie d'interface utilisateur à votre projet.
 
 import { Image } from 'astro:assets';
 import bootstrapImg from '../../../../../assets/bootstrap_added.png';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -30,29 +31,33 @@ La commande d'installation de **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstra
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Exécutez la commande suivante dans votre terminal :
 
-```bash
-ng add @ng-bootstrap/ng-bootstrap
-```
+    ```bash
+    ng add @ng-bootstrap/ng-bootstrap
+    ```
 
 2. Arrêtez le serveur s'il est toujours en cours d'exécution (raccourci clavier `CTRL+C`) et redémarrez-le avec la commande suivante :
 
-```bash
-ng serve
-```
+    ```bash
+    ng serve
+    ```
 
 3. Ouvrez le fichier `src/app/app.component.html` et remplacez le contenu par le code suivant pour ajouter des classes Bootstrap :
 
-```html
-<header class="navbar bg-body-tertiary px-4">
-    <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
-</header>
-```
+    ```html
+    <header class="navbar bg-body-tertiary px-4">
+        <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
+    </header>
+    ```
 
 4. Découvrez les *petits* changements dans votre navigateur.
 
-<Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="Un oiseau posé sur un nid d’œufs."/>
+    <Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="Un oiseau posé sur un nid d’œufs."/>
+
+</Steps>
 
 
 ## ✔️ Ce que vous avez appris

@@ -3,6 +3,7 @@ title: Ajoutez une tâche via le service
 description: Découvrez comment ajouter une tâche avec le service `TaskService` dans votre application Angular.
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -11,53 +12,55 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Concevez une méthode pour ajouter une tâche
 
-Le `TaskService` sera responsable de la gestion de la liste des tâches comme prévu.
+Le **TaskService** sera responsable de la gestion de la liste des tâches comme prévu.
 Vous devez ajouter une fonction pour ajouter une tâche à la liste.
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task.service.ts`.
+<Steps>
 
-2. Ajoutez le code suivant au fichier :
+1. Modifiez le fichier `src/app/task.service.ts`.
 
-```typescript ins={"Importez le package uuid": 4-5} ins={"Ajoutez la fonction addTask": 26-32}
-// task.service.ts
-import { Injectable } from '@angular/core';
-import { Task } from './models/task.model';
+    ```typescript ins={"Importez le package uuid": 4-5} ins={"Ajoutez la fonction addTask": 26-32}
+    // task.service.ts
+    import { Injectable } from '@angular/core';
+    import { Task } from './models/task.model';
 
-import { v4 as uuid } from 'uuid';
+    import { v4 as uuid } from 'uuid';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TaskService {
-    tasks: Task[] = [
-                {
-                    id: uuid(),
-                    title: 'Tâche 1',
-                    description: 'Description de la tâche 1',
-                    createdAt: new Date()
-                },
-                {
-                    id: uuid(),
-                    title: 'Tâche 2',
-                    description: 'Description de la tâche 2',
-                    createdAt: new Date()
-                }
-            ];
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class TaskService {
+        tasks: Task[] = [
+                    {
+                        id: uuid(),
+                        title: 'Tâche 1',
+                        description: 'Description de la tâche 1',
+                        createdAt: new Date()
+                    },
+                    {
+                        id: uuid(),
+                        title: 'Tâche 2',
+                        description: 'Description de la tâche 2',
+                        createdAt: new Date()
+                    }
+                ];
 
-    
-    addTask(task: Task): void {
-        this.tasks.push({
-            ...task,
-            createdAt: new Date()
-        });
+
+        addTask(task: Task): void {
+            this.tasks.push({
+                ...task,
+                createdAt: new Date()
+            });
+        }
     }
-}
-```
+    ```
 
-Cette nouvelle fonction sera appelée depuis votre composant `TaskFormComponent` pour ajouter une nouvelle tâche à la liste.
+</Steps>
+
+Cette nouvelle fonction sera appelée depuis votre composant **TaskFormComponent** pour ajouter une nouvelle tâche à la liste.
 
 ## ✔️ Ce que vous avez appris
 
-Vous avez créé une fonction dans le service `TaskService` pour isoler la logique d'ajout de tâche.
+Vous avez créé une fonction dans le service **TaskService** pour isoler la logique d'ajout de tâche.

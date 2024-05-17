@@ -3,6 +3,7 @@ title: Liaison du formulaire
 description: Apprenez à lier un formulaire à un modèle dans Angular
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -29,13 +30,13 @@ Côté Angular, notre objectif est de lier chaque champ à une propriété pour 
 
 ## Modèle de tâche
 
-Vous allez créer un modèle de `task` pour représenter une tâche. Le modèle `task` aura deux propriétés : `title` et `description`.
-Sa forme est différente de l'interface `Task` que vous avez créée précédemment. Vous allez en créer une nouvelle dérivée à partir de l'interface `Task` existante.
+Vous allez créer un modèle de **task** pour représenter une tâche. Le modèle **task** aura deux propriétés : **title** et **description**.
+Sa forme est différente de l'interface **Task** que vous avez créée précédemment. Vous allez en créer une nouvelle dérivée à partir de l'interface **Task** existante.
 
 ### Choisissez le type d'utilitaire Typescript
 
-Le type d'utilitaire `Pick` vous permet de créer un nouveau type en sélectionnant certaines propriétés d'un type existant.
-L'avantage d'utiliser le type d'utilitaire  `Pick` est qu'il vous aide à éviter de dupliquer les propriétés du type existant.
+Le type d'utilitaire **Pick** vous permet de créer un nouveau type en sélectionnant certaines propriétés d'un type existant.
+L'avantage d'utiliser le type d'utilitaire  **Pick** est qu'il vous aide à éviter de dupliquer les propriétés du type existant.
 
 Vous lui transmettez le type d'origine et les propriétés que vous souhaitez sélectionner.
 
@@ -47,40 +48,44 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Ouvrez le fichier `src/app/task-form/task.model.ts`.
 
 2. Ajoutez le code suivant:
 
-```typescript
-// task.model.ts
-export type TaskForm = Pick<Task, 'title' | 'description'>;
-```
+    ```typescript
+    // task.model.ts
+    export type TaskForm = Pick<Task, 'title' | 'description'>;
+    ```
 
 3. Ouvrez le fichier `src/app/task-form/task-form.component.ts`.
 
 4. Remplacez le contenu du fichier par le code suivant :
 
-```typescript ins={"Importez le nouveau type TaskForm": 3-4} ins={"Ajoutez le modèle de tâche avec des valeurs vides": 12-16}
-// task-form.component.ts
-import { Component } from '@angular/core';
+    ```typescript ins={"Importez le nouveau type TaskForm": 3-4} ins={"Ajoutez le modèle de tâche avec des valeurs vides": 12-16}
+    // task-form.component.ts
+    import { Component } from '@angular/core';
 
-import {TaskForm} from '../model/task.model';
+    import {TaskForm} from '../model/task.model';
 
-@Component({
-  selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.css']
-})
-export class TaskFormComponent implements OnInit {
-    
-  task: TaskForm = {
-    title: '',
-    description: ''
-  };
-    
-  ngOnInit() {}  
-}
-```
+    @Component({
+      selector: 'app-task-form',
+      templateUrl: './task-form.component.html',
+      styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+
+      task: TaskForm = {
+        title: '',
+        description: ''
+      };
+
+      ngOnInit() {}
+    }
+    ```
+
+</Steps>
 
 ## Liaison du formulaire
 
@@ -90,7 +95,7 @@ Mais cela ne suffira pas pour votre cas d'utilisation : cela vous permet uniquem
 
 ### Liaison de données bidirectionnelle
 
-Pour mettre à jour votre modèle `task` lorsque le formulaire est mis à jour, vous devez utiliser le format `[(ngModel)]`.
+Pour mettre à jour votre modèle **task** lorsque le formulaire est mis à jour, vous devez utiliser le format `[(ngModel)]`.
 Cette syntaxe nous permet de :
 
 - lier la valeur de la tâche au champ du formulaire;
@@ -104,7 +109,7 @@ Pensez **banana in a box** [()]
 `[(ngModel)]` ✅
 :::
 
-A présent, il faut lier l'input `title` à la propriété `task.title` et le textarea `description` à la propriété `task.description`.
+A présent, il faut lier l'input **title** à la propriété **task.title** et le textarea **description** à la propriété **task.description**.
 
 ### 🎓 Instructions
 
@@ -127,11 +132,11 @@ A présent, il faut lier l'input `title` à la propriété `task.title` et le te
 </form>
 ```
 
-En étant lié au formulaire, le modèle `task` sera mis à jour lorsque le formulaire sera mis à jour.
+En étant lié au formulaire, le modèle **task** sera mis à jour lorsque le formulaire sera mis à jour.
 
 ## ✔️ Ce que vous avez appris
 
-Dans ce chapitre, vous avez appris à lier un formulaire à un modèle (`.component.ts`) dans Angular. Vous avez appris à créer un modèle `task` pour représenter une tâche. Vous avez également appris à utiliser la directive `[(ngModel)]` pour lier une entrée de formulaire à un modèle.
+Dans ce chapitre, vous avez appris à lier un formulaire à un modèle (`.component.ts`) dans Angular. Vous avez appris à créer un modèle **task** pour représenter une tâche. Vous avez également appris à utiliser la directive `[(ngModel)]` pour lier une entrée de formulaire à un modèle.
 
 ## 🔗 Ressources
 

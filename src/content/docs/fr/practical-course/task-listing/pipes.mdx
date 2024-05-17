@@ -4,6 +4,7 @@ description: Apprenez à personnaliser l'affichage des données dans les vues An
 ---
 
 import Quiz from '../../../../../components/quiz.astro';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -31,22 +32,24 @@ Vous utiliserez cette dernière pour formater la date **createdAt** de la tâche
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-list.component.html`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/task-list.component.html`.
 
-```html ins={"utilisez la pipe de date et transmettez-lui une option shortdate pour un format plus précis": 3-4}
-<ul>
-  <li *ngFor="let task of tasks">
+    ```html ins={"utilisez la pipe de date et transmettez-lui une option shortdate pour un format plus précis": 3-4}
+    <ul>
+      <li *ngFor="let task of tasks">
 
-    {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
-  </li>
-</ul>
-```
+        {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
+      </li>
+    </ul>
+    ```
 
-3. Vérifiez les modifications dans votre navigateur :
+2. Vérifiez les modifications dans votre navigateur :
 
-// TODO: ajout de l'image
+    // TODO: ajout de l'image
+
+</Steps>
 
 La date de création de la tâche est affichée dans un format plus convivial.
 

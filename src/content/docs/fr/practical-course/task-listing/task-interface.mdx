@@ -3,6 +3,7 @@ title: Créez l'interface des tâches
 description: Créez votre première interface TypeScript.
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -28,32 +29,36 @@ Ces modèles métiers, ces entités sont donc bien différents du modèle du com
 
 ### 🎓 Instructions
 
-1. Créez un nouveau dossier appelé `models` dans le dossier `src/app` pour stocker toutes les interfaces TypeScript de l'application.
+<Steps>
+
+1. Créez un nouveau dossier appelé **models** dans le dossier `src/app` pour stocker toutes les interfaces TypeScript de l'application.
 
 1. Créez un nouveau fichier appelé `task.model.ts`dans ce nouveau dossier.
 
 2. Ajoutez le code suivant au fichier :
 
-```typescript
-// task.model.ts
-export interface Task {
-  id: string;
-  title: string;
-  description: string;
-  createdAt: Date;
-}
-```
+    ```typescript
+    // task.model.ts
+    export interface Task {
+      id: string;
+      title: string;
+      description: string;
+      createdAt: Date;
+    }
+    ```
+
+</Steps>
 
 ## Génération d'identifiant
 
 Vous générerez un identifiant unique pour chaque tâche. Cet identifiant vous aidera à trouver une tâche donnée de manière unique.
 Un tel identifiant est généralement généré par un serveur backend, mais pour ce tutoriel, vous le générerez côté client.
 
-Pour ce faire, vous utiliserez la libairie `uuid`. Cette libairie génère des identifiants uniques basés sur l'horodatage actuel et un nombre aléatoire.
+Pour ce faire, vous utiliserez la libairie **uuid**. Cette libairie génère des identifiants uniques basés sur l'horodatage actuel et un nombre aléatoire.
 
 ### 🎓 Instructions
 
-1. Installez la libairie `uuid` en exécutant la commande suivante dans le terminal :
+1. Installez la libairie **uuid** en exécutant la commande suivante dans le terminal :
 
 ```bash
 npm install uuid
@@ -61,8 +66,8 @@ npm install uuid
 
 ## Utilisation de l'interface
 
-Créez une variable locale dans la classe `TaskListComponent` pour stocker une liste de tâches.
-Vous utiliserez l'interface `Task` pour définir le type de la variable tâches.
+Créez une variable locale dans la classe **TaskListComponent** pour stocker une liste de tâches.
+Vous utiliserez l'interface **Task** pour définir le type de la variable tâches.
 
 En JavaScript, vous définiriez la variable tâches comme ceci :
 

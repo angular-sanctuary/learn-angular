@@ -5,6 +5,7 @@ description: Créez un composant de liste de tâches dans Angular
 
 import { Image } from 'astro:assets';
 import creationImg from '../../../../../assets/first-component_creation.png';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -21,19 +22,23 @@ Vous pouvez aussi utiliser la commande raccourcie `ng g c nom-du-composant`.
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Exécutez la commande suivante dans un terminal pour générer un nouveau composant appelé `task-list`
 
-```bash
-ng generate component task-list
-```
+    ```bash
+    ng generate component task-list
+    ```
 
-ou
+    ou
 
-```bash
-ng g c task-list
-```
+    ```bash
+    ng g c task-list
+    ```
 
 2. Recherchez un nouveau dossier appelé `task-list` dans le dossier `src/app`.
+
+</Steps>
 
 
 :::note
@@ -63,16 +68,16 @@ export class TaskListComponent implements OnInit {
 }
 ```
 
-Le décorateur `@Component` définit les métadonnées de configuration du composant.
+Le décorateur **@Component** définit les métadonnées de configuration du composant.
 C'est ici qu'on détermine comment le composant doit être traité, instancié et utilisé au moment de son exécution.
 
-La propriété `selector` définit le sélecteur d'éléments CSS du composant.
+La propriété **selector** définit le sélecteur d'éléments CSS du composant.
 En utilisant ce sélecteur dans un Template HTML (vue), Angular crée et affiche une instance du composant.
 
-La propriété `templateUrl` définit l'emplacement du Template HTML (de sa vue) pour le composant.
-C'est la vue qui sera affichée lorsque le sélecteur CSS `selector` sera utilisé dans un autre Template HTML.
+La propriété **templateUrl** définit l'emplacement du Template HTML (de sa vue) pour le composant.
+C'est la vue qui sera affichée lorsque le sélecteur CSS **selector** sera utilisé dans un autre Template HTML.
 
-La propriété `styleUrls` définit les emplacements des fichiers CSS du composant.
+La propriété **styleUrls** définit les emplacements des fichiers CSS du composant.
 Ces styles seront appliqués au modèle du composant.
 
 :::note
@@ -81,29 +86,33 @@ Un décorateur est une façon de faire de la méta-programmation. Ils peuvent mo
 
 ## Affichez le composant
 
-Jusqu'à présent, l'application affiche uniquement le contenu HTML du composant `app` dans le navigateur.
+Jusqu'à présent, l'application affiche uniquement le contenu HTML du composant **app** dans le navigateur.
 Vous avez généré le nouveau composant mais vous devez afficher son contenu HTML en utilisant son sélecteur.
 
 ### 🎓 Instructions
+
+<Steps>
 
 1. Ouvrez le fichier `src/app/app.component.html`.
 
 2. Ajoutez le sélecteur du composant de la liste de tâches comme suit :
 
-```html ins={"Ajoutez le sélecteur du composant (et la balise <main> pour garantir une bonne sémantique HTML et gestion CSS)": 5-8}
-// app.component.html
-<header>
-    <h1>Angular Practical course</h1>
-</header>
+    ```html ins={"Ajoutez le sélecteur du composant (et la balise <main> pour garantir une bonne sémantique HTML et gestion CSS)": 5-8}
+    // app.component.html
+    <header>
+        <h1>Angular Practical course</h1>
+    </header>
 
-<main class="container pt-4">
-  <app-task-list />
-</main>
-```
+    <main class="container pt-4">
+      <app-task-list />
+    </main>
+    ```
 
 3. Vérifiez les modifications dans votre navigateur.
 
-<Image class="shadow-xl rounded-xl" src={creationImg} alt="Un oiseau posé sur un nid d’œufs."/>
+    <Image class="shadow-xl rounded-xl" src={creationImg} alt="Un oiseau posé sur un nid d’œufs."/>
+
+</Steps>
 
 :::tip
 `task-list works!` s'affiche dans le navigateur.

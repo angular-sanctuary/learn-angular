@@ -3,6 +3,7 @@ title: Injectez le service dans le composant de formulaire
 description: Découvrez comment injecter un service dans votre composant de formulaire dans une application Angular.
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -15,42 +16,46 @@ La première étape est d'injecter le service dans votre composant.
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-form.component.ts`.
+<Steps>
 
-2. Ajoutez le code suivant dans le fichier:
+1. Modifiez le fichier `src/app/task-form.component.ts`.
 
-```typescript ins={"1. Importez TaskService": 3-4} ins={"2. Injectez TaskService dans le constructeur de la classe": 17-18} ins={"3. Appelez la fonction addTask de TaskService": 22-25}
-// task-form.component.ts
-import { Component } from '@angular/core';
+    ```typescript ins={"1. Importez TaskService": 3-4} ins={"2. Injectez TaskService dans le constructeur de la classe": 17-18} ins={"3. Appelez la fonction addTask de TaskService": 22-25}
+    // task-form.component.ts
+    import { Component } from '@angular/core';
 
-import { TaskService } from '../task.service';
+    import { TaskService } from '../task.service';
 
-@Component({
-    selector: 'app-task-form',
-    templateUrl: './task-form.component.html',
-    styleUrls: ['./task-form.component.css']
-})
-export class TaskFormComponent implements OnInit {
-    task = {
-        title: '',
-        description: ''
-    };
-    
+    @Component({
+        selector: 'app-task-form',
+        templateUrl: './task-form.component.html',
+        styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+        task = {
+            title: '',
+            description: ''
+        };
 
-    constructor(private taskService: TaskService) { }
-    
-    ngOnInit() {}
 
-    
-    createTask() {
-        this.taskService.addTask(this.task);
+        constructor(private taskService: TaskService) { }
+
+        ngOnInit() {}
+
+
+        createTask() {
+            this.taskService.addTask(this.task);
+        }
     }
-}
-```
+    ```
 
-La classe `TaskFormComponent` utilise désormais `TaskService` pour ajouter une nouvelle tâche à la liste.
+</Steps>
+
+La classe **TaskFormComponent** utilise désormais **TaskService** pour ajouter une nouvelle tâche à la liste.
 
 ## Testons-le
+
+<Steps>
 
 1. Retournez dans votre navigateur
 2. Cliquez sur le lien `Ajouter une nouvelle tâche`
@@ -58,8 +63,10 @@ La classe `TaskFormComponent` utilise désormais `TaskService` pour ajouter une 
 4. Cliquez sur le bouton `Créer une tâche`
 5. Cliquez sur le lien `Liste des tâches`
 
+</Steps>
+
 Vous devriez voir la nouvelle tâche dans la liste.
 
 ## ✔️ Ce que vous avez appris
 
-Vous avez appris à utiliser `TaskService` une fois de plus ! Cette fois-ci pour déclencher la fonction `addTask` afin d'ajouter une nouvelle tâche à la liste des tâches. Bien joué ! 🤩
+Vous avez appris à utiliser **TaskService** une fois de plus ! Cette fois-ci pour déclencher la fonction **addTask** afin d'ajouter une nouvelle tâche à la liste des tâches. Bien joué ! 🤩

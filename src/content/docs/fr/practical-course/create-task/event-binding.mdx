@@ -3,6 +3,7 @@ title: Liaison d'évènements
 description: Apprennez à lier un événement à une fonction
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -26,22 +27,24 @@ Dans la classe du modèle (dans le fichier `.component.ts`/ la classe du composa
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-form/task-form.component.html`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/task-form/task-form.component.html`.
 
-```html ins={"Ajoutez la liaison d\'évènement de soumission du formulaire": 8-9} ins="(click)="createTask()""
-// task-form.component.html
-<form>
-  <label for="title" class="form-label">Titre:</label>
-  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
-  
-  <label for="description" class="form-label">Description:</label>
-  <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
+    ```html ins={"Ajoutez la liaison d\'évènement de soumission du formulaire": 8-9} ins="(click)="createTask()""
+    // task-form.component.html
+    <form>
+      <label for="title" class="form-label">Titre:</label>
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
 
-  <button type="submit" class="btn btn-primary" (click)="createTask()">Créer une tâche</button>
-</form>
-```
+      <label for="description" class="form-label">Description:</label>
+      <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
+
+      <button type="submit" class="btn btn-primary" (click)="createTask()">Créer une tâche</button>
+    </form>
+    ```
+
+</Steps>
 
 ## Fonction `createTask`
 
@@ -50,9 +53,9 @@ Pour cette étape, vous allez simplement enregistrer la valeur du formulaire dan
 
 ### 🎓 Instructions
 
-1. Ouvrez le fichier `src/app/task-form/task-form.component.ts`.
+<Steps>
 
-2. Remplacez le contenu du fichier par le code suivant :
+1. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
 
 ```typescript ins={"Ajoutez la méthode createTask": 17-20}
 // task-form.component.ts
@@ -81,6 +84,8 @@ export class TaskFormComponent implements OnInit {
 3. Ouvrez la console Devtools de votre navigateur.
 4. Remplissez les champs de titre et de description et cliquez sur le bouton 'create task'.
 4. En cliquant sur le bouton 'create task', vous devriez voir les données du formulaire s'afficher dans la console.
+
+</Steps>
 
 ## ✔️ Ce que vous avez appris
 

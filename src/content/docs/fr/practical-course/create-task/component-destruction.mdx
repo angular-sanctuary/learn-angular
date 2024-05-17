@@ -9,8 +9,8 @@ import Objective from '../../../../../components/learning-objective.astro';
 {mainTitle: 'Objectifs de ce chapitre', title: 'Apprenez le fonctionnement de destruction un composant', description: 'Comprenez ce qui se passe lorsque vous quittez un composant dans une application Angular.'},
 ]} />
 
-Au moment où vous soumettez le formulaire, la propriété de tâche du `TaskFormComponent` est renseignée avec les valeurs que vous avez saisies dans le formulaire.
-Par exemple, étant donné que vous avez rempli les champs nom et description, la propriété `task` sera :
+Au moment où vous soumettez le formulaire, la propriété de tâche du **TaskFormComponent** est renseignée avec les valeurs que vous avez saisies dans le formulaire.
+Par exemple, étant donné que vous avez rempli les champs nom et description, la propriété **task** sera :
 
 ```typescript
 task = {
@@ -19,10 +19,10 @@ task = {
 };
 ```
 
-En soumettant le formulaire, vous quittez également le composant `TaskFormComponent`.
+En soumettant le formulaire, vous quittez également le composant **TaskFormComponent**.
 Lorsque vous quittez un composant, celui-ci est détruit.
 
-Ainsi, en naviguant à nouveau vers ce formulaire, la propriété `task` sera vide :
+Ainsi, en naviguant à nouveau vers ce formulaire, la propriété **task** sera vide :
 
 ```typescript
 task = {
@@ -31,11 +31,11 @@ task = {
 };
 ```
 
-Une nouvelle instance du composant `TaskFormComponent` est créée à chaque fois que vous y accédez.
+Une nouvelle instance du composant **TaskFormComponent** est créée à chaque fois que vous y accédez.
 Ainsi, tout état local que vous définissez dans le composant est perdu lorsque vous naviguez sur une autre route.
 
 :::tip
-C'est pourquoi vous utilisez le service `TaskService` pour stocker la nouvelle tâche.
+C'est pourquoi vous utilisez le service **TaskService** pour stocker la nouvelle tâche.
 Le service est un singleton, ce qui signifie qu'il s'agit d'une instance unique partagée dans l'application.
 Sauf si vous forcez le rechargement de la page, les tâches que vous avez ajoutées seront conservées.
 :::
