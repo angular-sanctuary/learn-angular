@@ -5,6 +5,7 @@ description: Learn how to display a list of items in an Angular application.
 
 import { Image } from 'astro:assets';
 import staticImg from '../../../../assets/display-list_static.png';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -25,10 +26,10 @@ To display a list of items, the expected HTML structure is:
 
 <Image class="shadow-xl rounded-xl" src={staticImg} alt="A bird sitting on a nest of eggs."/>
 
-However, what happens if we want to display a dynamic list of items changing over time?
+However, what happens if you want to display a dynamic list of items changing over time?
 What if a new task is added?
 
-We want to rely on the `tasks` variable to display the proper list of tasks.
+You want to rely on the **tasks** variable to display the proper list of tasks.
 If the tasks is updated, the view should be updated as well.
 
 ## Angular Directives
@@ -39,10 +40,10 @@ They can help to dynamically hide/display some content, change their style, or a
 
 ### *ngFor directive
 
-`*ngFor` name refers to **for loop**: its goal is to display a given html tag as many times as there are items in a provided list.
+***ngFor** name refers to **for loop**: its goal is to display a given html tag as many times as there are items in a provided list.
 You can apply it on any html tag. It'll affect this tag and its children.
 
-To use it, we add this `*ngFor` on the html tag and provide it an arbitrary syntax to define the list we want to iterate over and a reference to use the value of each item.
+To use it, add this ***ngFor** on the html tag and provide it an arbitrary syntax to define the list you want to iterate over and a reference to use the value of each item.
 This syntax is `let task of tasks`:
 
 - **tasks** refers to the list defined in your component.ts file.
@@ -56,25 +57,27 @@ This syntax is `let task of tasks`:
 
 ### 🎓 Instructions
 
-1. Open the `src/app/task-list.component.html` file.
+<Steps>
 
-2. Replace the content of the file with the following code:
+1. Update the `src/app/task-list.component.html` file.
 
-```html
-// task-list.component.html
-<ul class="list-group">
-  <li *ngFor="let task of tasks" class="list-group-item">
-    Task
-  </li>
-</ul>
-```
+    ```html
+    // task-list.component.html
+    <ul class="list-group">
+        <li *ngFor="let task of tasks" class="list-group-item">
+        Task
+        </li>
+    </ul>
+    ```
 
-3. Go back to your browser and see the following page:
+2. Go back to your browser and see the following page:
 
-// TODO: Add image
+    // TODO: Add image
+
+</Steps>
 
 Your list is now displayed in the browser.
-You should see `Task` repeated as many times (2) as there are tasks in the list.
+You should see **Task** repeated as many times (2) as there are tasks in the list.
 
 ## ✔️ What you learned
 

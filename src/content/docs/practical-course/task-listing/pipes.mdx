@@ -4,6 +4,7 @@ description: Learn to customize the display of data in Angular HTML templates us
 ---
 
 import Quiz from '../../../../components/quiz.astro';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -22,31 +23,35 @@ You can chain multiple pipes together to transform the data in the HTML template
 
 Here are some of the most common built-in pipes:
 
-- `uppercase`: Transforms a string to uppercase.
-- `lowercase`: Transforms a string to lowercase.
-- `currency`: Formats a number as a currency.
-- `date`: Formats a date.
+- **uppercase**: Transforms a string to uppercase.
+- **lowercase**: Transforms a string to lowercase.
+- **currency**: Formats a number as a currency.
+- **date**: Formats a date.
 
-We'll use the latter one to format the task **createdAt** date as a human-readable date.
+You'll use the latter one to format the task **createdAt** date as a human-readable date.
 
 ### 🎓 Instructions
+
+<Steps>
 
 1. Open the `src/app/task-list.component.html` file.
 
 2. Replace the content of the file with the following code:
 
-```html ins={"use date pipe and pass it a shortdate option for a more grained format": 3-4}
-<ul>
-  <li *ngFor="let task of tasks">
+    ```html ins={"use date pipe and pass it a shortdate option for a more grained format": 3-4}
+    <ul>
+        <li *ngFor="let task of tasks">
 
-    {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
-  </li>
-</ul>
-```
+        {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
+        </li>
+    </ul>
+    ```
 
 3. Check the changes in your browser:
 
-// TODO: Add image
+    // TODO: Add image
+
+</Steps>
 
 The task creation date is displayed in a more user-friendly format.
 
@@ -55,7 +60,7 @@ The task creation date is displayed in a more user-friendly format.
 A common alternative to transform data in the HTML template is to use a function.
 As Interpolation evaluates JavaScript expression, you can pass it a function which returns a value.
 
-In the following example, we use a function to format the task creation date. The function takes the task creation date as an argument and returns a formatted date.
+In the following example, a function is used to format the task creation date. The function takes the task creation date as an argument and returns a formatted date.
 
 ```html ins="formatDate(task.createdAt)"
 <ul>

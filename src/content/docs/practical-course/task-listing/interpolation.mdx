@@ -4,6 +4,7 @@ description: rendering data in a HTML template
 ---
 
 import Quiz from '../../../../components/quiz.astro';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -11,8 +12,8 @@ import Objective from '../../../../components/learning-objective.astro';
 ]} />
 
 
-We are now iterating over the `tasks` array but displaying a static `Task` value.
-We now want to display the actual task instead.
+You are now iterating over the **tasks** array but displaying a static **Task** value.
+You now want to display the actual task instead.
 
 ## What is interpolation?
 
@@ -20,9 +21,9 @@ Interpolation is the solution to render a JavaScript expression in the HTML temp
 While some of your html content is static, you may want to display dynamic data in your HTML template.
 It allows us to display the actual value of a property defined in the component.ts file in the HTML template.
 
-That's our situation: we want to display the details of each task!
+That's our situation: you want to display the details of each task!
 
-We use `{{ }}` delimiters to identify the expression we want to evaluate.
+You use `{{ }}` delimiters to identify the expression you want to evaluate.
 You can use any valid TypeScript expression within the interpolation delimiters.
 
 ```html
@@ -33,24 +34,26 @@ You can use any valid TypeScript expression within the interpolation delimiters.
 
 ### 🎓 Instructions
 
-1. Open the `src/app/task-list.component.html` file.
+<Steps>
 
-2. Replace the content of the file with the following code:
+1. Update the `src/app/task-list.component.html` file.
 
-```html ins={"Add interpolation and pass it a task property": 3-4}
-<ul>
-  <li *ngFor="let task of tasks">
-      
-    {{ task.title }} - {{ task.createdAt }}
-  </li>
-</ul>
-```
+    ```html ins={"Add interpolation and pass it a task property": 3-4}
+    <ul>
+        <li *ngFor="let task of tasks">
 
-3. Check the changes in your browser:
+        {{ task.title }} - {{ task.createdAt }}
+        </li>
+    </ul>
+    ```
 
-// TODO: Add image
+2. Check the changes in your browser:
 
-The interpolation evaluates the `task.title` and `task.createdAt` properties and displays the values in the browser.
+    // TODO: Add image
+
+</Steps>
+
+The interpolation evaluates the **task.title** and **task.createdAt** properties and displays the values in the browser.
 
 ## ✔️ What you learned
 

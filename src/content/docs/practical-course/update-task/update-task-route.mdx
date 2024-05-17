@@ -12,10 +12,10 @@ import Objective from '../../../../components/learning-objective.astro';
 
 ## The route path
 
-So far we defined 2 route paths:
+So far you defined 2 route paths:
 
-- `''` for the `TaskListComponent` component to display the list of tasks
-- `'add-task'` for the `AddTaskComponent` component to display a form
+- `''` for the **TaskListComponent** component to display the list of tasks
+- `'add-task'` for the **AddTaskComponent** component to display a form
 
 The update route path is quite different as you don't just want to land on a new page: to update a task, you need to know which task to update.
 
@@ -33,7 +33,7 @@ Each one is prefixed by a colon `:` followed by an arbitrary name.
 :::
 
 You won't create a dedicated component for the update feature.
-The purpose of the `TaskFormComponent` is to create tasks with user input: let's update it to handle both creation and update.
+The purpose of the **TaskFormComponent** is to create tasks with user input: let's update it to handle both creation and update.
 
 ### 🎓 Instructions
 
@@ -67,8 +67,8 @@ The purpose of the `TaskFormComponent` is to create tasks with user input: let's
 
 ## The update link
 
-Let's add a link to the `TaskListComponent` to navigate to the `TaskFormComponent` with the `id` of the task to update.
-By navigating to this path, you will extract the `id` value from the URL in the next chapter.
+Let's add a link to the **TaskListComponent** to navigate to the **TaskFormComponent** with the **id** of the task to update.
+By navigating to this path, you will extract the **id** value from the URL in the next chapter.
 
 ### 🎓 Instructions
 
@@ -88,9 +88,9 @@ By navigating to this path, you will extract the `id` value from the URL in the 
 
 </Steps>
 
-The `routerLink` value expects a string or an array of URL segments.
+The **routerLink** value expects a string or an array of URL segments.
 The first one is a string, the static part of the path.
-The second one is the `id` of the task to update.
+The second one is the **id** of the task to update.
 
 ## Let's test it out
 
@@ -98,12 +98,12 @@ The second one is the `id` of the task to update.
 
 1. Click on the 'Update' button next to a task in the list.
 2. Check the URL:  `http://localhost:4200/update/1` for example.
-3. The `TaskFormComponent` should be displayed.
+3. The **TaskFormComponent** should be displayed.
 
 </Steps>
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to add a route to update a task in an Angular application. You learned how to define a dynamic route path to pass the `id` of the task to update. You also learned how to use the `routerLink` directive to navigate to the `UpdateTaskComponent` and pass the `id` of
+In this chapter, you learned how to add a route to update a task in an Angular application. You learned how to define a dynamic route path to pass the **id** of the task to update. You also learned how to use the **routerLink** directive to navigate to the **UpdateTaskComponent** and pass the **id** of
 the task to update.
 

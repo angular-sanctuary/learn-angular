@@ -10,10 +10,10 @@ import Objective from '../../../../components/learning-objective.astro';
 {title: 'Populate a form', description: 'Learn how to populate a form with the task to update.'},
 ]} />
 
-You are now able to land on the `TaskFormComponent`  by clicking on the 'Update' link.
-This path includes a dynamic value to pass the `id` of the task to update.
+You are now able to land on the **TaskFormComponent**  by clicking on the 'Update' link.
+This path includes a dynamic value to pass the **id** of the task to update.
 
-The `TaskFormComponent` form is currently empty as it was created to add a new task, initialized as an empty form.
+The **TaskFormComponent** form is currently empty as it was created to add a new task, initialized as an empty form.
 
 ```typescript
 // task-form.component.ts
@@ -29,7 +29,7 @@ Let's update it to use the form both to create and update a task.
 ## Retrieve the task to update with the TaskService
 
 Before retrieving the id from the route, let's prepare the logic to identify the task to update.
-As the list of tasks is stored in the `TaskService`, you'll add a new function to retrieve a task based on its `id`.
+As the list of tasks is stored in the **TaskService**, you'll add a new function to retrieve a task based on its **id**.
 From this id, you will retrieve the task to fill the form.
 
 ### 🎓 Instructions
@@ -77,17 +77,17 @@ From this id, you will retrieve the task to fill the form.
 
 ## Retrieve the task id from the route
 
-The `id` is present in the route path, you need to retrieve it in the `TaskFormComponent` component.
-Use the `ActivatedRoute` service to retrieve the `id` from the route.
+The **id** is present in the route path, you need to retrieve it in the **TaskFormComponent** component.
+Use the **ActivatedRoute** service to retrieve the **id** from the route.
 
 This service provides access to information about the current route.
-Like you did with the `Router`, you'll inject it in the constructor of the `TaskFormComponent`.
+Like you did with the **Router**, you'll inject it in the constructor of the **TaskFormComponent**.
 
 ### Angular lifecycle hooks
 
 So far you initialized class properties when declaring them.
 
-For example, you initialized the `task` property with an empty object:
+For example, you initialized the **task** property with an empty object:
 
 ```typescript
 task = {
@@ -97,7 +97,7 @@ task = {
 };
 ```
 
-You cannot use such a logic to initialize the `task` property with the task to update because this `id`is not yet available when the Component class is created.
+You cannot use such a logic to initialize the **task** property with the task to update because this `id`is not yet available when the Component class is created.
 
 Why so?
 
@@ -107,7 +107,7 @@ At the class creation of the Component stage, the route information is not avail
 To handle such a case, Angular provides lifecycle hooks.
 Lifecycle hooks are methods that Angular calls on components and directives as it creates, changes, and destroys them.
 
-One of the most used lifecycle hooks is `ngOnInit`, it's already present in all the created Components of the application.
+One of the most used lifecycle hooks is **ngOnInit**, it's already present in all the created Components of the application.
 This hook is called just after Angular instantiated the Component class.
 And at that time, the component is able to read the route information.
 
@@ -119,12 +119,12 @@ ngOnInit() {
 }
 ```
 
-The `route.snapshot` is a static image of the route information and it exposes a `paramMap` property.
+The **route.snapshot** is a static image of the route information and it exposes a **paramMap** property.
 
-This `paramMap` is a map of the required and optional parameters specific to the route, including dynamic route path parameters.
-The `get` method of the `paramMap` object allows us to retrieve the value of a parameter based on the name we used in the route path definition: `id`.
+This **paramMap** is a map of the required and optional parameters specific to the route, including dynamic route path parameters.
+The **get** method of the **paramMap** object allows us to retrieve the value of a parameter based on the name you used in the route path definition: **id**.
 
-Next, you'll retrieve the task to update from the `TaskService` based on the `id` available in the route.
+Next, you'll retrieve the task to update from the **TaskService** based on the **id** available in the route.
 
 ```typescript
 ngOnInit() {
@@ -134,9 +134,9 @@ ngOnInit() {
 ```
 
 :::tip
-The `TaskFormComponent` is used both to create and update a task.
-You need to test if the `id` is available in the route before retrieving the task to update.
-It will avoid an error when the `id` is not available in the route.
+The **TaskFormComponent** is used both to create and update a task.
+You need to test if the **id** is available in the route before retrieving the task to update.
+It will avoid an error when the **id** is not available in the route.
 :::
 
 ```typescript
@@ -196,7 +196,7 @@ ngOnInit() {
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to update the `TaskFormComponent` to populate the form with the task to update. You learned how to retrieve the task to update from the `TaskService` based on the `id` available in the route.
+In this chapter, you learned how to update the **TaskFormComponent** to populate the form with the task to update. You learned how to retrieve the task to update from the **TaskService** based on the **id** available in the route.
 
 
 

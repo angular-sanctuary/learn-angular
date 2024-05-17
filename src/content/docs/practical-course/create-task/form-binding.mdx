@@ -3,13 +3,14 @@ title: Form binding
 description: Learn how to bind a form to a model in Angular
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
 {title: 'Bind your HTML form', description: 'Learn how to bind a form to a model in Angular.'},
 ]} />
 
-We are able to fill out the form, but we need to get the data from the form to create a new task and add it to the existing list.
+You are able to fill out the form, but you need to get the data from the form to create a new task and add it to the existing list.
 
 ## Angular Forms API
 
@@ -18,26 +19,26 @@ Angular provides 2 different API to work with forms:
 - Template-driven forms
 - Reactive forms
 
-In this course, we will use the template-driven forms API to bind the form.
+In this course, you will use the template-driven forms API to bind the form.
 
 ## Template-driven forms
 
-What does `Template-driven` mean?
+What does **Template-driven** mean?
 
 The form structure and validations are defined in the HTML template. The template-driven forms are easy to use and suitable for simple forms.
 On Angular side, our focus is to bind each field to a property to retrieve its current value.
 
 ## Task model
 
-We will create a `task` model to represent a task. The `task` model will have two properties: `title` and `description`.
-Its shape is different from the `Task` interface we created earlier. We'll create a new derivated one from the existing `Task` interface.
+You will create a **task** model to represent a task. The **task** model will have two properties: **title** and **description**.
+Its shape is different from the **Task** interface you created earlier.You'll create a new derivated one from the existing **Task** interface.
 
 ### Pick Typescript Utility type
 
-The `Pick` utility type allows you to create a new type by picking some properties from an existing type.
-The benefit of using the `Pick` utility type is that it helps you to avoid duplicating the properties of the existing type.
+The **Pick** utility type allows you to create a new type by picking some properties from an existing type.
+The benefit of using the **Pick** utility type is that it helps you to avoid duplicating the properties of the existing type.
 
-We pass it the original type and the properties we want to pick.
+You pass it the original type and the properties you want to pick.
 
 ```ts
 // task.model.ts
@@ -47,40 +48,42 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Open the `src/app/task-form/task.model.ts` file.
 
-2. Add the following code:
+2. Add the following code below the existing interface:
 
-```typescript
-// task.model.ts
-export type TaskForm = Pick<Task, 'title' | 'description'>;
-```
+    ```typescript
+    // task.model.ts
+    export type TaskForm = Pick<Task, 'title' | 'description'>;
+    ```
 
-3. Open the `src/app/task-form/task-form.component.ts` file.
+3. Update the `src/app/task-form/task-form.component.ts` file.
 
-4. Replace the content of the file with the following code:
+    ```typescript ins={"Import the new TaskForm type": 3-4} ins={"Add the task model with empty values": 12-16}
+    // task-form.component.ts
+    import { Component } from '@angular/core';
 
-```typescript ins={"Import the new TaskForm type": 3-4} ins={"Add the task model with empty values": 12-16}
-// task-form.component.ts
-import { Component } from '@angular/core';
+    import {TaskForm} from '../model/task.model';
 
-import {TaskForm} from '../model/task.model';
+    @Component({
+      selector: 'app-task-form',
+      templateUrl: './task-form.component.html',
+      styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
 
-@Component({
-  selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.css']
-})
-export class TaskFormComponent implements OnInit {
-    
-  task: TaskForm = {
-    title: '',
-    description: ''
-  };
-    
-  ngOnInit() {}  
-}
-```
+      task: TaskForm = {
+        title: '',
+        description: ''
+      };
+
+      ngOnInit() {}
+    }
+    ```
+
+</Steps>
 
 ## Form binding
 
@@ -90,37 +93,39 @@ But it won't be enough for our usecase: it only allows us to bind the value of t
 
 ### 2 way data binding
 
-To update our `task` model when the form is updated, we need to use the `[(ngModel)]` format.
+To update our **task** model when the form is updated, you need to use the `[(ngModel)]` format.
 Also called **banana in a box** syntax to remember how to write it, it allows us to:
 
 - bind the value of the task to the form field
 - to update the value of the task based on the user input
 
-We want to bind the `title` input to the `task.title` property and the `description` textarea to the `task.description` property.
+You want to bind the **title** input to the **task.title** property and the **description** textarea to the **task.description** property.
 
 ### 🎓 Instructions
 
-1. Open the `src/app/task-form/task-form.component.html` file.
+<Steps>
 
-2. Replace the content of the file with the following code:
+1. Update the `src/app/task-form/task-form.component.html` file.
 
-```html ins={"Bind the title with the ngModel directive": 4-5} ins="[(ngModel)]="task.title"" ins={"Bind the description with the ngModel directive": 8-9} ins="[(ngModel)]="task.description""
-// task-form.component.html
-<form>
-  <label for="title" class="form-label">Title</label>
-    
-  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
-    
-  <label for="description" class="form-label">Description</label>
-    
-  <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
-  
-  <button type="submit" class="btn btn-primary">Create task</button>
-</form>
-```
+    ```html ins={"Bind the title with the ngModel directive": 4-5} ins="[(ngModel)]="task.title"" ins={"Bind the description with the ngModel directive": 8-9} ins="[(ngModel)]="task.description""
+    // task-form.component.html
+    <form>
+      <label for="title" class="form-label">Title</label>
 
-By being bound to the form, the `task` model will be updated when the form is updated.
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
+
+      <label for="description" class="form-label">Description</label>
+
+      <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
+
+      <button type="submit" class="btn btn-primary">Create task</button>
+    </form>
+    ```
+
+</Steps>
+
+By being bound to the form, the **task** model will be updated when the form is updated.
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to bind a form to a model in Angular. You learned how to create a `task` model to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a model.
+In this chapter, you learned how to bind a form to a model in Angular. You learned how to create a **task** model to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a model.

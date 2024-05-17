@@ -3,6 +3,7 @@ title: Dependency injection
 description: Learn how to use dependency injection in an Angular application.
 ---
 
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -12,55 +13,57 @@ import Objective from '../../../../components/learning-objective.astro';
 
 ## Remove the tasks list from the TaskListComponent
 
-The `TaskListComponent` class is still using its own tasks list.
-We want it to use the service list instead. The first step is to delete the tasks list from the `TaskListComponent` class.
+The **TaskListComponent** class is still using its own tasks list.
+We want it to use the service list instead. The first step is to delete the tasks list from the **TaskListComponent** class.
 
 :::caution
-As we are deleting this list, the application will stop working for a moment as the html file is still expecting a `tasks` variable.
+As you are deleting this list, the application will stop working for a moment as the html file is still expecting a **tasks** variable.
 :::
 
 ### 🎓 Instructions
 
-1. Open the `src/app/task-list.component.ts` file.
+<Steps>
 
-2. Remove the `tasks` variable from the `TaskListComponent` class:
+1. Remove the **tasks** variable from the `src/app/task-list.component.ts` file.
 
-```typescript del={"remove the task list": 8-22}
-// task-list.component.ts
-@Component({
-    selector: 'app-task-list',
-    templateUrl: './task-list.component.html',
-    styleUrls: ['./task-list.component.css']
-})
-export class TaskListComponent implements OnInit {
+    ```typescript del={"remove the task list": 8-22}
+    // task-list.component.ts
+    @Component({
+        selector: 'app-task-list',
+        templateUrl: './task-list.component.html',
+        styleUrls: ['./task-list.component.css']
+    })
+    export class TaskListComponent implements OnInit {
 
-    tasks: Task[] = [
-                {
-                    id: uuid(),
-                    title: 'Task 1',
-                    description: 'Description of task 1',
-                    createdAt: new Date()
-                },
-                {
-                    id: uuid(),
-                    title: 'Task 2',
-                    description: 'Description of task 2',
-                    createdAt: new Date()
-                }
-            ];
-    
-    ngOnInit() {}
-}
-```
+        tasks: Task[] = [
+                    {
+                        id: uuid(),
+                        title: 'Task 1',
+                        description: 'Description of task 1',
+                        createdAt: new Date()
+                    },
+                    {
+                        id: uuid(),
+                        title: 'Task 2',
+                        description: 'Description of task 2',
+                        createdAt: new Date()
+                    }
+                ];
+
+        ngOnInit() {}
+    }
+    ```
+
+</Steps>
 
 ## Inject the TaskService
 
-Our TaskListComponent class needs to use the `TaskService` to get the tasks list.
-Angular is using the dependency injection system to provide the `TaskService` to the `TaskListComponent` class.
+Our TaskListComponent class needs to use the **TaskService** to get the tasks list.
+Angular is using the dependency injection system to provide the **TaskService** to the **TaskListComponent** class.
 
-The TaskService class is prefixed by the `@Injectable()` decorator. This decorator tells Angular that the `TaskService` class can be injected into other classes.
+The TaskService class is prefixed by the **@Injectable()** decorator. This decorator tells Angular that the **TaskService** class can be injected into other classes.
 
-To do so, we reference the `TaskService` class in the `TaskListComponent` class constructor.
+To do so, you reference the **TaskService** class in the **TaskListComponent** class constructor.
 
 ```ts
 constructor(private taskService: TaskService) {}
@@ -74,31 +77,33 @@ tasks: Task[] = this.taskService.tasks;
 
 ### 🎓 Instructions
 
-1. Open the `src/app/task-list.component.ts` file.
+<Steps>
 
-2. Add the following code to the file:
+1. Update the `src/app/task-list.component.ts` file.
 
-```typescript ins={"import the TaskService": 3-4} ins={"create a tasks variable and initialize it with the TaskService list": 12-13} ins={"Inject the TaskService in the class constructor": 15-16}
-// task-list.component.ts
-import { Component } from '@angular/core';
+    ```typescript ins={"import the TaskService": 3-4} ins={"create a tasks variable and initialize it with the TaskService list": 12-13} ins={"Inject the TaskService in the class constructor": 15-16}
+    // task-list.component.ts
+    import { Component } from '@angular/core';
 
-import { TaskService } from '../task.service';
+    import { TaskService } from '../task.service';
 
-@Component({
-    selector: 'app-task-list',
-    templateUrl: './task-list.component.html',
-    styleUrls: ['./task-list.component.css']
-})
-export class TaskListComponent implements OnInit {
+    @Component({
+        selector: 'app-task-list',
+        templateUrl: './task-list.component.html',
+        styleUrls: ['./task-list.component.css']
+    })
+    export class TaskListComponent implements OnInit {
 
-    tasks: Task[] = this.taskService.tasks;
+        tasks: Task[] = this.taskService.tasks;
 
 
-    constructor(private taskService: TaskService) {}
-    
-    ngOnInit() {}
-}
-```
+        constructor(private taskService: TaskService) {}
+
+        ngOnInit() {}
+    }
+    ```
+
+</Steps>
 
 ## ✔️ What you learned
 

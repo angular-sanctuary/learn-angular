@@ -18,7 +18,7 @@ If you are familiar with **components** with another frontend framework, the con
 
 ## Our first component
 
-Our project already has a default component called `app`.
+Our project already has a default component called **app**.
 
 It's made of 3 files:
 

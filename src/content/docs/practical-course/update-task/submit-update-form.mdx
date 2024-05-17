@@ -12,7 +12,7 @@ import Objective from '../../../../components/learning-objective.astro';
 
 ## Update the task with the TaskService
 
-The `TaskService` service already includes a function to add a new task to the list.
+The **TaskService** service already includes a function to add a new task to the list.
 Let's add a new function to update an existing task of the list.
 
 ### 🎓 Instructions
@@ -65,15 +65,15 @@ Let's add a new function to update an existing task of the list.
 
 ## Update the TaskFormComponent
 
-The `TaskFormComponent` component is currently used to add a new task to the list.
+The **TaskFormComponent** component is currently used to add a new task to the list.
 
 Let's handle the submission of the form to update and not create a new task.
-To do so, keep the same `submit` function but update it to use the `updateTask` function of the `TaskService` service.
+To do so, keep the same **submit** function but update it to use the **updateTask** function of the **TaskService** service.
 
 When?
 
-- If the task has an `id`, call the `updateTask` function.
-- If the task doesn't have an `id`, call the `addTask` function.
+- If the task has an **id**, call the **updateTask** function.
+- If the task doesn't have an **id**, call the **addTask** function.
 
 ```typescript
 submit(task) {
@@ -150,6 +150,6 @@ In both situations, navigate back to the list of tasks.
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to update the `TaskFormComponent` to handle both updating and creating tasks.
+In this chapter, you learned how to update the **TaskFormComponent** to handle both updating and creating tasks.
 
 

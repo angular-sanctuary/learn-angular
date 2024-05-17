@@ -5,6 +5,7 @@ description: Add an UI library to your project
 
 import { Image } from 'astro:assets';
 import bootstrapImg from '../../../../assets/bootstrap_added.png';
+import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
@@ -20,7 +21,7 @@ Discover a comparison of the complete application before and after adding the UI
 
 An UI library is a collection of reusable styled components that can be used to build a user interface. It helps to create a consistent look and feel across the application.
 
-For this course, we'll add <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> to our project.
+For this course, you'll add <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> to our project.
 
 ## How to add Bootstrap
 
@@ -30,35 +31,37 @@ The **NG-Bootstrap** `ng add @ng-bootstrap/ng-bootstrap` installation command wi
 
 ### 🎓 Instructions
 
+<Steps>
+
 1. Run the following command in your terminal:
 
-```bash
-ng add @ng-bootstrap/ng-bootstrap
-```
+    ```bash
+    ng add @ng-bootstrap/ng-bootstrap
+    ```
 
 2. Stop the server if it's still running and restart it with the following command:
 
-```bash
-ng serve
-```
+    ```bash
+    ng serve
+    ```
 
 3. Open the `src/app/app.component.html` file and replace the content with the following code to add Bootstrap classes:
 
-```html
-<header class="navbar bg-body-tertiary px-4">
-    <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
-</header>
-```
+    ```html
+    <header class="navbar bg-body-tertiary px-4">
+        <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
+    </header>
+    ```
 
 4. Check out the *small* changes in your browser.
 
-<Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="A bird sitting on a nest of eggs."/>
-
+    <Image class="shadow-xl rounded-xl" src={bootstrapImg} alt="A bird sitting on a nest of eggs."/>
+</Steps>
 
 ## ✔️ What you learned
 
 You learned how to add a library to an Angular application.
-Most Angular libraries use the `ng add` command to facilitate the installation process. It avoids relying on  `npm install` command and additional manual updates of your project configuration.
+Most Angular libraries use the `ng add` command to facilitate the installation process. It avoids relying on `npm install` command and additional manual updates of your project configuration.
 The next chapters will use **Bootstrap** classes in html snippets to enhance the user interface of the application.
 You won't need to explore the Bootstrap documentation, as the snippets will be provided for you.
 
