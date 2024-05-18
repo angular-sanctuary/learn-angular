@@ -1,13 +1,13 @@
 ---
 title: Form binding
-description: Learn how to bind a form to a model in Angular
+description: Learn how to bind a form to a variable in Angular
 ---
 
 import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{title: 'Bind your HTML form', description: 'Learn how to bind a form to a model in Angular.'},
+{title: 'Bind your HTML form', description: 'Learn how to bind a form to a variable in Angular.'},
 ]} />
 
 You are able to fill out the form, but you need to get the data from the form to create a new task and add it to the existing list.
@@ -28,12 +28,12 @@ What does **Template-driven** mean?
 The form structure and validations are defined in the HTML template. The template-driven forms are easy to use and suitable for simple forms.
 On Angular side, our focus is to bind each field to a property to retrieve its current value.
 
-## Task model
+## TaskForm type
 
-You will create a **task** model to represent a task. The **task** model will have two properties: **title** and **description**.
+Let's create a **TaskForm** type to represent a task form. The **TaskForm** type will have two properties: **title** and **description**.
 Its shape is different from the **Task** interface you created earlier.You'll create a new derivated one from the existing **Task** interface.
 
-### Pick Typescript Utility type
+### Pick TypeScript Utility type
 
 The **Pick** utility type allows you to create a new type by picking some properties from an existing type.
 The benefit of using the **Pick** utility type is that it helps you to avoid duplicating the properties of the existing type.
@@ -61,7 +61,7 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 3. Update the `src/app/task-form/task-form.component.ts` file.
 
-    ```typescript ins={"Import the new TaskForm type": 3-4} ins={"Add the task model with empty values": 12-16}
+    ```typescript ins={"Import the new TaskForm type": 3-4} ins={"Add the task variable with empty values": 12-16}
     // task-form.component.ts
     import { Component } from '@angular/core';
 
@@ -87,13 +87,13 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 ## Form binding
 
-To bind a form to a model in Angular, you can use the `[ngModel]` directive.
-The `[ngModel]` directive is a built-in directive that allows you to bind a form input to a model.
-But it won't be enough for our usecase: it only allows us to bind the value of the property to the field, not the other way around.
+To bind a form to your new **task** variable in Angular, you can use the `[ngModel]` directive.
+The `[ngModel]` directive is a built-in directive that allows you to bind a form input to a variable.
+But it won't be enough for our usecase: it only allows us to bind the value of the property to the field, not to get the user input changes.
 
 ### 2 way data binding
 
-To update our **task** model when the form is updated, you need to use the `[(ngModel)]` format.
+To update our **task** variable when the form is updated, you need to use the `[(ngModel)]` format.
 Also called **banana in a box** syntax to remember how to write it, it allows us to:
 
 - bind the value of the task to the form field
@@ -124,8 +124,8 @@ You want to bind the **title** input to the **task.title** property and the **de
 
 </Steps>
 
-By being bound to the form, the **task** model will be updated when the form is updated.
+By being bound to the form, the **task** variable will be updated when the form is updated.
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to bind a form to a model in Angular. You learned how to create a **task** model to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a model.
+In this chapter, you learned how to bind a form to a variable in Angular. You learned how to create a **task** variable to represent a task. You also learned how to use the `[(ngModel)]` directive to bind a form input to a variable.

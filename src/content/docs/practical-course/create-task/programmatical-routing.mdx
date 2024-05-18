@@ -20,17 +20,19 @@ In the last step, you tested the form with this scenario:
 But what if you want to redirect the user to the list of tasks after the form is submitted?
 That's a common scenario in web applications, and Angular provides a way to do that.
 
-You saw how to trigger a navigation by clicking on a link with the `routerLink` directive.
-But in our situation, you want to trigger a navigation when the `createTask` function is called.
+You saw how to trigger a navigation by clicking on a link with the **routerLink** directive.
+But in our situation, you want to trigger a navigation when the **createTask** function is called.
 
 ## Inject the Router
 
-Your `TaskService` service is not the only element you can inject in the constructor of a component.
-By using the Angular Router feature, you can inject the `Router` service in a component.
+Your **TaskService** service is not the only element you can inject in the constructor of a component.
+By using the Angular Router feature, you can inject the **Router** service in a component.
 
 This service provides information about the current route and allows you to navigate to a different one.
 
 ### 🎓 Instructions
+
+<Steps>
 
 1. Update the `src/app/task-form.component.ts` file.
 

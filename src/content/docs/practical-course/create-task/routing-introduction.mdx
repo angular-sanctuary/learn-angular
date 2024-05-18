@@ -22,7 +22,7 @@ We want to be able to switch between displaying this list or the form to add a n
 
 ## Router outlet
 
-The Angular router module provides a directive called `router-outlet`. This directive is used to display the content of the current route. When the user navigates to a different route, the content of the `router-outlet` is replaced with the content of the new route.
+The Angular **RouterModule** provides a directive called `router-outlet`. This directive is used to display the content of the current route. When the user navigates to a different route, the content of the `router-outlet` is replaced with the content of the new route.
 This `router-outlet` is a placeholder for our content.
 
 ### 🎓 Instructions
@@ -95,7 +95,7 @@ The route definition lies in the `app-routing.module.ts` file.
 We need to add links to trigger the navigation between the different routes.
 We could manually change the URL in the browser but users expect to have clickables links to navigate between pages.
 
-The `<a>` HTMl tag is used to create links and is associated to the `routerLink` directive to trigger Angular routing. This directive take the path of the route to navigate to as a value.
+The `<a>` HTMl tag is used to create links and is associated to the **routerLink** directive to trigger Angular routing. This directive take the path of the route to navigate to as a value.
 
 ### 🎓 Instructions
 
@@ -122,13 +122,13 @@ The `<a>` HTMl tag is used to create links and is associated to the `routerLink`
 </Steps>
 
 :::tip
-The `TaskFormComponent` path is defined as `add-task` in the `app-routing.module.ts` file, but used as `/add-task` in the `routerLink` directive.
+The **TaskFormComponent** path is defined as `add-task` in the `app-routing.module.ts` file, but used as `/add-task` in the **routerLink** directive.
 It's used to change the URL at the root of the URL. Without it, the navigation would be relative to the current URL: if you are already on `/add-task`, the link would try to navigate to `/add-task/add-task`.
 :::
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to add routing to your application. You learned how to define the routes and how to navigate between them using the `routerLink` directive. You also learned how to display the content of the current route using the `router-outlet` directive.
+In this chapter, you learned how to add routing to your application. You learned how to define the routes and how to navigate between them using the **routerLink** directive. You also learned how to display the content of the current route using the `router-outlet` directive.
 
 ## 🚦 Quiz
 

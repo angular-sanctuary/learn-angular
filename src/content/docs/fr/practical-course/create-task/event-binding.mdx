@@ -1,5 +1,5 @@
 ---
-title: Liaison d'évènements
+title: Event binding
 description: Apprennez à lier un événement à une fonction
 ---
 
@@ -7,13 +7,13 @@ import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{mainTitle: 'Objectifs de ce chapitre', title: 'Liaison d\'évènements', description: 'Apprenez à lier un événement à une fonction dans Angular.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Event binding', description: 'Apprenez à lier un événement à une fonction dans Angular.'},
 ]} />
 
 
-## Liaison d'évènements
+## Event binding
 
-La liaison d'évènements permet d'écouter les évènements et d'exécuter une fonction lorsque l'évènements se produit.
+L'event binding permet d'écouter les évènements et d'exécuter une fonction lorsque l'évènement est déclenché.
 Dans la situation actuelle, vous allez exécuter une fonction lorsque l'on clique sur le bouton 'Créer une tâche'.
 
 Sur la balise HTML `<button>`, vous pouvez lier l'événement clic à une fonction en utilisant la syntaxe `(click)`.
@@ -23,7 +23,7 @@ Vous lui attribuez la fonction que vous voulez exécuter lorsque l'on clique sur
 <button type="submit" class="btn btn-primary" (click)="createTask()">Créer une tâche</button>
 ```
 
-Dans la classe du modèle (dans le fichier `.component.ts`/ la classe du composant), vous devez créer la fonction liée. Sans cela, Angular ne compilera pas.
+Dans la classe du **TaskFormComponent**, vous devez créer la fonction liée. Sans cela, Angular ne compilera pas.
 
 ### 🎓 Instructions
 
@@ -49,7 +49,7 @@ Dans la classe du modèle (dans le fichier `.component.ts`/ la classe du composa
 ## Fonction `createTask`
 
 Vous allez créer une fonction `createTask` pour gérer la soumission du formulaire.
-Pour cette étape, vous allez simplement enregistrer la valeur du formulaire dans la console.
+Pour cette étape, vous allez seulement enregistrer la valeur du formulaire dans la console.
 
 ### 🎓 Instructions
 

@@ -1,6 +1,6 @@
 ---
-title: Introduction au routage
-description: Introduction au routage au sein de votre application
+title: Introduction au routing
+description: Introduction au routing au sein de votre application
 ---
 
 import {Steps} from '@astrojs/starlight/components';
@@ -15,18 +15,18 @@ import Objective from '../../../../../components/learning-objective.astro';
     {title: 'Définir des routes', description: 'Définissez des routes dans votre application.'},
 ]}/>
 
-## Qu'est-ce que le routage ?
+## Qu'est-ce que le routing ?
 
-Le routage est le processus permettant de déterminer le contenu à afficher en fonction de l'URL du navigateur.
+Le routing est le processus permettant de déterminer le contenu à afficher en fonction de l'URL du navigateur.
 Angular est un framework d'application monopage (SPA). En modifiant l'URL, l'application peut afficher un contenu différent sans recharger la page.
 Il fournit une API **Router** pour modifier le contenu en fonction de l'URL.
 
 Le projet affiche actuellement une liste de tâches.
 Afin d'ajouter une nouvelle tâche à cette liste, vous avez besoin de pouvoir basculer la vue de cette liste à la vue du formulaire.
 
-## Directive RouterOutlet
+## Directive router-outlet
 
-Le module `RouterModule` fournit une directive appelé `router-outlet`. Cette directive est utilisée pour afficher le contenu de la route actuelle. Lorsque l'utilisateur navigue vers un itinéraire différent, le contenu du `router-outlet` est remplacé par le contenu du nouvel itinéraire.
+Le module **RouterModule** fournit une directive appelé `router-outlet`. Cette directive est utilisée pour afficher le contenu de la route actuelle. Lorsque l'utilisateur navigue vers un itinéraire différent, le contenu du `router-outlet` est remplacé par le contenu du nouvel itinéraire.
 La directive `router-outlet` a pour seul rôle de marquer l'emplacement dans le Template HTML du contenu correspondant à l'URL que vous aurez défini.
 
 ### 🎓 Instructions
@@ -95,7 +95,7 @@ La définition de la route réside dans le fichier `app-routing.module.ts`.
 Il faut ajouter des liens pour déclencher la navigation entre les différents itinéraires.
 Vous pourriez modifier manuellement l'URL dans le navigateur, mais les utilisateurs s'attendent à disposer de liens cliquables pour naviguer entre les pages.
 
-La balise HTML `<a>` est utilisée pour créer des liens et est associée la directive `routerLink` pour utliser le routing d'Angular. Cette directive prend le chemin de la route vers laquelle naviguer en tant que valeur.
+La balise HTML `<a>` est utilisée pour créer des liens et est associée la directive **routerLink** pour utliser le routing d'Angular. Cette directive prend le chemin de la route vers laquelle naviguer en tant que valeur.
 
 ### 🎓 Instructions
 
@@ -121,16 +121,16 @@ La balise HTML `<a>` est utilisée pour créer des liens et est associée la dir
 </Steps>
 
 :::tip
-Le chemin du composant `TaskFormComponent` est défini à `add-task` dans le fichier `app-routing.module.ts`. Par contre, dans le Template HTML, dans la directive `routerLink`, il est spécifié comme `/add-task` (avec le `/`).
+Le chemin du composant **TaskFormComponent** est défini à `add-task` dans le fichier `app-routing.module.ts`. Par contre, dans le Template HTML, dans la directive **routerLink**, il est spécifié comme `/add-task` (avec le `/`).
 
-`routerLink` construit l'URL de manière relative au chemin courant. Ajoutez un slash indique que l'URL doit être construite depuis l'URL de base de l'application (ici `http://localhost:4200`). Sans la spécification du slash dans la directive du `routerLink`, vous réaliseriez des imbrications et vous navigueriez vers `/add-task/add-task`.
+**routerLink** construit l'URL de manière relative au chemin courant. Ajoutez un slash indique que l'URL doit être construite depuis l'URL de base de l'application (ici `http://localhost:4200`). Sans la spécification du slash dans la directive du **routerLink**, vous réaliseriez des imbrications et vous navigueriez vers `/add-task/add-task`.
 
 >  `<a routerLink="/add-task">...</a>` => http://localhost:4200/add-task`<a routerLink="add-task">...</a>` => http://localhost:4200/add-task/add-task
 :::
 
 ## ✔️ Ce que vous avez appris
 
-Dans ce chapitre, vous avez appris à ajouter du routage à votre application. Vous avez appris à définir les routes et à naviguer entre elles à l'aide de la directive `routerLink`. Vous avez également appris à afficher le contenu de la route actuelle à l'aide de la directive `router-outlet`.
+Dans ce chapitre, vous avez appris à ajouter du routage à votre application. Vous avez appris à définir les routes et à naviguer entre elles à l'aide de la directive **routerLink**. Vous avez également appris à afficher le contenu de la route actuelle à l'aide de la directive `router-outlet`.
 
 ## 🚦 Quiz
 
