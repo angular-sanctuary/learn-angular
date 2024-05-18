@@ -57,29 +57,29 @@ Pour cette étape, vous allez seulement enregistrer la valeur du formulaire dans
 
 1. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
 
-```typescript ins={"Ajoutez la méthode createTask": 17-20}
-// task-form.component.ts
-import { Component } from '@angular/core';
+    ```typescript ins={"Ajoutez la méthode createTask": 17-20}
+    // task-form.component.ts
+    import { Component } from '@angular/core';
 
-@Component({
-  selector: 'app-task-form',
-  templateUrl: './task-form.component.html',
-  styleUrls: ['./task-form.component.css']
-})
-export class TaskFormComponent implements OnInit {
-    
-  task: TaskForm = {
-    title: '',
-    description: ''
-  };
-    
-  ngOnInit() {}  
+    @Component({
+      selector: 'app-task-form',
+      templateUrl: './task-form.component.html',
+      styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
 
-  createTask(): void {
-    console.log('Tâche créée', this.task);
-  }
-}
-```
+      task: TaskForm = {
+        title: '',
+        description: ''
+      };
+
+      ngOnInit() {}
+
+      createTask(): void {
+        console.log('Tâche créée', this.task);
+      }
+    }
+    ```
 
 3. Ouvrez la console Devtools de votre navigateur.
 4. Remplissez les champs de titre et de description et cliquez sur le bouton 'create task'.
