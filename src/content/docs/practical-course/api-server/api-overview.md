@@ -18,7 +18,7 @@ It'll allow us to create, read, update and delete tasks.
 
 As promoted on the json-server GitHub repository:
 
-> Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+> Get a full fake API with zero coding in less than 30 seconds (seriously)
 
 ## Technical details
 

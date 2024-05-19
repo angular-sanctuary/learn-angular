@@ -1,0 +1,216 @@
+---
+title: Add task with the HTTP client
+description: Learn how to add a task to a list using the HTTP client in an Angular application.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Create tasks with the HTTP client', description: 'Add task to the list with an API call to the fake API'},
+]} />
+
+## The TaskService
+
+You just communicated with the API server to retrieve a list of tasks.
+Let's update the API server list by adding a new task.
+
+Based on the HTTP protocol, you will use the **post** function to add a task to the list: **http.post()**.
+This function expects 2 parameters:
+
+1. The URL of the API server
+2. The task to send to the server
+
+```typescript
+addTask(task: TaskForm) {
+  return this.http.post<Task>('http://localhost:3000/tasks', {
+      ...task,
+      createdAt: new Date()
+  });
+}
+```
+
+As JSON-server is able to generate an **id** for us, you won't use the **uuid** package to generate an **id** for the task.
+
+This new **addTask** function defines the contract with the API server:
+
+- it makes a **POST** request
+- it sends a **TaskForm** object as a request body
+- it communicates with the API server at `http://localhost:3000/tasks`
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Update the `src/app/task.service.ts` file.
+
+    ```typescript ins={"Add the addTask function": 10-16}
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Task, TaskForm } from './task.model';
+
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class TaskService {
+      constructor(private http: HttpClient) { }
+
+      addTask(task: TaskForm) {
+        return this.http.post<Task>('http://localhost:3000/tasks', {
+          ...task,
+          createdAt: new Date()
+        });
+      }
+    }
+    ```
+
+</Steps>
+
+## Update the TaskFormComponent
+
+In the previous step, you were explained Observables need to be subscribed to in order to execute the request.
+You were able to use the **async** pipe in the HTML template to subscribe to the observable.
+
+But in the current situation, the request does happen in the component.ts file.
+
+Let's subscribe to the observable by using the `subscribe` function.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Update the `src/app/task-form/task-form.component.ts` file.
+
+    ```typescript ins={"Update the submit function": 19-23} ins="this.taskService.addTask(task).subscribe();"
+    import { Component, OnInit } from '@angular/core';
+    import { TaskService } from '../task.service';
+    import { TaskForm } from '../task.model';
+
+    @Component({
+      selector: 'app-task-form',
+      templateUrl: './task-form.component.html',
+      styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+      task: TaskForm = {
+        title: '',
+        description: ''
+      };
+
+      constructor(private taskService: TaskService) { }
+
+      ngOnInit() {}
+
+      submit(task: TaskForm) {
+        if (task.id) {
+            this.taskService.updateTask(task);
+        } else {
+            this.taskService.addTask(task).subscribe();
+        }
+        this.router.navigate(['/']);
+      }
+    }
+    ```
+
+</Steps>
+
+It now works, but not exactly as you should expect...
+
+
+## Asynchronous programming
+
+Remember the newsletter example from the previous chapter?
+Given that's a physical newsletter, it takes time to be delivered to your mailbox.
+Some time happens between the moment you subscribe and the moment you receive the newsletter.
+
+That's the same in our situation.
+By sending a request with the **subscribe()** function, you're asking the server to add a task to the list.
+But the navigation to the **"/"** route will happen immediately after the request is sent, not after the request is completed.
+
+Let's review the code you just changed in the `submit` function of the `TaskFormComponent`:
+
+```typescript
+submit(task: TaskForm) {
+    if (task.id) {
+        this.taskService.updateTask(task);
+    } else {
+        this.taskService.addTask(task).subscribe();
+    }
+    this.router.navigate(['/']);
+}
+```
+
+1. you call the **addTask** function from the **TaskService** to add a task to the API server.
+2. you navigate to the **"/"** route.
+
+:::danger
+This code won't run in the expected order
+:::
+
+API communication is asynchronous, meaning that the action of **addTask** function might not be resolved yet when the **router.navigate** function is called.
+Our server is served locally, so the request will be fast, but it's still asynchronous.
+
+A request to the server can take a long time if the server or the network is slow for any reason.
+In this situation, While the request is still being processed, the **router.navigate** function will be executed.
+
+That's not what you want as by navigating, you want to display the updated task list.
+
+You need to wait for the response from the server before navigating to the **"/"** route.
+
+## The Subscription
+
+The subscribe function accepts a callback function as a parameter.
+This callback function will be executed when the observable emits a value.
+
+Let's use this callback function to navigate to the **"/"** route.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Update the `src/app/task-form/task-form.component.ts` file.
+
+    ```typescript ins={"Update the submit function": 20-25}
+    import { Component, OnInit } from '@angular/core';
+    import { Router } from '@angular/router';
+    import { TaskService } from '../task.service';
+    import { TaskForm } from '../task.model';
+
+    @Component({
+      selector: 'app-task-form',
+      templateUrl: './task-form.component.html',
+      styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+      task: TaskForm = {
+        title: '',
+        description: ''
+      };
+
+      constructor(private taskService: TaskService, private router: Router) { }
+
+      ngOnInit() {}
+
+      submit(task: TaskForm) {
+        if (task.id) {
+            this.taskService.updateTask(task);
+        } else {
+            this.taskService.addTask(task).subscribe(() => {
+              this.router.navigate(['/']);
+            });
+        }
+      }
+    }
+    ```
+    :::caution
+    This change temporarily introduces a regression in the application.
+    Updating a task does no longer trigger the router navigation.
+    We'll fix it in the next lesson.
+    :::
+
+</Steps>
+
+## ✔️ What you learned
+
+In this chapter, you learned how to use the **HttpClient** to add a task to the list. As the API communication is asynchronous, you learned how to use the **subscribe** function to wait for the response from the server before navigating to the **"/"** route.
+

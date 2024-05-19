@@ -1,0 +1,110 @@
+---
+title: Delete task with the HTTP client
+description: Learn how to delete a task to a list using the HTTP client in an Angular application.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Delete a task with the HTTP client', description: 'Learn how to delete a task to a list using the HTTP client in an Angular application.'},
+]} />
+
+## The TaskService
+
+Based on the HTTP protocol, you will use the **delete** function to add a task to the list: **http.delete()**.
+This function expects only 1 parameter, the URL of the resource to delete, including once again the **id** of the task to delete.
+
+```typescript
+deleteTask(task: Task) {
+  return this.http.delete<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+}
+```
+
+### 🎓 Instructions
+
+<Steps>
+
+    1. Update the **task.service.ts** file.
+
+    ```typescript ins={"Add the addTask function": 10-16}
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Task, TaskForm } from './task.model';
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class TaskService {
+        constructor(private http: HttpClient) { }
+
+        deleteTask(task: Task) {
+            return this.http.delete<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+        }
+    }
+    ```
+
+</Steps>
+
+## Update the TaskFormComponent
+
+Let's update the **TaskFormComponent** to use this new function.
+Th easiest way to do so would be to apply the same logic as in the previous lesson, by updating the **submit** function to make an API call and navigate to the list page.
+    It would result in the following code:
+
+```typescript ins={"Update the submit function": 3-6}
+submit(task: TaskForm) {
+    if (task.id) {
+
+        this.taskService.updateTask(task).subscribe(() => {
+            this.router.navigate(['/']);
+        });
+    } else {
+        this.taskService.addTask(task).subscribe(() => {
+            this.router.navigate(['/']);
+        });
+    }
+}
+```
+
+It works but it's not the best way to do it as we are duplicating the navigation logic. If the list page path changes, we will have to update it in two places.
+Let's handle it by changing the **submit** function:
+
+- create a variable whose value will be either the **updateTask** or **addTask** function, its value will be an **Observable** you can subscribe to.
+- subscribe to this variable and navigate to the list page.
+
+### 🎓 Instructions
+
+<Steps>
+
+    1. Update the **task-form.component.ts** file.
+
+    ```typescript ins={"Update the submit function": 3-15}
+    import { Component, OnInit } from '@angular/core';
+    import { Router } from '@angular/router';
+    import { TaskForm } from '../task.model';
+    import { TaskService } from '../task.service';
+
+    @Component({
+    selector: 'app-task-form',
+    templateUrl: './task-form.component.html',
+    styleUrls: ['./task-form.component.css']
+})
+    export class TaskFormComponent implements OnInit {
+    constructor(private taskService: TaskService, private router: Router) { }
+
+    submit(task: TaskForm) {
+    const taskObservable = task.id ? this.taskService.updateTask(task) : this.taskService.addTask(task);
+
+    taskObservable.subscribe(() => {
+    this.router.navigate(['/']);
+});
+}
+}
+    ```
+
+</Steps>
+
+## ✔️ What you learned
+
+You learned how to send a **PUT** request with HttpClient to update a task in an Angular application.
