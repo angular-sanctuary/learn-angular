@@ -30,7 +30,7 @@ export default defineConfig({
                         {label: 'Prerequisites', link: '/practical-course/prerequisites'},
                         {
                             label: 'Typescript introduction',
-                            link: '/practical-course/task-listing/typescript-introduction'
+                            link: '/practical-course/typescript-introduction'
                         },
                         {label: 'Getting started', link: '/practical-course/getting-started'},
                         {

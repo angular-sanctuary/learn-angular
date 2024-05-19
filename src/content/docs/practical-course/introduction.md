@@ -7,21 +7,27 @@ description: Learn Angular in a practical way
 
 ## What is Angular?
 
-Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+> Angular is a web framework that empowers developers to build fast, reliable applications.
+Maintained by a dedicated team at Google, Angular provides a broad suite of tools, APIs, and libraries to simplify and streamline your development workflow. Angular gives you a solid platform on which to build fast, reliable applications that scale with both the size of your team and the size of your codebase.
+
+source: <a href="https://angular.dev/overview" target="_blank">Angular documentation</a>
 
 ## What will you learn?
 
-In this practical course, you will learn how to build a complete Angular application from scratch. You will learn how to create components, services, and routes. You will also learn how to use ...
+In this practical course, you will learn how to build a complete Angular application from scratch. You will learn how to create components, services, and routes. You will also learn how to build, manage the local state of your application and communicate with a REST API.
 
 ## What will you build?
 
-You will build a complete Angular application from scratch. You will build a simple application that will allow you to manage a list of items. You will be able to add, edit, and delete items.
+You will build a simple application that will allow you to manage a list of items. You will be able to read, add, edit, and delete items.
 
 ## Who is this course for?
 
-This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular. If you are not familiar with these technologies, we recommend you to take a look at the HTML, CSS and JavaScript tutorials on <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>.
+This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular.
 
 :::caution
-A **Renaissance** happened for Angular in the last versions.  
-This course is based on Angular 14 and doesn't cover the latest versions.  
-It's aimed for beginners onboarded to old Angular projects.
+This course has been crafted for **Angular v14** and doesn't cover the latest versions.
+It's intended to help beginners onboarded to old Angular projects. Great features have been added to Angular since v14 but impacts the way to create applications in a different way.
+Our goal is to help you being comfortable onboarding on older projects.
+
+**We'll release a new course for the latest Angular version soon.**
+:::

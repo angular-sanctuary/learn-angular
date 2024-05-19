@@ -3,9 +3,11 @@ title: Typescript Introduction
 description: Create your first Typescript model
 ---
 
-:::note
-Learn how to create your first TypeScript model.
-:::
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{title: 'Discover TypeScript', description: 'Learn how to create your first TypeScript model.'},
+]} />
 
 ## What is TypeScript?
 
@@ -70,13 +72,11 @@ The typescript authoring format is:
 
 ## What are the benefits of using TypeScript?
 
-### Autocompletion
+#### Autocompletion
 
 When you define a type for a variable, you get autocompletion for the properties of that type.
 
-// TODO add a screenshot
-
-### Type checking
+#### Type checking
 
 TypeScript will check if you are using the right type for a variable.
 
@@ -84,16 +84,11 @@ TypeScript will check if you are using the right type for a variable.
 
 Your IDE will warn you if you are using the wrong type for a variable.
 
-// TODO add a screenshot
-
 #### Compile time errors
 
 TypeScript will catch errors at compile time.
 
-// TODO add a screenshot
-
 
 ## ✔️ What you learned
 
-In this chapter, you learned how to create your first TypeScript model. You learned how to define a TypeScript interface and how to use it to create a new object. You also learned about the benefits of using TypeScript, such as autocompletion, type checking, IDE support, and compile time errors.
-Typescript is a tool to enhance your experience as a developer. It helps you to write better code, catch errors early, and improve the quality of your code. It's a great tool to use in your projects.
+In this chapter, you learned how to create your first TypeScript model. You learned how to define a TypeScript interface and how to use it to create a new object.

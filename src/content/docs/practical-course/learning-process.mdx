@@ -1,0 +1,84 @@
+---
+title: Learning process
+description: Learn how to learn in this practical course.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../components/learning-objective.astro';
+
+## The course structure
+
+The course is divided into several chapters, each one focusing on a specific feature of the application.
+The course is feature driven rather than technology driven.
+
+Angular features will be introduced as needed and as limited as possible to the feature at hand.
+
+### Chapters
+
+- <a href="/practical-course/create-task-list" target="_blank">Create a task list</a>
+- <a href="/practical-course/add-task-form" target="_blank">Add a task</a>
+- <a href="/practical-course/delete-task" target="_blank">Delete a task</a>
+- <a href="/practical-course/update-task-route" target="_blank">Update a task</a>
+
+### Lessons
+
+Each chapter is divided into muliple lessons. Each lesson is a small task to complete.
+Each lesson is introduced with a learning objective and a description of the expected completion.
+
+#### Key learning objectives
+
+The lesson key learning objectives are the main takeaways from the step.
+There are highlighted to help you focus on the main points, for example:
+
+<Objective class="drop-shadow-xl" objectives={[
+    {title: 'Trigger the route programmatically', description: 'Learn how to trigger a route programmatically in an Angular application.'},
+]} />
+
+#### Instructions
+
+After a short explanation about the technical aspects, a lesson will provide you a set of instructions to update the code, for example:
+
+<Steps>
+1. create the **Task** model class in the `src/app/models` folder.
+
+    ```typescript
+    // src/app/models/task.model.ts
+    export class Task {
+        id: number;
+        title: string;
+        description: string;
+        completed: boolean;
+    }
+    ```
+
+2. Create a new component named **TaskFormComponent**.
+</Steps>
+
+#### Terminal
+
+Some lessons will require you to run commands in the terminal.
+
+In Visual Studio Code, you can open a terminal by clicking on the `Terminal` menu and selecting `New Terminal`.
+
+#### Code snippets
+
+Most lessons contains code snippets as a reference to help you complete the task.
+The course content uses specific styling to highlight the changes to make in the code, for example:
+
+```html ins={"Add the submit event binding": 8-9} ins="(click)="createTask()""
+// task-form.component.html
+<form>
+    <label for="title" class="form-label">Title:</label>
+    <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
+
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
+
+    <button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
+ </form>
+```
+
+#### Learn more
+
+Some lessons contains a "Learn more" section to help you dive deeper into the topic.
+You do not need to read the "Learn more" section to complete the course, but it can help you understand the topic better.
