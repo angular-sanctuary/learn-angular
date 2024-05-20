@@ -21,12 +21,12 @@ export const versionIntermediateQuiz: Quiz = {
                 {
                     id: 3,
                     title: "Angular 10",
-                    isCorrect: false
+                    isCorrect: true
                 },
                 {
                     id: 4,
                     title: "Angular 11",
-                    isCorrect: true
+                    isCorrect: false
                 }
             ],
             answerExplanation: "Angular 11 introduced the Ivy renderer as the default rendering engine."
