@@ -1,27 +1,33 @@
 ---
-title: Discover Angular
-description: Learn Angular in a practical way
+title: Découvrez Angular
+description : Apprenez Angular en pratiquant
 ---
 
 ![Angular](../../../../assets/extended-angular-logo.png)
 
-## What is Angular?
+## Qu'est-ce qu'Angular ?
 
-Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps.
+> Angular est un framework Web qui permet aux développeurs de créer des applications rapides et fiables.
+Géré par une équipe dédiée chez Google, Angular fournit une large suite d'outils, d'API et de librairies pour simplifier et rationaliser votre flux de travail de développement. Angular vous offre une plate-forme solide sur laquelle créer des applications rapides et fiables qui s'adaptent à la fois à la taille de votre équipe et à la taille de votre base de code.
 
-## What will you learn?
+source: <a href="https://angular.dev/overview" target="_blank">Documentation Angular</a>
 
-In this practical course, you will learn how to build a complete Angular application from scratch. You will learn how to create components, services, and routes. You will also learn how to use ...
+## Qu'allez-vous apprendre ?
 
-## What will you build?
+Dans ce cours pratique, vous apprendrez à créer une application Angular complète à partir de zéro. Vous apprendrez à créer des composants, des services et des routes. Vous apprendrez également à créer, gérer l'état local de votre application et à communiquer avec une API REST.
 
-You will build a complete Angular application from scratch. You will build a simple application that will allow you to manage a list of items. You will be able to add, edit, and delete items.
+## Qu'allez-vous réaliser ?
 
-## Who is this course for?
+Vous construirez une application simple qui vous permettra de gérer une liste d'éléments. Vous pourrez lire, ajouter, modifier et supprimer des éléments.
 
-This course is designed for developers who have some basic knowledge of HTML, CSS and JavaScript and want to discover Angular. If you are not familiar with these technologies, we recommend you to take a look at the HTML, CSS and JavaScript tutorials on <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>.
+## A qui est destiné ce cours ?
+
+Ce cours s'adresse aux développeurs ayant des connaissances de base en HTML, CSS et JavaScript et souhaitant découvrir Angular.
 
 :::caution
-A **Renaissance** happened for Angular in the last versions.  
-This course is based on Angular 14 and doesn't cover the latest versions.  
-It's aimed for beginners onboarded to old Angular projects.
+Ce cours a été conçu avec **Angular v14** et ne couvre pas les dernières versions.
+Il est destiné à aider les débutants à intégrer d'anciens projets Angular. D'excellentes fonctionnalités ont été ajoutées à Angular depuis la v14, mais ont un impact différent sur la manière de créer des applications.
+Notre objectif est de vous aider à vous sentir à l'aise pour intégrer des projets plus anciens.
+
+**Nous publierons bientôt un nouveau cours pour la dernière version d'Angular.**
+:::

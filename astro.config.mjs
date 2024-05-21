@@ -24,21 +24,26 @@ export default defineConfig({
     },
     sidebar: [{
       label: 'Introduction Course',
+      translations: { fr: 'Apprendre les bases d\'Angular' },
       items: [{
         label: 'Introduction',
         link: '/practical-course/introduction'
       }, {
         label: 'Learning process',
-        link: '/practical-course/learning-process'
+        link: '/practical-course/learning-process',
+        translations: { fr: 'Processus d\'apprentissage' }
       }, {
         label: 'Prerequisites',
-        link: '/practical-course/prerequisites'
+        link: '/practical-course/prerequisites',
+        translations: { fr: 'Pré-requis' }
       }, {
         label: 'Typescript introduction',
-        link: '/practical-course/typescript-introduction'
+        link: '/practical-course/typescript-introduction',
+        translations: { fr: 'Introduction à Typescript' }
       }, {
         label: 'Getting started',
-        link: '/practical-course/getting-started'
+        link: '/practical-course/getting-started',
+        translations: { fr: 'C\'est parti !' }
       }, {
         label: 'Task listing',
         collapsed: true,
