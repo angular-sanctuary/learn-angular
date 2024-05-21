@@ -204,18 +204,30 @@ export default defineConfig({
       }, {
         label: 'Delete task',
         collapsed: true,
+        translations: {
+          fr: 'Supprimer une tâche'
+        },
         items: [{
           label: '🚀 Delete overview',
           link: '/practical-course/delete-task/delete-overview'
         }, {
           label: 'Add delete function',
-          link: '/practical-course/delete-task/add-delete-function'
+          link: '/practical-course/delete-task/add-delete-function',
+          translations: {
+            fr: 'Ajouter la fonction supprimer'
+          }
         }, {
           label: 'Add delete button',
-          link: '/practical-course/delete-task/add-delete-button'
+          link: '/practical-course/delete-task/add-delete-button',
+          translations: {
+            fr: 'Ajouter le bouton supprimer'
+          }
         }, {
           label: 'Add empty list',
-          link: '/practical-course/delete-task/add-empty-list'
+          link: '/practical-course/delete-task/add-empty-list',
+          translations: {
+            fr: 'Si liste vide'
+          }
         }, {
           label: '🏁 Delete review',
           link: '/practical-course/delete-task/delete-review',
