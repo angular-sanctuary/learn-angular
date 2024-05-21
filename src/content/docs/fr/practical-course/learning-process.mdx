@@ -1,0 +1,84 @@
+---
+title: Processus d'apprentissage
+description: Comprenez la structure d'apprentissage de ce cours pratique.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
+
+## La structure du cours
+
+Le cours est divisé en plusieurs chapitres. Chacun se concentrant sur une fonctionnalité spécifique de l'application.
+Le cours est axé sur les fonctionnalités plutôt que sur la technologie.
+
+Les fonctionnalités Angular seront introduites selon les besoins. 
+
+### Chapitres
+
+- <a href="/practical-course/create-task-list" target="_blank">Créez une liste de tâches</a>
+- <a href="/practical-course/add-task-form" target="_blank">Ajoutez une tâche</a>
+- <a href="/practical-course/delete-task" target="_blank">Supprimez une tâche</a>
+- <a href="/practical-course/update-task-route" target="_blank">Mettre à jour une tâche</a>
+
+### Leçons
+
+Chaque chapitre est divisé en plusieurs leçons. Chaque leçon est une petite action à accomplir.
+Chaque leçon est introduite avec un objectif d'apprentissage et une description du résultat attendu.
+
+#### Objectifs clés des chapitres
+
+Les objectifs clés de la leçon sont les principaux points à retenir de cette étape.
+Ils sont mis en évidence pour vous aider à vous concentrer sur les points principaux, par exemple :
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Déclenchez la navigation avec le routing', description: 'Découvrez comment déclencher une navigation via le routing d\'une application Angular.'},
+]} />
+
+#### Instructions
+
+Après une brève explication sur les aspects techniques, une leçon vous fournira un ensemble d'instructions pour mettre à jour le code, par exemple :
+
+<Steps>
+1. Créez le modèle **Task** dans le dossier `src/app/models`.
+
+    ```typescript
+    // src/app/models/task.model.ts
+    export class Task {
+        id: number;
+        title: string;
+        description: string;
+        completed: boolean;
+    }
+    ```
+
+2. Créez un nouveau composant nommé **TaskFormComponent**.
+</Steps>
+
+#### Terminal
+
+Certaines leçons vous demanderont d'exécuter des commandes dans le terminal.
+
+Dans Visual Studio Code, vous pouvez ouvrir un terminal en cliquant sur le menu `Terminal` et en sélectionnant `Nouveau terminal`.
+
+#### Extraits de code
+
+La plupart des leçons contiennent des extraits de code comme exemple pour vous aider à accomplir l'action.
+Le contenu du cours utilise un style spécifique pour mettre en évidence les modifications à apporter au code, par exemple :
+
+```html ins={"Ajoutez la liaison d'événement pour créer la tâche": 8-9} ins="(click)="createTask()""
+// task-form.component.html
+<form>
+    <label for="title" class="form-label">Titre:</label>
+    <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
+
+    <label for="description" class="form-label">Description:</label>
+    <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
+
+    <button type="submit" class="btn btn-primary" (click)="createTask()">Créer la tâche</button>
+ </form>
+```
+
+#### Apprendre encore plus: vers l'infini et au-delà ! 🚀
+
+Certaines leçons contiennent une section « En savoir plus » pour vous aider à approfondir le sujet.
+Vous n'avez pas besoin de lire la section « En savoir plus » pour terminer le cours, mais cela peut vous aider à mieux comprendre le sujet.

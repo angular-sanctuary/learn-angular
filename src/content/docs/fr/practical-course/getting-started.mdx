@@ -1,78 +1,88 @@
 ---
-title: Getting Started
-description: How to get started with Angular
+title: C'est parti !
+description: Comment démarrer avec Angular
 ---
 
 import { Image } from 'astro:assets';
 import boilerplateImg from '../../../../assets/getting-started_boilerplate.png';
 import headerImg from '../../../../assets/getting-started_header.png';
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../components/learning-objective.astro';
 
-:::note
-Learn how to create an Angular application and ensure it runs on your local machine.
-:::
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Générez une application Angular', description: 'Découvrez comment utiliser la CLI Angular pour générer une application Angular.'},
+    {title: 'Exécutez l\'application', description: 'Lancez l\’application localement et consultez la page de base par défaut.'},
+    {title: 'Comprendre le rechargement à chaud', description: 'Comprenez comment fonctionne le rechargement à chaud dans les applications Angular.'}
+]} />
 
-## Project creation
+## Créez le projet
 
-Open a terminal and run the following command to create an Angular application:
+Angular fournit une interface de ligne de commande (CLI) pour générer une nouvelle application Angular, gérer le projet et exécuter l'application localement.
 
-```bash
-npx -p @angular/cli@latest ng new angular-introduction-course --standalone=false --style=css --ssr=false --skip-tests=true
-```
+### 🎓 Instructions
+
+<Steps>
+
+1. Ouvrez un terminal et exécutez la commande suivante pour créer une application Angular :
+
+    ```bash
+    npx -p @angular/cli@latest ng new angular-introduction-course --standalone=false --style=css --ssr=false --skip-tests=true
+    ```
+</Steps>
 
 :::tip
-The command includes some options to **facilitate the learning process**.
-Find more about the options in the <a href="/practical-course/going-further#angular-cli-options" target="_blank">Angular CLI options</a>.
+La commande inclut quelques options pour **faciliter le processus d'apprentissage**.
+Apprenez-en davantage sur les options dans les <a href="/practical-course/going-further#angular-cli-options" target="_blank">Options de la CLI Angular</a>.
 :::
 
-## Open the project
+## Ouvrez le projet
 
 ### 🎓Instructions
 
-1. open **Visual Studio Code**.
-2. Click on the `File` menu and select `Open Folder`.
-3. Navigate to the `practical-course` folder and click on the `Select Folder` button.
+<Steps>
+1. Ouvrez **Visual Studio Code**.
+2. Cliquez sur le menu `Fichier` et sélectionnez `Ouvrir un dossier`.
+3. Accédez au dossier `practical-course` et cliquez sur le bouton `Sélectionner un dossier`.
+</Steps>
 
-## Running the application
+## Exécutez l'application
 
-Angular CLI provides a command to serve the application locally.
-
-### 🎓 Instructions
-
-1. Open a terminal in Visual Studio Code.
-2. Type the following command to start the application:
-
-```bash
-ng serve
-```
-
-3. Open your browser and navigate to `http://localhost:4200`.
-4. You should see the following default boilerplate page:
-
-
-<Image class="shadow-xl rounded-xl" src={boilerplateImg} alt="A bird sitting on a nest of eggs."/>
-
-## Hot reload
-
-Hot reload is a feature that allows you to see the changes you make in your code without having to manually refresh the page.
+La CLI Angular fournit une commande pour lancer l'application localement.
 
 ### 🎓 Instructions
 
-1. Open the `src/app/app.component.html` file.
-2. Replace the full content of the file with the following code:
+<Steps>
+1. Ouvrez le terminal de Visual Studio Code.
+2. Tapez la commande suivante pour démarrer l'application :
 
-```html
-// app.component.html
-<header>
-    <h1>Angular Practical course</h1>
-</header>
-```
+    ```bash
+    ng serve
+    ```
 
-3. Go back to your browser to see the following page:
+3. Ouvrez votre navigateur et accédez à `http://localhost:4200`.
+4. Vous devriez voir la page de base par défaut suivante :
 
-<Image class="shadow-xl rounded-xl" src={headerImg} alt="A bird sitting on a nest of eggs."/>
+    <Image class="shadow-xl rounded-xl" src={boilerplateImg} alt="Un oiseau posé sur un nid d’œufs."/>
+</Steps>
 
+## Rechargement à chaud
 
-## 🔎 Want to learn more?
+Le rechargement à chaud est une fonctionnalité qui vous permet de voir les modifications que vous apportez à votre code sans avoir à actualiser manuellement la page.
 
--
+### 🎓 Instructions
 
+<Steps>
+1. Ouvrez le fichier `src/app/app.component.html`.
+2. Remplacez le contenu complet du fichier par le code suivant :
+
+    ```html
+    // app.component.html
+    <header>
+        <h1>Angular Practical course</h1>
+    </header>
+    ```
+
+3. Revenez à votre navigateur pour voir la page suivante :
+
+    <Image class="shadow-xl rounded-xl" src={headerImg} alt="Un oiseau posé sur un nid d’œufs."/>
+</Steps>

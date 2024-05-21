@@ -1,0 +1,93 @@
+---
+title: Introduction à Typescript
+description: Créez votre premier modèle Typescript
+---
+
+import Objective from '../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{mainTitle: 'Objectifs de ce chapitre', title: 'Discover TypeScript', description: 'Découvrez comment créer votre premier modèle TypeScript.'},
+]} />
+
+## Qu'est-ce que TypeScript ?
+
+TypeScript est un sur-ensemble typé de JavaScript qui se compile en JavaScript simple. TypeScript est purement orienté objet avec des classes, des interfaces et typé statiquement comme C# ou Java.
+
+## Pourquoi utiliser TypeScript ?
+
+L'utilisation de TypeScript présente plusieurs avantages :
+
+- **Sécurité via le typage** : TypeScript fournit un typage statique, ce qui vous aide à détecter les erreurs au moment de la compilation plutôt qu'au moment de l'exécution. Cela peut vous aider à détecter les bugs plus tôt et à améliorer la qualité de votre code.
+- **Outils** : TypeScript fournit un riche ensemble d'outils pour créer et maintenir des applications à grande échelle. Cela inclut des fonctionnalités telles que la complétion du code, la refactorisation et la navigation.
+- **Lisibilité** : TypeScript fournit un moyen d'ajouter des annotations de type à votre code, ce qui peut le rendre plus facile à comprendre et à maintenir.
+
+Prenez un objet **car**, en Javascript, on accepte le format suivant :
+
+```javascript
+const car = {
+  make: 'Toyota',
+  model: 'Corolla',
+  year: 2020
+};
+```
+
+Pour logguer le modèle de la voiture, vous feriez:
+
+```javascript
+console.log(car.model);
+```
+
+Mais non seulement vous devez rappeler la structure de l’objet voiture, mais vous devez également vous rappeler le type de chaque propriété.
+Cela complique la maintenance et la compréhension du code.
+
+Dans TypeScript, vous pouvez définir une interface **Car** comme celle-ci :
+
+```typescript
+export interface Car {
+  make: string;
+  model: string;
+  year: number;
+}
+```
+
+Et puis vous pouvez l'utiliser comme ceci :
+
+```typescript
+const car: Car = {
+  make: 'Toyota',
+  model: 'Corolla',
+  year: 2020
+};
+```
+
+:::note
+Le format de création Typescript est composé ainsi:
+
+```typescript
+<property>: <type> = <value>;
+```
+
+`[]` est utilisé pour définir un tableau, comme dans `tasks: Task[]`.
+:::
+
+## Quels sont les avantages de l'utilisation de TypeScript ?
+
+### Auto-complétion
+
+Lorsque vous définissez un type pour une variable, vous obtenez la saisie semi-automatique pour les propriétés de ce type.
+
+### Vérification des types
+
+TypeScript vérifiera si vous utilisez le bon type pour une variable.
+
+### Prise en charge de l'IDE
+
+Votre IDE vous avertira si vous utilisez le mauvais type pour une variable.
+
+### Erreurs de compilation
+
+TypeScript détectera les erreurs au moment de la compilation.
+
+## ✔️ Ce que vous avez appris
+
+Dans ce chapitre, vous avez appris à créer votre premier modèle TypeScript. Vous avez appris à définir une interface TypeScript et à l'utiliser pour créer un nouvel objet.
