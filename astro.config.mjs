@@ -4,8 +4,6 @@ import tailwind from '@astrojs/tailwind';
 import starlightImageZoom from 'starlight-image-zoom';
 import starlightBlog from 'starlight-blog';
 
-import analogjsangular from "@analogjs/astro-angular";
-
 // https://astro.build/config
 export default defineConfig({
   site: 'https://learn-angular',
@@ -314,5 +312,5 @@ export default defineConfig({
     })]
   }), tailwind({
     applyBaseStyles: false
-  }), analogjsangular()]
+  })]
 });
