@@ -1,0 +1,87 @@
+---
+title: Modifiez la suppression de la tâche avec HTTP Client
+description: Découvrez comment supprimer une tâche de la liste à l'aide de HTTP Client dans une application Angular.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Supprimez la tâche avec HTTP Client', description: 'Apprenez comment supprimer une tâche de la liste en utilisant HTTP Client dans une application Angular.'},
+]} />
+
+## TaskService
+
+Basé sur le protocole HTTP, vous utiliserez la fonction **delete** pour ajouter une tâche à la liste : **http.delete()**.
+Cette fonction n'attend qu'un seul paramètre, l'URL de la ressource à supprimer, incluant l'**id** de la tâche à supprimer.
+
+```typescript
+deleteTask(task: Task) {
+  return this.http.delete<Task>(`${http://localhost:3000/tasks/${task.id}}`);
+}
+```
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Modifiez le fichier **task.service.ts**.
+
+    ```typescript ins={"Ajoutez la fonction deleteTask": 10-16}
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Task, TaskForm } from './task.model';
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class TaskService {
+        constructor(private http: HttpClient) { }
+
+        deleteTask(id: string) {
+            return this.http.delete<Task>(`${http://localhost:3000/tasks/${id}}`);
+        }
+    }
+    ```
+
+</Steps>
+
+## TaskFormComponent
+
+Mettez à jour **TaskFormComponent** pour utiliser cette nouvelle fonction.
+Le moyen le plus simple de le faire serait d'appliquer la même logique que dans la leçon précédente, en mettant à jour la fonction **submit** pour effectuer un appel API et accéder à la page de liste.
+    Cela donnerait le code suivant :
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Modifiez le fichier `src/app/task-list/task-list.component.ts`.
+
+   ```typescript ins={"Modifiez la fonction deleteTask": 13-16}
+   import { Component } from '@angular/core';
+   import { TaskService } from '../task.service';
+
+   @Component({
+     selector: 'app-task-list',
+     templateUrl: './task-list.component.html',
+     styleUrls: ['./task-list.component.css']
+   })
+   export class TaskListComponent {
+     tasks$ = this.taskService.getTasks();
+
+     constructor(private taskService: TaskService) { }
+
+     deleteTask(id: string): void {
+       this.taskService.deleteTask(id);
+     }
+   }
+   ```
+
+</Steps>
+
+Dans la même logique vu précédemment, nous allons attendre le retour de la requête pour actualiser la vue de la liste des tâches.
+
+## ✔️ Ce que vous avez appris
+
+Vous avez appris à envoyer une requête **DELETE** avec HttpClient pour supprimer une tâche dans une application Angular.

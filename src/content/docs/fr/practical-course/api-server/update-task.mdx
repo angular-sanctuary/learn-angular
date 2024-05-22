@@ -1,0 +1,119 @@
+---
+title: Modifiez la mise à jour de la tâche avec HTTP Client
+description: Découvrez comment mettre à jour une tâche de la liste à l'aide de HTTP Client dans une application Angular.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Modifiez la mise à jour de la tâche avec HTTP Client', description: 'Apprenez comment mettre à jour une tâche de la liste en utilisant HTTP Client dans une application Angular.'},
+]} />
+
+En plus de cibler la mise à jour d'une tâche plutôt que sa création, cette leçon sera assez similaire à la précédente :
+
+- Vous mettrez à jour **TaskService**;
+- Vous mettrez à jour **TaskFormComponent** en faisant attention à la requête HTTP asynchrone.
+
+## TaskService
+
+Basé sur le protocole HTTP, vous utiliserez la fonction **put** pour ajouter une tâche à la liste : **http.put()**.
+Cette fonction attend 2 paramètres :
+
+1. L'URL du serveur API; Cette URL inclura l'identifiant de la tâche à mettre à jour : `http://localhost:3000/tasks/${task.id}`
+2. L'objet de la tâche à envoyer au serveur
+
+```typescript
+updateTask(task: Task) {
+  return this.http.post<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+}
+```
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Modifiez le fichier **task.service.ts**.
+
+    ```typescript ins={"Add the addTask function": 10-16}
+    import { Injectable } from '@angular/core';
+    import { HttpClient } from '@angular/common/http';
+    import { Task, TaskForm } from './task.model';
+
+    @Injectable({
+        providedIn: 'root'
+    })
+    export class TaskService {
+        constructor(private http: HttpClient) { }
+
+        updateTask(task: Task) {
+            return this.http.post<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+        }
+    }
+    ```
+
+</Steps>
+
+## TaskFormComponent
+
+Modifiez **TaskFormComponent** pour qu'il utilise la nouvelle fonction.
+Le moyen le plus simple de le faire serait d'appliquer la même logique que dans la leçon précédente, en mettant à jour la fonction **submit** pour effectuer un appel API et accéder à la page de liste.
+
+Cela donnerait le code suivant :
+
+```typescript ins={"Update the submit function": 3-6}
+submit(task: TaskForm) {
+    if (task.id) {
+
+        this.taskService.updateTask(task).subscribe(() => {
+            this.router.navigate(['/']);
+        });
+    } else {
+        this.taskService.addTask(task).subscribe(() => {
+            this.router.navigate(['/']);
+        });
+    }
+}
+```
+
+Cela fonctionne mais ce n'est pas la meilleure façon de procéder car nous dupliquons la logique de navigation. Si le chemin de la page de liste change, nous devrons le mettre à jour à deux endroits.
+Gérez-le en modifiant la fonction **submit** :
+
+- Créez une variable dont la valeur sera soit la fonction **updateTask** ou **addTask**. Sa valeur sera donc une **Observable** auquelle vous pourrez vous abonner.
+- Abonnez-vous à cette variable et accédez à la page de la liste.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Modifiez le fichier **task-form.component.ts**.
+
+    ```typescript ins={"Update the submit function": 3-15}
+    import { Component, OnInit } from '@angular/core';
+    import { Router } from '@angular/router';
+    import { TaskForm } from '../task.model';
+    import { TaskService } from '../task.service';
+
+    @Component({
+        selector: 'app-task-form',
+        templateUrl: './task-form.component.html',
+        styleUrls: ['./task-form.component.css']
+    })
+    export class TaskFormComponent implements OnInit {
+        constructor(private taskService: TaskService, private router: Router) { }
+
+        submit(task: TaskForm) {
+            const taskObservable = task.id ? this.taskService.updateTask(task) : this.taskService.addTask(task);
+
+            taskObservable.subscribe(() => {
+                this.router.navigate(['/']);
+            });
+        }
+    }
+    ```
+
+</Steps>
+
+## ✔️ Ce que vous avez appris
+
+Vous avez appris à envoyer une requête **PUT** avec HttpClient pour mettre à jour une tâche dans une application Angular.

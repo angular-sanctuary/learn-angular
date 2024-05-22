@@ -1,0 +1,109 @@
+---
+title: Ajoutez une route pour la fonctionnalité de mise à jour de la tâche
+description: Découvrez comment ajouter une route pour mettre à jour une tâche dans une application Angular.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+{mainTitle: 'Objectifs de ce chapitre', title: 'Créez une route dynamique', description: 'Définissez un chemin de routage dynamique pour transmettre l\'identifiant de la tâche à mettre à jour.'},
+]} />
+
+## Configuration de la route
+
+Jusqu'à présent, vous avez défini 2 chemins de route:
+
+- `''` pour le composant **TaskListComponent** pour afficher la liste des tâches;
+- `'add-task'` pour le composant **AddTaskComponent** pour afficher un formulaire.
+
+Le chemin de mise à jour est assez différent car vous ne voulez pas seulement aller sur une nouvelle page. Pour mettre à jour une tâche, vous devez savoir quelle tâche mettre à jour.
+
+Une manière courante de fournir des informations à un composant routé consiste à utiliser un chemin de routage dynamique.
+
+## Créer l'itinéraire
+
+Le nouveau chemin sera `update/:id`.
+La partie `update` est statique mais la partie `:id` est dynamique.
+
+:::tip
+La partie `:id` est un paramètre de route.
+Vous pouvez enchaîner plusieurs paramètres de route dans un chemin, par exemple `'update/:id/:name'`.
+Chacun est préfixé par deux points `:` suivi d'un nom choisi arbitrairement.
+:::
+
+Vous ne créerez pas de composant dédié pour la fonctionnalité de mise à jour.
+Le but de **TaskFormComponent** est de créer des tâches avec la saisie de l'utilisateur et de mettre à jour.
+Mettons à jour le composant pour gérer à la fois la création et la mise à jour.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Mettez à jour le fichier `src/app/app-routing.module.ts`.
+
+   ```typescript ins={"1. Ajoutez la route pour la fonctionnalité de tâche de mise à jour": 9-10}
+   import { NgModule } from '@angular/core';
+   import { RouterModule, Routes } from '@angular/router';
+   import { TaskListComponent } from './task-list/task-list.component';
+   import { TaskFormComponent } from './task-form/task-form.component';
+
+   const routes: Routes = [
+       { path: '', component: TaskListComponent },
+       { path: 'add-task', component: TaskFormComponent },
+
+       { path: 'update/:id', component: TaskFormComponent }
+   ];
+
+   @NgModule({
+     imports: [RouterModule.forRoot(routes)],
+     exports: [RouterModule]
+   })
+   export class AppRoutingModule { }
+   ```
+
+
+
+</Steps>
+
+## Mettez à jour la navigation
+
+Ajoutez un lien dans le **TaskListComponent** pour accéder au **TaskFormComponent** avec l'**id** de la tâche à mettre à jour.
+En accédant à ce chemin, vous extrairez la valeur **id** de l'URL dans le chapitre suivant.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Mettez à jour le fichier `src/app/task-list/task-list.component.html`.
+
+    ```html ins={"1. Ajoutez un bouton de mise à jour": 4-5}
+    <ul>
+      <li *ngFor="let task of tasks; let i = index">
+        Nom de la tâche: {{ task.title }}
+
+        <a [routerLink]="['/update', task.id]">Mettre à jour</a>
+      </li>
+    </ul>
+    ```
+
+</Steps>
+
+La valeur **routerLink** attend une chaîne ou un tableau de segments d'URL.
+La première est une chaîne, la partie statique du chemin.
+Le second est le **id** de la tâche à mettre à jour.
+
+## Testez-le
+
+<Steps>
+
+1. Cliquez sur le bouton 'Mettre à jour' sur la première tâche de la liste.
+2. Vérifiez l'URL:  `http://localhost:4200/update/1` par exemple.
+3. Le formulaire **TaskFormComponent** s'affiche bien.
+
+</Steps>
+
+## ✔️ Ce que vous avez appris
+
+Dans ce chapitre, vous avez appris à ajouter une route pour mettre à jour une tâche dans une application Angular. Vous avez appris à définir un chemin de routage dynamique pour transmettre l'**id** de la tâche à mettre à jour. Vous avez également appris à utiliser la directive **routerLink** pour accéder au **TaskFormComponent** et transmettre l'**id** de la tâche à mettre à jour.
+
