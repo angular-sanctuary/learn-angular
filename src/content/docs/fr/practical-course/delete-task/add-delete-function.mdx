@@ -7,7 +7,7 @@ import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{mainTitle: 'Objectifs de ce chapitre', title: 'Gérer la suppression', description: 'Découvrez comment supprimer une tâche de la liste.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Gérez la suppression', description: 'Découvrez comment supprimer une tâche de la liste.'},
 ]} />
 
 ## La fonction deleteTask
@@ -21,7 +21,7 @@ Cette fonction supprimera la tâche de la liste en se basant sur son **id**.
 
 1. Modifiez le fichier `src/app/task.service.ts`.
 
-   ```typescript ins={"Ajout de la fonction deleteTask": 22-25}
+   ```typescript ins={"Ajoutez de la fonction deleteTask": 22-25}
    import { Injectable } from '@angular/core';
 
    @Injectable({

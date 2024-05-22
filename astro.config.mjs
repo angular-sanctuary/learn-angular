@@ -185,18 +185,22 @@ export default defineConfig({
       }, {
         label: 'Update task',
         collapsed: true,
+        translations: { fr: 'Mettre à jour une tâche'},
         items: [{
           label: '🚀 Update overview',
           link: '/practical-course/update-task/update-overview'
         }, {
           label: 'Update task route',
-          link: '/practical-course/update-task/update-task-route'
+          link: '/practical-course/update-task/update-task-route',
+          translations: { fr: 'Naviguez avec panache !' }
         }, {
           label: 'Update form',
-          link: '/practical-course/update-task/update-task-form'
+          link: '/practical-course/update-task/update-task-form',
+          translations: { fr: 'Formulaire de mise à jour' }
         }, {
           label: 'Submit update form',
-          link: '/practical-course/update-task/submit-update-form'
+          link: '/practical-course/update-task/submit-update-form',
+          translations: { fr: 'Soumettez le formulaire de mise à jour' }
         }, {
           label: '🏁 Update review',
           link: '/practical-course/update-task/update-review',
@@ -241,27 +245,34 @@ export default defineConfig({
       }, {
         label: 'API Server',
         collapsed: true,
+        translations: { fr: 'Utilisez les APIs' },
         items: [{
           label: '🚀 API overview',
           link: '/practical-course/api-server/api-overview'
         }, {
           label: 'JSON server installation',
-          link: '/practical-course/api-server/json-server-installation'
+          link: '/practical-course/api-server/json-server-installation',
+          translations: { fr: 'Installation de JSON server' }
         }, {
           label: 'Add HTTP client',
-          link: '/practical-course/api-server/add-http-client'
+          link: '/practical-course/api-server/add-http-client',
+          translations: { fr: 'Ajoutez HTTP Client' }
         }, {
           label: 'Retrieve tasks',
-          link: '/practical-course/api-server/retrieve-tasks'
+          link: '/practical-course/api-server/retrieve-tasks',
+          translations: { fr: 'Récupérez la liste des tâches' }
         }, {
           label: 'Create task',
-          link: '/practical-course/api-server/create-task'
+          link: '/practical-course/api-server/create-task',
+          translations: { fr: 'Modifiez la création' }
         }, {
           label: 'Update task',
-          link: '/practical-course/api-server/update-task'
+          link: '/practical-course/api-server/update-task',
+          translations: { fr: 'Modifiez la mise à jour' }
         }, {
           label: 'Delete task',
-          link: '/practical-course/api-server/delete-task'
+          link: '/practical-course/api-server/delete-task',
+          translations: { fr: 'Modifiez la suppression' }
         }, {
           label: '🏁 API review',
           link: '/practical-course/api-server/api-review',

@@ -1,0 +1,68 @@
+---
+title: Ajoutez HTTP Client
+description: Découvrez comment ajouter HTTP Client à une application Angular.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Ajoutez HTTP Client', description: 'Découvrez comment ajouter HTTP Client pour communiquer avec le faux serveur API.'},
+]} />
+
+## Module HttpClient
+
+Le **HttpClientModule** est un module Angular intégré qui vous permet d'envoyer des requêtes HTTP à un serveur.
+Il fournit un service **HttpClient** que vous pouvez injecter dans vos services pour effectuer des requêtes HTTP.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Importez **HttpClientModule** dans le fichier `src/app/app.module.ts`.
+
+    ```typescript ins={"Importez HttpClientModule": 3-4} ins={"Ajoutez HttpClientModule au tableau d\'imports": 13-14}
+    import { BrowserModule } from '@angular/platform-browser';
+    import { NgModule } from '@angular/core';
+
+    import { HttpClientModule } from '@angular/common/http';
+    import { AppComponent } from './app.component';
+
+    @NgModule({
+    declarations: [
+    AppComponent
+    ],
+    imports: [
+    BrowserModule,
+
+    HttpClientModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+    ```
+
+2. Injectez le service HttpClient dans le fichier `src/app/task.service.ts`.
+
+    ```typescript ins={"Importez le service HttpClient": 2-3} ins={"Injectez le service HttpClient": 9-11}
+    import { Injectable } from '@angular/core';
+
+    import { HttpClient } from '@angular/common/http';
+
+    @Injectable({
+    providedIn: 'root'
+    })
+    export class TaskService {
+
+    constructor(private http: HttpClient) { }
+    }
+    ```
+
+</Steps>
+
+## ✔️ Ce que vous avez appris
+
+**HttpClientModule** est un module Angular intégré qui vous permet d'envoyer des requêtes HTTP à un serveur.
+C'est l'un des premiers modules ajoutés à une application Angular réelle pour communiquer avec un serveur.
+Dans les prochains chapitres, nous l'utiliserons pour communiquer avec le faux serveur API afin de récupérer et de mettre à jour les tâches.

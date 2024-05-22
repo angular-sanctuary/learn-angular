@@ -1,0 +1,73 @@
+---
+title: Installez JSON Server
+description: Découvrez comment installer JSON Server pour créer une fausse API.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import Objective from '../../../../../components/learning-objective.astro';
+
+<Objective class="drop-shadow-xl" objectives={[
+    {mainTitle: 'Objectifs de ce chapitre', title: 'Ajoutez JSON Server', description: 'Installez et configurez json-server en tant que faux serveur API.'},
+]} />
+
+## Qu'est-ce que le JSON server ?
+
+json-server est un petit package qui vous aide à créer une API sans code en moins de 30 secondes.
+Il s'agit d'une fausse API complète sans code qui vous permet de créer, lire, mettre à jour et supprimer des tâches.
+
+Cela ne nous fournira pas un véritable serveur API, mais c'est un excellent outil pour se concentrer sur la partie Angular de l'application.
+
+Installons-le et créons une fausse base de données.
+
+### 🎓 Instructions
+
+<Steps>
+
+1. Exécutez la commande suivante dans un terminal pour installer json-server.
+
+    ```bash
+    npm install json-server
+    ```
+2. Créez un fichier `db.json` à la racine du projet et remplissez-le avec une liste de tâches.
+
+    ```json
+    {
+      "tasks": [
+        {
+          "id": 1,
+          "title": "Première tâche",
+          "description": "Voici la première tâche de ta to-do liste.",
+          "createdAt": "2021-09-01T12:00:00"
+        },
+        {
+          "id": 2,
+          "title": "Seconde tâche",
+          "description": "Voici la seconde tâche de ta to-do liste.",
+          "createdAt": "2021-09-01T12:00:00"
+        }
+      ]
+    }
+    ```
+3. Créez un script `start-server` dans votre fichier `package.json`.
+
+    ```json
+    {
+      "scripts": {
+        "start-server": "json-server --watch db.json"
+      }
+    }
+    ```
+4. Exécutez la commande suivante pour démarrer json-server.
+
+    ```bash
+    npm run start-server
+    ```
+5. Ouvrez votre navigateur et accédez à `http://localhost:3000/tasks`.
+
+</Steps>
+
+
+## ✔️ Ce que vous avez appris
+
+Dans ce chapitre, vous avez appris comment ajouter json-server et le configurer pour créer un faux serveur API.
+Il sera utilisé dans les prochains chapitres pour créer, lire, mettre à jour et supprimer des tâches comme si vous intérargissez avec un véritable serveur API.

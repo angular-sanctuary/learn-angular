@@ -7,7 +7,7 @@ import { Steps } from '@astrojs/starlight/components';
 import Objective from '../../../../../components/learning-objective.astro';
 
 <Objective class="drop-shadow-xl" objectives={[
-{mainTitle: 'Objectifs de ce chapitre', title: 'Supprimer une tâche', description: 'Ajoutez un bouton supprimer dans le TaskListComponent pour supprimer la tâche dans la liste.'},
+{mainTitle: 'Objectifs de ce chapitre', title: 'Supprimez une tâche', description: 'Ajoutez un bouton supprimer dans le TaskListComponent pour supprimer la tâche dans la liste.'},
 ]} />
 
 ## Le bouton supprimer
@@ -42,9 +42,9 @@ Cette fonction appelera la fonction **deleteTask** de **TaskService** crée dans
 
 <Steps>
 
-1. Modifiez le fichier  `src/app/task-list/task-list.component.ts`.
+1. Modifiez le fichier `src/app/task-list/task-list.component.ts`.
 
-   ```typescript ins={"Ajouter la fonction deleteTask et appeler deleteTask du TaskService": 13-16}
+   ```typescript ins={"Ajoutez la fonction deleteTask et appeler deleteTask du TaskService": 13-16}
    import { Component } from '@angular/core';
    import { TaskService } from '../task.service';
 
