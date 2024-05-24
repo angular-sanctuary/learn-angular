@@ -20,7 +20,7 @@ Sur la balise HTML `<button>`, vous pouvez lier l'événement clic à une foncti
 Vous lui attribuez la fonction que vous voulez exécuter lorsque l'on clique sur le bouton.
 
 ```html ins="(click)="submit()""
-<button type="submit" class="btn btn-primary" (click)="submit()">Créer une tâche</button>
+<button type="submit" class="btn btn-primary" (click)="submit()">Soumettre</button>
 ```
 
 Dans la classe du **TaskFormComponent**, vous devez créer la fonction liée. Sans cela, Angular ne compilera pas.
@@ -40,7 +40,7 @@ Dans la classe du **TaskFormComponent**, vous devez créer la fonction liée. Sa
       <label for="description" class="form-label">Description:</label>
       <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
 
-      <button type="submit" class="btn btn-primary" (click)="submit()">Créer une tâche</button>
+      <button type="submit" class="btn btn-primary" (click)="submit()">Soumettre</button>
     </form>
     ```
 
