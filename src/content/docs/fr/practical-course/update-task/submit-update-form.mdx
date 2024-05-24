@@ -76,14 +76,20 @@ Quand?
 - Si la tâche n'a pas d'**id**, appelez la fonction **addTask**.
 
 ```typescript
-submit(task) {
-    if (task.id) {
-        this.taskService.updateTask(task);
+submit() {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+      const existingTask = this.taskService.getTask(id);
+      this.taskService.updateTask({
+        ...existingTask,
+        ...this.task
+      });
     } else {
-        this.taskService.addTask(task);
+      this.taskService.addTask(this.task);
     }
     this.router.navigate(['/tasks']);
-}
+  }
 ```
 
 Dans les deux cas, revenez à la liste des tâches.
@@ -94,7 +100,7 @@ Dans les deux cas, revenez à la liste des tâches.
 
 1. Mettez à jour le fichier `src/app/task-form/task-form.component.ts`.
 
-   ```typescript ins={"Ajoutez la fonction updateTask": 28-33}
+   ```typescript ins={"Ajoutez la fonction updateTask": 28-42}
    import { Component, OnInit } from '@angular/core';
    import { ActivatedRoute } from '@angular/router';
    import { TaskService } from '../task.service';
@@ -123,15 +129,20 @@ Dans les deux cas, revenez à la liste des tâches.
          }
      }
 
-     submit(task) {
+        submit() {
+            const id = this.route.snapshot.paramMap.get('id');
 
-       if (task.id) {
-           this.taskService.updateTask(task);
-           } else {
-           this.taskService.addTask(task);
-       }
-         this.router.navigate(['/tasks']);
-     }
+            if (id) {
+                const existingTask = this.taskService.getTask(id);
+                this.taskService.updateTask({
+                    ...existingTask,
+                    ...this.task
+                });
+            } else {
+                this.taskService.addTask(this.task);
+            }
+            this.router.navigate(['/tasks']);
+        }
    }
    ```
 
