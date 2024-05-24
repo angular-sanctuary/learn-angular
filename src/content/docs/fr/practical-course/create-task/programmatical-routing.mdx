@@ -21,7 +21,7 @@ Mais que se passe-t-il si l'on souhaite rediriger l'utilisateur vers la liste de
 C'est un scénario courant dans les applications Web et Angular fournit un moyen de le faire.
 
 Vous avez vu comment déclencher une navigation en cliquant sur un lien avec la directive **routerLink**.
-Mais dans cette situation, vous allez déclencher une navigation lorsque la fonction **createTask** est appelée.
+Mais dans cette situation, vous allez déclencher une navigation lorsque la fonction **submit** est appelée.
 
 ## Injectez le Router
 
@@ -60,7 +60,7 @@ Ce service vous permet de récupérer des informations sur la route actuelle et 
             private router: Router
         ) { }
 
-        createTask() {
+        submit() {
             this.taskService.addTask(this.task);
 
             this.router.navigate(['/']);

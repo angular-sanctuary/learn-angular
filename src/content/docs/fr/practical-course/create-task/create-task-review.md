@@ -26,7 +26,7 @@ We create a HTML form structure in the `TaskFormComponent` class.
   <label for="description">Description:</label>
   <textarea id="description" name="description" [(ngModel)]="task.description"></textarea>
   
-  <button type="submit" (click)="createTask()">Create task</button>
+  <button type="submit" (click)="submit()">Create task</button>
 </form>
 ```
 
@@ -57,7 +57,7 @@ export class TaskFormComponent {
       private router: Router
   ) { }
     
-  createTask() {
+  submit() {
     this.taskService.addTask(this.task);
     this.router.navigate(['/tasks']);
   }

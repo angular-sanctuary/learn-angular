@@ -41,7 +41,7 @@ La première étape est d'injecter le service dans votre composant.
         constructor(private taskService: TaskService) { }
 
 
-        createTask() {
+        submit() {
             this.taskService.addTask(this.task);
         }
     }
