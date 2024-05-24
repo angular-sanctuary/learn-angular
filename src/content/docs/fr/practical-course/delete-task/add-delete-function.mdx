@@ -21,7 +21,7 @@ Cette fonction supprimera la tâche de la liste en se basant sur son **id**.
 
 1. Modifiez le fichier `src/app/task.service.ts`.
 
-   ```typescript ins={"Ajoutez de la fonction deleteTask": 22-25}
+   ```typescript ins={"Ajoutez de la fonction deleteTask": 22-26}
    import { Injectable } from '@angular/core';
 
    @Injectable({
@@ -44,9 +44,10 @@ Cette fonction supprimera la tâche de la liste en se basant sur son **id**.
        ];
 
 
-     deleteTask(id: string): void {
-       this.tasks = this.tasks.filter(task => task.id !== id);
-     }
+    deleteTask(id: string): void {
+        const taskIndex = this.tasks.findIndex(task => task.id === id);
+        this.tasks.splice(taskIndex, 1);
+    }
    }
    ```
 

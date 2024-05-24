@@ -21,14 +21,17 @@ Quand l\'utilisateur clique sur ce bouton, la tâche sera supprimée de la liste
 
 1. Modifiez le fichier `src/app/task-list/task-list.component.html`.
 
-   ```html ins={"1. Ajouter un bouton supprimer": 4-5}
-   <ul>
-     <li *ngFor="let task of tasks">
-       Tâche : {{ task.title }}
+   ```html ins={"1. Ajouter un bouton supprimer": 7-8}
+   // task-list.component.html
+    <tr *ngFor="let task of tasks">
+        <td>{{ task.title }}</td>
+        <td>{{ task.createdAt | date }}</td>
+        <td>
+            <a class="btn btn-primary" [routerLink]="['/update', task.id]">Mettre à jour</a>
 
-       <button type="button" (click)="deleteTask(task.id)">Supprimer</button>
-     </li>
-   </ul>
+            <button class="btn btn-danger" type="button" (click)="deleteTask(task.id)">Supprimer</button>
+        </td>
+    </tr>
    ```
 
 </Steps>

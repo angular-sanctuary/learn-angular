@@ -29,12 +29,15 @@ En lui donnant une condition, l'élèment n'est construit et afficher que si la 
 
 1. Modifiez le fichier `src/app/task-list.component.html`.
 
-   ```html ins={"1. Ajoutez un message quand la liste est vide": 6-7}
-   <ul>
-     <li *ngFor="let task of tasks">
-       Task name : {{ task.title }}
-     </li>
-   </ul>
+   ```html ins={"1. Ajoutez un message quand la liste est vide": 9-10}
+    <tr *ngFor="let task of tasks">
+    <td>{{ task.title }}</td>
+    <td>{{ task.createdAt | date }}</td>
+    <td>
+            <a class="btn btn-primary" [routerLink]="['/update', task.id]">Mettre à jour</a>
+            <button class="btn btn-danger" type="button" (click)="deleteTask(task.id)">Supprimer</button>
+        </td>
+    </tr>
 
    <p *ngIf="!tasks.length">Pas de tâche</p>
    ```
