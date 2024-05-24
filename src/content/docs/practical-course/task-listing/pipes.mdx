@@ -38,11 +38,11 @@ You'll use the latter one to format the task **createdAt** date as a human-reada
 
 2. Replace the content of the file with the following code:
 
-    ```html ins={"use date pipe and pass it a shortdate option for a more grained format": 3-4}
+    ```html ins={"use date pipe": 3-4}
     <ul>
         <li *ngFor="let task of tasks">
 
-        {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
+        {{ task.title }} - {{ task.createdAt | date }}
         </li>
     </ul>
     ```

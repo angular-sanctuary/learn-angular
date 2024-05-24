@@ -36,13 +36,25 @@ Vous utiliserez cette dernière pour formater la date **createdAt** de la tâche
 
 1. Modifiez le fichier `src/app/task-list.component.html`.
 
-    ```html ins={"utilisez la pipe de date et transmettez-lui une option shortdate pour un format plus précis": 3-4}
-    <ul>
-      <li *ngFor="let task of tasks">
+    ```html ins={"utilisez la pipe de date": 13-14} ins="| date: 'shortdate'"
+    // task-list.component.html
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+        <td>{{ task.title }}</td>
 
-        {{ task.title }} - {{ task.createdAt | date: 'shortdate' }}
-      </li>
-    </ul>
+        <td>{{ task.createdAt | date }}</td>
+        <td></td>
+        </tr>
+    </tbody>
+    </table>
     ```
 
 2. Vérifiez les modifications dans votre navigateur :
@@ -61,11 +73,23 @@ Comme l'interpolation évalue l'expression JavaScript, vous pouvez lui transmett
 Dans l'exemple suivant, nous utilisons une fonction pour formater la date de création de la tâche. La fonction prend la date de création de la tâche comme argument et renvoie une date formatée.
 
 ```html ins="formatDate(task.createdAt)"
-<ul>
-  <li *ngFor="let task of tasks">
-    {{ task.title }} - {{ formatDate(task.createdAt) }}
-  </li>
-</ul>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let task of tasks">
+    <td>{{ task.title }}</td>
+
+    <td>{{ formatDate(task.createdAt) }}</td>
+    <td></td>
+    </tr>
+    </tbody>
+</table>
 ```
 
 ```typescript ins={"passe la date et renvoie une date formatée": 6-13}

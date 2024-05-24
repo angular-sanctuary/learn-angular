@@ -38,13 +38,24 @@ Vous pouvez utiliser n'importe quelle expression TypeScript valide entre ces dé
 
 1. Modifiez le fichier `src/app/task-list.component.html`.
 
-    ```html ins={"Ajoutez une interpolation et transmettez-lui une propriété de tâche": 3-4}
-    <ul>
-      <li *ngFor="let task of tasks">
+    ```html ins={"Ajoutez une interpolation et transmettez-lui une propriété de tâche": 11-13}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
 
-        {{ task.title }} - {{ task.createdAt }}
-      </li>
-    </ul>
+        <td>{{ task.title }}</td>
+        <td>{{ task.createdAt }}</td>
+        <td></td>
+        </tr>
+    </tbody>
+    </table>
     ```
 
 2. Vérifiez les modifications dans votre navigateur :

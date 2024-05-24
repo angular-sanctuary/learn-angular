@@ -14,19 +14,35 @@ import Objective from '../../../../../components/learning-objective.astro';
 
 ## Structure HTML
 
-Pour afficher une liste d'éléments, la structure HTML attendue est :
+Pour afficher un tableau d'éléments, la structure HTML attendue est :
 
 ```html
-<ul class="list-group">
-  <li class="list-group-item">Item 1</li>
-  <li class="list-group-item">Item 2</li>
-  <li class="list-group-item">Item 3</li>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Date</th>
+        <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td>Suivre le cours</td>
+        <td>24/05/2024</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>Suivre le cours</td>
+        <td>24/05/2024</td>
+        <td></td>
+    </tr>
+  </tbody>
+</table>
 ```
 
 <Image class="shadow-xl rounded-xl" src={staticImg} alt="Un oiseau posé sur un nid d’œufs."/>
 
-Cependant, que se passe-t-il si vous souhaitez afficher une liste dynamique d’éléments évoluant au fil du temps ?
+Cependant, que se passe-t-il si vous souhaitez afficher un tableau dynamique d’éléments évoluant au fil du temps ?
 Et si une nouvelle tâche est ajoutée ?
 
 Vous voudrez vous appuyer sur la variable **tasks** pour afficher la bonne liste de tâches.
@@ -49,11 +65,25 @@ Cette syntaxe est `let task of tasks` :
 - **tasks** fait référence à la liste définie dans votre fichier `composant.ts`.
 - **task** est la référence pour utiliser la valeur de chaque élément de la liste (vous pouvez le nommer comme vous le souhaitez).
 
-```html
-  <ul>
-    <li *ngFor="let item of items"></li>
-  </ul>
-```
+    ```html
+    <table class="table">
+      <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let task of tasks">
+            <td>Suivre le cours</td>
+            <td>24/05/2024</td>
+            <td></td>
+        </tr>
+      </tbody>
+    </table>
+    ```
 
 ### 🎓 Instructions
 
@@ -63,11 +93,22 @@ Cette syntaxe est `let task of tasks` :
 
     ```html
     // task-list.component.html
-    <ul class="list-group">
-      <li *ngFor="let task of tasks" class="list-group-item">
-        Task
-      </li>
-    </ul>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nom</th>
+            <th scope="col">Date</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let task of tasks">
+        <td>Suivre le cours</td>
+        <td>24/05/2024</td>
+        <td></td>
+        </tr>
+    </tbody>
+    </table>
     ```
 
 2. Revenez à votre navigateur et consultez la page suivante :
