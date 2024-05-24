@@ -122,4 +122,4 @@ Not only it might leads to bugs, but it'll complexify the code by having to chec
 
 ## Conclusion
 
-In this chapter, you learned how to create derivations of a Typescript interface with the `Omit` utility type. You also learned about the alternatives to `Omit`, such as `Partial`, `Pick`, and optional properties.
+In this chapter, you learned how to create derivations of a TypeScript interface with the `Omit` utility type. You also learned about the alternatives to `Omit`, such as `Partial`, `Pick`, and optional properties.
