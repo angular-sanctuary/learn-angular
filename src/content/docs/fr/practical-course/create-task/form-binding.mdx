@@ -59,7 +59,35 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
     export type TaskForm = Pick<Task, 'title' | 'description'>;
     ```
 
-3. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
+3. Importer la fonctionnalité de formulaires dans Angular avec le module **FormsModule**
+
+    ```typescript ins={"Importer FormsModule": 3-4} ins={"Ajouter FormsModule dans le tableau des imports": 16-17}
+    // app.module.ts
+    import { NgModule } from '@angular/core';
+
+    import {FormsModule} from "@angular/forms";
+
+    @NgModule({
+    declarations: [
+    AppComponent,
+    TaskListComponent,
+    TaskFormComponent
+    ],
+    imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+
+    FormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
+
+    ```
+
+4. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
 
     ```typescript ins={"Importez le nouveau type TaskForm": 3-4} ins={"Ajoutez la variable task avec des valeurs vides": 12-16}
     // task-form.component.ts

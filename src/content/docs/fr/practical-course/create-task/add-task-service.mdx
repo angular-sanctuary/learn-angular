@@ -21,12 +21,12 @@ Créez une fonction pour ajouter une tâche à la liste.
 
 1. Modifiez le fichier `src/app/task.service.ts`.
 
-    ```typescript ins={"Importez le package uuid": 4-5} ins={"Ajoutez la fonction addTask": 26-32}
+    ```typescript ins={"importer le type TaskForm": 4-5} ins={"Ajoutez la fonction addTask": 26-32}
     // task.service.ts
     import { Injectable } from '@angular/core';
     import { Task } from './models/task.model';
 
-    import { v4 as uuid } from 'uuid';
+    import {TaskForm} from './models/task-form.model';
 
     @Injectable({
       providedIn: 'root'
@@ -48,9 +48,10 @@ Créez une fonction pour ajouter une tâche à la liste.
                 ];
 
 
-        addTask(task: Task): void {
+        addTask(task: TaskForm): void {
             this.tasks.push({
                 ...task,
+                id: uuid(),
                 createdAt: new Date()
             });
         }

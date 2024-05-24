@@ -103,12 +103,13 @@ La balise HTML `<a>` est utilisée pour créer des liens et est associée la dir
 
 1. Modifiez le fichier `src/app/app.component.html`.
 
-    ```html ins={"Ajoutez des liens pour naviguer entre les routes": 3-5}
+    ```html ins={"Ajoutez des liens pour naviguer entre les routes": 4-6}
     // app.component.html
     <header>
-        <h1>Angular Practical course</h1>
-        <a routerLink="/">Liste des tâches</a>
-        <a routerLink="/add-task">Ajouter une nouvelle tâche</a>
+        <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
+
+        <a class="btn btn-light" routerLink="/">Liste des tâches</a>
+        <a class="btn btn-light" routerLink="/add-task">Ajouter une nouvelle tâche</a>
     </header>
 
     <main class="container pt-4">

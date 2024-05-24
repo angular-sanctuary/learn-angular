@@ -61,11 +61,13 @@ La commande `ng generate` que vous avez utilisé pour les composants peut égale
 
 2. Ouvrez le fichier `task.service.ts` et ajoutez une propriété pour stocker la liste des tâches:
 
-    ```typescript ins={"Importez l\'interface des tâches": 3-4} ins={"Ajoutez la variable des tâches": 10-24}
+    ```typescript ins={"Importez l\'interface des tâches": 3-4} ins={"importer uuid": 5-6} ins={"Ajoutez la variable des tâches": 12-26}
     // task.service.ts
     import { Injectable } from '@angular/core';
 
     import { Task } from './models/task.model';
+
+    import { v4 as uuid } from 'uuid';
 
     @Injectable({
       providedIn: 'root'
