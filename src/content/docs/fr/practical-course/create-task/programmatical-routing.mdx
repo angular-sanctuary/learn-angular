@@ -48,7 +48,7 @@ Ce service vous permet de récupérer des informations sur la route actuelle et 
         templateUrl: './task-form.component.html',
         styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
         task = {
             title: '',
             description: ''
@@ -59,8 +59,6 @@ Ce service vous permet de récupérer des informations sur la route actuelle et 
 
             private router: Router
         ) { }
-
-        ngOnInit() {}
 
         createTask() {
             this.taskService.addTask(this.task);

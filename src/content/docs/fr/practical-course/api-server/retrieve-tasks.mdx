@@ -100,7 +100,7 @@ Une Observable **observe** un flux de données.
 1. Mettez à jour le fichier `src/app/task-list/task-list.component.ts`.
 
     ```typescript del={"Supprimez la variable task": 11-12} ins={"Remplacez-la avec la variable tasks$": 13-14}
-    import { Component, OnInit } from '@angular/core';
+    import { Component } from '@angular/core';
     import { TaskService } from '../task.service';
     import { Task } from '../task.model';
 
@@ -109,15 +109,13 @@ Une Observable **observe** un flux de données.
         templateUrl: './task-list.component.html',
         styleUrls: ['./task-list.component.css']
     })
-    export class TaskListComponent implements OnInit {
+    export class TaskListComponent {
 
         tasks: Task[] = this.taskService.tasks;
 
         tasks$ = this.taskService.getTasks();
 
         constructor(private taskService: TaskService) { }
-
-        ngOnInit() {}
     }
     ```
 

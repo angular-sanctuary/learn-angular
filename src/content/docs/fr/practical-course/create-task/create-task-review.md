@@ -43,7 +43,7 @@ import { Router } from '@angular/router';
   templateUrl: './task-form.component.html',
   styleUrls: ['./task-form.component.css']
 })
-export class TaskFormComponent implements OnInit {
+export class TaskFormComponent {
     
     
   task = {
@@ -56,8 +56,6 @@ export class TaskFormComponent implements OnInit {
       private taskService: TaskService,
       private router: Router
   ) { }
-  
-  ngOnInit() {}  
     
   createTask() {
     this.taskService.addTask(this.task);
@@ -107,13 +105,11 @@ import { TaskService } from '../task.service';
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
-export class TaskListComponent implements OnInit {
+export class TaskListComponent {
     
   tasks: Task[] = this.taskService.tasks;
   
   constructor(private taskService: TaskService) { }
-    
-  ngOnInit() {}  
 }
 ```
 

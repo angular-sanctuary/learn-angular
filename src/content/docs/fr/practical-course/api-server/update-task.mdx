@@ -89,7 +89,7 @@ Gérez-le en modifiant la fonction **submit** :
 1. Modifiez le fichier **task-form.component.ts**.
 
     ```typescript ins={"Update the submit function": 3-15}
-    import { Component, OnInit } from '@angular/core';
+    import { Component } from '@angular/core';
     import { Router } from '@angular/router';
     import { TaskForm } from '../task.model';
     import { TaskService } from '../task.service';
@@ -99,7 +99,7 @@ Gérez-le en modifiant la fonction **submit** :
         templateUrl: './task-form.component.html',
         styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
         constructor(private taskService: TaskService, private router: Router) { }
 
         submit(task: TaskForm) {

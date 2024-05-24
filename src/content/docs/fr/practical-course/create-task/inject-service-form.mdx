@@ -31,7 +31,7 @@ La première étape est d'injecter le service dans votre composant.
         templateUrl: './task-form.component.html',
         styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
         task = {
             title: '',
             description: ''
@@ -39,8 +39,6 @@ La première étape est d'injecter le service dans votre composant.
 
 
         constructor(private taskService: TaskService) { }
-
-        ngOnInit() {}
 
 
         createTask() {

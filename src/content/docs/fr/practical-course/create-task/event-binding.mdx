@@ -66,14 +66,12 @@ Pour cette étape, vous allez seulement enregistrer la valeur du formulaire dans
       templateUrl: './task-form.component.html',
       styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
 
       task: TaskForm = {
         title: '',
         description: ''
       };
-
-      ngOnInit() {}
 
       createTask(): void {
         console.log('Tâche créée', this.task);

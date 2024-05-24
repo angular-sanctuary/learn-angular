@@ -33,7 +33,7 @@ Au fur et à mesure que vous supprimez cette liste, l'application cessera de fon
         templateUrl: './task-list.component.html',
         styleUrls: ['./task-list.component.css']
     })
-    export class TaskListComponent implements OnInit {
+    export class TaskListComponent {
 
         tasks: Task[] = [
                     {
@@ -49,8 +49,6 @@ Au fur et à mesure que vous supprimez cette liste, l'application cessera de fon
                         createdAt: new Date()
                     }
                 ];
-
-        ngOnInit() {}
     }
     ```
 
@@ -96,8 +94,6 @@ export class TaskListComponent implements OnInit {
 
 
     constructor(private taskService: TaskService) {}
-    
-    ngOnInit() {}
 }
 ```
 
