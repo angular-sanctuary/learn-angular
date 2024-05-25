@@ -33,7 +33,9 @@ This new **getTasks** defines the contract with the API server:
 - it expects an array of **Task** objects as a response
 - it communicates with the API server at `http://localhost:3000/tasks` URL.
 
-Additionally, let's remove the tasks variable from the **TaskService** class as we no longer need it: the data will be fetched from the API server.
+:::caution
+As we are now querying the task list from the API server, the **tasks** variable is no longer needed in the **TaskService** class.
+However as some code still depends on it, we will keep it for now.
 
 ### 🎓 Instructions
 
@@ -41,7 +43,7 @@ Additionally, let's remove the tasks variable from the **TaskService** class as 
 
 1. Update the `src/app/task.service.ts` file.
 
-    ```typescript del={"Remove the task variable": 9-21} ins={"Add the getTasks function": 24-27}
+    ```typescript ins={"Add the getTasks function": 24-27}
     import { Injectable } from '@angular/core';
     import { HttpClient } from '@angular/common/http';
     import { Task } from './task.model';
@@ -50,19 +52,6 @@ Additionally, let's remove the tasks variable from the **TaskService** class as 
         providedIn: 'root'
     })
     export class TaskService {
-
-        tasks: Task[] = [
-            {
-                id: '1',
-                title: 'First task',
-                description: 'This is the first task'
-            },
-            {
-                id: '2',
-                title: 'Second task',
-                description: 'This is the second task'
-            }
-        ];
 
         constructor(private http: HttpClient) { }
 
@@ -152,12 +141,15 @@ You'll discover the alternative at the end of this page.
 
 1. Update the the `src/app/task-list/task-list.component.html` file.
 
-    ```html ins={"Update the HTML template": 1-2} ins="tasks$ | async"
-    <ul>
-        <li *ngFor="let task of tasks$ | async">
-            Task name: {{ task.title }}
-        </li>
-    </ul>
+    ```html ins="tasks$ | async"
+    <tr *ngFor="let task of tasks$ | async">
+        <td>{{ task.title }}</td>
+        <td>{{ task.createdAt | date }}</td>
+        <td>
+            <a class="btn btn-primary" [routerLink]="['/update', task.id]">Mettre à jour</a>
+            <button class="btn btn-danger" type="button" (click)="deleteTask(task.id)">Supprimer</button>
+        </td>
+    </tr>
     ```
 
 </Steps>

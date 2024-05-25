@@ -44,7 +44,7 @@ Cette nouvelle fonction **addTask** définit l'échange avec le serveur API :
 
 1. Modifiez le fichier `src/app/task.service.ts`.
 
-    ```typescript ins={"Ajoutez la fonction addTask": 10-16}
+    ```typescript ins={"Remplacez la fonction addTask": 10-16}
     import { Injectable } from '@angular/core';
     import { HttpClient } from '@angular/common/http';
     import { Task, TaskForm } from './task.model';
@@ -81,7 +81,7 @@ Abonnez-nous à l'observable en utilisant la fonction `subscribe`.
 
 1. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
 
-    ```typescript ins={"Mettez à jour la fonction de soumission du formulaire": 19-23} ins="this.taskService.addTask(task).subscribe();"
+    ```typescript ins={"Mettez à jour la fonction de soumission du formulaire": 28-29} ins="this.taskService.addTask(task).subscribe();"
     import { Component } from '@angular/core';
     import { TaskService } from '../task.service';
     import { TaskForm } from '../task.model';
@@ -97,16 +97,23 @@ Abonnez-nous à l'observable en utilisant la fonction `subscribe`.
         description: ''
       };
 
-      constructor(private taskService: TaskService) { }
+    constructor(private taskService: TaskService) { }
 
-      submit(task: TaskForm) {
-        if (task.id) {
-            this.taskService.updateTask(task);
+    submit() {
+        const id = this.route.snapshot.paramMap.get('id');
+
+        if (id) {
+            const existingTask = this.taskService.getTask(id);
+            this.taskService.updateTask({
+                ...existingTask,
+                ...this.task
+            });
         } else {
-            this.taskService.addTask(task).subscribe();
+
+            this.taskService.addTask(this.task).subscribe();
         }
         this.router.navigate(['/']);
-      }
+        }
     }
     ```
 </Steps>
@@ -126,11 +133,17 @@ Mais la navigation vers l'itinéraire **"/"** aura lieu immédiatement après l'
 Passons en revue le code que vous venez de modifier dans la fonction `submit` de `TaskFormComponent` :
 
 ```typescript
-submit(task: TaskForm) {
-    if (task.id) {
-        this.taskService.updateTask(task);
+submit() {
+    const id = this.route.snapshot.paramMap.get('id');
+
+    if (id) {
+        const existingTask = this.taskService.getTask(id);
+        this.taskService.updateTask({
+                ...existingTask,
+                ...this.task
+        });
     } else {
-        this.taskService.addTask(task).subscribe();
+        this.taskService.addTask(this.task).subscribe();
     }
     this.router.navigate(['/']);
 }
@@ -166,7 +179,7 @@ Utilisez cette fonction de rappel pour naviguer vers la route **"/"**.
 
 1. Modifiez le fichier `src/app/task-form/task-form.component.ts`.
 
-    ```typescript ins={"Mettez à jour la fonction de soumission du formulaire": 20-25}
+    ```typescript ins={"Mettez à jour la fonction de soumission du formulaire": 29-32}
     import { Component } from '@angular/core';
     import { Router } from '@angular/router';
     import { TaskService } from '../task.service';
@@ -185,14 +198,21 @@ Utilisez cette fonction de rappel pour naviguer vers la route **"/"**.
 
       constructor(private taskService: TaskService, private router: Router) { }
 
-      submit(task: TaskForm) {
-        if (task.id) {
-            this.taskService.updateTask(task);
-        } else {
-            this.taskService.addTask(task).subscribe(() => {
-              this.router.navigate(['/']);
-            });
-        }
+      submit() {
+          const id = this.route.snapshot.paramMap.get('id');
+
+            if (id) {
+                const existingTask = this.taskService.getTask(id);
+                this.taskService.updateTask({
+                    ...existingTask,
+                    ...this.task
+                });
+            } else {
+
+                this.taskService.addTask(this.task).subscribe(() => {
+                    this.router.navigate(['/']);
+                });
+            }
       }
     }
     ```

@@ -33,7 +33,10 @@ Cette nouvelle méthode **getTasks** définit la communication avec le serveur A
 - Il attend un tableau d'objets **Task** en réponse;
 - Il communique avec le serveur API à l'URL `http://localhost:3000/tasks`.
 
-Vous allez supprimer la variable tâches de la classe **TaskService** car vous n'en aurez plus besoin. Effectivement, les données seront récupérées depuis l'API.
+:::caution
+L'API sera responsable de récupérer la liste des tâches et vous n'aurez plus besoin de la variable **tasks** du **TaskService**.
+Néanmoins, du code dépendant encore de cette variable, vous devrez la conserver pour le moment.
+:::
 
 ### 🎓 Instructions
 
@@ -41,7 +44,7 @@ Vous allez supprimer la variable tâches de la classe **TaskService** car vous n
 
 1. Mettez à jour le fichier `src/app/task.service.ts`.
 
-    ```typescript del={"supprimer la variable task": 9-21} ins={"Ajoutez la fonction getTasks": 24-27}
+    ```typescript ins={"Ajoutez la fonction getTasks": 24-27}
     import { Injectable } from '@angular/core';
     import { HttpClient } from '@angular/common/http';
     import { Task } from './task.model';
@@ -150,12 +153,15 @@ Vous découvrirez l'alternative à la fin de cette page.
 
 1. Modifiez le fichier `src/app/task-list/task-list.component.html`.
 
-    ```html ins={"Modifiez le Template HTML": 1-2} ins="tasks$ | async"
-    <ul>
-        <li *ngFor="let task of tasks$ | async">
-            Task name: {{ task.title }}
-        </li>
-    </ul>
+    ```html ins="tasks$ | async"
+    <tr *ngFor="let task of tasks$ | async">
+    <td>{{ task.title }}</td>
+    <td>{{ task.createdAt | date }}</td>
+    <td>
+        <a class="btn btn-primary" [routerLink]="['/update', task.id]">Mettre à jour</a>
+    <button class="btn btn-danger" type="button" (click)="deleteTask(task.id)">Supprimer</button>
+        </td>
+    </tr>
     ```
 
 </Steps>
