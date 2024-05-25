@@ -25,7 +25,7 @@ This function expects 2 parameters:
 
 ```typescript
 updateTask(task: Task) {
-  return this.http.post<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+  return this.http.patch<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
 }
 ```
 
@@ -47,7 +47,7 @@ updateTask(task: Task) {
         constructor(private http: HttpClient) { }
 
         updateTask(task: Task) {
-            return this.http.post<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
+            return this.http.patch<Task>(`${http://localhost:3000/tasks/${task.id}}`, task);
         }
     }
     ```

@@ -39,7 +39,7 @@ deleteTask(task: Task) {
         constructor(private http: HttpClient) { }
 
         deleteTask(id: string) {
-            return this.http.delete<Task>(`${http://localhost:3000/tasks/${id}}`);
+            return this.http.delete<Task>(`http://localhost:3000/tasks/${id}`);
         }
     }
     ```
@@ -58,7 +58,7 @@ Le moyen le plus simple de le faire serait d'appliquer la même logique que dans
 
 1. Modifiez le fichier `src/app/task-list/task-list.component.ts`.
 
-   ```typescript ins={"Modifiez la fonction deleteTask": 13-16}
+   ```typescript ins={"Modifiez la fonction deleteTask": 13-18}
    import { Component } from '@angular/core';
    import { TaskService } from '../task.service';
 
@@ -68,13 +68,15 @@ Le moyen le plus simple de le faire serait d'appliquer la même logique que dans
      styleUrls: ['./task-list.component.css']
    })
    export class TaskListComponent {
-     tasks$ = this.taskService.getTasks();
+       tasks$ = this.taskService.getTasks();
 
-     constructor(private taskService: TaskService) { }
+        constructor(private taskService: TaskService) { }
 
-     deleteTask(id: string): void {
-       this.taskService.deleteTask(id);
-     }
+        deleteTask(id: string): void {
+            this.taskService.deleteTask(id).subscribe(() => {
+                document.location.reload();
+            });
+        }
    }
    ```
 
