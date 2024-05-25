@@ -72,14 +72,13 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
       templateUrl: './task-form.component.html',
       styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
 
       task: TaskForm = {
         title: '',
         description: ''
       };
-
-      ngOnInit() {}
+      
     }
     ```
 

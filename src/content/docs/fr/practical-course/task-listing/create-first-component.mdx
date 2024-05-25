@@ -69,7 +69,7 @@ export class TaskListComponent {
 Le décorateur **@Component** définit les métadonnées de configuration du composant.
 C'est ici qu'on détermine comment le composant doit être traité, instancié et utilisé au moment de son exécution.
 
-La propriété **selector** définit le sélecteur d'éléments CSS du composant.
+La propriété **selector** définit le nom balise HTML du composant.
 En utilisant ce sélecteur dans un Template HTML (vue), Angular crée et affiche une instance du composant.
 
 La propriété **templateUrl** définit l'emplacement du Template HTML (de sa vue) pour le composant.
@@ -97,8 +97,8 @@ Vous avez généré le nouveau composant mais vous devez afficher son contenu HT
 
     ```html ins={"Ajoutez le sélecteur du composant (et la balise <main> pour garantir une bonne sémantique HTML et gestion CSS)": 5-8}
     // app.component.html
-    <header>
-        <h1>Angular Practical course</h1>
+    <header class="navbar bg-body-tertiary px-4">
+        <h1 class="navbar-brand fw-bold">Angular Practical course</h1>
     </header>
 
     <main class="container pt-4">

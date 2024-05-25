@@ -33,7 +33,7 @@ As you are deleting this list, the application will stop working for a moment as
         templateUrl: './task-list.component.html',
         styleUrls: ['./task-list.component.css']
     })
-    export class TaskListComponent implements OnInit {
+    export class TaskListComponent {
 
         tasks: Task[] = [
                     {
@@ -49,8 +49,6 @@ As you are deleting this list, the application will stop working for a moment as
                         createdAt: new Date()
                     }
                 ];
-
-        ngOnInit() {}
     }
     ```
 
@@ -92,14 +90,13 @@ tasks: Task[] = this.taskService.tasks;
         templateUrl: './task-list.component.html',
         styleUrls: ['./task-list.component.css']
     })
-    export class TaskListComponent implements OnInit {
+    export class TaskListComponent {
 
         tasks: Task[] = this.taskService.tasks;
 
 
         constructor(private taskService: TaskService) {}
 
-        ngOnInit() {}
     }
     ```
 
