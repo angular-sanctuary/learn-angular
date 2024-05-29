@@ -35,11 +35,11 @@ This function will be created in the component class.
     // task-form.component.html
     <form>
       <label for="title" class="form-label">Title:</label>
-      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
+      <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title" />
 
       <label for="description" class="form-label">Description:</label>
       <textarea id="description" name="description" class="form-control" [(ngModel)]="task.description"></textarea>
-
+s
       <button type="submit" class="btn btn-primary" (click)="createTask()">Create task</button>
     </form>
     ```

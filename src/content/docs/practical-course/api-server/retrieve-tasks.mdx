@@ -98,15 +98,13 @@ An Observable **observes** a stream of data.
         templateUrl: './task-list.component.html',
         styleUrls: ['./task-list.component.css']
     })
-    export class TaskListComponent implements OnInit {
+    export class TaskListComponent {
 
         tasks: Task[] = this.taskService.tasks;
 
         tasks$ = this.taskService.getTasks();
 
         constructor(private taskService: TaskService) { }
-
-        ngOnInit() {}
     }
     ```
 

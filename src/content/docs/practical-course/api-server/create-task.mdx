@@ -91,15 +91,13 @@ Let's subscribe to the observable by using the `subscribe` function.
       templateUrl: './task-form.component.html',
       styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
       task: TaskForm = {
         title: '',
         description: ''
       };
 
       constructor(private taskService: TaskService) { }
-
-      ngOnInit() {}
 
       submit(task: TaskForm) {
         if (task.id) {
@@ -181,15 +179,13 @@ Let's use this callback function to navigate to the **"/"** route.
       templateUrl: './task-form.component.html',
       styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
       task: TaskForm = {
         title: '',
         description: ''
       };
 
       constructor(private taskService: TaskService, private router: Router) { }
-
-      ngOnInit() {}
 
       submit(task: TaskForm) {
         if (task.id) {

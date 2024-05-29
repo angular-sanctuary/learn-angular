@@ -22,7 +22,7 @@ We create a HTML form structure in the `TaskFormComponent` class.
 <form>
   <label for="title">Title:</label>
   
-  <input type="text" id="title" name="title" [(ngModel)]="task.title">
+  <input type="text" id="title" name="title" [(ngModel)]="task.title"/>
   <label for="description">Description:</label>
   <textarea id="description" name="description" [(ngModel)]="task.description"></textarea>
   
@@ -59,7 +59,7 @@ export class TaskFormComponent {
     
   submit() {
     this.taskService.addTask(this.task);
-    this.router.navigate(['/tasks']);
+    this.router.navigate(['/']);
   }
 }
 ```

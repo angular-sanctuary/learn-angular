@@ -62,7 +62,7 @@ Vous utiliserez cette dernière pour formater la date **createdAt** de la tâche
 
 La date de création de la tâche est affichée dans un format plus convivial.
 
-## Alternative
+## Alternative (ne pas faire)
 
 Une alternative courante pour transformer les données dans le Template HTML consiste à utiliser une fonction.
 Comme l'interpolation évalue l'expression JavaScript, vous pouvez lui transmettre une fonction qui renvoie une valeur.
@@ -96,7 +96,7 @@ export class TaskListComponent {
     { title: 'Tâche 2', createdAt: new Date() }
   ];
 
-  formatDate(date: Date): string {
+  formatDate(currentDate: Date): string {
     // Obtenez le mois, le jour et l'année à partir de l'objet Date
     const month = currentDate.getMonth() + 1; // getMonth commence à 00 pour janvier, nous ajoutons donc 1
     const day = currentDate.getDate();

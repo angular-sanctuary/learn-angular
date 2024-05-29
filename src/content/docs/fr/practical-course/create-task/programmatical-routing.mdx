@@ -71,11 +71,11 @@ Ce service vous permet de récupérer des informations sur la route actuelle et 
 </Steps>
 
 La fonction de navigation attend un tableau de segments de routes en tant que paramètre.
-Dans notre cas, vous allez naviguer vers la route **tasks** telle que vous l'avez défini dans votre configuration de route. Vous transmettez donc `['/tasks']`.
+Dans notre cas, vous allez naviguer vers la route **tasks** telle que vous l'avez défini dans votre configuration de route. Vous transmettez donc `['/']`.
 
 ```typescript
 const routes: Routes = [
-  { path: 'tasks', component: TaskListComponent },
+  { path: '', component: TaskListComponent },
   { path: 'add-task', component: TaskFormComponent }
 ];
 ```

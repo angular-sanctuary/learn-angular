@@ -50,7 +50,7 @@ export type TaskForm = Pick<Task, 'title' | 'description'>;
 
 <Steps>
 
-1. Ouvrez le fichier `src/app/task-form/task.model.ts`.
+1. Ouvrez le fichier `src/app/models/task.model.ts`.
 
 2. Ajoutez le code suivant en dessous de l'existant:
 
@@ -146,7 +146,7 @@ A présent, il faut lier l'input **title** à la propriété **task.title** et l
 <form>
   <label for="title" class="form-label">Titre</label>
     
-  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title">
+  <input type="text" id="title" name="title" class="form-control" [(ngModel)]="task.title"/>
     
   <label for="description" class="form-label">Description</label>
     

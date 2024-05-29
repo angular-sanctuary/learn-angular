@@ -98,7 +98,7 @@ Let's handle it by changing the **submit** function:
         templateUrl: './task-form.component.html',
         styleUrls: ['./task-form.component.css']
     })
-    export class TaskFormComponent implements OnInit {
+    export class TaskFormComponent {
         constructor(private taskService: TaskService, private router: Router) { }
 
         submit(task: TaskForm) {

@@ -22,7 +22,7 @@ Cette fonction prend le chemin de la route du serveur API comme paramètre : `h
 C'est l'URL qu'il interrogera pour obtenir la liste des tâches.
 
 ```typescript
-getTasks() {
+getTasks(): Observable<Task[]> {
   return this.http.get<Task[]>('http://localhost:3000/tasks');
 }
 ```
@@ -69,7 +69,7 @@ Néanmoins, du code dépendant encore de cette variable, vous devrez la conserve
 
         constructor(private http: HttpClient) { }
 
-        getTasks() {
+        getTasks(): Observable<Task[]> {
             return this.http.get<Task[]>('http://localhost:3000/tasks');
         }
     }
